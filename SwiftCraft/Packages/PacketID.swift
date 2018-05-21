@@ -23,11 +23,11 @@ public struct PacketID: Equatable, Hashable {
 /// - play: The normal game.
 /// - status: Pinging the server.
 /// - login: The login process.
-public enum ConnectionState: Equatable, Hashable {
-    case handshaking
-    case play
-    case status
-    case login
+public enum ConnectionState: Int, Equatable, Hashable {
+    case handshaking = 0
+    case status = 1
+    case login = 2
+    case play = 3
 
     /// Creates a new packet id.
     ///

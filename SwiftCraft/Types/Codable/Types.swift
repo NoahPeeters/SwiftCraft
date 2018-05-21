@@ -105,6 +105,18 @@ public typealias VarInt32 = VarInt<Int32>
 /// Minecraft's VarLong type
 public typealias VarInt64 = VarInt<Int64>
 
+extension VarInt where IntegerType == Int32 {
+    public init(_ value: Int) {
+        self.init(Int32(value))
+    }
+}
+
+extension VarInt where IntegerType == Int64 {
+    public init(_ value: Int) {
+        self.init(Int64(value))
+    }
+}
+
 // MARK: - String
 
 extension String: CodableDataType {

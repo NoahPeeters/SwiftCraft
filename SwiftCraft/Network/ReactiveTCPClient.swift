@@ -18,7 +18,7 @@ import ReactiveSwift
 /// - received: The input stream received new data.
 /// - outputStreamClosed: The output stream closed.
 /// - inputStreamClosed: The input stream closed.
-public enum TCPClientEvents: Equatable, Hashable {
+public enum TCPClientEvent: Equatable, Hashable {
     case outputStreamOpened
     case inputStreamOpened
     case outputStreamHasSpaceAvailable
@@ -26,19 +26,13 @@ public enum TCPClientEvents: Equatable, Hashable {
     case received(data: Data)
     case outputStreamClosed
     case inputStreamClosed
-}
-
-/// Errors of a TCPClient.
-///
-/// - unknownError: An unknown error occured.
-public enum TCPClientError: Error {
     case unknownError
 }
 
 /// A protocol for a tcp client like object.
 public protocol ReactiveTCPClientProtocol {
     /// The type of the events signal
-    typealias EventsSignal = Signal<TCPClientEvents, TCPClientError>
+    typealias EventsSignal = Signal<TCPClientEvent, NoError>
 
     /// The type of the output signal
     typealias OutputSignal = Signal<ByteArray, NoError>
@@ -54,6 +48,12 @@ public protocol ReactiveTCPClientProtocol {
 
     /// The observer for new messages to send
     var output: OutputSignal.Observer { get }
+
+    /// The host to connect to.
+    var host: CFString { get }
+
+    /// The port to connect to
+    var port: UInt32 { get }
 }
 
 public class ReactiveTCPClient: NSObject, ReactiveTCPClientProtocol {
@@ -160,7 +160,7 @@ extension ReactiveTCPClient: StreamDelegate {
         case .hasBytesAvailable:
             streamHasBytesAvailable(stream)
         case .errorOccurred:
-            eventsObserver.send(error: .unknownError)
+            eventsObserver.send(value: .unknownError)
         case .endEncountered:
             streamEndOccured(stream)
         default:

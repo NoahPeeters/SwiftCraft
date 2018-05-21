@@ -18,10 +18,10 @@ class ReactiveTCPClientTests: QuickSpec {
 
             waitUntil { done in
                 var eventCount = 0
-                client.events.observeResult { event in
+                client.events.observeValues { event in
                     eventCount += 1
 
-                    switch event.value! {
+                    switch event {
                     case let .received(data):
                         expect(String(data: data, encoding: .utf8)).toNot(beNil())
                         expect(eventCount).to(equal(5))
@@ -41,9 +41,9 @@ class ReactiveTCPClientTests: QuickSpec {
             let client = ReactiveTCPClient(host: "example.com2", port: 80)
 
             waitUntil { done in
-                client.events.observeResult { event in
+                client.events.observeValues { event in
                     client.close()
-                    expect(event.error).to(matchError(TCPClientError.unknownError))
+                    expect(event).to(equal(.unknownError))
                     done()
                 }
 
