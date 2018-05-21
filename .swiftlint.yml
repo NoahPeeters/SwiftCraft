@@ -1,0 +1,9 @@
+excluded:
+  - Carthage
+
+identifier_name:
+  excluded:
+    - id
+    - x
+    - y
+    - z
