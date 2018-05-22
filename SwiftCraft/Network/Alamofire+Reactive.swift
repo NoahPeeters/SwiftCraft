@@ -10,7 +10,7 @@ import Result
 import Alamofire
 import ReactiveSwift
 
-private let queue = DispatchQueue(label: "my serial queue")
+private let queue = DispatchQueue(label: "Alamofire queue")
 
 extension DataRequest {
     internal func signalProducer() -> SignalProducer<Data, AnyError> {

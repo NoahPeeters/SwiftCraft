@@ -25,14 +25,55 @@ struct EncryptionRequestPacket: HandleablePacket {
         verifyToken = try buffer.read(lenght: Int(verifyTokenLength.value))
     }
 
-    func handle(with client: MinecraftClient) {
-        client.receivedEncryptionRequestPacket(self)
+    func handle(with client: MinecraftClient) throws {
+        try client.receivedEncryptionRequestPacket(self)
     }
 }
 
 extension MinecraftClient {
-    func receivedEncryptionRequestPacket(_ packet: EncryptionRequestPacket) {
+    func receivedEncryptionRequestPacket(_ packet: EncryptionRequestPacket) throws {
         print("receivedEncryptionRequestPacket")
-        print(packet)
+
+        guard let serverIDData = packet.serverID.data(using: .ascii) else {
+            throw EncryptionRequestPacketError.invalidServerID
+        }
+
+        let publicKeyData = Data(bytes: packet.publicKey)
+        let sharedSecret = generateSharedSecret()
+
+        let encryptedVerifyToken = try encrypt(Data(bytes: packet.verifyToken), withKey: publicKeyData)
+        let encryptedSharedSecret = try encrypt(sharedSecret, withKey: publicKeyData)
+
+        let serverHash = sessionServerService.serverHash(
+            serverID: serverIDData,
+            sharedSecret: sharedSecret,
+            publicKey: publicKeyData)
+
+        let responsePacket = EncryptionResponsePacket(
+            encryptedSharedSecret: Array(encryptedSharedSecret),
+            encryptedVerifyToken: Array(encryptedVerifyToken))
+
+        sessionServerService.joinSessionRequest(serverHash: serverHash).startWithResult { [weak self] response in
+            print(response)
+            self?.sendPacket(responsePacket)
+            self?.enableEncryption(sharedSecret: sharedSecret)
+        }
     }
+
+    private func encrypt(_ data: Data, withKey keyData: Data) throws -> Data {
+        return try CC.RSA.encrypt(
+            data,
+            derKey: keyData,
+            tag: Data(),
+            padding: .pkcs1,
+            digest: .none)
+    }
+
+    private func generateSharedSecret() -> Data {
+        return CC.generateRandom(16)
+    }
+}
+
+enum EncryptionRequestPacketError: Error {
+    case invalidServerID
 }

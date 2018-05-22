@@ -19,9 +19,7 @@ class MinecraftUserLoginTests: QuickSpec {
         let loginService = UserLoginService()
 
         context("when using correct credentials") {
-            let passwordCredentials = UserLoginPasswordCredentials(
-                username: ProcessInfo.processInfo.environment["correctUsername"]!,
-                password: ProcessInfo.processInfo.environment["correctPassword"]!)
+            let passwordCredentials = UserLoginPasswordCredentials.readFromEnvironment()
 
             context("when requesting a user object") {
                 var response: Result<UserLoginResponse, AnyError>?

@@ -1,5 +1,6 @@
 excluded:
   - Carthage
+  - SwiftCraft/Crypto/SwCrypt.swift
 
 identifier_name:
   excluded:

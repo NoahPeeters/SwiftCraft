@@ -11,11 +11,15 @@ import Foundation
 public class MinecraftClient {
     private let tcpClient: ReactiveTCPClientProtocol
     private let packetLibrary: PacketLibrary
+    public let sessionServerService: SessionServerServiceProtcol
     public private(set) var connectionState = ConnectionState.handshaking
 
-    public init(tcpClient: ReactiveTCPClientProtocol, packetLibrary: PacketLibrary) {
+    public init(tcpClient: ReactiveTCPClientProtocol,
+                packetLibrary: PacketLibrary,
+                sessionServerService: SessionServerServiceProtcol) {
         self.tcpClient = tcpClient
         self.packetLibrary = packetLibrary
+        self.sessionServerService = sessionServerService
 
         tcpClient.events.observeValues { [weak self] event in
             self?.handleEvent(event)
@@ -26,10 +30,10 @@ public class MinecraftClient {
         tcpClient.connect()
     }
 
-    public func connectAndLogin(username: String) {
+    public func connectAndLogin() {
         connect()
         sendHandshake(nextState: .login)
-        sendLoginStart(username: username)
+        sendLoginStart(username: sessionServerService.username)
         connectionState = .login
     }
 
@@ -43,6 +47,16 @@ public class MinecraftClient {
 
     public var port: UInt32 {
         return tcpClient.port
+    }
+
+    var aesCipher: AESCipher?
+
+    public func enableEncryption(sharedSecret: Data) {
+        aesCipher = AESCipher(mode: MODE_CFB, keyData: sharedSecret, ivData: sharedSecret)
+    }
+
+    public func disableEncryption() {
+        aesCipher = nil
     }
 }
 
@@ -73,7 +87,8 @@ extension MinecraftClient {
     }
 
     func handleMessage(_ bytes: ByteArray) throws {
-        let buffer = ByteBuffer(elements: bytes)
+        let buffer = ByteBuffer(elements: decodeMessage(bytes))
+        print(buffer.elements.count)
         let packetLength = try Int(VarInt32(from: buffer).value)
 
         guard buffer.remainingData() == packetLength else {
@@ -84,5 +99,13 @@ extension MinecraftClient {
         let packetID = connectionState.packetID(with: rawPacketID)
 
         try packetLibrary.parseAndHandle(buffer, packetID: packetID, with: self)
+    }
+
+    func decodeMessage(_ bytes: ByteArray) -> ByteArray {
+        guard let aesCipher = aesCipher else {
+            return bytes
+        }
+
+        return Array(aesCipher.decrypt(Data(bytes: bytes)))
     }
 }

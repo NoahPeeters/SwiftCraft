@@ -23,10 +23,10 @@ public struct UserLoginResponse: UserLoginSessionCredentials, Codable, Equatable
     /// User object in the response
     public struct User: Codable, Equatable {
         /// The id of the user.
-        let id: String
+        public let id: String
 
         /// List of properties.
-        let properties: [UserProperty]?
+        public let properties: [UserProperty]?
     }
 
     /// Property of a user.
@@ -52,4 +52,14 @@ public struct UserLoginResponse: UserLoginSessionCredentials, Codable, Equatable
 
     /// A optional user object. This will be include if the request requested it.
     public let user: User?
+}
+
+extension UserLoginResponse: AuthenticationProvider {
+    public var profileID: String {
+        return selectedProfile.id
+    }
+
+    public var username: String {
+        return selectedProfile.name
+    }
 }

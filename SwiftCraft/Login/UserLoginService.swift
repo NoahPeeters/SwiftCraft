@@ -22,11 +22,14 @@ public protocol UserLoginServiceProtocol {
     ///   - username: The username to login.
     ///   - password: The password to login.
     /// - Returns: A SignalProducer for the login request.
-    func login(credentials: UserLoginCredentials, requestUser: Bool) -> ResponseSignalProducer
+    func loginRequest(credentials: UserLoginCredentials, requestUser: Bool) -> ResponseSignalProducer
 }
 
-struct UserLoginService: UserLoginServiceProtocol {
-    public func login(credentials: UserLoginCredentials, requestUser: Bool) -> ResponseSignalProducer {
+/// The login server for the default mojang servers.
+public struct UserLoginService: UserLoginServiceProtocol {
+    public init() {}
+
+    public func loginRequest(credentials: UserLoginCredentials, requestUser: Bool) -> ResponseSignalProducer {
         // Get payload
         let payload = credentials.createPayload(requestUser: requestUser)
 

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133424BD20B425660097C45D /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BC20B425660097C45D /* SwCrypt.swift */; };
+		133424BF20B42EBC0097C45D /* EncryptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BE20B42EBC0097C45D /* EncryptionResponse.swift */; };
+		133424C120B4341D0097C45D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133424C020B4341D0097C45D /* CryptoSwift.framework */; };
+		1334250B20B453E60097C45D /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1334250920B453E60097C45D /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1334250C20B453E60097C45D /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1334250A20B453E60097C45D /* AESCipher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1334250E20B4541A0097C45D /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 1334250D20B4541A0097C45D /* AES.c */; };
+		1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251120B460D60097C45D /* Data+MinecraftHexString.swift */; };
+		1334251520B4647A0097C45D /* SessionServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251420B4647A0097C45D /* SessionServerService.swift */; };
+		1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251720B469DB0097C45D /* AuthenticationProvider.swift */; };
+		1334251920B46E3B0097C45D /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6320B1DD26008790F2 /* ReactiveSwift.framework */; };
+		1334251A20B46E3B0097C45D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6420B1DD26008790F2 /* Result.framework */; };
 		4024AB5220B1DB57008790F2 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 4024AB4B20B1DB57008790F2 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4024AB6620B1DD26008790F2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6320B1DD26008790F2 /* ReactiveSwift.framework */; };
@@ -57,7 +68,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		133424D920B43ADF0097C45D /* Copy Crypto Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Crypto Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		133424DC20B43B060097C45D /* Copy Crypto Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Crypto Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		133424BC20B425660097C45D /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
+		133424BE20B42EBC0097C45D /* EncryptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionResponse.swift; sourceTree = "<group>"; };
+		133424C020B4341D0097C45D /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
+		1334250920B453E60097C45D /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		1334250A20B453E60097C45D /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
+		1334250D20B4541A0097C45D /* AES.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AES.c; sourceTree = "<group>"; };
+		1334251120B460D60097C45D /* Data+MinecraftHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+MinecraftHexString.swift"; sourceTree = "<group>"; };
+		1334251320B463350097C45D /* AES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
+		1334251420B4647A0097C45D /* SessionServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServerService.swift; sourceTree = "<group>"; };
+		1334251720B469DB0097C45D /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
 		4024AB4820B1DB57008790F2 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4024AB4B20B1DB57008790F2 /* SwiftCraft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft.h; sourceTree = "<group>"; };
 		4024AB4C20B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133424C120B4341D0097C45D /* CryptoSwift.framework in Frameworks */,
 				4024AB6620B1DD26008790F2 /* ReactiveSwift.framework in Frameworks */,
 				4024AB6720B1DD26008790F2 /* Result.framework in Frameworks */,
 				4024AB6820B1DD26008790F2 /* Alamofire.framework in Frameworks */,
@@ -129,12 +174,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				4068071D20B364D600B116C4 /* SwiftCraft.framework in Frameworks */,
+				1334251920B46E3B0097C45D /* ReactiveSwift.framework in Frameworks */,
+				1334251A20B46E3B0097C45D /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		133424C220B439320097C45D /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				1334251320B463350097C45D /* AES.h */,
+				1334250D20B4541A0097C45D /* AES.c */,
+				1334250920B453E60097C45D /* AESCipher.h */,
+				1334250A20B453E60097C45D /* AESCipher.m */,
+				133424BC20B425660097C45D /* SwCrypt.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		1334250F20B460BC0097C45D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4024AB4C20B1DB57008790F2 /* Info.plist */,
+				4024AB4B20B1DB57008790F2 /* SwiftCraft.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1334251620B469C90097C45D /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				4068070920B361E000B116C4 /* MinecraftClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
 		4024AB3E20B1DB57008790F2 = {
 			isa = PBXGroup;
 			children = (
@@ -159,9 +235,9 @@
 		4024AB4A20B1DB57008790F2 /* SwiftCraft */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB4C20B1DB57008790F2 /* Info.plist */,
-				4024AB4B20B1DB57008790F2 /* SwiftCraft.h */,
-				4068070920B361E000B116C4 /* MinecraftClient.swift */,
+				1334250F20B460BC0097C45D /* Supporting Files */,
+				1334251620B469C90097C45D /* Client */,
+				133424C220B439320097C45D /* Crypto */,
 				4024AB7720B1F20C008790F2 /* Login */,
 				4024AB7E20B21E39008790F2 /* Types */,
 				406806FD20B30D2500B116C4 /* Network */,
@@ -187,6 +263,7 @@
 		4024AB6220B1DD26008790F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				133424C020B4341D0097C45D /* CryptoSwift.framework */,
 				4024AB6A20B1DEA0008790F2 /* Nimble.framework */,
 				4024AB6B20B1DEA0008790F2 /* Quick.framework */,
 				4024AB6520B1DD26008790F2 /* Alamofire.framework */,
@@ -200,6 +277,9 @@
 			isa = PBXGroup;
 			children = (
 				4024AB7320B1EA6C008790F2 /* UserLoginService.swift */,
+				1334251420B4647A0097C45D /* SessionServerService.swift */,
+				1334251720B469DB0097C45D /* AuthenticationProvider.swift */,
+				1334251120B460D60097C45D /* Data+MinecraftHexString.swift */,
 				4024AB7820B1F216008790F2 /* Credentials.swift */,
 				4024AB7A20B1F241008790F2 /* UserLoginResponse.swift */,
 			);
@@ -283,6 +363,7 @@
 				4068071F20B3678D00B116C4 /* LoginStartPacket.swift */,
 				40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */,
 				40D6CC5420B36EE00043FAB5 /* EncryptionRequest.swift */,
+				133424BE20B42EBC0097C45D /* EncryptionResponse.swift */,
 				40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */,
 			);
 			path = Login;
@@ -296,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */,
+				1334250B20B453E60097C45D /* AESCipher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +411,7 @@
 				4024AB4E20B1DB57008790F2 /* Frameworks */,
 				4024AB4F20B1DB57008790F2 /* Resources */,
 				4024AB6920B1DD60008790F2 /* Copy Frameworks */,
+				133424D920B43ADF0097C45D /* Copy Crypto Framework */,
 			);
 			buildRules = (
 			);
@@ -348,6 +431,7 @@
 				4068070C20B364A600B116C4 /* Frameworks */,
 				4068070D20B364A600B116C4 /* Resources */,
 				4068071E20B364DF00B116C4 /* Copy Frameworks */,
+				133424DC20B43B060097C45D /* Copy Crypto Framework */,
 			);
 			buildRules = (
 			);
@@ -443,6 +527,7 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -474,6 +559,7 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/ReactiveSwift.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -492,12 +578,15 @@
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
 				4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */,
 				40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */,
+				133424BF20B42EBC0097C45D /* EncryptionResponse.swift in Sources */,
+				1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */,
 				4024AB8B20B22C37008790F2 /* CodableDataType.swift in Sources */,
 				4068070620B355CF00B116C4 /* CodablePacket.swift in Sources */,
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
 				4024AB9020B23089008790F2 /* Types.swift in Sources */,
 				4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */,
+				1334250E20B4541A0097C45D /* AES.c in Sources */,
 				4024AB8020B21E45008790F2 /* InputBuffers.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
@@ -506,8 +595,12 @@
 				4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */,
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* ReactiveTCPClient.swift in Sources */,
+				1334250C20B453E60097C45D /* AESCipher.m in Sources */,
 				4024AB8E20B22DB5008790F2 /* DirectCodableDataType.swift in Sources */,
+				1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */,
 				4068070420B34D3F00B116C4 /* PacketID.swift in Sources */,
+				1334251520B4647A0097C45D /* SessionServerService.swift in Sources */,
+				133424BD20B425660097C45D /* SwCrypt.swift in Sources */,
 				40D6CC5520B36EE00043FAB5 /* EncryptionRequest.swift in Sources */,
 				4024AB6F20B1E093008790F2 /* Alamofire+Reactive.swift in Sources */,
 			);
@@ -678,6 +771,7 @@
 		4024AB5D20B1DB57008790F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -691,7 +785,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftCraft/Info.plist;
+				INFOPLIST_FILE = "SwiftCraft/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,6 +795,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraft;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -709,6 +804,7 @@
 		4024AB5E20B1DB57008790F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -722,7 +818,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftCraft/Info.plist;
+				INFOPLIST_FILE = "SwiftCraft/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -732,6 +828,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraft;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -786,6 +883,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = SwiftCraftApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -803,6 +904,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = SwiftCraftApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
