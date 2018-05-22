@@ -82,3 +82,13 @@ extension UserLoginSessionCredentials {
         ]
     }
 }
+
+public struct SimpleUserLoginSessionCredentials: UserLoginSessionCredentials {
+    public let accessToken: String
+    public let clientToken: String
+
+    public init(accessToken: String, clientToken: String) {
+        self.accessToken = accessToken
+        self.clientToken = clientToken
+    }
+}

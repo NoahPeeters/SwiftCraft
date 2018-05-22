@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        let passwordCredentials = UserLoginPasswordCredentials.readFromEnvironment()
+        let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
 
         let loginService = UserLoginService()
 
@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             switch response {
             case let .success(login):
                 print("Login succeeded: \(login)")
+                self.saveSessionCredentials(login)
                 self.minecraftClient = MinecraftClient(
                     tcpClient: ReactiveTCPClient(host: "play.lemoncloud.org", port: 25565),
                     packetLibrary: DefaultPacketLibrary(),
@@ -43,5 +44,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 exit(1)
             }
         }
+    }
+
+    /// Loads sessioncredentials from user default if present.
+    ///
+    /// - Returns: The loaded credentials or nil if not present.
+    func loadCredentials() -> UserLoginCredentials? {
+        guard let accessToken = UserDefaults.standard.string(forKey: "accessToken"),
+            let clientToken = UserDefaults.standard.string(forKey: "clientToken") else {
+                return nil
+        }
+        return SimpleUserLoginSessionCredentials(accessToken: accessToken, clientToken: clientToken)
+    }
+
+    /// Saves credentials to user defaults
+    ///
+    /// - Parameter credentials: The credentials to save.
+    func saveSessionCredentials(_ credentials: UserLoginSessionCredentials) {
+        UserDefaults.standard.set(credentials.accessToken, forKey: "accessToken")
+        UserDefaults.standard.set(credentials.clientToken, forKey: "clientToken")
     }
 }
