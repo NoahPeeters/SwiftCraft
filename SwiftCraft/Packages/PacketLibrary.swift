@@ -41,9 +41,16 @@ public enum PacketLibraryError: Error {
 public struct DefaultPacketLibrary: PacketLibrary {
     /// List of packet types.
     let packets: [HandleablePacket.Type] = [
+        // Login
         DisconnectPacket.self,
         EncryptionRequestPacket.self,
-        LoginSuccessPacket.self
+        LoginSuccessPacket.self,
+        SetCompressionPacket.self,
+
+        // Play
+        ReceiveChatMessagePacket.self,
+        KeepaliveRequestPacket.self,
+        JoinGamePacket.self
     ]
 
     /// Creates a new packet library.
@@ -52,7 +59,8 @@ public struct DefaultPacketLibrary: PacketLibrary {
     public func parseAndHandle<Buffer: ReadBuffer>(
         _ buffer: Buffer, packetID: PacketID, with client: MinecraftClient) throws where Buffer.Element == Byte {
         guard let packetType = packets.first(where: { $0.packetID == packetID }) else {
-            throw PacketLibraryError.unknowPacketID(packetID: packetID)
+            return
+//            throw PacketLibraryError.unknowPacketID(packetID: packetID)
         }
 
         let packet = try packetType.init(from: buffer)

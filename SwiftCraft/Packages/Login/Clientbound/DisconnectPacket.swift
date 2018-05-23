@@ -24,7 +24,6 @@ struct DisconnectPacket: HandleablePacket {
 
 extension MinecraftClient {
     func receivedDisconnectPacket(_ packet: DisconnectPacket) {
-        print("receivedDisconnectPacket")
-        print(packet)
+        print("disconnect: \(packet.message)")
     }
 }

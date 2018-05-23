@@ -302,7 +302,7 @@
 
 
     str = (unsigned char *)cipherData.bytes;
-    len = (int)strlen((char*)str);
+    len = (int)[cipherData length];
 
 	//NSLog(@"Cipher-Objc (%i | %i): %s", cipherData.length, len, cipherData.bytes);
 
@@ -467,7 +467,6 @@
 		return nil;
 	}
 
-    buffer[len] = '\0';
 	NSData *result = [[NSData alloc] initWithBytes:buffer length:len];
     free(buffer);
 

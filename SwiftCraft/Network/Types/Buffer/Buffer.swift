@@ -51,6 +51,17 @@ public class Buffer<Element> {
         elements.removeAll()
         position = 0
     }
+
+    /// Resets the position to the start of the buffer.
+    public func resetPosition() {
+        position = 0
+    }
+
+    /// Drops all read elements.
+    public func dropReadElements() {
+        elements.removeFirst(position)
+        resetPosition()
+    }
 }
 
 // MARK: - Read Buffer

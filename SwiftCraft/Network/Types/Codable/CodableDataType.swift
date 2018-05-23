@@ -17,7 +17,7 @@ extension EncodableDataType {
     /// Encodes the type and returns the data.
     ///
     /// - Returns: The encoded type.
-    func directEncode() -> ByteArray {
+    public func directEncode() -> ByteArray {
         let buffer = ByteBuffer()
         encode(to: buffer)
         return buffer.elements
@@ -34,7 +34,7 @@ extension DecodableDataType {
     ///
     /// - Parameter bytes: The bytes to decode.
     /// - Throws: Any decoding error.
-    init(from bytes: ByteArray) throws {
+    public init(from bytes: ByteArray) throws {
         let buffer = ByteBuffer(elements: bytes)
         try self.init(from: buffer)
     }

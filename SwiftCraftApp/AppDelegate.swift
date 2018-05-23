@@ -21,6 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
+//        UserDefaults.standard.removeObject(forKey: "accessToken")
+
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
 
         let loginService = UserLoginService()
@@ -34,15 +36,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 print("Login succeeded: \(login)")
                 self.saveSessionCredentials(login)
                 self.minecraftClient = MinecraftClient(
-                    tcpClient: ReactiveTCPClient(host: "play.lemoncloud.org", port: 25565),
+//                    tcpClient: ReactiveTCPClient(host: "play.lemoncloud.org", port: 25565),
+                    tcpClient: ReactiveTCPClient(host: "192.168.150.61", port: 25565),
                     packetLibrary: DefaultPacketLibrary(),
                     sessionServerService: SessionServerService(authenticationProvider: login))
-                self.minecraftClient.connectAndLogin()
+
+                DispatchQueue.main.sync {
+                    self.minecraftClient.connectAndLogin()
+                }
 
             case let .failure(error):
                 print("Login failed \(error)")
                 exit(1)
             }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.minecraftClient.sendMessage(String(repeating: "A", count: 256))
         }
     }
 

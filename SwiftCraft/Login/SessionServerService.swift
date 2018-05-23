@@ -66,8 +66,7 @@ public struct SessionServerService: SessionServerServiceProtcol {
 
         // Decode response
         return request.signalProducer().map {
-            print($0)
-            return true
+            return $0.count == 0
         }
     }
 

@@ -32,8 +32,6 @@ struct EncryptionRequestPacket: HandleablePacket {
 
 extension MinecraftClient {
     func receivedEncryptionRequestPacket(_ packet: EncryptionRequestPacket) throws {
-        print("receivedEncryptionRequestPacket")
-
         guard let serverIDData = packet.serverID.data(using: .ascii) else {
             throw EncryptionRequestPacketError.invalidServerID
         }
@@ -53,8 +51,7 @@ extension MinecraftClient {
             encryptedSharedSecret: Array(encryptedSharedSecret),
             encryptedVerifyToken: Array(encryptedVerifyToken))
 
-        sessionServerService.joinSessionRequest(serverHash: serverHash).startWithResult { [weak self] response in
-            print(response)
+        sessionServerService.joinSessionRequest(serverHash: serverHash).startWithResult { [weak self] _ in
             self?.sendPacket(responsePacket)
             self?.enableEncryption(sharedSecret: sharedSecret)
         }

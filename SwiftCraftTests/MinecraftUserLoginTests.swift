@@ -25,7 +25,7 @@ class MinecraftUserLoginTests: QuickSpec {
                 var response: Result<UserLoginResponse, AnyError>?
 
                 beforeOnce {
-                    response = loginService.login(credentials: passwordCredentials, requestUser: true).single()
+                    response = loginService.loginRequest(credentials: passwordCredentials, requestUser: true).single()
                 }
 
                 it("should not be nil") {
@@ -73,7 +73,7 @@ class MinecraftUserLoginTests: QuickSpec {
 
                     beforeOnce {
                         if let originalResponse = response?.value {
-                            refreshResponse = loginService.login(
+                            refreshResponse = loginService.loginRequest(
                                 credentials: originalResponse,
                                 requestUser: true).single()
                         }
@@ -109,7 +109,7 @@ class MinecraftUserLoginTests: QuickSpec {
                 var response: Result<UserLoginResponse, AnyError>?
 
                 beforeOnce {
-                    response = loginService.login(credentials: passwordCredentials, requestUser: false).single()
+                    response = loginService.loginRequest(credentials: passwordCredentials, requestUser: false).single()
                 }
 
                 it("should not be nil") {
@@ -130,7 +130,7 @@ class MinecraftUserLoginTests: QuickSpec {
             var response: Result<UserLoginResponse, AnyError>?
 
             beforeOnce {
-                response = loginService.login(
+                response = loginService.loginRequest(
                     credentials: passwordCredentials,
                     requestUser: true).single()
             }

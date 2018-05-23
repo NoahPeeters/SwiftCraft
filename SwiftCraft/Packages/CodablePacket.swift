@@ -10,7 +10,7 @@ import Foundation
 
 /// A encodable minecaft packet.
 public protocol EncodablePacket {
-    /// Encodes the packet and its header to a byte array.
+    /// Encodes the packet and its package id to a byte array.
     ///
     /// - Returns: The byte array.
     func encode() -> ByteArray
@@ -29,10 +29,7 @@ extension EncodablePacket {
         let encodedPacketID = VarInt32(Self.packetID.id).directEncode()
         let encodedData = encodeData()
 
-        let length = encodedPacketID.count + encodedData.count
-        let encodedLength = VarInt32(length).directEncode()
-
-        return encodedLength + encodedPacketID + encodedData
+        return encodedPacketID + encodedData
     }
 }
 

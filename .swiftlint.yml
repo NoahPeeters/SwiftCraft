@@ -1,6 +1,7 @@
 excluded:
   - Carthage
   - SwiftCraft/Crypto/SwCrypt.swift
+  - SwiftCraft/Crypto/DataCompression.swift
 
 identifier_name:
   excluded:

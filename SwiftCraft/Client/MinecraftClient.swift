@@ -10,9 +10,10 @@ import Foundation
 
 public class MinecraftClient {
     private let tcpClient: ReactiveTCPClientProtocol
+    private let incommingDataBuffer = ByteBuffer()
     private let packetLibrary: PacketLibrary
     public let sessionServerService: SessionServerServiceProtcol
-    public private(set) var connectionState = ConnectionState.handshaking
+    public var connectionState = ConnectionState.handshaking
 
     public init(tcpClient: ReactiveTCPClientProtocol,
                 packetLibrary: PacketLibrary,
@@ -49,25 +50,41 @@ public class MinecraftClient {
         return tcpClient.port
     }
 
-    var aesCipher: AESCipher?
+    var messageCryptor: ContinuousMessageCryptor?
+    var compressor: MessageCompressor?
 
     public func enableEncryption(sharedSecret: Data) {
-        aesCipher = AESCipher(mode: MODE_CFB, keyData: sharedSecret, ivData: sharedSecret)
+        messageCryptor = ContinuousMessageCryptor(sharedSecret: sharedSecret)
     }
 
     public func disableEncryption() {
-        aesCipher = nil
+        messageCryptor = nil
+    }
+
+    public func enableCompression(threshold: Int) {
+        compressor = MessageCompressor(threshold: threshold)
+    }
+
+    public func disableCompression() {
+        compressor = nil
     }
 }
 
 // MARK: - Sending
 extension MinecraftClient {
     public func send(_ bytes: ByteArray) {
-        tcpClient.output.send(value: bytes)
+        tcpClient.output.send(value: encryptMessageIfRequired(bytes))
     }
 
     public func sendPacket(_ packet: EncodablePacket) {
-        send(packet.encode())
+        do {
+            let compressedMessage = try compressMessageIfRequired(packet.encode())
+            let messageSize = VarInt32(compressedMessage.count).directEncode()
+
+            send(messageSize + compressedMessage)
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -76,36 +93,70 @@ extension MinecraftClient {
     func handleEvent(_ event: TCPClientEvent) {
         switch event {
         case let .received(data):
-            do {
-                try self.handleMessage(Array(data))
-            } catch {
-                print(error)
-            }
+            self.handleMessage(Array(data))
         default:
             break
         }
     }
 
-    func handleMessage(_ bytes: ByteArray) throws {
-        let buffer = ByteBuffer(elements: decodeMessage(bytes))
-        print(buffer.elements.count)
-        let packetLength = try Int(VarInt32(from: buffer).value)
+    private func handleMessage(_ bytes: ByteArray) {
+        let decryptedBytes = decryptMessageIfRequired(bytes)
+        incommingDataBuffer.write(elements: decryptedBytes)
 
-        guard buffer.remainingData() == packetLength else {
-            fatalError("Length missmatch")
+        while true {
+            guard let packetLength = try? Int(VarInt32(from: incommingDataBuffer).value) else {
+                incommingDataBuffer.resetPosition()
+                return
+            }
+
+            guard let packetData = try? incommingDataBuffer.read(lenght: packetLength) else {
+                incommingDataBuffer.resetPosition()
+                return
+            }
+
+            incommingDataBuffer.dropReadElements()
+
+            do {
+                try handlePackage(packetData)
+            } catch {
+                print(error)
+            }
         }
-
-        let rawPacketID = try Int(VarInt32(from: buffer).value)
-        let packetID = connectionState.packetID(with: rawPacketID)
-
-        try packetLibrary.parseAndHandle(buffer, packetID: packetID, with: self)
     }
 
-    func decodeMessage(_ bytes: ByteArray) -> ByteArray {
-        guard let aesCipher = aesCipher else {
+    private func handlePackage(_ packetData: ByteArray) throws {
+        let packetBuffer = try Buffer(elements: decompressMessageIfRequired(packetData))
+        let rawPacketID = try Int(VarInt32(from: packetBuffer).value)
+        let packetID = connectionState.packetID(with: rawPacketID)
+
+        try packetLibrary.parseAndHandle(packetBuffer, packetID: packetID, with: self)
+    }
+}
+
+extension MinecraftClient {
+    func encryptMessageIfRequired(_ bytes: ByteArray) -> ByteArray {
+        guard let messageCryptor = messageCryptor else {
             return bytes
         }
 
-        return Array(aesCipher.decrypt(Data(bytes: bytes)))
+        return Array(messageCryptor.encryptOutgoingMessage(Data(bytes: bytes)))
+    }
+
+    func decryptMessageIfRequired(_ bytes: ByteArray) -> ByteArray {
+        guard let messageCryptor = messageCryptor else {
+            return bytes
+        }
+
+        return Array(messageCryptor.decryptIncommingMessage(Data(bytes: bytes)))
+    }
+}
+
+extension MinecraftClient {
+    func compressMessageIfRequired(_ bytes: ByteArray) throws -> ByteArray {
+        return try compressor?.compressMessage(bytes) ?? bytes
+    }
+
+    func decompressMessageIfRequired(_ bytes: ByteArray) throws -> ByteArray {
+        return try compressor?.decompressMessage(bytes) ?? bytes
     }
 }

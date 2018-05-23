@@ -26,7 +26,6 @@ struct LoginSuccessPacket: HandleablePacket {
 
 extension MinecraftClient {
     func receivedLoginSuccessPacket(_ packet: LoginSuccessPacket) {
-        print("receivedLoginSuccessPacket")
-        print(packet)
+        connectionState = .play
     }
 }

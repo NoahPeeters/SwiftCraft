@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		133424BD20B425660097C45D /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BC20B425660097C45D /* SwCrypt.swift */; };
-		133424BF20B42EBC0097C45D /* EncryptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BE20B42EBC0097C45D /* EncryptionResponse.swift */; };
-		133424C120B4341D0097C45D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133424C020B4341D0097C45D /* CryptoSwift.framework */; };
+		133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */; };
 		1334250B20B453E60097C45D /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1334250920B453E60097C45D /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1334250C20B453E60097C45D /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1334250A20B453E60097C45D /* AESCipher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1334250E20B4541A0097C45D /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 1334250D20B4541A0097C45D /* AES.c */; };
@@ -18,6 +17,16 @@
 		1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251720B469DB0097C45D /* AuthenticationProvider.swift */; };
 		1334251920B46E3B0097C45D /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6320B1DD26008790F2 /* ReactiveSwift.framework */; };
 		1334251A20B46E3B0097C45D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6420B1DD26008790F2 /* Result.framework */; };
+		4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
+		4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */; };
+		4022B06620B4B88E00B4E680 /* DataCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06520B4B88E00B4E680 /* DataCompression.swift */; };
+		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
+		4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */; };
+		4022B07320B4CCCF00B4E680 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07220B4CCCF00B4E680 /* Types.swift */; };
+		4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */; };
+		4022B07720B4D20C00B4E680 /* ReceiveChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */; };
+		4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */; };
+		4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */; };
 		4024AB5220B1DB57008790F2 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 4024AB4B20B1DB57008790F2 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4024AB6620B1DD26008790F2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6320B1DD26008790F2 /* ReactiveSwift.framework */; };
@@ -38,7 +47,7 @@
 		4024AB8820B22418008790F2 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8720B22418008790F2 /* BufferTests.swift */; };
 		4024AB8B20B22C37008790F2 /* CodableDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8A20B22C37008790F2 /* CodableDataType.swift */; };
 		4024AB8E20B22DB5008790F2 /* DirectCodableDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8D20B22DB5008790F2 /* DirectCodableDataType.swift */; };
-		4024AB9020B23089008790F2 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8F20B23089008790F2 /* Types.swift */; };
+		4024AB9020B23089008790F2 /* CodableTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8F20B23089008790F2 /* CodableTypes.swift */; };
 		4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
 		4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9320B2C1AD008790F2 /* BitShifting.swift */; };
 		406806FF20B30D3500B116C4 /* ReactiveTCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* ReactiveTCPClient.swift */; };
@@ -54,8 +63,9 @@
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
 		40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */; };
 		40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */; };
-		40D6CC5520B36EE00043FAB5 /* EncryptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5420B36EE00043FAB5 /* EncryptionRequest.swift */; };
+		40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */; };
 		40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */; };
+		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,33 +78,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		133424D920B43ADF0097C45D /* Copy Crypto Framework */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Copy Crypto Framework";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		133424DC20B43B060097C45D /* Copy Crypto Framework */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Copy Crypto Framework";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		133424BC20B425660097C45D /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
-		133424BE20B42EBC0097C45D /* EncryptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionResponse.swift; sourceTree = "<group>"; };
-		133424C020B4341D0097C45D /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
+		133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionResponsePacket.swift; sourceTree = "<group>"; };
 		1334250920B453E60097C45D /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
 		1334250A20B453E60097C45D /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		1334250D20B4541A0097C45D /* AES.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AES.c; sourceTree = "<group>"; };
@@ -102,6 +88,16 @@
 		1334251320B463350097C45D /* AES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		1334251420B4647A0097C45D /* SessionServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServerService.swift; sourceTree = "<group>"; };
 		1334251720B469DB0097C45D /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousMessageCryptor.swift; sourceTree = "<group>"; };
+		4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompressionPacket.swift; sourceTree = "<group>"; };
+		4022B06520B4B88E00B4E680 /* DataCompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCompression.swift; sourceTree = "<group>"; };
+		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
+		4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGamePacket.swift; sourceTree = "<group>"; };
+		4022B07220B4CCCF00B4E680 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
+		4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveChatMessagePacket.swift; sourceTree = "<group>"; };
+		4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepaliveRequestPacket.swift; sourceTree = "<group>"; };
+		4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepaliveResponsePacket.swift; sourceTree = "<group>"; };
 		4024AB4820B1DB57008790F2 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4024AB4B20B1DB57008790F2 /* SwiftCraft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft.h; sourceTree = "<group>"; };
 		4024AB4C20B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +121,7 @@
 		4024AB8720B22418008790F2 /* BufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferTests.swift; sourceTree = "<group>"; };
 		4024AB8A20B22C37008790F2 /* CodableDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDataType.swift; sourceTree = "<group>"; };
 		4024AB8D20B22DB5008790F2 /* DirectCodableDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCodableDataType.swift; sourceTree = "<group>"; };
-		4024AB8F20B23089008790F2 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		4024AB8F20B23089008790F2 /* CodableTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTypes.swift; sourceTree = "<group>"; };
 		4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDataTypesTest.swift; sourceTree = "<group>"; };
 		4024AB9320B2C1AD008790F2 /* BitShifting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitShifting.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* ReactiveTCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveTCPClient.swift; sourceTree = "<group>"; };
@@ -143,8 +139,9 @@
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
 		40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketLibrary.swift; sourceTree = "<group>"; };
 		40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessPacket.swift; sourceTree = "<group>"; };
-		40D6CC5420B36EE00043FAB5 /* EncryptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionRequest.swift; sourceTree = "<group>"; };
+		40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionRequestPacket.swift; sourceTree = "<group>"; };
 		40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectPacket.swift; sourceTree = "<group>"; };
+		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				133424C120B4341D0097C45D /* CryptoSwift.framework in Frameworks */,
 				4024AB6620B1DD26008790F2 /* ReactiveSwift.framework in Frameworks */,
 				4024AB6720B1DD26008790F2 /* Result.framework in Frameworks */,
 				4024AB6820B1DD26008790F2 /* Alamofire.framework in Frameworks */,
@@ -190,6 +186,9 @@
 				1334250920B453E60097C45D /* AESCipher.h */,
 				1334250A20B453E60097C45D /* AESCipher.m */,
 				133424BC20B425660097C45D /* SwCrypt.swift */,
+				4022B06520B4B88E00B4E680 /* DataCompression.swift */,
+				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
+				4022B06720B4B92600B4E680 /* MessageCompressor.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -199,6 +198,7 @@
 			children = (
 				4024AB4C20B1DB57008790F2 /* Info.plist */,
 				4024AB4B20B1DB57008790F2 /* SwiftCraft.h */,
+				4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -207,8 +207,65 @@
 			isa = PBXGroup;
 			children = (
 				4068070920B361E000B116C4 /* MinecraftClient.swift */,
+				4022B07220B4CCCF00B4E680 /* Types.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		4022B06B20B4CBDB00B4E680 /* Serverbound */ = {
+			isa = PBXGroup;
+			children = (
+				4068070720B35FDF00B116C4 /* HandshakePacket.swift */,
+			);
+			path = Serverbound;
+			sourceTree = "<group>";
+		};
+		4022B06C20B4CBFA00B4E680 /* Serverbound */ = {
+			isa = PBXGroup;
+			children = (
+				4068071F20B3678D00B116C4 /* LoginStartPacket.swift */,
+				133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */,
+			);
+			path = Serverbound;
+			sourceTree = "<group>";
+		};
+		4022B06D20B4CC0900B4E680 /* Clientbound */ = {
+			isa = PBXGroup;
+			children = (
+				40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */,
+				40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */,
+				40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */,
+				4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */,
+			);
+			path = Clientbound;
+			sourceTree = "<group>";
+		};
+		4022B06E20B4CC2300B4E680 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				4022B07820B4E11200B4E680 /* Serverbound */,
+				4022B06F20B4CC2D00B4E680 /* Clientbound */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		4022B06F20B4CC2D00B4E680 /* Clientbound */ = {
+			isa = PBXGroup;
+			children = (
+				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
+				4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */,
+				4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */,
+			);
+			path = Clientbound;
+			sourceTree = "<group>";
+		};
+		4022B07820B4E11200B4E680 /* Serverbound */ = {
+			isa = PBXGroup;
+			children = (
+				4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */,
+				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
+			);
+			path = Serverbound;
 			sourceTree = "<group>";
 		};
 		4024AB3E20B1DB57008790F2 = {
@@ -239,7 +296,6 @@
 				1334251620B469C90097C45D /* Client */,
 				133424C220B439320097C45D /* Crypto */,
 				4024AB7720B1F20C008790F2 /* Login */,
-				4024AB7E20B21E39008790F2 /* Types */,
 				406806FD20B30D2500B116C4 /* Network */,
 				4068070220B34D3300B116C4 /* Packages */,
 			);
@@ -263,7 +319,6 @@
 		4024AB6220B1DD26008790F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				133424C020B4341D0097C45D /* CryptoSwift.framework */,
 				4024AB6A20B1DEA0008790F2 /* Nimble.framework */,
 				4024AB6B20B1DEA0008790F2 /* Quick.framework */,
 				4024AB6520B1DD26008790F2 /* Alamofire.framework */,
@@ -310,7 +365,7 @@
 			children = (
 				4024AB8A20B22C37008790F2 /* CodableDataType.swift */,
 				4024AB8D20B22DB5008790F2 /* DirectCodableDataType.swift */,
-				4024AB8F20B23089008790F2 /* Types.swift */,
+				4024AB8F20B23089008790F2 /* CodableTypes.swift */,
 				4024AB9320B2C1AD008790F2 /* BitShifting.swift */,
 			);
 			path = Codable;
@@ -319,6 +374,7 @@
 		406806FD20B30D2500B116C4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4024AB7E20B21E39008790F2 /* Types */,
 				4024AB6E20B1E093008790F2 /* Alamofire+Reactive.swift */,
 				406806FE20B30D3500B116C4 /* ReactiveTCPClient.swift */,
 			);
@@ -332,6 +388,7 @@
 				4068070520B355CF00B116C4 /* CodablePacket.swift */,
 				40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */,
 				4068072220B3683E00B116C4 /* Handshake */,
+				4022B06E20B4CC2300B4E680 /* Play */,
 				4068072320B3686C00B116C4 /* Login */,
 			);
 			path = Packages;
@@ -352,7 +409,7 @@
 		4068072220B3683E00B116C4 /* Handshake */ = {
 			isa = PBXGroup;
 			children = (
-				4068070720B35FDF00B116C4 /* HandshakePacket.swift */,
+				4022B06B20B4CBDB00B4E680 /* Serverbound */,
 			);
 			path = Handshake;
 			sourceTree = "<group>";
@@ -360,11 +417,8 @@
 		4068072320B3686C00B116C4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4068071F20B3678D00B116C4 /* LoginStartPacket.swift */,
-				40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */,
-				40D6CC5420B36EE00043FAB5 /* EncryptionRequest.swift */,
-				133424BE20B42EBC0097C45D /* EncryptionResponse.swift */,
-				40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */,
+				4022B06C20B4CBFA00B4E680 /* Serverbound */,
+				4022B06D20B4CC0900B4E680 /* Clientbound */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -411,7 +465,6 @@
 				4024AB4E20B1DB57008790F2 /* Frameworks */,
 				4024AB4F20B1DB57008790F2 /* Resources */,
 				4024AB6920B1DD60008790F2 /* Copy Frameworks */,
-				133424D920B43ADF0097C45D /* Copy Crypto Framework */,
 			);
 			buildRules = (
 			);
@@ -431,7 +484,6 @@
 				4068070C20B364A600B116C4 /* Frameworks */,
 				4068070D20B364A600B116C4 /* Resources */,
 				4068071E20B364DF00B116C4 /* Copy Frameworks */,
-				133424DC20B43B060097C45D /* Copy Crypto Framework */,
 			);
 			buildRules = (
 			);
@@ -527,7 +579,6 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -559,7 +610,6 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/ReactiveSwift.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -576,32 +626,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
+				4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */,
 				4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */,
 				40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */,
-				133424BF20B42EBC0097C45D /* EncryptionResponse.swift in Sources */,
+				4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */,
+				133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */,
 				1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */,
 				4024AB8B20B22C37008790F2 /* CodableDataType.swift in Sources */,
 				4068070620B355CF00B116C4 /* CodablePacket.swift in Sources */,
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
-				4024AB9020B23089008790F2 /* Types.swift in Sources */,
+				4022B07320B4CCCF00B4E680 /* Types.swift in Sources */,
+				4024AB9020B23089008790F2 /* CodableTypes.swift in Sources */,
 				4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */,
 				1334250E20B4541A0097C45D /* AES.c in Sources */,
 				4024AB8020B21E45008790F2 /* InputBuffers.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
+				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
+				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
+				4022B06620B4B88E00B4E680 /* DataCompression.swift in Sources */,
 				4024AB7920B1F216008790F2 /* Credentials.swift in Sources */,
+				4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */,
+				4022B07720B4D20C00B4E680 /* ReceiveChatMessagePacket.swift in Sources */,
 				40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */,
 				4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */,
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* ReactiveTCPClient.swift in Sources */,
 				1334250C20B453E60097C45D /* AESCipher.m in Sources */,
 				4024AB8E20B22DB5008790F2 /* DirectCodableDataType.swift in Sources */,
+				4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */,
 				1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */,
 				4068070420B34D3F00B116C4 /* PacketID.swift in Sources */,
 				1334251520B4647A0097C45D /* SessionServerService.swift in Sources */,
+				40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */,
 				133424BD20B425660097C45D /* SwCrypt.swift in Sources */,
-				40D6CC5520B36EE00043FAB5 /* EncryptionRequest.swift in Sources */,
+				4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */,
+				40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */,
 				4024AB6F20B1E093008790F2 /* Alamofire+Reactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
