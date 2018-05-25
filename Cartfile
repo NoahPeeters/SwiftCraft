@@ -1,5 +1,4 @@
 github "Alamofire/Alamofire" ~> 4.7
-github "ReactiveCocoa/ReactiveSwift" ~> 3.0
 
 # Testing
 github "quick/quick"

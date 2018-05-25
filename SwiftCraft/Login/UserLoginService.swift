@@ -6,30 +6,28 @@
 //  Copyright © 2018 Noah Peeters. All rights reserved.
 //
 
-import Result
 import Alamofire
-import ReactiveSwift
 
 /// Protocol for a service capable to login the user.
 public protocol UserLoginServiceProtocol {
 
-    /// Signal producer for the login response.
-    typealias ResponseSignalProducer = SignalProducer<UserLoginResponse, AnyError>
+    /// Response handler for the login response.
+    typealias ResponseHandler = (Result<UserLoginResponse>) -> Void
 
-    /// Creates a login request.
+    /// Starts a login.
     ///
     /// - Parameters:
     ///   - username: The username to login.
     ///   - password: The password to login.
-    /// - Returns: A SignalProducer for the login request.
-    func loginRequest(credentials: UserLoginCredentials, requestUser: Bool) -> ResponseSignalProducer
+    ///   - handler: Completion handler called on success or error
+    func login(credentials: UserLoginCredentials, requestUser: Bool, handler: @escaping ResponseHandler)
 }
 
 /// The login server for the default mojang servers.
 public struct UserLoginService: UserLoginServiceProtocol {
     public init() {}
 
-    public func loginRequest(credentials: UserLoginCredentials, requestUser: Bool) -> ResponseSignalProducer {
+    public func login(credentials: UserLoginCredentials, requestUser: Bool, handler: @escaping ResponseHandler) {
         // Get payload
         let payload = credentials.createPayload(requestUser: requestUser)
 
@@ -43,7 +41,6 @@ public struct UserLoginService: UserLoginServiceProtocol {
             encoding: JSONEncoding.default
         )
 
-        // Decode response
-        return request.jsonSignalProducer(type: UserLoginResponse.self)
+        request.asyncJsonResponse(handler)
     }
 }

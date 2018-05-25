@@ -1,5 +1,5 @@
 //
-//  ReactiveTCPClientTests.swift
+//  TCPClientTests.swift
 //  SwiftCraftTests
 //
 //  Created by Noah Peeters on 21.05.18.
@@ -8,17 +8,16 @@
 
 import Quick
 import Nimble
-import Result
 @testable import SwiftCraft
 
-class ReactiveTCPClientTests: QuickSpec {
+class TCPClientTests: QuickSpec {
     override func spec() {
         it("connects to a valid host") {
-            let client = ReactiveTCPClient(host: "example.com", port: 80)
+            let client = TCPClient(host: "example.com", port: 80)
 
             waitUntil { done in
                 var eventCount = 0
-                client.events.observeValues { event in
+                client.events { event in
                     eventCount += 1
 
                     switch event {
@@ -33,15 +32,16 @@ class ReactiveTCPClientTests: QuickSpec {
                 }
 
                 client.connect()
-                client.output.send(value: [0x00, 0x00, 0x00])
+                client.send(bytes: [0x00, 0x00, 0x00])
             }
         }
 
         it("does not connect to a invalid host") {
-            let client = ReactiveTCPClient(host: "example.com2", port: 80)
+            let client = TCPClient(host: "example.com2", port: 80)
 
             waitUntil { done in
-                client.events.observeValues { event in
+
+                client.events { event in
                     client.close()
                     expect(event).to(equal(.unknownError))
                     done()

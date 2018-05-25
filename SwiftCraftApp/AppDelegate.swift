@@ -7,8 +7,6 @@
 //
 
 import Cocoa
-import Result
-import ReactiveSwift
 import SwiftCraft
 
 @NSApplicationMain
@@ -24,10 +22,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
         let loginService = UserLoginService()
-        let loginRequest = loginService.loginRequest(credentials: passwordCredentials, requestUser: false)
 
         print("Logging in with \(passwordCredentials)")
-        loginRequest.startWithResult { response in
+        loginService.login(credentials: passwordCredentials, requestUser: false) { response in
             switch response {
             case let .success(login):
                 print("Login succeeded: \(login)")
@@ -47,8 +44,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func createMincraftClient(login: AuthenticationProvider) {
         minecraftClient = MinecraftClient(
-//            tcpClient: ReactiveTCPClient(host: "play.lemoncloud.org", port: 25565),
-            tcpClient: ReactiveTCPClient(host: "192.168.200.36", port: 25565),
+//            tcpClient: TCPClient(host: "play.lemoncloud.org", port: 25565),
+            tcpClient: TCPClient(host: "192.168.200.36", port: 25565),
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: SessionServerService(authenticationProvider: login))
 

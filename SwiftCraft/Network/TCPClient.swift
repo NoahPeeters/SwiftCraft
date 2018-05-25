@@ -1,13 +1,10 @@
 //
-//  ReactiveTCPClient.swift
+//  TCPClient.swift
 //  SwiftCraft
 //
 //  Created by Noah Peeters on 21.05.18.
 //  Copyright © 2018 Noah Peeters. All rights reserved.
 //
-
-import Result
-import ReactiveSwift
 
 /// Events of a TCPClient.
 ///
@@ -30,33 +27,31 @@ public enum TCPClientEvent: Equatable, Hashable {
 }
 
 /// A protocol for a tcp client like object.
-public protocol ReactiveTCPClientProtocol {
-    /// The type of the events signal
-    typealias EventsSignal = Signal<TCPClientEvent, NoError>
-
-    /// The type of the output signal
-    typealias OutputSignal = Signal<ByteArray, NoError>
-
+public protocol TCPClientProtocol {
     /// Connects the client to its server.
     func connect()
 
     /// Closes the connection
     func close()
 
-    /// The events signal.
-    var events: EventsSignal { get }
-
-    /// The observer for new messages to send
-    var output: OutputSignal.Observer { get }
+    /// Sets the handler for events
+    ///
+    /// - Parameter handler: Handler for events.
+    func events(handler: ((TCPClientEvent) -> Void)?)
 
     /// The host to connect to.
     var host: CFString { get }
 
     /// The port to connect to
     var port: UInt32 { get }
+
+    /// Sends the given bytes if the outout stream is open.
+    ///
+    /// - Parameter bytes: The bytes to send.
+    func send(bytes: ByteArray)
 }
 
-public class ReactiveTCPClient: NSObject, ReactiveTCPClientProtocol {
+public class TCPClient: NSObject, TCPClientProtocol {
     /// The underlying input stream.
     private var inputStream: InputStream?
     /// The underlying output stream.
@@ -68,11 +63,8 @@ public class ReactiveTCPClient: NSObject, ReactiveTCPClientProtocol {
     /// The port to connect to
     public let port: UInt32
 
-    public let events: EventsSignal
-    private let eventsObserver: EventsSignal.Observer
-
-    private let outputSignal: OutputSignal
-    public let output: OutputSignal.Observer
+    /// Handler for events.
+    public var eventsHandler: ((TCPClientEvent) -> Void)?
 
     /// The maximum buffer size.
     public var maxBufferSize: Int = 1024
@@ -86,14 +78,7 @@ public class ReactiveTCPClient: NSObject, ReactiveTCPClientProtocol {
         self.host = host
         self.port = port
 
-        (events, eventsObserver) = EventsSignal.pipe()
-        (outputSignal, output) = OutputSignal.pipe()
-
         super.init()
-
-        outputSignal.observeValues { [weak self] bytes in
-            self?.send(bytes: bytes)
-        }
     }
 
     public convenience init(host: String, port: Int) {
@@ -148,9 +133,13 @@ public class ReactiveTCPClient: NSObject, ReactiveTCPClientProtocol {
     public func send(bytes: ByteArray) {
         outputStream?.write(UnsafePointer<UInt8>(bytes), maxLength: bytes.count)
     }
+
+    public func events(handler: ((TCPClientEvent) -> Void)?) {
+        self.eventsHandler = handler
+    }
 }
 
-extension ReactiveTCPClient: StreamDelegate {
+extension TCPClient: StreamDelegate {
     public func stream(_ stream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case .openCompleted:
@@ -160,7 +149,7 @@ extension ReactiveTCPClient: StreamDelegate {
         case .hasBytesAvailable:
             streamHasBytesAvailable(stream)
         case .errorOccurred:
-            eventsObserver.send(value: .unknownError)
+            eventsHandler?(.unknownError)
         case .endEncountered:
             streamEndOccured(stream)
         default:
@@ -173,17 +162,17 @@ extension ReactiveTCPClient: StreamDelegate {
     /// - Parameter stream: The steram.
     private func streamOpened(_ stream: Stream) {
         if stream == inputStream {
-            eventsObserver.send(value: .inputStreamOpened)
+            eventsHandler?(.inputStreamOpened)
         } else if stream == outputStream {
-            eventsObserver.send(value: .outputStreamOpened)
+            eventsHandler?(.outputStreamOpened)
         }
     }
 
     private func streamHasSpaceAvailable(_ stream: Stream) {
         if stream == inputStream {
-            eventsObserver.send(value: .inputStreamHasSpaceAvailable)
+            eventsHandler?(.inputStreamHasSpaceAvailable)
         } else if stream == outputStream {
-            eventsObserver.send(value: .outputStreamHasSpaceAvailable)
+            eventsHandler?(.outputStreamHasSpaceAvailable)
         }
     }
 
@@ -203,7 +192,7 @@ extension ReactiveTCPClient: StreamDelegate {
             length = inputStream.read(&buffer, maxLength: self.maxBufferSize)
             if length > 0 {
                 let data = Data(bytes: &buffer, count: length)
-                eventsObserver.send(value: .received(data: data))
+                eventsHandler?(.received(data: data))
             }
         }
     }
@@ -211,9 +200,9 @@ extension ReactiveTCPClient: StreamDelegate {
     private func streamEndOccured(_ stream: Stream) {
         closeStream(stream)
         if stream == inputStream {
-            eventsObserver.send(value: .inputStreamClosed)
+            eventsHandler?(.inputStreamClosed)
         } else if stream == outputStream {
-            eventsObserver.send(value: .outputStreamClosed)
+            eventsHandler?(.outputStreamClosed)
         }
     }
 }

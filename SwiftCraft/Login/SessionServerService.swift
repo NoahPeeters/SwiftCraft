@@ -6,21 +6,20 @@
 //  Copyright © 2018 Noah Peeters. All rights reserved.
 //
 
-import Result
 import Alamofire
-import ReactiveSwift
 
 /// Protocol for a service capable to join a session.
 public protocol SessionServerServiceProtcol {
 
-    /// Signal producer for the join response.
-    typealias ResponseSignalProducer = SignalProducer<Bool, AnyError>
+    /// Response handler for the join response.
+    typealias ResponseHandler = (Result<Bool>) -> Void
 
-    /// Creates a request for a joining a session.
+    /// Starts a request for a joining a session.
     ///
-    /// - Parameter serverHash: The server hash for the request.
-    /// - Returns:
-    func joinSessionRequest(serverHash: String) -> ResponseSignalProducer
+    /// - Parameter
+    ///   - serverHash: The server hash for the request.
+    ///   - handler: Completion handler called on success or error
+    func joinSession(serverHash: String, handler: @escaping ResponseHandler)
 
     /// Creates a server hash for a join request.
     ///
@@ -51,7 +50,7 @@ public struct SessionServerService: SessionServerServiceProtcol {
         return authenticationProvider.username
     }
 
-    public func joinSessionRequest(serverHash: String) -> ResponseSignalProducer {
+    public func joinSession(serverHash: String, handler: @escaping ResponseHandler) {
         let payload = createpayload(serverHash: serverHash)
 
         let url = "https://sessionserver.mojang.com/session/minecraft/join"
@@ -65,8 +64,8 @@ public struct SessionServerService: SessionServerServiceProtcol {
         )
 
         // Decode response
-        return request.signalProducer().map {
-            return $0.count == 0
+        request.asyncDataResponse {
+            handler($0.map { $0.count == 0 })
         }
     }
 

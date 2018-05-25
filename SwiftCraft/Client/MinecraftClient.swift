@@ -9,21 +9,21 @@
 import Foundation
 
 open class MinecraftClient {
-    private let tcpClient: ReactiveTCPClientProtocol
+    private let tcpClient: TCPClientProtocol
     private let incommingDataBuffer = ByteBuffer()
     private let packetLibrary: PacketLibrary
     public let sessionServerService: SessionServerServiceProtcol
     public var connectionState = ConnectionState.handshaking
     public var reactors: [Reactor] = []
 
-    public init(tcpClient: ReactiveTCPClientProtocol,
+    public init(tcpClient: TCPClientProtocol,
                 packetLibrary: PacketLibrary,
                 sessionServerService: SessionServerServiceProtcol) {
         self.tcpClient = tcpClient
         self.packetLibrary = packetLibrary
         self.sessionServerService = sessionServerService
 
-        tcpClient.events.observeValues { [weak self] event in
+        tcpClient.events { [weak self] event in
             self?.handleEvent(event)
         }
     }
@@ -69,7 +69,7 @@ open class MinecraftClient {
             encryptedSharedSecret: Array(encryptedSharedSecret),
             encryptedVerifyToken: Array(encryptedVerifyToken))
 
-        sessionServerService.joinSessionRequest(serverHash: serverHash).startWithResult { [weak self] _ in
+        sessionServerService.joinSession(serverHash: serverHash) { [weak self] _ in
             self?.sendPacket(responsePacket)
             self?.enableEncryption(sharedSecret: sharedSecret)
         }
@@ -112,7 +112,7 @@ open class MinecraftClient {
 // MARK: - Sending
 extension MinecraftClient {
     public func send(_ bytes: ByteArray) {
-        tcpClient.output.send(value: encryptMessageIfRequired(bytes))
+        tcpClient.send(bytes: encryptMessageIfRequired(bytes))
     }
 
     public func sendPacket(_ packet: EncodablePacket) {

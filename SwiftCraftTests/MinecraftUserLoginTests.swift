@@ -8,9 +8,7 @@
 
 import Quick
 import Nimble
-import Result
-import ReactiveSwift
-import enum Result.Result
+import Alamofire
 @testable import SwiftCraft
 
 class MinecraftUserLoginTests: QuickSpec {
@@ -22,10 +20,15 @@ class MinecraftUserLoginTests: QuickSpec {
             let passwordCredentials = UserLoginPasswordCredentials.readFromEnvironment()
 
             context("when requesting a user object") {
-                var response: Result<UserLoginResponse, AnyError>?
+                var response: Result<UserLoginResponse>?
 
                 beforeOnce {
-                    response = loginService.loginRequest(credentials: passwordCredentials, requestUser: true).single()
+                    waitUntil { done in
+                        loginService.login(credentials: passwordCredentials, requestUser: true) {
+                            response = $0
+                            done()
+                        }
+                    }
                 }
 
                 it("should not be nil") {
@@ -69,13 +72,16 @@ class MinecraftUserLoginTests: QuickSpec {
                 }
 
                 context("when refreshing the session") {
-                    var refreshResponse: Result<UserLoginResponse, AnyError>?
+                    var refreshResponse: Result<UserLoginResponse>?
 
                     beforeOnce {
                         if let originalResponse = response?.value {
-                            refreshResponse = loginService.loginRequest(
-                                credentials: originalResponse,
-                                requestUser: true).single()
+                            waitUntil {done in
+                                loginService.login(credentials: originalResponse, requestUser: true) {
+                                    refreshResponse = $0
+                                    done()
+                                }
+                            }
                         }
                     }
 
@@ -106,10 +112,15 @@ class MinecraftUserLoginTests: QuickSpec {
             }
 
             context("when not requesting a user object") {
-                var response: Result<UserLoginResponse, AnyError>?
+                var response: Result<UserLoginResponse>?
 
                 beforeOnce {
-                    response = loginService.loginRequest(credentials: passwordCredentials, requestUser: false).single()
+                    waitUntil { done in
+                        loginService.login(credentials: passwordCredentials, requestUser: false) {
+                            response = $0
+                            done()
+                        }
+                    }
                 }
 
                 it("should not be nil") {
@@ -127,12 +138,15 @@ class MinecraftUserLoginTests: QuickSpec {
                 username: "invalidmail@example.com",
                 password: "invalid password")
 
-            var response: Result<UserLoginResponse, AnyError>?
+            var response: Result<UserLoginResponse>?
 
             beforeOnce {
-                response = loginService.loginRequest(
-                    credentials: passwordCredentials,
-                    requestUser: true).single()
+                waitUntil { done in
+                    loginService.login(credentials: passwordCredentials, requestUser: true) {
+                        response = $0
+                        done()
+                    }
+                }
             }
 
             it("should not be nil") {
