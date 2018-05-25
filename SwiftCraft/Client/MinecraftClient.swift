@@ -8,12 +8,13 @@
 
 import Foundation
 
-public class MinecraftClient {
+open class MinecraftClient {
     private let tcpClient: ReactiveTCPClientProtocol
     private let incommingDataBuffer = ByteBuffer()
     private let packetLibrary: PacketLibrary
     public let sessionServerService: SessionServerServiceProtcol
     public var connectionState = ConnectionState.handshaking
+    public var reactors: [Reactor] = []
 
     public init(tcpClient: ReactiveTCPClientProtocol,
                 packetLibrary: PacketLibrary,
@@ -53,6 +54,27 @@ public class MinecraftClient {
     var messageCryptor: ContinuousMessageCryptor?
     var compressor: MessageCompressor?
 
+    open func startEncryption(serverID: Data, publicKey: Data, verifyToken: Data) throws {
+        let sharedSecret = generateSharedSecret()
+
+        let encryptedVerifyToken = try encrypt(verifyToken, withPublicKey: publicKey)
+        let encryptedSharedSecret = try encrypt(sharedSecret, withPublicKey: publicKey)
+
+        let serverHash = sessionServerService.serverHash(
+            serverID: serverID,
+            sharedSecret: sharedSecret,
+            publicKey: publicKey)
+
+        let responsePacket = EncryptionResponsePacket(
+            encryptedSharedSecret: Array(encryptedSharedSecret),
+            encryptedVerifyToken: Array(encryptedVerifyToken))
+
+        sessionServerService.joinSessionRequest(serverHash: serverHash).startWithResult { [weak self] _ in
+            self?.sendPacket(responsePacket)
+            self?.enableEncryption(sharedSecret: sharedSecret)
+        }
+    }
+
     public func enableEncryption(sharedSecret: Data) {
         messageCryptor = ContinuousMessageCryptor(sharedSecret: sharedSecret)
     }
@@ -61,12 +83,29 @@ public class MinecraftClient {
         messageCryptor = nil
     }
 
+    public func generateSharedSecret() -> Data {
+        return CC.generateRandom(16)
+    }
+
+    private func encrypt(_ data: Data, withPublicKey keyData: Data) throws -> Data {
+        return try CC.RSA.encrypt(
+            data,
+            derKey: keyData,
+            tag: Data(),
+            padding: .pkcs1,
+            digest: .none)
+    }
+
     public func enableCompression(threshold: Int) {
         compressor = MessageCompressor(threshold: threshold)
     }
 
     public func disableCompression() {
         compressor = nil
+    }
+
+    public func addReactor(_ reactor: Reactor) {
+        reactors.append(reactor)
     }
 }
 
@@ -78,10 +117,13 @@ extension MinecraftClient {
 
     public func sendPacket(_ packet: EncodablePacket) {
         do {
-            let compressedMessage = try compressMessageIfRequired(packet.encode())
-            let messageSize = VarInt32(compressedMessage.count).directEncode()
+            if shouldSendPacket(packet, client: self) {
+                let compressedMessage = try compressMessageIfRequired(packet.encode())
+                let messageSize = VarInt32(compressedMessage.count).directEncode()
 
-            send(messageSize + compressedMessage)
+                send(messageSize + compressedMessage)
+                didSendPacket(packet, client: self)
+            }
         } catch {
             print(error)
         }
@@ -117,19 +159,44 @@ extension MinecraftClient {
             incommingDataBuffer.dropReadElements()
 
             do {
-                try handlePackage(packetData)
+                try handlePacketData(packetData)
             } catch {
-                print(error)
+//                print(error)
             }
         }
     }
 
-    private func handlePackage(_ packetData: ByteArray) throws {
+    private func handlePacketData(_ packetData: ByteArray) throws {
         let packetBuffer = try Buffer(elements: decompressMessageIfRequired(packetData))
         let rawPacketID = try Int(VarInt32(from: packetBuffer).value)
         let packetID = connectionState.packetID(with: rawPacketID)
 
-        try packetLibrary.parseAndHandle(packetBuffer, packetID: packetID, with: self)
+        let packet = try packetLibrary.parse(packetBuffer, packetID: packetID)
+        try handlePacket(packet)
+    }
+
+    private func handlePacket(_ packet: ReceivedPacket) throws {
+        try self.didReceivedPacket(packet, client: self)
+    }
+}
+
+extension MinecraftClient: Reactor {
+    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws {
+        try reactors.forEach {
+            try $0.didReceivedPacket(packet, client: client)
+        }
+    }
+
+    public func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool {
+        return reactors.reduce(true) {
+            return $0 && $1.shouldSendPacket(packet, client: client)
+        }
+    }
+
+    public func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {
+        reactors.forEach {
+            $0.didSendPacket(packet, client: client)
+        }
     }
 }
 

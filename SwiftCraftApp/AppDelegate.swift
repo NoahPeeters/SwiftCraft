@@ -9,7 +9,6 @@
 import Cocoa
 import Result
 import ReactiveSwift
-
 import SwiftCraft
 
 @NSApplicationMain
@@ -24,9 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
-
         let loginService = UserLoginService()
-
         let loginRequest = loginService.loginRequest(credentials: passwordCredentials, requestUser: false)
 
         print("Logging in with \(passwordCredentials)")
@@ -35,11 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             case let .success(login):
                 print("Login succeeded: \(login)")
                 self.saveSessionCredentials(login)
-                self.minecraftClient = MinecraftClient(
-//                    tcpClient: ReactiveTCPClient(host: "play.lemoncloud.org", port: 25565),
-                    tcpClient: ReactiveTCPClient(host: "192.168.150.61", port: 25565),
-                    packetLibrary: DefaultPacketLibrary(),
-                    sessionServerService: SessionServerService(authenticationProvider: login))
+                self.createMincraftClient(login: login)
 
                 DispatchQueue.main.sync {
                     self.minecraftClient.connectAndLogin()
@@ -50,10 +43,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 exit(1)
             }
         }
+    }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            self.minecraftClient.sendMessage(String(repeating: "A", count: 256))
-        }
+    func createMincraftClient(login: AuthenticationProvider) {
+        minecraftClient = MinecraftClient(
+//            tcpClient: ReactiveTCPClient(host: "play.lemoncloud.org", port: 25565),
+            tcpClient: ReactiveTCPClient(host: "192.168.200.36", port: 25565),
+            packetLibrary: DefaultPacketLibrary(),
+            sessionServerService: SessionServerService(authenticationProvider: login))
+
+        minecraftClient.addReactor(MinecraftClient.debugPrintReactor())
+        minecraftClient.addReactor(MinecraftClient.essentialReactors())
     }
 
     /// Loads sessioncredentials from user default if present.

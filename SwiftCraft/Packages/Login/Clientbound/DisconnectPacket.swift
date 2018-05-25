@@ -8,22 +8,12 @@
 
 import Foundation
 
-struct DisconnectPacket: HandleablePacket {
-    static var packetID = PacketID(connectionState: .login, id: 0x00)
+public struct DisconnectPacket: ReceivedPacket {
+    public static var packetID = PacketID(connectionState: .login, id: 0x00)
 
-    let message: String
+    public let message: String
 
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         message = try String(from: buffer)
-    }
-
-    func handle(with client: MinecraftClient) {
-        client.receivedDisconnectPacket(self)
-    }
-}
-
-extension MinecraftClient {
-    func receivedDisconnectPacket(_ packet: DisconnectPacket) {
-        print("disconnect: \(packet.message)")
     }
 }

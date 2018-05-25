@@ -66,6 +66,12 @@
 		40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */; };
 		40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */; };
 		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
+		40E314F520B601F900C9E271 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F420B601F900C9E271 /* Reactor.swift */; };
+		40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F720B6048600C9E271 /* LoginReactor.swift */; };
+		40E314FA20B6079F00C9E271 /* KeepaliveReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F920B6079F00C9E271 /* KeepaliveReactor.swift */; };
+		40E314FC20B609C900C9E271 /* PrintReactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314FB20B609C900C9E271 /* PrintReactors.swift */; };
+		40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */; };
+		40E3150020B612EB00C9E271 /* TimeUpdatePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +148,12 @@
 		40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionRequestPacket.swift; sourceTree = "<group>"; };
 		40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectPacket.swift; sourceTree = "<group>"; };
 		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
+		40E314F420B601F900C9E271 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
+		40E314F720B6048600C9E271 /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
+		40E314F920B6079F00C9E271 /* KeepaliveReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepaliveReactor.swift; sourceTree = "<group>"; };
+		40E314FB20B609C900C9E271 /* PrintReactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintReactors.swift; sourceTree = "<group>"; };
+		40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBlockChangePacket.swift; sourceTree = "<group>"; };
+		40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpdatePacket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				4068070920B361E000B116C4 /* MinecraftClient.swift */,
+				40E314F620B603D100C9E271 /* Reactor */,
 				4022B07220B4CCCF00B4E680 /* Types.swift */,
 			);
 			path = Client;
@@ -253,8 +266,10 @@
 			isa = PBXGroup;
 			children = (
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
+				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
 				4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */,
 				4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */,
+				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
 			);
 			path = Clientbound;
 			sourceTree = "<group>";
@@ -423,6 +438,17 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		40E314F620B603D100C9E271 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				40E314F420B601F900C9E271 /* Reactor.swift */,
+				40E314F720B6048600C9E271 /* LoginReactor.swift */,
+				40E314F920B6079F00C9E271 /* KeepaliveReactor.swift */,
+				40E314FB20B609C900C9E271 /* PrintReactors.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -436,6 +462,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		403464D220B8A94A002FBC11 /* Create Documentation */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "--author \"Noah Peeters\" --author_url \"https://github.com/NoahPeeters\" --module SwiftCraft --min-acl private";
+			buildConfigurationList = 403464D520B8A94A002FBC11 /* Build configuration list for PBXLegacyTarget "Create Documentation" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/jazzy;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "Create Documentation";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Create Documentation";
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		4024AB4720B1DB57008790F2 /* SwiftCraft */ = {
@@ -511,6 +554,9 @@
 					4024AB5020B1DB57008790F2 = {
 						CreatedOnToolsVersion = 9.3.1;
 					};
+					403464D220B8A94A002FBC11 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
 					4068070E20B364A600B116C4 = {
 						CreatedOnToolsVersion = 9.3.1;
 						SystemCapabilities = {
@@ -537,6 +583,7 @@
 				4024AB4720B1DB57008790F2 /* SwiftCraft */,
 				4024AB5020B1DB57008790F2 /* SwiftCraftTests */,
 				4068070E20B364A600B116C4 /* SwiftCraftApp */,
+				403464D220B8A94A002FBC11 /* Create Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -625,10 +672,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E314FC20B609C900C9E271 /* PrintReactors.swift in Sources */,
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
 				4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */,
 				4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */,
 				40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */,
+				40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */,
 				4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */,
 				133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */,
 				1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */,
@@ -649,7 +698,10 @@
 				4024AB7920B1F216008790F2 /* Credentials.swift in Sources */,
 				4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */,
 				4022B07720B4D20C00B4E680 /* ReceiveChatMessagePacket.swift in Sources */,
+				40E314F520B601F900C9E271 /* Reactor.swift in Sources */,
+				40E314FA20B6079F00C9E271 /* KeepaliveReactor.swift in Sources */,
 				40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */,
+				40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */,
 				4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */,
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* ReactiveTCPClient.swift in Sources */,
@@ -661,6 +713,7 @@
 				1334251520B4647A0097C45D /* SessionServerService.swift in Sources */,
 				40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */,
 				133424BD20B425660097C45D /* SwCrypt.swift in Sources */,
+				40E3150020B612EB00C9E271 /* TimeUpdatePacket.swift in Sources */,
 				4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */,
 				40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */,
 				4024AB6F20B1E093008790F2 /* Alamofire+Reactive.swift in Sources */,
@@ -938,6 +991,29 @@
 			};
 			name = Release;
 		};
+		403464D320B8A94A002FBC11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+			};
+			name = Debug;
+		};
+		403464D420B8A94A002FBC11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+			};
+			name = Release;
+		};
 		4068071B20B364A700B116C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1006,6 +1082,15 @@
 			buildConfigurations = (
 				4024AB6020B1DB57008790F2 /* Debug */,
 				4024AB6120B1DB57008790F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		403464D520B8A94A002FBC11 /* Build configuration list for PBXLegacyTarget "Create Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				403464D320B8A94A002FBC11 /* Debug */,
+				403464D420B8A94A002FBC11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,10 +8,13 @@
 
 import Foundation
 
+/// Alias for `UInt8`.
 public typealias Byte = UInt8
+
+/// Alias for array of `Bytes`.
 public typealias ByteArray = [Byte]
 
-/// A buffer of bytes.
+/// A buffer of `Bytes`.
 public typealias ByteBuffer = Buffer<Byte>
 
 /// Errors which can occure while using the buffer.
@@ -21,19 +24,20 @@ public enum BufferError: Error {
     case noDataAvailable
 }
 
-/// A buffer which can be used for reading and writing
+/// A buffer which can be used for reading and writing.
 public class Buffer<Element> {
+
     /// The underlying elements.
     private(set) var elements: [Element]
 
     /// The current positon for reading.
     private(set) var position: Int
 
-    /// Creates a new `Buffer`.
+    /// Creates a new `Buffer` with the given elements and position of the reading head.
     ///
     /// - Parameters:
-    ///   - elements: The elements in the buffer
-    ///   - position: The location to start reading
+    ///   - elements: The elements in the buffer.
+    ///   - position: The location to start reading.
     public init(elements: [Element] = [], position: Int = 0) {
         self.elements = elements
         self.position = position
@@ -46,7 +50,7 @@ public class Buffer<Element> {
         return elements.count - position
     }
 
-    /// Clears the buffer content and resets the read position
+    /// Clears the buffer content and resets the read position.
     public func clear() {
         elements.removeAll()
         position = 0

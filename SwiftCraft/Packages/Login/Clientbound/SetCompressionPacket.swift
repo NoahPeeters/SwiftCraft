@@ -8,26 +8,12 @@
 
 import Foundation
 
-struct SetCompressionPacket: HandleablePacket {
-    static var packetID = PacketID(connectionState: .login, id: 0x03)
+public struct SetCompressionPacket: ReceivedPacket {
+    public static var packetID = PacketID(connectionState: .login, id: 0x03)
 
-    let threshold: Int
+    public let threshold: Int
 
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         threshold = try Int(VarInt32(from: buffer).value)
-    }
-
-    func handle(with client: MinecraftClient) {
-        client.receivedSetCompressionPacket(self)
-    }
-}
-
-extension MinecraftClient {
-    func receivedSetCompressionPacket(_ packet: SetCompressionPacket) {
-        if packet.threshold == -1 {
-            disableCompression()
-        } else {
-            enableCompression(threshold: packet.threshold)
-        }
     }
 }

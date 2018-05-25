@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct JoinGamePacket: HandleablePacket {
-    static var packetID = PacketID(connectionState: .play, id: 0x23)
+public struct JoinGamePacket: ReceivedPacket {
+    public static var packetID = PacketID(connectionState: .play, id: 0x23)
 
-    let playerEntityID: EntityID
-    let gameMode: Gamemode
-    let dimension: Dimension
-    let difficulty: Difficulty
-    let maxPlayers: Byte
-    let levelType: LevelType
-    let reducedDebugInfo: Bool
+    public let playerEntityID: EntityID
+    public let gameMode: Gamemode
+    public let dimension: Dimension
+    public let difficulty: Difficulty
+    public let maxPlayers: Byte
+    public let levelType: LevelType
+    public let reducedDebugInfo: Bool
 
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         playerEntityID = try Int(Int32(from: buffer))
         gameMode = try Gamemode(id: Byte(from: buffer)).unwrap(JoinGamePacketError.unknownGamemode)
         dimension = try Dimension(rawValue: Int(Int32(from: buffer))).unwrap(JoinGamePacketError.unknownDimension)
@@ -28,20 +28,9 @@ struct JoinGamePacket: HandleablePacket {
         levelType = try LevelType(rawValue: String(from: buffer)).unwrap(JoinGamePacketError.unknownLevelType)
         reducedDebugInfo = try Bool(from: buffer)
     }
-
-    func handle(with client: MinecraftClient) {
-        client.receivedJoinGamePacket(self)
-    }
 }
 
-extension MinecraftClient {
-    func receivedJoinGamePacket(_ packet: JoinGamePacket) {
-        print("receivedJoinGamePacket")
-        print(packet)
-    }
-}
-
-enum JoinGamePacketError: Error {
+public enum JoinGamePacketError: Error {
     case unknownGamemode
     case unknownDimension
     case unknownDifficulty

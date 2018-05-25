@@ -8,24 +8,14 @@
 
 import Foundation
 
-struct LoginSuccessPacket: HandleablePacket {
-    static var packetID = PacketID(connectionState: .login, id: 0x02)
+public struct LoginSuccessPacket: ReceivedPacket {
+    public static var packetID = PacketID(connectionState: .login, id: 0x02)
 
-    let uuid: String
-    let username: String
+    public let uuid: String
+    public let username: String
 
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         uuid = try String(from: buffer)
         username = try String(from: buffer)
-    }
-
-    func handle(with client: MinecraftClient) {
-        client.receivedLoginSuccessPacket(self)
-    }
-}
-
-extension MinecraftClient {
-    func receivedLoginSuccessPacket(_ packet: LoginSuccessPacket) {
-        connectionState = .play
     }
 }

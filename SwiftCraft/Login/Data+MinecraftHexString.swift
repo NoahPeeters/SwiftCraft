@@ -45,7 +45,7 @@ extension Data {
             let newByteValue = ~bytes[index]
             if carry {
                 carry = newByteValue == 0xff
-                bytes[index] = newByteValue + 1
+                bytes[index] = newByteValue.addingReportingOverflow(1).partialValue
             } else {
                 bytes[index] = newByteValue
             }

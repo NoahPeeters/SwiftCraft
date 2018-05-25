@@ -8,25 +8,15 @@
 
 import Foundation
 
-struct ReceiveChatMessagePacket: HandleablePacket {
-    static var packetID = PacketID(connectionState: .play, id: 0x0F)
+public struct ReceiveChatMessagePacket: ReceivedPacket {
+    public static var packetID = PacketID(connectionState: .play, id: 0x0F)
 
-    let message: String
-    let position: ChatMessageLocation
+    public let message: String
+    public let position: ChatMessageLocation
 
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         message = try String(from: buffer)
         position = try ChatMessageLocation(rawValue: Byte(from: buffer)).unwrap(ChatMessagePacketError.unknownPosition)
-    }
-
-    func handle(with client: MinecraftClient) {
-        client.receivedChatMessagePacket(self)
-    }
-}
-
-extension MinecraftClient {
-    func receivedChatMessagePacket(_ packet: ReceiveChatMessagePacket) {
-        print("chat: \(packet.message)")
     }
 }
 

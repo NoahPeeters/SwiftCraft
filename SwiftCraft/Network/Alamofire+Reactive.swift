@@ -10,12 +10,13 @@ import Result
 import Alamofire
 import ReactiveSwift
 
-private let queue = DispatchQueue(label: "Alamofire queue")
+/// Queue used for alamofire completion handler.
+private let alamofireQueue = DispatchQueue(label: "Alamofire queue")
 
 extension DataRequest {
     internal func signalProducer() -> SignalProducer<Data, AnyError> {
         return SignalProducer { observer, lifetime in
-            self.responseData(queue: queue) { response in
+            self.responseData(queue: alamofireQueue) { response in
                 switch response.result {
                 case let .success(data):
                     observer.send(value: data)
