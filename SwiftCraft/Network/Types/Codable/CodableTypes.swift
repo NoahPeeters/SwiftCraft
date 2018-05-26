@@ -219,3 +219,22 @@ public struct Position: CodableDataType, Equatable, Hashable {
         result.encode(to: buffer)
     }
 }
+
+extension Array: DecodableDataType where Element: DecodableDataType {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        let count = try VarInt32(from: buffer).value
+
+        self = try (0..<count).map { _ in
+            return try Element(from: buffer)
+        }
+    }
+}
+
+extension Array: EncodableDataType where Element: EncodableDataType {
+    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        VarInt32(count).encode(to: buffer)
+        forEach {
+            $0.encode(to: buffer)
+        }
+    }
+}
