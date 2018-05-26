@@ -8,8 +8,11 @@
 
 import Foundation
 
-/// THe ID of an entity
+/// The ID of an entity
 public typealias EntityID = Int32
+
+/// The id of a recipe
+public typealias RecipeID = Int
 
 /// The gamemode of a player.
 public struct Gamemode {

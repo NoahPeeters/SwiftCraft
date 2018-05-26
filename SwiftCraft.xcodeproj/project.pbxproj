@@ -57,6 +57,7 @@
 		4068071D20B364D600B116C4 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
 		408E63E520B992D900AE9C2D /* EntityStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */; };
+		408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -144,6 +145,7 @@
 		4068071920B364A700B116C4 /* SwiftCraftApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftApp.entitlements; sourceTree = "<group>"; };
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
 		408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityStatusPacket.swift; sourceTree = "<group>"; };
+		408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRecipesPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */,
 				4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */,
 				40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */,
+				408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */,
 				40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */,
 				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
 			);
@@ -730,6 +733,7 @@
 				4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */,
 				40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */,
 				4024AB6F20B1E093008790F2 /* Alamofire+Helper.swift in Sources */,
+				408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
