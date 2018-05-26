@@ -49,6 +49,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         ReceiveMultiBlockChangePacket.self,
         KeepaliveRequestPacket.self,
         JoinGamePacket.self,
+        ReceivedPlayerAbilitiesPacket.self,
         TimeUpdatePacket.self
     ]
 
