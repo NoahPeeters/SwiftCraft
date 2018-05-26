@@ -80,7 +80,7 @@ public struct PlayerListPacket: ReceivedPacket {
             name = try String(from: buffer)
             properties = try [Property](from: buffer)
             gamemode = try Gamemode(id: Byte(from: buffer)).unwrap(PlayerListPacketError.unknownGamemode)
-            ping = try Int(VarInt32(from: buffer).value)
+            ping = try VarInt32(from: buffer).integer
             displayName = try String?(from: buffer)
         }
 

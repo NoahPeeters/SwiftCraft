@@ -20,6 +20,6 @@ public struct SetCompressionPacket: ReceivedPacket {
     public let threshold: Int
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
-        threshold = try Int(VarInt32(from: buffer).value)
+        threshold = try VarInt32(from: buffer).integer
     }
 }

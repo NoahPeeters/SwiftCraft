@@ -218,7 +218,7 @@ extension MinecraftClient {
 
         while true {
             // Read next packet length
-            guard let packetLength = try? Int(VarInt32(from: incommingDataBuffer).value) else {
+            guard let packetLength = try? VarInt32(from: incommingDataBuffer).integer else {
                 incommingDataBuffer.resetPosition()
                 return
             }
@@ -252,7 +252,7 @@ extension MinecraftClient {
     /// - Throws: Any error which might occure.
     private func handlePacketData(_ packetData: ByteArray) throws {
         let packetBuffer = try Buffer(elements: decompressMessageIfRequired(packetData))
-        let rawPacketID = try Int(VarInt32(from: packetBuffer).value)
+        let rawPacketID = try VarInt32(from: packetBuffer).integer
         let packetID = connectionState.packetID(with: rawPacketID)
 
         let packet = try packetLibrary.parse(packetBuffer, packetID: packetID)

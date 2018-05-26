@@ -30,6 +30,6 @@ public struct Statistic: DeserializableDataType {
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         type = try String(from: buffer)
-        value = try Int(VarInt32(from: buffer).value)
+        value = try VarInt32(from: buffer).integer
     }
 }
