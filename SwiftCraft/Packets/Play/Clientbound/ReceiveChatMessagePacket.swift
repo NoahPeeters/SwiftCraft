@@ -24,7 +24,7 @@ public struct ReceiveChatMessagePacket: ReceivedPacket {
     }
 }
 
-/// A error which can occure while decoding a chat message packet.
+/// A error which can occure while deserializing a chat message packet.
 enum ChatMessagePacketError: Error {
     /// The received position is unknown.
     case unknownPosition

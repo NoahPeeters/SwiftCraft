@@ -16,7 +16,7 @@ open class MinecraftClient {
     /// A buffer for incomplete incomming minecraft messages.
     private let incommingDataBuffer = ByteBuffer()
 
-    /// The library of packets used for decoding.
+    /// The library of packets used for deserializing.
     private let packetLibrary: PacketLibrary
 
     /// Service to manage the authorization at mojang's session service.
@@ -32,7 +32,7 @@ open class MinecraftClient {
     ///
     /// - Parameters:
     ///   - tcpClient: The client used to connect to the server.
-    ///   - packetLibrary: The packet library to use for packet decoding.
+    ///   - packetLibrary: The packet library to use for packet deserializing.
     ///   - sessionServerService: The session server service used for authenticating.
     public init(tcpClient: TCPClientProtocol,
                 packetLibrary: PacketLibrary,
@@ -180,11 +180,11 @@ extension MinecraftClient {
     /// Sends a packet to the server.
     ///
     /// - Parameter packet: The packet to send.
-    public func sendPacket(_ packet: EncodablePacket) {
+    public func sendPacket(_ packet: SerializablePacket) {
         do {
             if shouldSendPacket(packet, client: self) {
-                let compressedMessage = try compressMessageIfRequired(packet.encode())
-                let messageSize = VarInt32(compressedMessage.count).directEncode()
+                let compressedMessage = try compressMessageIfRequired(packet.serialize())
+                let messageSize = VarInt32(compressedMessage.count).directSerialized()
 
                 send(messageSize + compressedMessage)
                 didSendPacket(packet, client: self)
@@ -246,7 +246,7 @@ extension MinecraftClient {
         }
     }
 
-    /// Handels the data of a new packet. This includes decoding and reactors.
+    /// Handels the data of a new packet. This includes deserializing and reactors.
     ///
     /// - Parameter packetData: The dat of the packet.
     /// - Throws: Any error which might occure.
@@ -268,13 +268,13 @@ extension MinecraftClient: Reactor {
         }
     }
 
-    public func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool {
+    public func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool {
         return reactors.reduce(true) {
             return $0 && $1.shouldSendPacket(packet, client: client)
         }
     }
 
-    public func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {
+    public func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) {
         reactors.forEach {
             $0.didSendPacket(packet, client: client)
         }

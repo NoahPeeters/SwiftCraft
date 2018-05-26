@@ -1,5 +1,5 @@
 //
-//  DirectCodableDataType.swift
+//  DirectSerializableDataType.swift
 //  SwiftCraft
 //
 //  Created by Noah Peeters on 21.05.18.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// Encodes and decodes with raw byte representation.
-protocol DirectCodableDataType: CodableDataType {}
+/// Serializes and deserializes with raw byte representation.
+protocol DirectSerializableDataType: Serializable {}
 
-extension DirectCodableDataType {
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+extension DirectSerializableDataType {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         let bytes = toByteArrayBigEndian(value: self)
         buffer.write(elements: bytes)
     }

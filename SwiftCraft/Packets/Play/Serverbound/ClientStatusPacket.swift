@@ -9,14 +9,14 @@
 import Foundation
 
 /// Sends a status update to the server.
-public struct ClientStatusPacket: BufferEncodablePacket {
+public struct ClientStatusPacket: BufferSerializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x03)
 
     /// The action id of the packet. Send 0 to perform respawn and 1 for a statistics request.
     public let actionID: Int32
 
-    public func encodeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
-        VarInt32(actionID).encode(to: buffer)
+    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        VarInt32(actionID).serialize(to: buffer)
     }
 }
 

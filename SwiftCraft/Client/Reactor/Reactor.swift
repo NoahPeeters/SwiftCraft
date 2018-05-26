@@ -24,24 +24,24 @@ public protocol Reactor {
     ///   - packet: The packet to check.
     ///   - client: The client which will send the packet.
     /// - Returns: Whether this reactor want this message to be send or not.
-    func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool
+    func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool
 
     /// Called after a packet was send. The reactor might want to react.
     ///
     /// - Parameters:
     ///   - packet: The packet which was send.
     ///   - client: The client which send the packet.
-    func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient)
+    func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient)
 }
 
 extension Reactor {
     public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) {}
 
-    public func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool {
+    public func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool {
         return true
     }
 
-    public func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {}
+    public func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) {}
 }
 
 extension MinecraftClient {

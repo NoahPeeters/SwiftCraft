@@ -9,14 +9,14 @@
 import Foundation
 
 /// The packet to send after receiveing a keepalive packet from the server.
-public struct KeepaliveResponsePacket: BufferEncodablePacket {
+public struct KeepaliveResponsePacket: BufferSerializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x0B)
 
     /// The id from the received keepalive packet.
     let id: Int64
 
-    public func encodeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
-        id.encode(to: buffer)
+    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        id.serialize(to: buffer)
     }
 }
 

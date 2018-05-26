@@ -1,5 +1,5 @@
 //
-//  Types.swift
+//  SerializableTypes.swift
 //  SwiftCraft
 //
 //  Created by Noah Peeters on 21.05.18.
@@ -9,34 +9,34 @@
 import Foundation
 
 // MARK: - Boolean
-extension Bool: CodableDataType {
+extension Bool: Serializable {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         self = try buffer.readOne() != 0x00
     }
 
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         buffer.write(element: self ? 0x01 : 0x00)
     }
 }
 
 // MARK: - Integer
-extension Int8: DirectCodableDataType {}
-extension UInt8: DirectCodableDataType {}
-extension Int16: DirectCodableDataType {}
-extension UInt16: DirectCodableDataType {}
-extension Int32: DirectCodableDataType {}
-extension UInt32: DirectCodableDataType {}
-extension Int64: DirectCodableDataType {}
-extension UInt64: DirectCodableDataType {}
+extension Int8: DirectSerializableDataType {}
+extension UInt8: DirectSerializableDataType {}
+extension Int16: DirectSerializableDataType {}
+extension UInt16: DirectSerializableDataType {}
+extension Int32: DirectSerializableDataType {}
+extension UInt32: DirectSerializableDataType {}
+extension Int64: DirectSerializableDataType {}
+extension UInt64: DirectSerializableDataType {}
 
 // MARK: - Floating Point
-extension Float: DirectCodableDataType {}
-extension Double: DirectCodableDataType {}
+extension Float: DirectSerializableDataType {}
+extension Double: DirectSerializableDataType {}
 
 // MARK: - Var Length
 
-/// An integer which can be encoded with a variable length.
-public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
+/// An integer which can be serialized with a variable length.
+public struct VarInt<IntegerType: VarIntIntegerType>: Serializable {
     /// The underlying value
     let value: IntegerType
 
@@ -53,7 +53,7 @@ public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
         var lastRead: IntegerType
         repeat {
             guard numRead < IntegerType.maxVarIntByteCount else {
-                throw TypeDecodeError.varIntToBig
+                throw TypeDeserializeError.varIntToBig
             }
             lastRead = try IntegerType(buffer.readOne())
             let value: IntegerType = (lastRead & 0b01111111)
@@ -65,7 +65,7 @@ public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
         self.init(result)
     }
 
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         var remainingData = self.value
         repeat {
             var currentByte: Byte = (Byte(remainingData & 0b01111111))
@@ -77,9 +77,9 @@ public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
         } while (remainingData != 0)
     }
 
-    /// Errors which can occure while decoding the int.
-    enum TypeDecodeError: Error {
-        /// The integer encoded is to big for the type.
+    /// Errors which can occure while deserializing the int.
+    public enum TypeDeserializeError: Error {
+        /// The integer serialized is to big for the type.
         case varIntToBig
     }
 }
@@ -122,32 +122,32 @@ extension VarInt where IntegerType == Int64 {
 
 // MARK: - String
 
-extension String: CodableDataType {
+extension String: Serializable {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         let length = try Int(VarInt32(from: buffer).value)
         let stringBytes = try buffer.read(lenght: length)
         let stringData = Data(stringBytes)
 
         guard let string = String(data: stringData, encoding: .utf8) else {
-            throw TypeDecodeError.invalidStringData
+            throw TypeDeserializeError.invalidStringData
         }
 
         self = string
     }
 
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         let stringData = data(using: .utf8)!
         let stringBytes = Array(stringData)
 
         let length = VarInt32(Int32(stringBytes.count))
-        length.encode(to: buffer)
+        length.serialize(to: buffer)
 
         buffer.write(elements: stringBytes)
     }
 
-    /// Errors which can occure while decoding a string.
-    enum TypeDecodeError: Error {
-        /// The encoded data is not a valid utf8 string.
+    /// Errors which can occure while deserializing a string.
+    public enum TypeDeserializeError: Error {
+        /// The serialized data is not a valid utf8 string.
         case invalidStringData
     }
 }
@@ -177,7 +177,7 @@ extension Int64 {
 }
 
 /// A minecraft position struct.
-public struct Position: CodableDataType, Equatable, Hashable {
+public struct Position: Serializable, Equatable, Hashable {
     /// The x position.
     let x: Int
 
@@ -208,17 +208,17 @@ public struct Position: CodableDataType, Equatable, Hashable {
             z: Int(Int64(from: data, length: 26, rightOffset: 0)))
     }
 
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         let uintX = UInt64(bitPattern: Int64(x))
         let uintY = UInt64(bitPattern: Int64(y))
         let uintZ = UInt64(bitPattern: Int64(z))
 
         let result = ((uintX & 0x3FFFFFF) << 38) | ((uintY & 0xFFF) << 26) | (uintZ & 0x3FFFFFF)
-        result.encode(to: buffer)
+        result.serialize(to: buffer)
     }
 }
 
-extension Array: DecodableDataType where Element: DecodableDataType {
+extension Array: DeserializableDataType where Element: DeserializableDataType {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         let count = try VarInt32(from: buffer).value
 
@@ -228,16 +228,16 @@ extension Array: DecodableDataType where Element: DecodableDataType {
     }
 }
 
-extension Array: EncodableDataType where Element: EncodableDataType {
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
-        VarInt32(count).encode(to: buffer)
+extension Array: SerializableDataType where Element: Serializable {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        VarInt32(count).serialize(to: buffer)
         forEach {
-            $0.encode(to: buffer)
+            $0.serialize(to: buffer)
         }
     }
 }
 
-extension UUID: CodableDataType {
+extension UUID: Serializable {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         var data = try buffer.read(lenght: 16)
 
@@ -246,7 +246,7 @@ extension UUID: CodableDataType {
         }
     }
 
-    public func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         var uuid = self.uuid
         let data = withUnsafePointer(to: &uuid) {
             return Data(bytes: $0, count: 16)

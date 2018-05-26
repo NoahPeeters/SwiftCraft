@@ -9,7 +9,7 @@
 import Foundation
 
 /// Requests the initiation of the login request.
-public struct LoginStartPacket: BufferEncodablePacket {
+public struct LoginStartPacket: BufferSerializablePacket {
     public static var packetID = PacketID(connectionState: .login, id: 0x00)
 
     /// The username of the user which connects.
@@ -17,8 +17,8 @@ public struct LoginStartPacket: BufferEncodablePacket {
     /// - Attention: This username will be verified with the mojang server while logging in.
     let username: String
 
-    public func encodeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
-        username.encode(to: buffer)
+    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        username.serialize(to: buffer)
     }
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 
 /// Response to the `EncryptionRequestPacket`. This packet is essential for the login.
-struct EncryptionResponsePacket: BufferEncodablePacket {
+struct EncryptionResponsePacket: BufferSerializablePacket {
     static var packetID = PacketID(connectionState: .login, id: 0x01)
 
     /// The encrypted shared secret.
@@ -19,11 +19,11 @@ struct EncryptionResponsePacket: BufferEncodablePacket {
     /// The encrypted verify token from the encryption request.
     let encryptedVerifyToken: ByteArray
 
-    public func encodeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
-        VarInt32(encryptedSharedSecret.count).encode(to: buffer)
+    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        VarInt32(encryptedSharedSecret.count).serialize(to: buffer)
         buffer.write(elements: encryptedSharedSecret)
 
-        VarInt32(encryptedVerifyToken.count).encode(to: buffer)
+        VarInt32(encryptedVerifyToken.count).serialize(to: buffer)
         buffer.write(elements: encryptedVerifyToken)
     }
 }

@@ -26,13 +26,13 @@ open class MultiReactor: Reactor {
         }
     }
 
-    public func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool {
+    public func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool {
         return reactors.reduce(true) {
             return $0 && $1.shouldSendPacket(packet, client: client)
         }
     }
 
-    public func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {
+    public func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) {
         reactors.forEach {
             $0.didSendPacket(packet, client: client)
         }

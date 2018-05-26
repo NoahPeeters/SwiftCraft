@@ -35,7 +35,7 @@ public class MessageCompressor {
             throw MessageCompressorError.cannotCompressData
         }
 
-        let dataLength = VarInt32(messageData.count).directEncode()
+        let dataLength = VarInt32(messageData.count).directSerialized()
 
         return dataLength + Array(compressedMessage)
     }

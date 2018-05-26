@@ -33,7 +33,7 @@ class DebugPrintReactor: Reactor {
         print(" 🔽 \(packet)")
     }
 
-    func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {
+    func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) {
         print(" 🔼 \(packet)")
     }
 }

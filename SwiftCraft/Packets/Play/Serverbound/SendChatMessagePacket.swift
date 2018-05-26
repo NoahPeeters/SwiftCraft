@@ -9,7 +9,7 @@
 import Foundation
 
 /// A packet which will send a chat message to the server.
-public struct SendChatMessagePacket: BufferEncodablePacket {
+public struct SendChatMessagePacket: BufferSerializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x02)
 
     /// The chat message to send.
@@ -17,8 +17,8 @@ public struct SendChatMessagePacket: BufferEncodablePacket {
     /// - Note: Most servers will interpret a message with a leading / as a command.
     let message: String
 
-    public func encodeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
-        message.encode(to: buffer)
+    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        message.serialize(to: buffer)
     }
 }
 

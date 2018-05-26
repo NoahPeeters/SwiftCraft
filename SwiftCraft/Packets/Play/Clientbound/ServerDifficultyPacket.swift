@@ -19,7 +19,7 @@ public struct ServerDifficultyPacket: ReceivedPacket {
         difficulty = try Difficulty(rawValue: Byte(from: buffer)).unwrap(ServerDifficultyPacketError.unknownDifficulty)
     }
 
-    /// Errors which can occure while decoding a `ServerDifficultyPacket`.
+    /// Errors which can occure while deserializing a `ServerDifficultyPacket`.
     public enum ServerDifficultyPacketError: Error {
         /// The difficultiy received is unknown.
         case unknownDifficulty

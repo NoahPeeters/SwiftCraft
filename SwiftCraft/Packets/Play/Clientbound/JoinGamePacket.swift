@@ -43,7 +43,7 @@ public struct JoinGamePacket: ReceivedPacket {
         reducedDebugInfo = try Bool(from: buffer)
     }
 
-    /// Errors which can occure while decoding a `JoinGamePacket`.
+    /// Errors which can occure while deserializing a `JoinGamePacket`.
     public enum JoinGamePacketError: Error {
         /// The gamemode received is unknown.
         case unknownGamemode

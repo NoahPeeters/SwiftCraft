@@ -12,26 +12,26 @@ import Nimble
 
 class BoolCodableTests: QuickSpec {
     override func spec() {
-        describe("encoding") {
-            it("encodes false") {
-                expect(false.directEncode()).to(equal([0]))
+        describe("serializing") {
+            it("serializes false") {
+                expect(false.directSerialized()).to(equal([0]))
             }
 
-            it("encodes true") {
-                expect(true.directEncode()).to(equal([1]))
+            it("serializes true") {
+                expect(true.directSerialized()).to(equal([1]))
             }
         }
 
-        describe("decoding") {
-            it("decodes false") {
+        describe("deserializing") {
+            it("deserializes false") {
                 expect(try? Bool(from: [0])).to(equal(false))
             }
 
-            it("decodes true") {
+            it("deserializes true") {
                 expect(try? Bool(from: [1])).to(equal(true))
             }
 
-            it("throws when decoding empty data") {
+            it("throws when deserializing empty data") {
                 expect { try Bool(from: []) }.to(throwError(BufferError.noDataAvailable))
             }
         }
@@ -40,18 +40,18 @@ class BoolCodableTests: QuickSpec {
 
 class UInt8CodableTest: QuickSpec {
     override func spec() {
-        describe("encoding") {
-            it("encodes correctly") {
-                expect(UInt8(42).directEncode()).to(equal([42]))
+        describe("serializing") {
+            it("serializes correctly") {
+                expect(UInt8(42).directSerialized()).to(equal([42]))
             }
         }
 
-        describe("decoding") {
-            it("decodes correctly") {
+        describe("deserializing") {
+            it("deserializes correctly") {
                 expect(try? UInt8(from: [42])).to(equal(42))
             }
 
-            it("throws when decoding empty data") {
+            it("throws when deserializing empty data") {
                 expect { try UInt8(from: []) }.to(throwError(BufferError.noDataAvailable))
             }
         }
@@ -60,25 +60,25 @@ class UInt8CodableTest: QuickSpec {
 
 class Int8CodableTest: QuickSpec {
     override func spec() {
-        describe("encoding") {
-            it("encodes positive number correctly") {
-                expect(Int8(42).directEncode()).to(equal([42]))
+        describe("serializing") {
+            it("serializes positive number correctly") {
+                expect(Int8(42).directSerialized()).to(equal([42]))
             }
 
-            it("encodes negative number correctly") {
-                expect(Int8(-42).directEncode()).to(equal([0b11010110]))
+            it("serializes negative number correctly") {
+                expect(Int8(-42).directSerialized()).to(equal([0b11010110]))
             }
         }
 
-        describe("decoding") {
-            it("decodes positive number correctly") {
+        describe("deserializing") {
+            it("deserializes positive number correctly") {
                 expect(try? Int8(from: [42])).to(equal(42))
             }
-            it("decodes negative number correctly") {
+            it("deserializes negative number correctly") {
                 expect(try? Int8(from: [0b11010110])).to(equal(-42))
             }
 
-            it("throws when decoding empty data") {
+            it("throws when deserializing empty data") {
                 expect { try Int8(from: []) }.to(throwError(BufferError.noDataAvailable))
             }
         }
@@ -87,22 +87,22 @@ class Int8CodableTest: QuickSpec {
 
 class UInt64CodableTest: QuickSpec {
     override func spec() {
-        describe("encoding") {
-            it("encodes correctly") {
-                expect(UInt64(0x0102030405060708).directEncode()).to(equal(Array(1...8)))
+        describe("serializing") {
+            it("serializes correctly") {
+                expect(UInt64(0x0102030405060708).directSerialized()).to(equal(Array(1...8)))
             }
         }
 
-        describe("decoding") {
-            it("decodes correctly") {
+        describe("deserializing") {
+            it("deserializes correctly") {
                 expect(try? UInt64(from: Array(1...8))).to(equal(0x0102030405060708))
             }
 
-            it("throws when decoding empty data") {
+            it("throws when deserializing empty data") {
                 expect { try UInt64(from: []) }.to(throwError(BufferError.noDataAvailable))
             }
 
-            it("throws when decoding short data") {
+            it("throws when deserializing short data") {
                 expect { try UInt64(from: Array(1...7)) }.to(throwError(BufferError.noDataAvailable))
             }
         }
@@ -111,25 +111,25 @@ class UInt64CodableTest: QuickSpec {
 
 class DoubleCodableTest: QuickSpec {
     override func spec() {
-        let encodedData: ByteArray = [0b01000000, 0b00110111, 0, 0, 0, 0, 0, 0]
-        let decodedDouble: Double = 23
+        let serializedData: ByteArray = [0b01000000, 0b00110111, 0, 0, 0, 0, 0, 0]
+        let deserializedDouble: Double = 23
 
-        describe("encoding") {
-            it("encodes correctly") {
-                expect(decodedDouble.directEncode()).to(equal(encodedData))
+        describe("serializing") {
+            it("serializes correctly") {
+                expect(deserializedDouble.directSerialized()).to(equal(serializedData))
             }
         }
 
-        describe("decoding") {
-            it("decodes correctly") {
-                expect(try? Double(from: encodedData)).to(equal(decodedDouble))
+        describe("deserializing") {
+            it("deserializes correctly") {
+                expect(try? Double(from: serializedData)).to(equal(deserializedDouble))
             }
 
-            it("throws when decoding empty data") {
+            it("throws when deserializing empty data") {
                 expect { try Double(from: []) }.to(throwError(BufferError.noDataAvailable))
             }
 
-            it("throws when decoding short data") {
+            it("throws when deserializing short data") {
                 expect { try Double(from: Array(1...7)) }.to(throwError(BufferError.noDataAvailable))
             }
         }
@@ -150,38 +150,38 @@ class VarInt32CodableTest: QuickSpec {
             -2147483648: [0x80, 0x80, 0x80, 0x80, 0x08]
         ]
 
-        describe("encoding") {
-            it("encodes correctly") {
-                for (decodedData, encodedData) in data {
-                    let varInt = VarInt32(decodedData)
-                    expect(varInt.directEncode()).to(equal(encodedData))
+        describe("serializing") {
+            it("serializes correctly") {
+                for (deserializedData, serializedData) in data {
+                    let varInt = VarInt32(deserializedData)
+                    expect(varInt.directSerialized()).to(equal(serializedData))
                 }
             }
         }
 
-        describe("decoding") {
-            context("when decoding valid data") {
-                it("decodes correctly") {
-                    for (decodedData, encodedData) in data {
-                        expect(try? VarInt32(from: encodedData).value).to(equal(decodedData))
+        describe("deserializing") {
+            context("when deserializing valid data") {
+                it("deserializes correctly") {
+                    for (deserializedData, serializedData) in data {
+                        expect(try? VarInt32(from: serializedData).value).to(equal(deserializedData))
                     }
                 }
 
                 it("does not throw") {
-                    for (_, encodedData) in data {
-                        expect { try VarInt32(from: encodedData) }.toNot(throwError())
+                    for (_, serializedData) in data {
+                        expect { try VarInt32(from: serializedData) }.toNot(throwError())
                     }
                 }
             }
 
-            context("when decoding to many bytes") {
+            context("when deserializing to many bytes") {
                 it("throws") {
                     let invalidData: ByteArray = [0xff, 0xff, 0xff, 0xff, 0xff, 0x07]
-                    expect { try VarInt32(from: invalidData) }.to(throwError(VarInt32.TypeDecodeError.varIntToBig))
+                    expect { try VarInt32(from: invalidData) }.to(throwError(VarInt32.TypeDeserializeError.varIntToBig))
                 }
             }
 
-            context("when decoding data with missing bytes") {
+            context("when deserializing data with missing bytes") {
                 it("throws") {
                     let invalidData: ByteArray = [0xff, 0xff, 0xff, 0xff]
                     expect { try VarInt32(from: invalidData) }.to(throwError(BufferError.noDataAvailable))
@@ -207,38 +207,38 @@ class VarInt64CodableTest: QuickSpec {
             -9223372036854775808: [0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x01]
         ]
 
-        describe("encoding") {
-            it("encodes correctly") {
-                for (decodedData, encodedData) in data {
-                    let varInt = VarInt64(decodedData)
-                    expect(varInt.directEncode()).to(equal(encodedData))
+        describe("serializing") {
+            it("serializes correctly") {
+                for (deserializedData, serializedData) in data {
+                    let varInt = VarInt64(deserializedData)
+                    expect(varInt.directSerialized()).to(equal(serializedData))
                 }
             }
         }
 
-        describe("decoding") {
-            context("when decoding valid data") {
-                it("decodes correctly") {
-                    for (decodedData, encodedData) in data {
-                        expect(try? VarInt64(from: encodedData).value).to(equal(decodedData))
+        describe("deserializing") {
+            context("when deserializing valid data") {
+                it("deserializes correctly") {
+                    for (deserializedData, serializedData) in data {
+                        expect(try? VarInt64(from: serializedData).value).to(equal(deserializedData))
                     }
                 }
 
                 it("does not throw") {
-                    for (_, encodedData) in data {
-                        expect { try VarInt64(from: encodedData) }.toNot(throwError())
+                    for (_, serializedData) in data {
+                        expect { try VarInt64(from: serializedData) }.toNot(throwError())
                     }
                 }
             }
 
-            context("when decoding to many bytes") {
+            context("when deserializing to many bytes") {
                 it("throws") {
                     let invalidData: ByteArray = [0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f]
-                    expect { try VarInt64(from: invalidData) }.to(throwError(VarInt64.TypeDecodeError.varIntToBig))
+                    expect { try VarInt64(from: invalidData) }.to(throwError(VarInt64.TypeDeserializeError.varIntToBig))
                 }
             }
 
-            context("when decoding data with missing bytes") {
+            context("when deserializing data with missing bytes") {
                 it("throws") {
                     let invalidData: ByteArray = [0xff, 0xff, 0xff, 0xff]
                     expect { try VarInt64(from: invalidData) }.to(throwError(BufferError.noDataAvailable))
@@ -251,55 +251,55 @@ class VarInt64CodableTest: QuickSpec {
 class StringCodableTest: QuickSpec {
     override func spec() {
         describe("ascii") {
-            let encodedData: ByteArray = [12, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64, 0x21]
-            let decodedStrign = "Hello World!"
+            let serializedData: ByteArray = [12, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64, 0x21]
+            let deserializedStrign = "Hello World!"
 
-            describe("encoding") {
-                it("encodes correctly") {
-                    expect(decodedStrign.directEncode()).to(equal(encodedData))
+            describe("serializing") {
+                it("serializes correctly") {
+                    expect(deserializedStrign.directSerialized()).to(equal(serializedData))
                 }
             }
 
-            describe("decoding") {
-                it("decodes correctly") {
-                    expect(try? String(from: encodedData)).to(equal(decodedStrign))
+            describe("deserializing") {
+                it("deserializes correctly") {
+                    expect(try? String(from: serializedData)).to(equal(deserializedStrign))
                 }
             }
         }
 
         describe("emoji") {
-            let encodedData: ByteArray = [4, 0xf0, 0x9f, 0x98, 0x8e]
-            let decodedString = "😎"
+            let serializedData: ByteArray = [4, 0xf0, 0x9f, 0x98, 0x8e]
+            let deserializedString = "😎"
 
-            describe("encoding") {
-                it("encodes correctly") {
-                    expect(decodedString.directEncode()).to(equal(encodedData))
+            describe("serializing") {
+                it("serializes correctly") {
+                    expect(deserializedString.directSerialized()).to(equal(serializedData))
                 }
             }
 
-            describe("decoding") {
-                it("decodes correctly") {
-                    expect(try? String(from: encodedData)).to(equal(decodedString))
+            describe("deserializing") {
+                it("deserializes correctly") {
+                    expect(try? String(from: serializedData)).to(equal(deserializedString))
                 }
             }
         }
 
         describe("empty string") {
-            describe("encoding") {
-                it("encodes correctly") {
-                    expect("".directEncode()).to(equal([0]))
+            describe("serializing") {
+                it("serializes correctly") {
+                    expect("".directSerialized()).to(equal([0]))
                 }
             }
 
-            describe("decoding") {
-                it("decodes correctly") {
+            describe("deserializing") {
+                it("deserializes correctly") {
                     expect(try? String(from: [0])).to(equal(""))
                 }
             }
         }
 
-        describe("decoding invalid data") {
-            it("throws when decoding empty data") {
+        describe("deserializing invalid data") {
+            it("throws when deserializing empty data") {
                 expect { try String(from: []) }.to(throwError(BufferError.noDataAvailable))
             }
 
@@ -310,7 +310,7 @@ class StringCodableTest: QuickSpec {
             it("throws when the data is not valid utf8") {
                 expect {
                     try String(from: [3, 0xf0, 0x9f, 0x98])
-                }.to(throwError(String.TypeDecodeError.invalidStringData))
+                }.to(throwError(String.TypeDeserializeError.invalidStringData))
             }
         }
     }
@@ -319,52 +319,52 @@ class StringCodableTest: QuickSpec {
 class PositionCodableTest: QuickSpec {
     override func spec() {
         describe("zero position") {
-            let encodedData: ByteArray = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-            let decodedPosition = Position(x: 0, y: 0, z: 0)
+            let serializedData: ByteArray = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
+            let deserializedPosition = Position(x: 0, y: 0, z: 0)
 
-            describe("encoding") {
-                it("encodes correctly") {
-                    expect(decodedPosition.directEncode()).to(equal(encodedData))
+            describe("serializing") {
+                it("serializes correctly") {
+                    expect(deserializedPosition.directSerialized()).to(equal(serializedData))
                 }
             }
 
-            describe("decoding") {
-                it("decodes correctly") {
-                    expect(try? Position(from: encodedData)).to(equal(decodedPosition))
+            describe("deserializing") {
+                it("deserializes correctly") {
+                    expect(try? Position(from: serializedData)).to(equal(deserializedPosition))
                 }
             }
         }
 
         describe("positive position") {
-            let encodedData: ByteArray = [0x00, 0x00, 0x0a, 0x80, 0xac, 0x00, 0x00, 0x2c]
-            let decodedPosition = Position(x: 42, y: 43, z: 44)
+            let serializedData: ByteArray = [0x00, 0x00, 0x0a, 0x80, 0xac, 0x00, 0x00, 0x2c]
+            let deserializedPosition = Position(x: 42, y: 43, z: 44)
 
-            describe("encoding") {
-                it("encodes correctly") {
-                    expect(decodedPosition.directEncode()).to(equal(encodedData))
+            describe("serializing") {
+                it("serializes correctly") {
+                    expect(deserializedPosition.directSerialized()).to(equal(serializedData))
                 }
             }
 
-            describe("decoding") {
-                it("decodes correctly") {
-                    expect(try? Position(from: encodedData)).to(equal(decodedPosition))
+            describe("deserializing") {
+                it("deserializes correctly") {
+                    expect(try? Position(from: serializedData)).to(equal(deserializedPosition))
                 }
             }
         }
 
         describe("negative position") {
-            let encodedData: ByteArray = [0xff, 0xff, 0xf5, 0x80, 0x03, 0xff, 0xff, 0xd4]
-            let decodedPosition = Position(x: -42, y: 0, z: -44)
+            let serializedData: ByteArray = [0xff, 0xff, 0xf5, 0x80, 0x03, 0xff, 0xff, 0xd4]
+            let deserializedPosition = Position(x: -42, y: 0, z: -44)
 
-            describe("encoding") {
-                it("encodes correctly") {
-                    expect(decodedPosition.directEncode()).to(equal(encodedData))
+            describe("serializing") {
+                it("serializes correctly") {
+                    expect(deserializedPosition.directSerialized()).to(equal(serializedData))
                 }
             }
 
-            describe("decoding") {
-                it("decodes correctly") {
-                    expect(try? Position(from: encodedData)).to(equal(decodedPosition))
+            describe("deserializing") {
+                it("deserializes correctly") {
+                    expect(try? Position(from: serializedData)).to(equal(deserializedPosition))
                 }
             }
         }
@@ -376,15 +376,15 @@ class UUIDCodableTest: QuickSpec {
         fdescribe("when creating a uuid") {
             let uuid = UUID()
 
-            it("encoded is 16 bytes long") {
-                expect(uuid.directEncode().count).to(equal(16))
+            it("serialized uuid is 16 bytes long") {
+                expect(uuid.directSerialized().count).to(equal(16))
             }
 
-            it("can be en- and decoded") {
+            it("can be serialized and deserialized") {
                 print(uuid)
-                let encodedUUID = uuid.directEncode()
-                let decodedUUID = try? UUID(from: encodedUUID)
-                expect(decodedUUID).to(equal(uuid))
+                let serializedUUID = uuid.directSerialized()
+                let deserializedUUID = try? UUID(from: serializedUUID)
+                expect(deserializedUUID).to(equal(uuid))
             }
         }
     }
