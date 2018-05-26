@@ -177,7 +177,7 @@ class VarInt32CodableTest: QuickSpec {
             context("when decoding to many bytes") {
                 it("throws") {
                     let invalidData: ByteArray = [0xff, 0xff, 0xff, 0xff, 0xff, 0x07]
-                    expect { try VarInt32(from: invalidData) }.to(throwError(TypeDecodeError.varIntToBig))
+                    expect { try VarInt32(from: invalidData) }.to(throwError(VarInt32.TypeDecodeError.varIntToBig))
                 }
             }
 
@@ -234,7 +234,7 @@ class VarInt64CodableTest: QuickSpec {
             context("when decoding to many bytes") {
                 it("throws") {
                     let invalidData: ByteArray = [0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f]
-                    expect { try VarInt64(from: invalidData) }.to(throwError(TypeDecodeError.varIntToBig))
+                    expect { try VarInt64(from: invalidData) }.to(throwError(VarInt64.TypeDecodeError.varIntToBig))
                 }
             }
 
@@ -310,7 +310,7 @@ class StringCodableTest: QuickSpec {
             it("throws when the data is not valid utf8") {
                 expect {
                     try String(from: [3, 0xf0, 0x9f, 0x98])
-                }.to(throwError(TypeDecodeError.invalidStringData))
+                }.to(throwError(String.TypeDecodeError.invalidStringData))
             }
         }
     }
@@ -366,6 +366,25 @@ class PositionCodableTest: QuickSpec {
                 it("decodes correctly") {
                     expect(try? Position(from: encodedData)).to(equal(decodedPosition))
                 }
+            }
+        }
+    }
+}
+
+class UUIDCodableTest: QuickSpec {
+    override func spec() {
+        fdescribe("when creating a uuid") {
+            let uuid = UUID()
+
+            it("encoded is 16 bytes long") {
+                expect(uuid.directEncode().count).to(equal(16))
+            }
+
+            it("can be en- and decoded") {
+                print(uuid)
+                let encodedUUID = uuid.directEncode()
+                let decodedUUID = try? UUID(from: encodedUUID)
+                expect(decodedUUID).to(equal(uuid))
             }
         }
     }

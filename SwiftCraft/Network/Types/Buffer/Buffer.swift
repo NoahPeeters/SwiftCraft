@@ -58,12 +58,6 @@ public class Buffer<Element> {
         elements.removeFirst(position)
         resetPosition()
     }
-
-    /// Errors which can occure while using the buffer.
-    public enum BufferError: Error {
-        /// Thrown when no data are available anymore.
-        case noDataAvailable
-    }
 }
 
 // MARK: - Read Buffer
@@ -106,4 +100,10 @@ extension Buffer: WriteBuffer {
     public func write(element: Element) {
         elements.append(element)
     }
+}
+
+/// Errors which can occure while using the buffer.
+public enum BufferError: Error {
+    /// Thrown when no data are available anymore.
+    case noDataAvailable
 }
