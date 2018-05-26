@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum TypeDecodeError: Error {
-    case varIntToBig
-    case invalidStringData
-}
-
 // MARK: - Boolean
 extension Bool: CodableDataType {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
@@ -40,6 +35,7 @@ extension Double: DirectCodableDataType {}
 
 // MARK: - Var Length
 
+/// An integer which can be encoded with a variable length.
 public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
     /// The underlying value
     let value: IntegerType
@@ -80,8 +76,16 @@ public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
             buffer.write(element: currentByte)
         } while (remainingData != 0)
     }
+
+    /// Errors which can occure while decoding the int.
+    ///
+    /// - varIntToBig: The integer encoded is to big for the type.
+    enum TypeDecodeError: Error {
+        case varIntToBig
+    }
 }
 
+/// A type which can be used as the base integer type for varints
 public protocol VarIntIntegerType: FixedWidthInteger & BitPatternShiftable {
     /// The maxium number of bytes allowed in minecraft's VarInt types.
     static var maxVarIntByteCount: Int { get }
@@ -141,11 +145,29 @@ extension String: CodableDataType {
 
         buffer.write(elements: stringBytes)
     }
+
+    /// Errors which can occure while decoding a string.
+    ///
+    /// - invalidStringData: The encoded data is not a valid utf8 string.
+    enum TypeDecodeError: Error {
+        case invalidStringData
+    }
 }
 
 // MARK: - Position
 
 extension Int64 {
+    /// Inits a Int64 from a subset of bytes of a UInt64
+    ///
+    /// - Parameters:
+    ///   - bytes: The bytes to use.
+    ///   - length: The number of bytes to use for the new integer.
+    ///   - rightOffset: The distance from the right end (LSB).
+    /// - Experiment:
+    ///   Given the following byte array: 1001011010101101100101101010110110010110101011011001011010101101
+    ///   When useing length = 8 and right offet = 6 the following bytes will bu used:
+    ///   10010110101011011001011010101101100101101010110110_01011010_101101
+    ///   Which will result in 90.
     init(from bytes: UInt64, length: Int, rightOffset: Int) {
         let maxNumbers = NSDecimalNumber(decimal: pow(2, length))
 
@@ -156,11 +178,23 @@ extension Int64 {
     }
 }
 
+/// A minecraft position struct.
 public struct Position: CodableDataType, Equatable, Hashable {
+    /// The x position.
     let x: Int
+
+    /// The y position.
     let y: Int
+
+    /// The z position.
     let z: Int
 
+    /// Creates a new position from the give coordinates.
+    ///
+    /// - Parameters:
+    ///   - x: The x position.
+    ///   - y: The y position.
+    ///   - z: The z position.
     public init(x: Int, y: Int, z: Int) {
         self.x = x
         self.y = y

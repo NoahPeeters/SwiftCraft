@@ -11,6 +11,13 @@ import Foundation
 /// A packet which can be handled by a `MinecraftClient`
 public protocol ReceivedPacket: DecodablePacket {}
 
+/// Errors which might occure while handling a packet.
+///
+/// - unknowPacketID: The library does not know a packet with the given packet id.
+public enum PacketLibraryError: Error {
+    case unknowPacketID(packetID: PacketID)
+}
+
 /// A library of packets.
 public protocol PacketLibrary {
     /// Searches the correct packet and tries to decode and handle it.
@@ -22,13 +29,6 @@ public protocol PacketLibrary {
     /// - Throws: An error which might occure.
     func parse<Buffer: ReadBuffer>(
         _ buffer: Buffer, packetID: PacketID) throws -> ReceivedPacket where Buffer.Element == Byte
-}
-
-/// Errors which might occure while handling a packet.
-///
-/// - unknowPacketID: The library does not know a packet with the given packet id.
-public enum PacketLibraryError: Error {
-    case unknowPacketID(packetID: PacketID)
 }
 
 /// The default packet library which includes all packets currently implemented
@@ -52,6 +52,14 @@ public struct DefaultPacketLibrary: PacketLibrary {
     /// Creates a new packet library.
     public init() {}
 
+    /// Parses a buffer and returns the packet.
+    ///
+    /// - Parameters:
+    ///   - buffer: The buffer with the raw packet data. This buffer must not contain the packet id.
+    ///   - packetID: The packet id of the packet in  the buffer.
+    /// - Returns: The parsed packet.
+    /// - Throws: An `PacketLibraryError.unknowPacketID` error if the packet is unknown.
+    ///           If the packet decoding throws an error the error is forwared.
     public func parse<Buffer: ReadBuffer>(
         _ buffer: Buffer, packetID: PacketID) throws -> ReceivedPacket where Buffer.Element == Byte {
         guard let packetType = packets.first(where: { $0.packetID == packetID }) else {

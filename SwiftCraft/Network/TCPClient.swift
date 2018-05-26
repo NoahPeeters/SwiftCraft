@@ -51,9 +51,11 @@ public protocol TCPClientProtocol {
     func send(bytes: ByteArray)
 }
 
+/// A simple TCP client to send and receive tcp messages.
 public class TCPClient: NSObject, TCPClientProtocol {
     /// The underlying input stream.
     private var inputStream: InputStream?
+
     /// The underlying output stream.
     private var outputStream: OutputStream?
 
@@ -81,10 +83,16 @@ public class TCPClient: NSObject, TCPClientProtocol {
         super.init()
     }
 
+    /// Creates a new tcp client.
+    ///
+    /// - Parameters:
+    ///   - host: The host to connect to.
+    ///   - port: The port to connect to.
     public convenience init(host: String, port: Int) {
         self.init(host: host as CFString, port: UInt32(port))
     }
 
+    /// Connects to the host and port of the client.
     public func connect() {
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
@@ -112,6 +120,8 @@ public class TCPClient: NSObject, TCPClientProtocol {
         outputStream!.open()
     }
 
+    /// Closes the connection to the server.
+    /// - Attention: The close function must be called on the same runloop as the connect function.
     public func close() {
         if let inputStream = inputStream {
             closeStream(inputStream)
@@ -122,6 +132,10 @@ public class TCPClient: NSObject, TCPClientProtocol {
         }
     }
 
+    /// Closes a stream and removes it from the current runloop.
+    ///
+    /// - Parameter stream: The stream to close.
+    /// - Attention: The close function must be called on the same runloop as the connect function.
     private func closeStream(_ stream: Stream) {
         stream.close()
         stream.remove(from: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
@@ -134,12 +148,20 @@ public class TCPClient: NSObject, TCPClientProtocol {
         outputStream?.write(UnsafePointer<UInt8>(bytes), maxLength: bytes.count)
     }
 
+    /// Sets the handler for all future events.
+    ///
+    /// - Parameter handler: The handler to use for future events.
     public func events(handler: ((TCPClientEvent) -> Void)?) {
         self.eventsHandler = handler
     }
 }
 
 extension TCPClient: StreamDelegate {
+    /// Handels a incomming stream event.
+    ///
+    /// - Parameters:
+    ///   - stream: The stream which received the event.
+    ///   - eventCode: The code of the event.
     public func stream(_ stream: Stream, handle eventCode: Stream.Event) {
         switch eventCode {
         case .openCompleted:
@@ -168,6 +190,9 @@ extension TCPClient: StreamDelegate {
         }
     }
 
+    /// Handles space available in a steream buffer event.
+    ///
+    /// - Parameter stream: The stream which has space available.
     private func streamHasSpaceAvailable(_ stream: Stream) {
         if stream == inputStream {
             eventsHandler?(.inputStreamHasSpaceAvailable)
@@ -176,6 +201,9 @@ extension TCPClient: StreamDelegate {
         }
     }
 
+    /// Handels an event which indicates that the input buffer of a stream has new data.
+    ///
+    /// - Parameter stream: The stream which has bytes available.
     private func streamHasBytesAvailable(_ stream: Stream) {
         guard stream == inputStream else {
             return
@@ -197,6 +225,9 @@ extension TCPClient: StreamDelegate {
         }
     }
 
+    /// Handels an event which indicated that the steram was closed.
+    ///
+    /// - Parameter stream: The stream which was closed.
     private func streamEndOccured(_ stream: Stream) {
         closeStream(stream)
         if stream == inputStream {

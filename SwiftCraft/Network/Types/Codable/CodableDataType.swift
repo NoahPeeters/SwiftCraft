@@ -10,6 +10,9 @@ import Foundation
 
 /// Can be encoded to a buffer.
 public protocol EncodableDataType {
+    /// Encodes its content to the given buffer.
+    ///
+    /// - Parameter buffer: The buffer to encode the data to.
     func encode<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte
 }
 
@@ -26,6 +29,10 @@ extension EncodableDataType {
 
 /// Can be decoded from a buffer.
 public protocol DecodableDataType {
+    /// Creates a new object by decoding the content of the given buffer.
+    ///
+    /// - Parameter buffer: The buffer to decode the data from.
+    /// - Throws: Any decoding error.
     init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte
 }
 

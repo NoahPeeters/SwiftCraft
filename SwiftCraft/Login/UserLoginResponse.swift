@@ -10,7 +10,6 @@ import Foundation
 
 /// The response of a successfull user login.
 public struct UserLoginResponse: UserLoginSessionCredentials, Codable, Equatable {
-
     /// A profile of the user.
     public struct Profile: Codable, Equatable, Hashable {
         /// The id of the profile.

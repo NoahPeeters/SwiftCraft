@@ -10,7 +10,6 @@ import Alamofire
 
 /// Protocol for a service capable to join a session.
 public protocol SessionServerServiceProtcol {
-
     /// Response handler for the join response.
     typealias ResponseHandler = (Result<Bool>) -> Void
 
@@ -39,6 +38,9 @@ public struct SessionServerService: SessionServerServiceProtcol {
     /// The authentication provider
     private let authenticationProvider: AuthenticationProvider
 
+    /// URL of the minecraft session server.
+    private static let url = "https://sessionserver.mojang.com/session/minecraft/join"
+
     /// Creates a new session server service.
     ///
     /// - Parameter authenticationProvider: THe authentication provider to use.
@@ -53,11 +55,9 @@ public struct SessionServerService: SessionServerServiceProtcol {
     public func joinSession(serverHash: String, handler: @escaping ResponseHandler) {
         let payload = createpayload(serverHash: serverHash)
 
-        let url = "https://sessionserver.mojang.com/session/minecraft/join"
-
         // Create request
         let request = Alamofire.request(
-            url,
+            SessionServerService.url,
             method: .post,
             parameters: payload,
             encoding: JSONEncoding.default

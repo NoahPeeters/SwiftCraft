@@ -9,7 +9,7 @@
 import Foundation
 
 extension MinecraftClient {
-    /// Creates a new reactor for keepalive packets
+    /// Creates a new reactor for keepalive packets.
     ///
     /// - Returns: The new reactor
     public static func keepaliveReactor() -> Reactor {

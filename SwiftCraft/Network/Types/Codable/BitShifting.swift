@@ -10,6 +10,7 @@ import Foundation
 
 infix operator >>> : BitwiseShiftPrecedence
 
+/// A type which can shift the raw underlying data.
 public protocol BitPatternShiftable {
     /// Shifts the bit representation.
     ///

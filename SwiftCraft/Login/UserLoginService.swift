@@ -10,7 +10,6 @@ import Alamofire
 
 /// Protocol for a service capable to login the user.
 public protocol UserLoginServiceProtocol {
-
     /// Response handler for the login response.
     typealias ResponseHandler = (Result<UserLoginResponse>) -> Void
 
@@ -25,8 +24,15 @@ public protocol UserLoginServiceProtocol {
 
 /// The login server for the default mojang servers.
 public struct UserLoginService: UserLoginServiceProtocol {
+    /// Creates a new user login service.
     public init() {}
 
+    /// Starts the login request with the given credentials.
+    ///
+    /// - Parameters:
+    ///   - credentials: The credentials to use for the login.
+    ///   - requestUser: Flag if the user object is requested as well.
+    ///   - handler: A callback called after a success or failure.
     public func login(credentials: UserLoginCredentials, requestUser: Bool, handler: @escaping ResponseHandler) {
         // Get payload
         let payload = credentials.createPayload(requestUser: requestUser)
@@ -41,6 +47,7 @@ public struct UserLoginService: UserLoginServiceProtocol {
             encoding: JSONEncoding.default
         )
 
+        // Start request
         request.asyncJsonResponse(handler)
     }
 }

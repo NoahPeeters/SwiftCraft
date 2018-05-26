@@ -8,11 +8,22 @@
 
 import Foundation
 
+/// Requests the start of encryption.
 public struct EncryptionRequestPacket: ReceivedPacket {
     public static var packetID = PacketID(connectionState: .login, id: 0x01)
 
+    /// The server id of the server.
+    ///
+    /// - Note: In the current implementation this is always empty and
+    ///         is not used except for the response to this packet.
     public let serverID: String
+
+    /// The public key of the server.
+    ///
+    /// - Note: This key must be used to encrypt the `verifyToken` and a shared secret.
     public let publicKey: ByteArray
+
+    /// The verify token received from the server.
     public let verifyToken: ByteArray
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {

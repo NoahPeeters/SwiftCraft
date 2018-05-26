@@ -17,7 +17,20 @@ public protocol Reactor {
     ///   - client: The client which received the packet.
     /// - Throws: Any error which might occure.
     func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws
+
+    /// Decides whether the packet should be send or not.
+    ///
+    /// - Parameters:
+    ///   - packet: The packet to check.
+    ///   - client: The client which will send the packet.
+    /// - Returns: Whether this reactor want this message to be send or not.
     func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool
+
+    /// Called after a packet was send. The reactor might want to react.
+    ///
+    /// - Parameters:
+    ///   - packet: The packet which was send.
+    ///   - client: The client which send the packet.
     func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient)
 }
 
@@ -31,60 +44,10 @@ extension Reactor {
     public func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {}
 }
 
-/// Reacts to exacly one type of received packet
-open class SingleReactor<PacketType: ReceivedPacket>: Reactor {
-    public init() {}
-
-    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws {
-        if let packet = packet as? PacketType {
-            try didReceivedPacket(packet, client: client)
-        }
-    }
-
-    open func didReceivedPacket(_ packet: PacketType, client: MinecraftClient) throws {}
-}
-
-open class ClosureReactor<PacketType: ReceivedPacket>: SingleReactor<PacketType> {
-    public typealias Handler = (PacketType, MinecraftClient) throws -> Void
-
-    private let handler: Handler
-
-    public init(handler: @escaping Handler) {
-        self.handler = handler
-    }
-
-    override open func didReceivedPacket(_ packet: PacketType, client: MinecraftClient) throws {
-        try handler(packet, client)
-    }
-}
-
-open class MultiReactor: Reactor {
-    public init(reactors: [Reactor]) {
-        self.reactors = reactors
-    }
-
-    let reactors: [Reactor]
-
-    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws {
-        try reactors.forEach {
-            try $0.didReceivedPacket(packet, client: client)
-        }
-    }
-
-    public func shouldSendPacket(_ packet: EncodablePacket, client: MinecraftClient) -> Bool {
-        return reactors.reduce(true) {
-            return $0 && $1.shouldSendPacket(packet, client: client)
-        }
-    }
-
-    public func didSendPacket(_ packet: EncodablePacket, client: MinecraftClient) {
-        reactors.forEach {
-            $0.didSendPacket(packet, client: client)
-        }
-    }
-}
-
 extension MinecraftClient {
+    /// A reactor which handels all essential packets to login and keep the connection alive.
+    ///
+    /// - Returns: The requested reactor.
     public static func essentialReactors() -> Reactor {
         return MultiReactor(reactors: [
             loginReactor(),

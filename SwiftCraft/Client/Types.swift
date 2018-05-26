@@ -13,7 +13,6 @@ public typealias EntityID = Int
 
 /// The gamemode of a player.
 public struct Gamemode {
-
     /// The mode of the gamemode.
     ///
     /// - survival: Survival mode.
@@ -76,6 +75,13 @@ public enum Difficulty: Byte {
     case hard = 3
 }
 
+/// The level type of the current world.
+///
+/// - `default`: The default level type.
+/// - flat: A flat world.
+/// - largeBiomes: Large biomes.
+/// - amplified: Amplified.
+/// - defaultUnknown: Something else.
 public enum LevelType: String {
     case `default`
     case flat
@@ -84,6 +90,11 @@ public enum LevelType: String {
     case defaultUnknown = "default_1_1"
 }
 
+/// The location of a received chat messeage.
+///
+/// - chat: A normal chat message of another player.
+/// - systemMessage: A chat message of the server.
+/// - gameInfo: A message which should be shown in the center of the screen.
 public enum ChatMessageLocation: Byte {
     case chat = 0
     case systemMessage = 1

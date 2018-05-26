@@ -8,9 +8,11 @@
 
 import Foundation
 
+// MARK: - Encoding
+
 /// A encodable minecaft packet.
 public protocol EncodablePacket {
-    /// Encodes the packet and its package id to a byte array.
+    /// Encodes the packet and its packet id to a byte array.
     ///
     /// - Returns: The byte array.
     func encode() -> ByteArray
@@ -48,6 +50,8 @@ extension BufferEncodablePacket {
         return writeBuffer.elements
     }
 }
+
+// MARK: - Docoding
 
 /// A decodable minecaft packet.
 public protocol DecodablePacket {

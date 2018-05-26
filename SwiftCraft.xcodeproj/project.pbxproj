@@ -56,6 +56,9 @@
 		4068071720B364A700B116C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4068071520B364A700B116C4 /* MainMenu.xib */; };
 		4068071D20B364D600B116C4 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
+		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
+		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
+		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
 		40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */; };
 		40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */; };
 		40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */; };
@@ -135,6 +138,9 @@
 		4068071820B364A700B116C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4068071920B364A700B116C4 /* SwiftCraftApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftApp.entitlements; sourceTree = "<group>"; };
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
+		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
+		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
+		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
 		40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketLibrary.swift; sourceTree = "<group>"; };
 		40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessPacket.swift; sourceTree = "<group>"; };
 		40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionRequestPacket.swift; sourceTree = "<group>"; };
@@ -427,6 +433,9 @@
 			isa = PBXGroup;
 			children = (
 				40E314F420B601F900C9E271 /* Reactor.swift */,
+				40CA046020B8CCC50088EC44 /* MultiReactor.swift */,
+				40CA046420B8CCF00088EC44 /* SingleReactor.swift */,
+				40CA046220B8CCD80088EC44 /* ClosureReactor.swift */,
 				40E314F720B6048600C9E271 /* LoginReactor.swift */,
 				40E314F920B6079F00C9E271 /* KeepaliveReactor.swift */,
 				40E314FB20B609C900C9E271 /* PrintReactors.swift */,
@@ -451,7 +460,7 @@
 /* Begin PBXLegacyTarget section */
 		403464D220B8A94A002FBC11 /* Create Documentation */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--author \"Noah Peeters\" --author_url \"https://github.com/NoahPeeters\" --module SwiftCraft --min-acl private";
+			buildArgumentsString = "--author \"Noah Peeters\" --author_url \"https://github.com/NoahPeeters\" --module SwiftCraft --min-acl private -e SwiftCraft/Crypto/SwCrypt.swift SwiftCraft/Crypto/DataCompression.swift";
 			buildConfigurationList = 403464D520B8A94A002FBC11 /* Build configuration list for PBXLegacyTarget "Create Documentation" */;
 			buildPhases = (
 			);
@@ -669,12 +678,14 @@
 				4022B07320B4CCCF00B4E680 /* Types.swift in Sources */,
 				4024AB9020B23089008790F2 /* CodableTypes.swift in Sources */,
 				4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */,
+				40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */,
 				1334250E20B4541A0097C45D /* AES.c in Sources */,
 				4024AB8020B21E45008790F2 /* InputBuffers.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
 				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
+				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
 				4022B06620B4B88E00B4E680 /* DataCompression.swift in Sources */,
 				4024AB7920B1F216008790F2 /* Credentials.swift in Sources */,
 				4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */,
@@ -691,6 +702,7 @@
 				4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */,
 				1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */,
 				4068070420B34D3F00B116C4 /* PacketID.swift in Sources */,
+				40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */,
 				1334251520B4647A0097C45D /* SessionServerService.swift in Sources */,
 				40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */,
 				133424BD20B425660097C45D /* SwCrypt.swift in Sources */,

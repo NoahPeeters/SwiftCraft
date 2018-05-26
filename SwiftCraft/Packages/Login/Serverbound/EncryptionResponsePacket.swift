@@ -8,10 +8,15 @@
 
 import Foundation
 
+/// Response to the `EncryptionRequestPacket`. This packet is essential for the login.
 struct EncryptionResponsePacket: BufferEncodablePacket {
     static var packetID = PacketID(connectionState: .login, id: 0x01)
 
+    /// The encrypted shared secret.
+    /// The shared secret will be used by both the server and the client to encrypt all upcomming packets.
     let encryptedSharedSecret: ByteArray
+
+    /// The encrypted verify token from the encryption request.
     let encryptedVerifyToken: ByteArray
 
     public func encodeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {

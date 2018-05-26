@@ -11,22 +11,14 @@ import Foundation
 /// Alias for `UInt8`.
 public typealias Byte = UInt8
 
-/// Alias for array of `Bytes`.
+/// Alias for array of `Byte`s.
 public typealias ByteArray = [Byte]
 
-/// A buffer of `Bytes`.
+/// A buffer of `Byte`s.
 public typealias ByteBuffer = Buffer<Byte>
-
-/// Errors which can occure while using the buffer.
-///
-/// - noDataAvailable: Thrown when no data are available anymore.
-public enum BufferError: Error {
-    case noDataAvailable
-}
 
 /// A buffer which can be used for reading and writing.
 public class Buffer<Element> {
-
     /// The underlying elements.
     private(set) var elements: [Element]
 
@@ -65,6 +57,13 @@ public class Buffer<Element> {
     public func dropReadElements() {
         elements.removeFirst(position)
         resetPosition()
+    }
+
+    /// Errors which can occure while using the buffer.
+    ///
+    /// - noDataAvailable: Thrown when no data are available anymore.
+    public enum BufferError: Error {
+        case noDataAvailable
     }
 }
 

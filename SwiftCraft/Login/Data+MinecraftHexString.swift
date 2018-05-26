@@ -41,11 +41,9 @@ extension Data {
     private func twoComplement(of bytes: inout ByteArray) {
         var carry = true
         for index in (0..<bytes.count).reversed() {
-
             let newByteValue = ~bytes[index]
             if carry {
-                carry = newByteValue == 0xff
-                bytes[index] = newByteValue.addingReportingOverflow(1).partialValue
+                (bytes[index], carry) = newByteValue.addingReportingOverflow(1)
             } else {
                 bytes[index] = newByteValue
             }

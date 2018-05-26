@@ -8,10 +8,14 @@
 
 import Foundation
 
+/// Received from the server when the login was successful.
 public struct LoginSuccessPacket: ReceivedPacket {
     public static var packetID = PacketID(connectionState: .login, id: 0x02)
 
+    /// The uuid of the user.
     public let uuid: String
+
+    /// The username of the user.
     public let username: String
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {

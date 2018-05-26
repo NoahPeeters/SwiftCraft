@@ -9,6 +9,9 @@
 import Foundation
 
 extension MinecraftClient {
+    /// Handels set compression packets by enabeling or disableing compression.
+    ///
+    /// - Returns: The requested reactor.
     public static func compressionPacketReactor() -> Reactor {
         return ClosureReactor<SetCompressionPacket> { packet, client in
             if packet.threshold == -1 {
@@ -19,6 +22,9 @@ extension MinecraftClient {
         }
     }
 
+    /// Handels the `EncryptionRequestPacket` by enabeling encryption.
+    ///
+    /// - Returns: The requested reactor.
     public static func encryptionPacketReactor() -> Reactor {
         return ClosureReactor<EncryptionRequestPacket> { packet, client in
             guard let serverIDData = packet.serverID.data(using: .ascii) else {
@@ -32,12 +38,18 @@ extension MinecraftClient {
         }
     }
 
+    /// Handels the login success packets by updating the clients connection state.
+    ///
+    /// - Returns: The requested reactor.
     public static func loginSuccessPacketReactor() -> Reactor {
         return ClosureReactor<LoginSuccessPacket> { _, client in
             client.connectionState = .play
         }
     }
 
+    /// Handels all packets relevant for the login.
+    ///
+    /// - Returns: The requested reactor.
     public static func loginReactor() -> Reactor {
         return MultiReactor(reactors: [
             compressionPacketReactor(),
@@ -47,6 +59,9 @@ extension MinecraftClient {
     }
 }
 
+/// Errors which can occure while handling encrytion request packets.
+///
+/// - invalidServerID: The given server id is not valid ascii.
 enum EncryptionRequestPacketReactorError: Error {
     case invalidServerID
 }

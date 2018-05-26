@@ -10,6 +10,7 @@ import Foundation
 
 /// A buffer used to write data to.
 public protocol WriteBuffer {
+    /// The type of elements saved in the buffer.
     associatedtype Element
 
     /// Writes the elements to the buffer.

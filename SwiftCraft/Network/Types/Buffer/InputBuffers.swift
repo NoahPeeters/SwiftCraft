@@ -10,6 +10,7 @@ import Foundation
 
 /// A buffer used to read data from.
 public protocol ReadBuffer {
+    /// The type of elements saved in the buffer.
     associatedtype Element
 
     /// Reads specific number of bytes.

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A packet received if multiple blocks changed in the same chunk in the same tick.
 public struct ReceiveMultiBlockChangePacket: ReceivedPacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x10)
 
