@@ -228,7 +228,7 @@ extension Array: DeserializableDataType where Element: DeserializableDataType {
     }
 }
 
-extension Array: SerializableDataType where Element: Serializable {
+extension Array: SerializableDataType where Element: SerializableDataType {
     public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
         VarInt32(count).serialize(to: buffer)
         forEach {
@@ -253,5 +253,28 @@ extension UUID: Serializable {
         }
 
         buffer.write(elements: Array(data))
+    }
+}
+
+extension Optional: DeserializableDataType where Wrapped: DeserializableDataType {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        let hasValue = try Bool(from: buffer)
+
+        if hasValue {
+            self = try Wrapped(from: buffer)
+        } else {
+            self = nil
+        }
+    }
+}
+
+extension Optional: SerializableDataType where Wrapped: SerializableDataType {
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        if let wrapped = self {
+            true.serialize(to: buffer)
+            wrapped.serialize(to: buffer)
+        } else {
+            false.serialize(to: buffer)
+        }
     }
 }
