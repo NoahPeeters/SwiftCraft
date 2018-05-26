@@ -25,4 +25,10 @@ public protocol ReadBuffer {
     /// - Returns: The byte.
     /// - Throws: Throws an error if the buffer is empty
     func readOne() throws -> Element
+
+    /// Reads all remaining data of the buffer.
+    ///
+    /// - Returns: The read data.
+    /// - Throws:
+    func readRemainingElements() -> [Element]
 }

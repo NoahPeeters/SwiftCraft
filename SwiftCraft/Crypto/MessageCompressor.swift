@@ -68,13 +68,3 @@ public class MessageCompressor {
         case cannotCompressData
     }
 }
-
-extension Buffer {
-    /// Reads all remaining data of the buffer.
-    ///
-    /// - Returns: The read data.
-    /// - Throws:
-    fileprivate func readRemainingElements() -> [Element] {
-        return (try? read(lenght: remainingData())) ?? []
-    }
-}

@@ -91,6 +91,10 @@ extension Buffer: ReadBuffer {
 
         return value
     }
+
+    public func readRemainingElements() -> [Element] {
+        return (try? read(lenght: remainingData())) ?? []
+    }
 }
 
 // MARK: - Write Buffer
