@@ -58,6 +58,8 @@
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
 		408E63E520B992D900AE9C2D /* EntityStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */; };
 		408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
+		408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */; };
+		408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -146,6 +148,8 @@
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
 		408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityStatusPacket.swift; sourceTree = "<group>"; };
 		408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRecipesPacket.swift; sourceTree = "<group>"; };
+		408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPacket.swift; sourceTree = "<group>"; };
+		408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStatusPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 		4022B06F20B4CC2D00B4E680 /* Clientbound */ = {
 			isa = PBXGroup;
 			children = (
+				408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */,
 				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
 				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
@@ -290,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */,
+				408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */,
 				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
 			);
 			path = Serverbound;
@@ -691,8 +697,10 @@
 				133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */,
 				40DAC2D920B985420017FEBD /* ServerDifficultyPacket.swift in Sources */,
 				1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */,
+				408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */,
 				4024AB8B20B22C37008790F2 /* CodableDataType.swift in Sources */,
 				4068070620B355CF00B116C4 /* CodablePacket.swift in Sources */,
+				408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */,
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
 				4022B07320B4CCCF00B4E680 /* Types.swift in Sources */,
