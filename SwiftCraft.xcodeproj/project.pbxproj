@@ -60,6 +60,7 @@
 		408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
 		408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */; };
 		408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */; };
+		408E63ED20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63EC20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift */; };
 		408E63EF20B9D4FC00AE9C2D /* PlayerListPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63EE20B9D4FC00AE9C2D /* PlayerListPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
@@ -151,6 +152,7 @@
 		408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRecipesPacket.swift; sourceTree = "<group>"; };
 		408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPacket.swift; sourceTree = "<group>"; };
 		408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStatusPacket.swift; sourceTree = "<group>"; };
+		408E63EC20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnExperienceOrbPacket.swift; sourceTree = "<group>"; };
 		408E63EE20B9D4FC00AE9C2D /* PlayerListPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */,
+				408E63EC20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift */,
 				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
 				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
@@ -707,6 +710,7 @@
 				408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */,
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
+				408E63ED20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift in Sources */,
 				4022B07320B4CCCF00B4E680 /* Types.swift in Sources */,
 				4024AB9020B23089008790F2 /* SerializableTypes.swift in Sources */,
 				4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */,
