@@ -12,9 +12,8 @@ import Foundation
 public protocol ReceivedPacket: DecodablePacket {}
 
 /// Errors which might occure while handling a packet.
-///
-/// - unknowPacketID: The library does not know a packet with the given packet id.
 public enum PacketLibraryError: Error {
+    /// The library does not know a packet with the given packet id.
     case unknowPacketID(packetID: PacketID)
 }
 

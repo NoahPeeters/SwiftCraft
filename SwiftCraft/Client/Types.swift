@@ -17,15 +17,17 @@ public typealias RecipeID = Int
 /// The gamemode of a player.
 public struct Gamemode {
     /// The mode of the gamemode.
-    ///
-    /// - survival: Survival mode.
-    /// - creative: Creative mode.
-    /// - adventure: Adventure mode.
-    /// - spectator: Spectator mode.
     public enum Mode: Int {
+        /// Survival mode.
         case survival = 0
+
+        /// Creative mode.
         case creative = 1
+
+        /// Adventure mode.
         case adventure = 2
+
+        /// Spectator mode.
         case spectator = 3
     }
 
@@ -55,51 +57,61 @@ public struct Gamemode {
 }
 
 /// Types of dimensions in minecraft.
-///
-/// - nether: The nether.
-/// - overworld: The overworld.
-/// - end: The end.
-public enum Dimension: Int {
-    case nether = -1
-    case overworld = 0
-    case end = 1
+public struct Dimension {
+    /// The id of the dimension
+    let id: Int32
+
+    /// The nether.
+    static let nether: Dimension = Dimension(id: -1)
+
+    /// The overworld.
+    static let overworld: Dimension = Dimension(id: 0)
+
+    /// The end.
+    static let end: Dimension = Dimension(id: 1)
 }
 
 /// Difficulty of the game.
-///
-/// - peaceful: Peaceful
-/// - easy: Easy
-/// - normal: Normal
-/// - hard: Hard
 public enum Difficulty: Byte {
+    /// Peaceful
     case peaceful = 0
+
+    /// Easy
     case easy = 1
+
+    /// Normal
     case normal = 2
+
+    // Hard
     case hard = 3
 }
 
 /// The level type of the current world.
-///
-/// - `default`: The default level type.
-/// - flat: A flat world.
-/// - largeBiomes: Large biomes.
-/// - amplified: Amplified.
-/// - defaultUnknown: Something else.
 public enum LevelType: String {
+    /// The default level type.
     case `default`
+
+    /// A flat world.
     case flat
+
+    /// Large biomes.
     case largeBiomes
+
+    /// Amplified.
     case amplified
+
+    /// Something else.
     case defaultUnknown = "default_1_1"
 }
 
 /// The location of a received chat messeage.
-///
-/// - chat: A normal chat message of another player.
-/// - systemMessage: A chat message of the server.
-/// - gameInfo: A message which should be shown in the center of the screen.
 public enum ChatMessageLocation: Byte {
+    /// A normal chat message of another player.
     case chat = 0
+
+    /// A chat message of the server.
     case systemMessage = 1
+
+    /// A message which should be shown in the center of the screen.
     case gameInfo = 2
 }

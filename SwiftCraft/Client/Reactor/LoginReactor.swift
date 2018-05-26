@@ -60,8 +60,7 @@ extension MinecraftClient {
 }
 
 /// Errors which can occure while handling encrytion request packets.
-///
-/// - invalidServerID: The given server id is not valid ascii.
 enum EncryptionRequestPacketReactorError: Error {
+    /// The given server id is not valid ascii.
     case invalidServerID
 }

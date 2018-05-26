@@ -19,13 +19,9 @@ public struct ServerDifficultyPacket: ReceivedPacket {
         difficulty = try Difficulty(rawValue: Byte(from: buffer)).unwrap(ServerDifficultyPacketError.unknownDifficulty)
     }
 
-    /// Errors which can occure while decoding a `JoinGamePacket`.
-    ///
-    /// - unknownGamemode: The gamemode received is unknown.
-    /// - unknownDimension: The dimension recieved is unknown.
-    /// - unknownDifficulty: The difficultiy received is unknown.
-    /// - unknownLevelType: The level type received is unknown.
+    /// Errors which can occure while decoding a `ServerDifficultyPacket`.
     public enum ServerDifficultyPacketError: Error {
+        /// The difficultiy received is unknown.
         case unknownDifficulty
     }
 }

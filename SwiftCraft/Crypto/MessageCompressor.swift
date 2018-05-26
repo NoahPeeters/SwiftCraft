@@ -60,11 +60,11 @@ public class MessageCompressor {
     }
 
     /// Errors of the `MessageCompressor`.
-    ///
-    /// - cannotDecompresData: A general decompression error.
-    /// - cannotCompressData: A general compression error.
     enum MessageCompressorError: Error {
+        /// A general decompression error.
         case cannotDecompresData
+
+        /// A general compression error.
         case cannotCompressData
     }
 }

@@ -60,9 +60,8 @@ public class Buffer<Element> {
     }
 
     /// Errors which can occure while using the buffer.
-    ///
-    /// - noDataAvailable: Thrown when no data are available anymore.
     public enum BufferError: Error {
+        /// Thrown when no data are available anymore.
         case noDataAvailable
     }
 }

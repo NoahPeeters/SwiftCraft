@@ -36,7 +36,7 @@ public struct JoinGamePacket: ReceivedPacket {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         playerEntityID = try EntityID(from: buffer)
         gameMode = try Gamemode(id: Byte(from: buffer)).unwrap(JoinGamePacketError.unknownGamemode)
-        dimension = try Dimension(rawValue: Int(Int32(from: buffer))).unwrap(JoinGamePacketError.unknownDimension)
+        dimension = try Dimension(id: Int32(from: buffer))
         difficulty = try Difficulty(rawValue: Byte(from: buffer)).unwrap(JoinGamePacketError.unknownDifficulty)
         maxPlayers = try Byte(from: buffer)
         levelType = try LevelType(rawValue: String(from: buffer)).unwrap(JoinGamePacketError.unknownLevelType)
@@ -44,15 +44,14 @@ public struct JoinGamePacket: ReceivedPacket {
     }
 
     /// Errors which can occure while decoding a `JoinGamePacket`.
-    ///
-    /// - unknownGamemode: The gamemode received is unknown.
-    /// - unknownDimension: The dimension recieved is unknown.
-    /// - unknownDifficulty: The difficultiy received is unknown.
-    /// - unknownLevelType: The level type received is unknown.
     public enum JoinGamePacketError: Error {
+        /// The gamemode received is unknown.
         case unknownGamemode
-        case unknownDimension
+
+        /// The difficultiy received is unknown.
         case unknownDifficulty
+
+        /// The level type received is unknown.
         case unknownLevelType
     }
 }

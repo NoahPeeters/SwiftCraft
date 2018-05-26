@@ -18,15 +18,17 @@ public struct PacketID: Equatable, Hashable {
 }
 
 /// The connection state of a connection
-///
-/// - handshaking: Handshaking.
-/// - play: The normal game.
-/// - status: Pinging the server.
-/// - login: The login process.
 public enum ConnectionState: Int, Equatable, Hashable {
+    /// Handshaking.
     case handshaking = 0
+
+    /// The normal game.
     case status = 1
+
+    /// Pinging the server.
     case login = 2
+
+    /// The login process.
     case play = 3
 
     /// Creates a new packet id.

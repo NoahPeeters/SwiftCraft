@@ -7,22 +7,29 @@
 //
 
 /// Events of a TCPClient.
-///
-/// - outputStreamOpened: The output stream has opened.
-/// - inputStreamOpened: The input stream has opened.
-/// - outputStreamHasSpaceAvailable: The output stream has space available.
-/// - inputStreamHasSpaceAvailable: The input stream has space available.
-/// - received: The input stream received new data.
-/// - outputStreamClosed: The output stream closed.
-/// - inputStreamClosed: The input stream closed.
 public enum TCPClientEvent: Equatable, Hashable {
+    /// The output stream has opened.
     case outputStreamOpened
+
+    /// The input stream has opened.
     case inputStreamOpened
+
+    /// The output stream has space available.
     case outputStreamHasSpaceAvailable
+
+    /// The input stream has space available.
     case inputStreamHasSpaceAvailable
+
+    /// The input stream received new data.
     case received(data: Data)
+
+    /// The output stream closed.
     case outputStreamClosed
+
+    /// The input stream closed.
     case inputStreamClosed
+
+    /// A unknown error occured.
     case unknownError
 }
 

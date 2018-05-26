@@ -40,15 +40,25 @@ public struct UnlockRecipesPacket: ReceivedPacket {
     }
 
     /// The different actions the server can request.
-    ///
-    /// - initList: This will init the crafting book. The first list contains all elements to add to the crafting book
-    ///             to restore the crafting book from the previous sessions. The second list is like the list from
-    ///             the `add` action.
-    /// - add: This will add all elements from the list to the crafting book and show a notification.
-    /// - remove: This will remove all elements of the list from the crafting book.
     public enum Action {
+        /// This will init the crafting book.
+        ///
+        /// - Note:
+        ///    - list1: The first list contains all elements to add to the crafting book
+        ///             to restore the crafting book from the previous sessions.
+        ///    - list2: The second list is like the list from the `add` action.
         case initList(list1: [RecipeID], list2: [RecipeID])
+
+        /// This will add all elements from the list to the crafting book and show a notification.
+        ///
+        /// - Note:
+        ///    - list: The elements to add.
         case add(list: [RecipeID])
+
+        /// This will remove all elements of the list from the crafting book.
+        ///
+        /// - Note:
+        ///    - list: The elements to remove.
         case remove(list: [RecipeID])
     }
 }

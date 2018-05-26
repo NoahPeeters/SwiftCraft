@@ -78,9 +78,8 @@ public struct VarInt<IntegerType: VarIntIntegerType>: CodableDataType {
     }
 
     /// Errors which can occure while decoding the int.
-    ///
-    /// - varIntToBig: The integer encoded is to big for the type.
     enum TypeDecodeError: Error {
+        /// The integer encoded is to big for the type.
         case varIntToBig
     }
 }
@@ -147,9 +146,8 @@ extension String: CodableDataType {
     }
 
     /// Errors which can occure while decoding a string.
-    ///
-    /// - invalidStringData: The encoded data is not a valid utf8 string.
     enum TypeDecodeError: Error {
+        /// The encoded data is not a valid utf8 string.
         case invalidStringData
     }
 }
