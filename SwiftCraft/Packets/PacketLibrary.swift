@@ -48,6 +48,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         PluginMessageReceivedPacket.self,
         EntityStatusPacket.self,
         ReceiveMultiBlockChangePacket.self,
+        PlayerListPacket.self,
         KeepaliveRequestPacket.self,
         JoinGamePacket.self,
         ReceivedPlayerAbilitiesPacket.self,

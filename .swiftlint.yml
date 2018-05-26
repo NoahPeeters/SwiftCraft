@@ -9,3 +9,6 @@ identifier_name:
     - x
     - y
     - z
+
+disabled_rules:
+  - nesting
