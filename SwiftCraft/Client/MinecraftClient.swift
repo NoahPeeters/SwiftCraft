@@ -236,8 +236,9 @@ extension MinecraftClient {
             do {
                 try handlePacketData(packetData)
             } catch {
-                if case PacketLibraryError.unknowPacketID(_) = error {
-
+                if case let PacketLibraryError.unknowPacketID(packetID) = error {
+                    let hexID = String(packetID.id, radix: 16, uppercase: true)
+                    print("unknown packet: \(packetID.connectionState): \(hexID)")
                 } else {
                     print(error)
                 }
