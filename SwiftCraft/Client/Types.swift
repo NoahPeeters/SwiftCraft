@@ -9,7 +9,7 @@
 import Foundation
 
 /// THe ID of an entity
-public typealias EntityID = Int
+public typealias EntityID = Int32
 
 /// The gamemode of a player.
 public struct Gamemode {

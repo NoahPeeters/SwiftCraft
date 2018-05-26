@@ -34,7 +34,7 @@ public struct JoinGamePacket: ReceivedPacket {
     public let reducedDebugInfo: Bool
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
-        playerEntityID = try Int(Int32(from: buffer))
+        playerEntityID = try EntityID(from: buffer)
         gameMode = try Gamemode(id: Byte(from: buffer)).unwrap(JoinGamePacketError.unknownGamemode)
         dimension = try Dimension(rawValue: Int(Int32(from: buffer))).unwrap(JoinGamePacketError.unknownDimension)
         difficulty = try Difficulty(rawValue: Byte(from: buffer)).unwrap(JoinGamePacketError.unknownDifficulty)
