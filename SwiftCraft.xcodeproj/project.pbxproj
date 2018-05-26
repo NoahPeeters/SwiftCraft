@@ -66,6 +66,7 @@
 		40DAC2D920B985420017FEBD /* ServerDifficultyPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */; };
 		40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */; };
 		40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */; };
+		40DAC2DF20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */; };
 		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 		40E314F520B601F900C9E271 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F420B601F900C9E271 /* Reactor.swift */; };
 		40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F720B6048600C9E271 /* LoginReactor.swift */; };
@@ -151,6 +152,7 @@
 		40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDifficultyPacket.swift; sourceTree = "<group>"; };
 		40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginMessageReceivedPacket.swift; sourceTree = "<group>"; };
 		40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedPlayerAbilitiesPacket.swift; sourceTree = "<group>"; };
+		40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeldItemChangedReceivedPacket.swift; sourceTree = "<group>"; };
 		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
 		40E314F420B601F900C9E271 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
 		40E314F720B6048600C9E271 /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */,
 				4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */,
 				40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */,
+				40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */,
 				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
 			);
 			path = Clientbound;
@@ -702,6 +705,7 @@
 				4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */,
 				4022B07720B4D20C00B4E680 /* ReceiveChatMessagePacket.swift in Sources */,
 				40E314F520B601F900C9E271 /* Reactor.swift in Sources */,
+				40DAC2DF20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift in Sources */,
 				40E314FA20B6079F00C9E271 /* KeepaliveReactor.swift in Sources */,
 				40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */,
 				40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */,

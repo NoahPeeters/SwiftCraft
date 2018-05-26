@@ -50,6 +50,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         KeepaliveRequestPacket.self,
         JoinGamePacket.self,
         ReceivedPlayerAbilitiesPacket.self,
+        HeldItemChangedReceivedPacket.self,
         TimeUpdatePacket.self
     ]
 
