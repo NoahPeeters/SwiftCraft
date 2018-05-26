@@ -312,7 +312,7 @@
 				133424C220B439320097C45D /* Crypto */,
 				4024AB7720B1F20C008790F2 /* Login */,
 				406806FD20B30D2500B116C4 /* Network */,
-				4068070220B34D3300B116C4 /* Packages */,
+				4068070220B34D3300B116C4 /* Packets */,
 			);
 			path = SwiftCraft;
 			sourceTree = "<group>";
@@ -393,7 +393,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		4068070220B34D3300B116C4 /* Packages */ = {
+		4068070220B34D3300B116C4 /* Packets */ = {
 			isa = PBXGroup;
 			children = (
 				4068070320B34D3F00B116C4 /* PacketID.swift */,
@@ -403,7 +403,7 @@
 				4022B06E20B4CC2300B4E680 /* Play */,
 				4068072320B3686C00B116C4 /* Login */,
 			);
-			path = Packages;
+			path = Packets;
 			sourceTree = "<group>";
 		};
 		4068071020B364A600B116C4 /* SwiftCraftApp */ = {
