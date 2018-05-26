@@ -52,7 +52,7 @@ public class MessageCompressor {
 
         if dataLength.value == 0 {
             return data
-        } else if let decompressedMessage = Data(bytes: data).deflate() {
+        } else if let decompressedMessage = Data(bytes: data).unzip() {
             return Array(decompressedMessage)
         } else {
             throw MessageCompressorError.cannotDecompresData
