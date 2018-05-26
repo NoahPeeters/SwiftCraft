@@ -63,6 +63,7 @@
 		40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */; };
 		40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */; };
 		40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */; };
+		40DAC2D920B985420017FEBD /* ServerDifficultyPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */; };
 		40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */; };
 		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 		40E314F520B601F900C9E271 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F420B601F900C9E271 /* Reactor.swift */; };
@@ -146,6 +147,7 @@
 		40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessPacket.swift; sourceTree = "<group>"; };
 		40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionRequestPacket.swift; sourceTree = "<group>"; };
 		40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectPacket.swift; sourceTree = "<group>"; };
+		40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDifficultyPacket.swift; sourceTree = "<group>"; };
 		40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginMessageReceivedPacket.swift; sourceTree = "<group>"; };
 		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
 		40E314F420B601F900C9E271 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		4022B06F20B4CC2D00B4E680 /* Clientbound */ = {
 			isa = PBXGroup;
 			children = (
+				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
 				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
 				40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */,
@@ -673,6 +676,7 @@
 				40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */,
 				4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */,
 				133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */,
+				40DAC2D920B985420017FEBD /* ServerDifficultyPacket.swift in Sources */,
 				1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */,
 				4024AB8B20B22C37008790F2 /* CodableDataType.swift in Sources */,
 				4068070620B355CF00B116C4 /* CodablePacket.swift in Sources */,
