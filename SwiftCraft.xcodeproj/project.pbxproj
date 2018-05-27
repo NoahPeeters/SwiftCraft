@@ -76,6 +76,8 @@
 		408E640F20BAFCEE00AE9C2D /* UnloadChunkPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E640E20BAFCEE00AE9C2D /* UnloadChunkPacket.swift */; };
 		408E641120BB006200AE9C2D /* SpawnMobPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641020BB006200AE9C2D /* SpawnMobPacket.swift */; };
 		408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */; };
+		408E641520BB08CD00AE9C2D /* SetExperiencePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641420BB08CD00AE9C2D /* SetExperiencePacket.swift */; };
+		408E641720BB096300AE9C2D /* UpdateHealthPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641620BB096300AE9C2D /* UpdateHealthPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -182,6 +184,8 @@
 		408E640E20BAFCEE00AE9C2D /* UnloadChunkPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnloadChunkPacket.swift; sourceTree = "<group>"; };
 		408E641020BB006200AE9C2D /* SpawnMobPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnMobPacket.swift; sourceTree = "<group>"; };
 		408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityPropertiesPacket.swift; sourceTree = "<group>"; };
+		408E641420BB08CD00AE9C2D /* SetExperiencePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExperiencePacket.swift; sourceTree = "<group>"; };
+		408E641620BB096300AE9C2D /* UpdateHealthPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateHealthPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 				408E63EE20B9D4FC00AE9C2D /* PlayerListPacket.swift */,
 				408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */,
 				40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */,
+				408E641420BB08CD00AE9C2D /* SetExperiencePacket.swift */,
+				408E641620BB096300AE9C2D /* UpdateHealthPacket.swift */,
 				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
 				408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */,
 			);
@@ -754,6 +760,7 @@
 				40E314FC20B609C900C9E271 /* PrintReactors.swift in Sources */,
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
 				4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */,
+				408E641720BB096300AE9C2D /* UpdateHealthPacket.swift in Sources */,
 				4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */,
 				408E63E520B992D900AE9C2D /* EntityStatusPacket.swift in Sources */,
 				408E63EF20B9D4FC00AE9C2D /* PlayerListPacket.swift in Sources */,
@@ -785,6 +792,7 @@
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
 				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
 				408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */,
+				408E641520BB08CD00AE9C2D /* SetExperiencePacket.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
 				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
 				408E640020BA082700AE9C2D /* Optional+Serializable.swift in Sources */,

@@ -55,6 +55,8 @@ public struct DefaultPacketLibrary: PacketLibrary {
         ReceivedPlayerAbilitiesPacket.self,
         UnlockRecipesPacket.self,
         HeldItemChangedReceivedPacket.self,
+        SetExperiencePacket.self,
+        UpdateHealthPacket.self,
         TimeUpdatePacket.self,
         EntityPropertiesPacket.self
     ]
