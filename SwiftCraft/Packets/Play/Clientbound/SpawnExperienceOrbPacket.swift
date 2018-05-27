@@ -23,10 +23,7 @@ public struct SpawnExperienceOrbPacket: SimpleDeserializablePacket {
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         entityID = try EntityID(VarInt32(from: buffer).value)
-        location = try EntityLocation(
-            x: Double(from: buffer),
-            y: Double(from: buffer),
-            z: Double(from: buffer))
+        location = try EntityLocation(from: buffer)
         amount = try Int16(from: buffer)
     }
 }

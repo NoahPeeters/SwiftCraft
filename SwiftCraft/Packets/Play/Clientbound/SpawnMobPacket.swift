@@ -30,16 +30,10 @@ public struct SpawnMobPacket: SimpleDeserializablePacket {
         entityID = try VarInt32(from: buffer).value
         uuid = try UUID(from: buffer)
         type = try VarInt32(from: buffer).integer
-        location = try EntityLocation(
-            x: Double(from: buffer),
-            y: Double(from: buffer),
-            z: Double(from: buffer))
+        location = try EntityLocation(from: buffer)
         yaw = try Byte(from: buffer)
         pitch = try Byte(from: buffer)
         headPitch = try Byte(from: buffer)
-        velocity = try EntityVelocity(
-            x: Int16(from: buffer),
-            y: Int16(from: buffer),
-            z: Int16(from: buffer))
+        velocity = try EntityVelocity(from: buffer)
     }
 }

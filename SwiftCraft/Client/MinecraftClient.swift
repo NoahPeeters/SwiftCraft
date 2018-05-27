@@ -192,7 +192,7 @@ extension MinecraftClient {
                 didSendPacket(packet, client: self)
             }
         } catch {
-            print(error)
+            print(" ❌ \(error)")
         }
     }
 }
@@ -240,9 +240,9 @@ extension MinecraftClient {
             } catch {
                 if case let PacketLibraryError.unknowPacketID(packetID) = error {
                     let hexID = String(packetID.id, radix: 16, uppercase: true)
-                    print("unknown packet: \(packetID.connectionState): 0x\(hexID)")
+                    print(" ❗️ unknown packet: \(packetID.connectionState): 0x\(hexID)")
                 } else {
-                    print(error)
+                    print(" ❌ \(error)")
                 }
             }
         }

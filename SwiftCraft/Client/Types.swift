@@ -122,7 +122,7 @@ public enum ChatMessageLocation: Byte, Hashable, Equatable {
 }
 
 /// The velocity of an entity
-public struct EntityVelocity: Hashable, Equatable {
+public struct EntityVelocity: Hashable, Equatable, DeserializableDataType {
     /// The velocity in the x direction.
     let x: Int16
 
@@ -131,10 +131,28 @@ public struct EntityVelocity: Hashable, Equatable {
 
     /// The velocity in the z direction.
     let z: Int16
+
+    /// Creates a new velocity from x, y, and z.
+    ///
+    /// - Parameters:
+    ///   - x: The x component.
+    ///   - y: The y component.
+    ///   - z: The z component.
+    public init(x: Int16, y: Int16, z: Int16) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        x = try Int16(from: buffer)
+        y = try Int16(from: buffer)
+        z = try Int16(from: buffer)
+    }
 }
 
 /// The location of an entity
-public struct EntityLocation: Hashable, Equatable {
+public struct EntityLocation: Hashable, Equatable, DeserializableDataType {
     /// The location in the x direction.
     let x: Double
 
@@ -143,4 +161,56 @@ public struct EntityLocation: Hashable, Equatable {
 
     /// The location in the z direction.
     let z: Double
+
+    /// Creates a new location from x, y, and z.
+    ///
+    /// - Parameters:
+    ///   - x: The x component.
+    ///   - y: The y component.
+    ///   - z: The z component.
+    public init(x: Double, y: Double, z: Double) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        x = try Double(from: buffer)
+        y = try Double(from: buffer)
+        z = try Double(from: buffer)
+    }
+}
+
+/// Describes the content of a slot.
+public enum SlotContent: Equatable, DeserializableDataType {
+    /// The slot is empty.
+    case empty
+
+    /// The slot contains the given data.
+    case hasContent(blockID: Int16, count: Byte, damage: Byte, nbt: ByteArray)
+
+    /// The amount of items in the slot.
+    var count: Byte {
+        switch self {
+        case .empty:
+            return 0
+        case let .hasContent(_, count, _, _):
+            return count
+        }
+    }
+
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        let blockID = try Int16(from: buffer)
+
+        guard blockID >= 0 else {
+            self = .empty
+            return
+        }
+
+        let count = try Byte(from: buffer)
+        let damage = try Byte(from: buffer)
+        let nbmData = buffer.readRemainingElements()
+
+        self = .hasContent(blockID: blockID, count: count, damage: damage, nbt: nbmData)
+    }
 }
