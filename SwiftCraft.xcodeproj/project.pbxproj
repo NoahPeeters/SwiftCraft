@@ -82,6 +82,7 @@
 		408E641B20BB0BA500AE9C2D /* AttachEntityPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641A20BB0BA500AE9C2D /* AttachEntityPacket.swift */; };
 		408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641C20BB0BEF00AE9C2D /* EntityVelocityPacket.swift */; };
 		408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */; };
+		408E642120BB134200AE9C2D /* SpawnObjectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -194,6 +195,7 @@
 		408E641A20BB0BA500AE9C2D /* AttachEntityPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachEntityPacket.swift; sourceTree = "<group>"; };
 		408E641C20BB0BEF00AE9C2D /* EntityVelocityPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityVelocityPacket.swift; sourceTree = "<group>"; };
 		408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityEquipmentPacket.swift; sourceTree = "<group>"; };
+		408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnObjectPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		4022B06F20B4CC2D00B4E680 /* Clientbound */ = {
 			isa = PBXGroup;
 			children = (
+				408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */,
 				408E63EC20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift */,
 				408E641020BB006200AE9C2D /* SpawnMobPacket.swift */,
 				408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */,
@@ -778,6 +781,7 @@
 				408E63EF20B9D4FC00AE9C2D /* PlayerListPacket.swift in Sources */,
 				408E63FA20BA07CE00AE9C2D /* Position.swift in Sources */,
 				408E641B20BB0BA500AE9C2D /* AttachEntityPacket.swift in Sources */,
+				408E642120BB134200AE9C2D /* SpawnObjectPacket.swift in Sources */,
 				408E63F820BA07B500AE9C2D /* String+Serializable.swift in Sources */,
 				40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */,
 				40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */,

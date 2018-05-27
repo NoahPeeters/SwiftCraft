@@ -12,8 +12,13 @@ import Foundation
 public struct SpawnMobPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x03)
 
+    /// The id of the entity.
     let entityID: EntityID
+
+    /// The uuid of the entity.
     let uuid: UUID
+
+    /// The type of the entity.
     let type: Int
 
     /// The location of the new entity.
@@ -22,8 +27,13 @@ public struct SpawnMobPacket: SimpleDeserializablePacket {
     /// The velocity of the new entity.
     let velocity: EntityVelocity
 
+    /// The yaw of the entity.
     let yaw: Byte
+
+    /// The pitch of the entity.
     let pitch: Byte
+
+    /// The head pitch of the entity.
     let headPitch: Byte
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {

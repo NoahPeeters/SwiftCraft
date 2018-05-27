@@ -38,6 +38,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         SetCompressionPacket.self,
 
         // Play
+        SpawnObjectPacket.self,
         SpawnExperienceOrbPacket.self,
         SpawnMobPacket.self,
         StatisticsPacket.self,

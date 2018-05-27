@@ -25,6 +25,16 @@ extension MinecraftClient {
     public static func debugPrintReactor() -> Reactor {
         return DebugPrintReactor()
     }
+
+    /// Creates a reactor which prints packets of one type.
+    ///
+    /// - Parameter type: The packet type to listen for
+    /// - Returns: The reactor.
+    public static func singleTypeDebugPrintReactor<Type: DeserializablePacket>(for type: Type.Type) -> Reactor {
+        return ClosureReactor<Type> { packet, _ in
+            print(" 🔽 \(packet)")
+        }
+    }
 }
 
 /// A Reactor which prints ever packet.

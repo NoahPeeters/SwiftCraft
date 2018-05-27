@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: SessionServerService(authenticationProvider: login))
 
-        minecraftClient.addReactor(MinecraftClient.debugPrintReactor())
+        minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(for: SpawnObjectPacket.self))
         minecraftClient.addReactor(MinecraftClient.essentialReactors())
         minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
     }
