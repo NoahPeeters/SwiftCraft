@@ -120,3 +120,27 @@ public enum ChatMessageLocation: Byte, Hashable, Equatable {
     /// A message which should be shown in the center of the screen.
     case gameInfo = 2
 }
+
+/// The velocity of an entity
+public struct EntityVelocity: Hashable, Equatable {
+    /// The velocity in the x direction.
+    let x: Int16
+
+    /// The velocity in the y direction.
+    let y: Int16
+
+    /// The velocity in the z direction.
+    let z: Int16
+}
+
+/// The location of an entity
+public struct EntityLocation: Hashable, Equatable {
+    /// The location in the x direction.
+    let x: Double
+
+    /// The location in the y direction.
+    let y: Double
+
+    /// The location in the z direction.
+    let z: Double
+}

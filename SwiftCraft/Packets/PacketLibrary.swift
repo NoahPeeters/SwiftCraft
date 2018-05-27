@@ -39,6 +39,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
 
         // Play
         SpawnExperienceOrbPacket.self,
+        SpawnMobPacket.self,
         StatisticsPacket.self,
         ServerDifficultyPacket.self,
         ReceiveChatMessagePacket.self,
@@ -54,7 +55,8 @@ public struct DefaultPacketLibrary: PacketLibrary {
         ReceivedPlayerAbilitiesPacket.self,
         UnlockRecipesPacket.self,
         HeldItemChangedReceivedPacket.self,
-        TimeUpdatePacket.self
+        TimeUpdatePacket.self,
+        EntityPropertiesPacket.self
     ]
 
     /// Creates a new packet library.

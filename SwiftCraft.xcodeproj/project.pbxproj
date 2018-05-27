@@ -74,6 +74,8 @@
 		408E640B20BAF60E00AE9C2D /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E640A20BAF60E00AE9C2D /* World.swift */; };
 		408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E640C20BAFC3200AE9C2D /* BlockReactor.swift */; };
 		408E640F20BAFCEE00AE9C2D /* UnloadChunkPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E640E20BAFCEE00AE9C2D /* UnloadChunkPacket.swift */; };
+		408E641120BB006200AE9C2D /* SpawnMobPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641020BB006200AE9C2D /* SpawnMobPacket.swift */; };
+		408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -178,6 +180,8 @@
 		408E640A20BAF60E00AE9C2D /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		408E640C20BAFC3200AE9C2D /* BlockReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockReactor.swift; sourceTree = "<group>"; };
 		408E640E20BAFCEE00AE9C2D /* UnloadChunkPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnloadChunkPacket.swift; sourceTree = "<group>"; };
+		408E641020BB006200AE9C2D /* SpawnMobPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnMobPacket.swift; sourceTree = "<group>"; };
+		408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityPropertiesPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -305,8 +309,9 @@
 		4022B06F20B4CC2D00B4E680 /* Clientbound */ = {
 			isa = PBXGroup;
 			children = (
-				408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */,
 				408E63EC20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift */,
+				408E641020BB006200AE9C2D /* SpawnMobPacket.swift */,
+				408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */,
 				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
 				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
@@ -321,6 +326,7 @@
 				408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */,
 				40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */,
 				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
+				408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */,
 			);
 			path = Clientbound;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */,
 				4024AB8B20B22C37008790F2 /* Serializable.swift in Sources */,
 				4068070620B355CF00B116C4 /* SerializablePacket.swift in Sources */,
+				408E641120BB006200AE9C2D /* SpawnMobPacket.swift in Sources */,
 				408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */,
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
@@ -777,6 +784,7 @@
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
 				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
+				408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
 				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
 				408E640020BA082700AE9C2D /* Optional+Serializable.swift in Sources */,
