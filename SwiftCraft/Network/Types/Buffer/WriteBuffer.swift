@@ -22,4 +22,21 @@ public protocol WriteBuffer {
     ///
     /// - Parameter element: The element to write
     func write(element: Element)
+
+    /// Saves the raw bytes to the end of the buffer.
+    ///
+    /// - Parameter value: The value to append.
+    func saveRaw<Value>(_ value: inout Value)
+
+    /// Saves a copy of the raw bytes to the end of the buffer. If you have a var use `saveRaw`.
+    ///
+    /// - Parameter value: The value to append.
+    func saveRawCopy<Value>(_ value: Value)
+}
+
+extension WriteBuffer {
+    public func saveRawCopy<Value>(_ value: Value) {
+        var copy = value
+        saveRaw(&copy)
+    }
 }

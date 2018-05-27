@@ -41,7 +41,6 @@
 		4024AB8620B220C0008790F2 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8520B220C0008790F2 /* Buffer.swift */; };
 		4024AB8820B22418008790F2 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8720B22418008790F2 /* BufferTests.swift */; };
 		4024AB8B20B22C37008790F2 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8A20B22C37008790F2 /* Serializable.swift */; };
-		4024AB8E20B22DB5008790F2 /* DirectSerializableDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8D20B22DB5008790F2 /* DirectSerializableDataType.swift */; };
 		4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
 		4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9320B2C1AD008790F2 /* BitShifting.swift */; };
 		406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* TCPClient.swift */; };
@@ -137,7 +136,6 @@
 		4024AB8520B220C0008790F2 /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		4024AB8720B22418008790F2 /* BufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferTests.swift; sourceTree = "<group>"; };
 		4024AB8A20B22C37008790F2 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
-		4024AB8D20B22DB5008790F2 /* DirectSerializableDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectSerializableDataType.swift; sourceTree = "<group>"; };
 		4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDataTypesTest.swift; sourceTree = "<group>"; };
 		4024AB9320B2C1AD008790F2 /* BitShifting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitShifting.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
@@ -413,7 +411,6 @@
 			children = (
 				408E63F220BA06CB00AE9C2D /* Types */,
 				4024AB8A20B22C37008790F2 /* Serializable.swift */,
-				4024AB8D20B22DB5008790F2 /* DirectSerializableDataType.swift */,
 				4024AB9320B2C1AD008790F2 /* BitShifting.swift */,
 			);
 			path = Serializable;
@@ -769,7 +766,6 @@
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */,
 				1334250C20B453E60097C45D /* AESCipher.m in Sources */,
-				4024AB8E20B22DB5008790F2 /* DirectSerializableDataType.swift in Sources */,
 				4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */,
 				1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */,
 				4068070420B34D3F00B116C4 /* PacketID.swift in Sources */,

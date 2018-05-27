@@ -29,6 +29,25 @@ public protocol ReadBuffer {
     /// Reads all remaining data of the buffer.
     ///
     /// - Returns: The read data.
-    /// - Throws:
     func readRemainingElements() -> [Element]
+
+    /// Moves the reading head forwards.
+    ///
+    /// - Parameter length: The amount to move the head by.
+    /// - Throws: Throws an error if the buffer is empty.
+    func advance(by length: Int) throws
+
+    /// Allows access to the raw bytes at the current position
+    ///
+    /// - Parameter body: The body of the access.
+    /// - Returns: The value returned by the body.
+    /// - Throws: Errors throws by the body.
+    /// - Attention: Dont forget to use `advance(by:)` after reading elements.
+    func withUnsafeBufferPointer<R>(_ body: (UnsafePointer<Element>) throws -> R) rethrows -> R
+
+    /// Reads one element .
+    ///
+    /// - Returns: The value
+    /// - Throws: Throws an error if the buffer is empty.
+    func loadAsType<R>() throws -> R
 }

@@ -88,6 +88,34 @@ extension Buffer: ReadBuffer {
     public func readRemainingElements() -> [Element] {
         return (try? read(lenght: remainingData())) ?? []
     }
+
+    public func advance(by length: Int) throws {
+        position += length
+    }
+
+    public func withUnsafeBufferPointer<R>(_ body: (UnsafePointer<Element>) throws -> R) rethrows -> R {
+        return try elements.withUnsafeBufferPointer { pointer in
+            return try body(pointer.baseAddress!.advanced(by: position))
+        }
+    }
+
+    public func loadAsType<R>() throws -> R {
+        let returnTypeLength = MemoryLayout<R>.stride
+
+        guard remainingData() >= returnTypeLength else {
+            throw BufferError.noDataAvailable
+        }
+
+        let readElement: R = elements.withUnsafeBufferPointer { pointer in
+            let base = pointer.baseAddress!
+            return base.advanced(by: position).withMemoryRebound(to: R.self, capacity: 1) {
+                $0.pointee
+            }
+        }
+
+        try advance(by: returnTypeLength)
+        return readElement
+    }
 }
 
 // MARK: - Write Buffer
@@ -100,7 +128,18 @@ extension Buffer: WriteBuffer {
     public func write(element: Element) {
         elements.append(element)
     }
+
+    public func saveRaw<Value>(_ value: inout Value) {
+        let newElements = withUnsafeBytes(of: &value) { pointer in
+            Array(pointer.bindMemory(to: Element.self))
+        }
+        write(elements: newElements)
+    }
 }
+
+//extension Buffer {
+//    <#code#>
+//}
 
 /// Errors which can occure while using the buffer.
 public enum BufferError: Error {

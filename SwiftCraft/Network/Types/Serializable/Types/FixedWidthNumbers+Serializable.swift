@@ -20,15 +20,44 @@ extension Bool: Serializable {
 }
 
 // MARK: - Integer
-extension Int8: DirectSerializableDataType {}
-extension UInt8: DirectSerializableDataType {}
-extension Int16: DirectSerializableDataType {}
-extension UInt16: DirectSerializableDataType {}
-extension Int32: DirectSerializableDataType {}
-extension UInt32: DirectSerializableDataType {}
-extension Int64: DirectSerializableDataType {}
-extension UInt64: DirectSerializableDataType {}
+
+extension FixedWidthInteger {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        let bigEndian: Self = try buffer.loadAsType()
+        self.init(bigEndian: bigEndian)
+    }
+
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        buffer.saveRawCopy(self.bigEndian)
+    }
+}
+
+extension Int8: Serializable {}
+extension UInt8: Serializable {}
+extension Int16: Serializable {}
+extension UInt16: Serializable {}
+extension Int32: Serializable {}
+extension UInt32: Serializable {}
+extension Int64: Serializable {}
+extension UInt64: Serializable {}
 
 // MARK: - Floating Point
-extension Float: DirectSerializableDataType {}
-extension Double: DirectSerializableDataType {}
+extension Float: Serializable {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        self = try Float(bitPattern: UInt32(bigEndian: buffer.loadAsType()))
+    }
+
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        buffer.saveRawCopy(self.bitPattern.bigEndian)
+    }
+}
+
+extension Double: Serializable {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        self = try Double(bitPattern: UInt64(bigEndian: buffer.loadAsType()))
+    }
+
+    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+        buffer.saveRawCopy(self.bitPattern.bigEndian)
+    }
+}
