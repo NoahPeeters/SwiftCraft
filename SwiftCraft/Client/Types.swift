@@ -15,7 +15,7 @@ public typealias EntityID = Int32
 public typealias RecipeID = Int
 
 /// The gamemode of a player.
-public struct Gamemode {
+public struct Gamemode: Hashable, Equatable {
     /// The mode of the gamemode.
     public enum Mode: Int {
         /// Survival mode.
@@ -57,9 +57,14 @@ public struct Gamemode {
 }
 
 /// Types of dimensions in minecraft.
-public struct Dimension {
+public struct Dimension: Hashable, Equatable {
     /// The id of the dimension
     let id: Int32
+
+    /// Flag whether the dimension has skylight data.
+    public var hasSkylight: Bool {
+        return self == .overworld
+    }
 
     /// The nether.
     static let nether: Dimension = Dimension(id: -1)
@@ -72,7 +77,7 @@ public struct Dimension {
 }
 
 /// Difficulty of the game.
-public enum Difficulty: Byte {
+public enum Difficulty: Byte, Hashable, Equatable {
     /// Peaceful
     case peaceful = 0
 
@@ -87,7 +92,7 @@ public enum Difficulty: Byte {
 }
 
 /// The level type of the current world.
-public enum LevelType: String {
+public enum LevelType: String, Hashable, Equatable {
     /// The default level type.
     case `default`
 
@@ -105,7 +110,7 @@ public enum LevelType: String {
 }
 
 /// The location of a received chat messeage.
-public enum ChatMessageLocation: Byte {
+public enum ChatMessageLocation: Byte, Hashable, Equatable {
     /// A normal chat message of another player.
     case chat = 0
 

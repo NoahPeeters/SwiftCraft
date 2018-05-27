@@ -47,6 +47,15 @@ extension MinecraftClient {
         }
     }
 
+    /// Handels the join game packet by updateing the dimension.
+    ///
+    /// - Returns: The requested reactor.
+    public static func joinGamePacketReactor() -> Reactor {
+        return ClosureReactor<JoinGamePacket> { packet, client in
+            client.dimension = packet.dimension
+        }
+    }
+
     /// Handels all packets relevant for the login.
     ///
     /// - Returns: The requested reactor.
@@ -54,7 +63,8 @@ extension MinecraftClient {
         return MultiReactor(reactors: [
             compressionPacketReactor(),
             encryptionPacketReactor(),
-            loginSuccessPacketReactor()
+            loginSuccessPacketReactor(),
+            joinGamePacketReactor()
         ])
     }
 }

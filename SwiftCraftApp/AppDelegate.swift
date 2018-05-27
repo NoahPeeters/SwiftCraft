@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
 
     var minecraftClient: MinecraftClient!
+    let minecraftWorld = MinecraftWorld()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -51,6 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         minecraftClient.addReactor(MinecraftClient.debugPrintReactor())
         minecraftClient.addReactor(MinecraftClient.essentialReactors())
+        minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
     }
 
     /// Loads sessioncredentials from user default if present.

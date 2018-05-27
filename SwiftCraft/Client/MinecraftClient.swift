@@ -166,6 +166,8 @@ open class MinecraftClient {
     public func addReactor(_ reactor: Reactor) {
         reactors.append(reactor)
     }
+
+    public var dimension: Dimension = .overworld
 }
 
 // MARK: - MinecraftClient+Sending
