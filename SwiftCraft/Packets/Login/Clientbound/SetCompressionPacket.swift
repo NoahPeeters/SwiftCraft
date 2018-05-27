@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet to enable or disable compression
-public struct SetCompressionPacket: ReceivedPacket {
+public struct SetCompressionPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .login, id: 0x03)
 
     /// The threshold describes how large a packet must be to be compressed.

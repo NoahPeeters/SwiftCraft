@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct TimeUpdatePacket: ReceivedPacket {
+public struct TimeUpdatePacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x47)
 
     /// The ticks since the world first started.

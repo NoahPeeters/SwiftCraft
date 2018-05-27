@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet informing the client that its selected slot has changed.
-public struct HeldItemChangedReceivedPacket: ReceivedPacket {
+public struct HeldItemChangedReceivedPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x3A)
 
     /// The new selected slot id

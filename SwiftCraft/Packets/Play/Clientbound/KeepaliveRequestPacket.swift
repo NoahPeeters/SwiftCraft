@@ -11,7 +11,7 @@ import Foundation
 /// A packet send in regular time intervalls to request a confirmation that the connection is still alive.
 ///
 /// - Attention: Every client must handle this packet or it will be kicked
-public struct KeepaliveRequestPacket: ReceivedPacket {
+public struct KeepaliveRequestPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x1F)
 
     /// An id which must be used in the reply.

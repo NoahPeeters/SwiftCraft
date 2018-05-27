@@ -9,7 +9,7 @@
 import Foundation
 
 /// A packet indicating that the server difficulty changed.
-public struct ServerDifficultyPacket: ReceivedPacket {
+public struct ServerDifficultyPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x0D)
 
     /// The difficulty of the world.

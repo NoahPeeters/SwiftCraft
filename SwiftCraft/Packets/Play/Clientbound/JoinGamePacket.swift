@@ -9,7 +9,7 @@
 import Foundation
 
 /// A packet received from the server after a successfull switch of the connection state from login to play.
-public struct JoinGamePacket: ReceivedPacket {
+public struct JoinGamePacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x23)
 
     /// The id of the player.

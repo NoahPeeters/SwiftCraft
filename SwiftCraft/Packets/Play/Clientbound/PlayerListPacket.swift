@@ -9,7 +9,7 @@
 import Foundation
 
 /// Updates for the player list.
-public struct PlayerListPacket: ReceivedPacket {
+public struct PlayerListPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x2E)
 
     let action: Action

@@ -11,7 +11,7 @@ import Foundation
 /// Received when the server closes the connection while logging in.
 ///
 /// - Note: The reason will be described in the `message` field.
-public struct DisconnectPacket: ReceivedPacket {
+public struct DisconnectPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .login, id: 0x00)
 
     /// The message with a description of the reason.

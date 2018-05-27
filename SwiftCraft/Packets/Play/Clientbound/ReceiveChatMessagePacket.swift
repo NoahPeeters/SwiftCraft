@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet containing a new chat message received from the server.
-public struct ReceiveChatMessagePacket: ReceivedPacket {
+public struct ReceiveChatMessagePacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x0F)
 
     /// The message received from the server.

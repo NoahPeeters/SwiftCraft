@@ -9,7 +9,7 @@
 import Foundation
 
 /// Send by the server when a experience orb spawns
-public struct SpawnExperienceOrbPacket: ReceivedPacket {
+public struct SpawnExperienceOrbPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x01)
 
     /// The id of the new experience orb.

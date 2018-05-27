@@ -16,7 +16,7 @@ public protocol Reactor {
     ///   - packet: The received packet.
     ///   - client: The client which received the packet.
     /// - Throws: Any error which might occure.
-    func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws
+    func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws
 
     /// Decides whether the packet should be send or not.
     ///
@@ -35,7 +35,7 @@ public protocol Reactor {
 }
 
 extension Reactor {
-    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) {}
+    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) {}
 
     public func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool {
         return true

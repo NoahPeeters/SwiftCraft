@@ -255,14 +255,14 @@ extension MinecraftClient {
         let rawPacketID = try VarInt32(from: packetBuffer).integer
         let packetID = connectionState.packetID(with: rawPacketID)
 
-        let packet = try packetLibrary.parse(packetBuffer, packetID: packetID)
+        let packet = try packetLibrary.parse(packetBuffer, packetID: packetID, client: self)
         try self.didReceivedPacket(packet, client: self)
     }
 }
 
 // MARK: - MinecraftClient+Reactor
 extension MinecraftClient: Reactor {
-    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws {
+    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
         try reactors.forEach {
             try $0.didReceivedPacket(packet, client: client)
         }

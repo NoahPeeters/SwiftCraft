@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet send to transmitt plugin message.
-public struct PluginMessageReceivedPacket: ReceivedPacket {
+public struct PluginMessageReceivedPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x18)
 
     /// The string identifying the channel.

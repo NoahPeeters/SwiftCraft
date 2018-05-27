@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct EntityStatusPacket: ReceivedPacket {
+public struct EntityStatusPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x1B)
 
     /// The id of the affected entity

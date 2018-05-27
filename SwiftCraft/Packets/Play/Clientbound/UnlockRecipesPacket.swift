@@ -9,7 +9,7 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct UnlockRecipesPacket: ReceivedPacket {
+public struct UnlockRecipesPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x31)
 
     /// If true, then the crafting book will be open when the player opens its inventory.

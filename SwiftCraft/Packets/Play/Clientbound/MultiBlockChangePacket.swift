@@ -9,7 +9,7 @@
 import Foundation
 
 /// A packet received if multiple blocks changed in the same chunk in the same tick.
-public struct ReceiveMultiBlockChangePacket: ReceivedPacket {
+public struct ReceiveMultiBlockChangePacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x10)
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {

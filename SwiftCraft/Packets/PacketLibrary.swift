@@ -8,9 +8,6 @@
 
 import Foundation
 
-/// A packet which can be handled by a `MinecraftClient`
-public protocol ReceivedPacket: DeserializablePacket {}
-
 /// Errors which might occure while handling a packet.
 public enum PacketLibraryError: Error {
     /// The library does not know a packet with the given packet id.
@@ -26,14 +23,14 @@ public protocol PacketLibrary {
     ///   - packetID: The packet if of the packet in the buffer.
     ///   - client: The client to handle the packet.
     /// - Throws: An error which might occure.
-    func parse<Buffer: ReadBuffer>(
-        _ buffer: Buffer, packetID: PacketID) throws -> ReceivedPacket where Buffer.Element == Byte
+    func parse<Buffer: ReadBuffer>(_ buffer: Buffer, packetID: PacketID, client: MinecraftClient)
+        throws -> DeserializablePacket where Buffer.Element == Byte
 }
 
 /// The default packet library which includes all packets currently implemented
 public struct DefaultPacketLibrary: PacketLibrary {
     /// List of packet types.
-    let packets: [ReceivedPacket.Type] = [
+    let packets: [DeserializablePacket.Type] = [
         // Login
         DisconnectPacket.self,
         EncryptionRequestPacket.self,
@@ -69,12 +66,12 @@ public struct DefaultPacketLibrary: PacketLibrary {
     /// - Returns: The parsed packet.
     /// - Throws: An `PacketLibraryError.unknowPacketID` error if the packet is unknown.
     ///           If the packet deserializing throws an error the error is forwared.
-    public func parse<Buffer: ReadBuffer>(
-        _ buffer: Buffer, packetID: PacketID) throws -> ReceivedPacket where Buffer.Element == Byte {
+    public func parse<Buffer: ReadBuffer>(_ buffer: Buffer, packetID: PacketID, client: MinecraftClient)
+        throws -> DeserializablePacket where Buffer.Element == Byte {
         guard let packetType = packets.first(where: { $0.packetID == packetID }) else {
             throw PacketLibraryError.unknowPacketID(packetID: packetID)
         }
 
-        return try packetType.init(from: buffer)
+        return try packetType.init(from: buffer, client: client)
     }
 }

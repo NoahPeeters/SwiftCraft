@@ -373,7 +373,7 @@ class PositionCodableTest: QuickSpec {
 
 class UUIDCodableTest: QuickSpec {
     override func spec() {
-        fdescribe("when creating a uuid") {
+        describe("when creating a uuid") {
             let uuid = UUID()
 
             it("serialized uuid is 16 bytes long") {

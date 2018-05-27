@@ -9,7 +9,7 @@
 import Foundation
 
 /// Send as response to to a statistics request.
-public struct StatisticsPacket: ReceivedPacket {
+public struct StatisticsPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x07)
 
     public let statistics: [Statistic]

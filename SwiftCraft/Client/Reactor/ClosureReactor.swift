@@ -9,7 +9,7 @@
 import Foundation
 
 /// A subclass of `SingleReactor` wich allows a closure to be called on packet receiving.
-open class ClosureReactor<PacketType: ReceivedPacket>: SingleReactor<PacketType> {
+open class ClosureReactor<PacketType: DeserializablePacket>: SingleReactor<PacketType> {
     /// The type of the closure.
     public typealias Handler = (PacketType, MinecraftClient) throws -> Void
 

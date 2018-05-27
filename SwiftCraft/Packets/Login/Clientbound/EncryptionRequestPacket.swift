@@ -9,7 +9,7 @@
 import Foundation
 
 /// Requests the start of encryption.
-public struct EncryptionRequestPacket: ReceivedPacket {
+public struct EncryptionRequestPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .login, id: 0x01)
 
     /// The server id of the server.

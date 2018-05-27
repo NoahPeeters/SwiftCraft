@@ -57,5 +57,15 @@ public protocol DeserializablePacket {
     /// The id of the packet.
     static var packetID: PacketID { get }
 
+    init<Buffer: ReadBuffer>(from buffer: Buffer, client: MinecraftClient) throws where Buffer.Element == Byte
+}
+
+public protocol SimpleDeserializablePacket: DeserializablePacket {
     init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte
+}
+
+extension SimpleDeserializablePacket {
+    public init<Buffer: ReadBuffer>(from buffer: Buffer, client: MinecraftClient) throws where Buffer.Element == Byte {
+        try self.init(from: buffer)
+    }
 }

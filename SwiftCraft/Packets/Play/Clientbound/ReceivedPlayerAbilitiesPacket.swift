@@ -9,7 +9,7 @@
 import Foundation
 
 /// Informs the player about its abilities.
-public struct ReceivedPlayerAbilitiesPacket: ReceivedPacket {
+public struct ReceivedPlayerAbilitiesPacket: SimpleDeserializablePacket {
     public static var packetID = PacketID(connectionState: .play, id: 0x2C)
 
     /// Flag of the invulnerability of the player.

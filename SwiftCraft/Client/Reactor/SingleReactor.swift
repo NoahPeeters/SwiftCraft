@@ -9,11 +9,11 @@
 import Foundation
 
 /// Reacts to exacly one type of received packet
-open class SingleReactor<PacketType: ReceivedPacket>: Reactor {
+open class SingleReactor<PacketType: DeserializablePacket>: Reactor {
     /// Creates a new `SingleReactor`.
     public init() {}
 
-    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws {
+    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
         if let packet = packet as? PacketType {
             try didReceivedPacket(packet, client: client)
         }

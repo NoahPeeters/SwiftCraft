@@ -20,7 +20,7 @@ open class MultiReactor: Reactor {
     /// The reactors to notify about events.
     private let reactors: [Reactor]
 
-    public func didReceivedPacket(_ packet: ReceivedPacket, client: MinecraftClient) throws {
+    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
         try reactors.forEach {
             try $0.didReceivedPacket(packet, client: client)
         }
