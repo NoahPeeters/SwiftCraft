@@ -32,38 +32,38 @@ public struct DefaultPacketLibrary: PacketLibrary {
     /// List of packet types.
     let packets: [DeserializablePacket.Type] = [
         // Login
-        DisconnectPacket.self,
-        EncryptionRequestPacket.self,
-        LoginSuccessPacket.self,
-        SetCompressionPacket.self,
+        DisconnectPacket.self,                              // 0x00
+        EncryptionRequestPacket.self,                       // 0x01
+        LoginSuccessPacket.self,                            // 0x02
+        SetCompressionPacket.self,                          // 0x03
 
         // Play
-        SpawnObjectPacket.self,
-        SpawnExperienceOrbPacket.self,
-        SpawnMobPacket.self,
-        StatisticsPacket.self,
-        ServerDifficultyPacket.self,
-        ReceiveChatMessagePacket.self,
-        ReceiveMultiBlockChangePacket.self,
-        PluginMessageReceivedPacket.self,
-        EntityStatusPacket.self,
-        UnloadChunkPacket.self,
-        ReceiveMultiBlockChangePacket.self,
-        PlayerListPacket.self,
-        KeepaliveRequestPacket.self,
-        ChunkDataPacket.self,
-        JoinGamePacket.self,
-        ReceivedPlayerAbilitiesPacket.self,
-        UnlockRecipesPacket.self,
-        HeldItemChangedReceivedPacket.self,
-        EntityMetadataPacket.self,
-        AttachEntityPacket.self,
-        EntityVelocityPacket.self,
-        EntityEquipmentPacket.self,
-        SetExperiencePacket.self,
-        UpdateHealthPacket.self,
-        TimeUpdatePacket.self,
-        EntityPropertiesPacket.self
+        SpawnObjectPacket.self,                             // 0x00
+        SpawnExperienceOrbPacket.self,                      // 0x01
+        SpawnMobPacket.self,                                // 0x03
+        StatisticsPacket.self,                              // 0x07
+        ServerDifficultyPacket.self,                        // 0x0D
+        ReceiveChatMessagePacket.self,                      // 0x0F
+        ReceiveMultiBlockChangePacket.self,                 // 0x10
+        PluginMessageReceivedPacket.self,                   // 0x18
+        EntityStatusPacket.self,                            // 0x1B
+        UnloadChunkPacket.self,                             // 0x1D
+        KeepaliveRequestPacket.self,                        // 0x1F
+        ChunkDataPacket.self,                               // 0x20
+        JoinGamePacket.self,                                // 0x23
+        ReceivedPlayerAbilitiesPacket.self,                 // 0x2C
+        PlayerListPacket.self,                              // 0x2E
+        PlayerPositionAndLookReceivedPacket.self,           // 0x2F
+        UnlockRecipesPacket.self,                           // 0x31
+        HeldItemChangedReceivedPacket.self,                 // 0x3A
+        EntityMetadataPacket.self,                          // 0x3C
+        AttachEntityPacket.self,                            // 0x3D
+        EntityVelocityPacket.self,                          // 0x3E
+        EntityEquipmentPacket.self,                         // 0x3F
+        SetExperiencePacket.self,                           // 0x40
+        UpdateHealthPacket.self,                            // 0x41
+        TimeUpdatePacket.self,                              // 0x47
+        EntityPropertiesPacket.self                         // 0x4E
     ]
 
     /// Creates a new packet library.

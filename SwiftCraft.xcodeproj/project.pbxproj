@@ -83,6 +83,7 @@
 		408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641C20BB0BEF00AE9C2D /* EntityVelocityPacket.swift */; };
 		408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */; };
 		408E642120BB134200AE9C2D /* SpawnObjectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */; };
+		408E642320BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -196,6 +197,7 @@
 		408E641C20BB0BEF00AE9C2D /* EntityVelocityPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityVelocityPacket.swift; sourceTree = "<group>"; };
 		408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityEquipmentPacket.swift; sourceTree = "<group>"; };
 		408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnObjectPacket.swift; sourceTree = "<group>"; };
+		408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPositionAndLookReceivedPacket.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */,
 				40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */,
 				408E63EE20B9D4FC00AE9C2D /* PlayerListPacket.swift */,
+				408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */,
 				408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */,
 				40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */,
 				408E641820BB0B2400AE9C2D /* EntityMetadataPacket.swift */,
@@ -832,6 +835,7 @@
 				40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */,
 				408E640820BADD6E00AE9C2D /* ChunkColumn.swift in Sources */,
 				4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */,
+				408E642320BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift in Sources */,
 				408E63F420BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift in Sources */,
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */,
