@@ -53,6 +53,7 @@
 		4024AB8B20B22C37008790F2 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8A20B22C37008790F2 /* Serializable.swift */; };
 		4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
 		4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9320B2C1AD008790F2 /* BitShifting.swift */; };
+		4024C5C520D9039F00493A86 /* SetSlotPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C5C420D9039F00493A86 /* SetSlotPacket.swift */; };
 		406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* TCPClient.swift */; };
 		4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070020B3200600B116C4 /* TCPClientTests.swift */; };
 		4068070420B34D3F00B116C4 /* PacketID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070320B34D3F00B116C4 /* PacketID.swift */; };
@@ -210,6 +211,7 @@
 		4024AB8A20B22C37008790F2 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDataTypesTest.swift; sourceTree = "<group>"; };
 		4024AB9320B2C1AD008790F2 /* BitShifting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitShifting.swift; sourceTree = "<group>"; };
+		4024C5C420D9039F00493A86 /* SetSlotPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSlotPacket.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
 		4068070020B3200600B116C4 /* TCPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClientTests.swift; sourceTree = "<group>"; };
 		4068070320B34D3F00B116C4 /* PacketID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketID.swift; sourceTree = "<group>"; };

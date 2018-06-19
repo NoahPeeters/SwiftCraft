@@ -45,6 +45,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         ServerDifficultyPacket.self,                        // 0x0D
         ReceiveChatMessagePacket.self,                      // 0x0F
         ReceiveMultiBlockChangePacket.self,                 // 0x10
+        SetSlotPacket.self,                                 // 0x16
         PluginMessageReceivedPacket.self,                   // 0x18
         EntityStatusPacket.self,                            // 0x1B
         UnloadChunkPacket.self,                             // 0x1D
