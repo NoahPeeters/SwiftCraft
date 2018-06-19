@@ -7,7 +7,7 @@
 //
 
 /// Events of a TCPClient.
-public enum TCPClientEvent: Equatable, Hashable {
+public enum TCPClientEvent: Hashable {
     /// The output stream has opened.
     case outputStreamOpened
 

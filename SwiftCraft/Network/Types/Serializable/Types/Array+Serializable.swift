@@ -16,6 +16,12 @@ extension Array: DeserializableDataType where Element: DeserializableDataType {
             return try Element(from: buffer)
         }
     }
+
+    public init<Buffer: ReadBuffer>(from buffer: Buffer, count: Int) throws where Buffer.Element == Byte {
+        self = try (0..<count).map { _ in
+            return try Element(from: buffer)
+        }
+    }
 }
 
 extension Array: SerializableDataType where Element: SerializableDataType {

@@ -54,6 +54,9 @@
 		4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
 		4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9320B2C1AD008790F2 /* BitShifting.swift */; };
 		4024C5C520D9039F00493A86 /* SetSlotPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C5C420D9039F00493A86 /* SetSlotPacket.swift */; };
+		4024C5C720D9069000493A86 /* SpawnPositionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C5C620D9069000493A86 /* SpawnPositionPacket.swift */; };
+		4024C5C920D9077A00493A86 /* WindowItemsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C5C820D9077A00493A86 /* WindowItemsPacket.swift */; };
+		4024C5F020D9158900493A86 /* NBT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C5EF20D9158900493A86 /* NBT.swift */; };
 		406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* TCPClient.swift */; };
 		4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070020B3200600B116C4 /* TCPClientTests.swift */; };
 		4068070420B34D3F00B116C4 /* PacketID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070320B34D3F00B116C4 /* PacketID.swift */; };
@@ -212,6 +215,10 @@
 		4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDataTypesTest.swift; sourceTree = "<group>"; };
 		4024AB9320B2C1AD008790F2 /* BitShifting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitShifting.swift; sourceTree = "<group>"; };
 		4024C5C420D9039F00493A86 /* SetSlotPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSlotPacket.swift; sourceTree = "<group>"; };
+		4024C5C620D9069000493A86 /* SpawnPositionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnPositionPacket.swift; sourceTree = "<group>"; };
+		4024C5C820D9077A00493A86 /* WindowItemsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowItemsPacket.swift; sourceTree = "<group>"; };
+		4024C5EF20D9158900493A86 /* NBT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBT.swift; sourceTree = "<group>"; };
+		4024C5F520D9373300493A86 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
 		4068070020B3200600B116C4 /* TCPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClientTests.swift; sourceTree = "<group>"; };
 		4068070320B34D3F00B116C4 /* PacketID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketID.swift; sourceTree = "<group>"; };
@@ -410,6 +417,7 @@
 				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
 				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
+				4024C5C820D9077A00493A86 /* WindowItemsPacket.swift */,
 				4024C5C420D9039F00493A86 /* SetSlotPacket.swift */,
 				40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */,
 				408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */,
@@ -428,6 +436,7 @@
 				408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */,
 				408E641420BB08CD00AE9C2D /* SetExperiencePacket.swift */,
 				408E641620BB096300AE9C2D /* UpdateHealthPacket.swift */,
+				4024C5C620D9069000493A86 /* SpawnPositionPacket.swift */,
 				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
 				408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */,
 			);
@@ -496,6 +505,7 @@
 		4024AB6220B1DD26008790F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4024C5F520D9373300493A86 /* libz.tbd */,
 				4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */,
 				4005B78E20C30D61001F09D2 /* Result.framework */,
 				4024AB6A20B1DEA0008790F2 /* Nimble.framework */,
@@ -545,6 +555,14 @@
 				4024AB9320B2C1AD008790F2 /* BitShifting.swift */,
 			);
 			path = Serializable;
+			sourceTree = "<group>";
+		};
+		4024C5EE20D9154C00493A86 /* NBT */ = {
+			isa = PBXGroup;
+			children = (
+				4024C5EF20D9158900493A86 /* NBT.swift */,
+			);
+			path = NBT;
 			sourceTree = "<group>";
 		};
 		406806FD20B30D2500B116C4 /* Network */ = {
@@ -609,6 +627,7 @@
 				408E63FB20BA07F900AE9C2D /* Array+Serializable.swift */,
 				408E63FD20BA080D00AE9C2D /* UUID+Serializable.swift */,
 				408E63FF20BA082700AE9C2D /* Optional+Serializable.swift */,
+				4024C5EE20D9154C00493A86 /* NBT */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -762,7 +781,7 @@
 		4024AB3F20B1DB57008790F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Noah Peeters";
 				TargetAttributes = {
@@ -910,6 +929,7 @@
 			files = (
 				408E63FC20BA07F900AE9C2D /* Array+Serializable.swift in Sources */,
 				40E314FC20B609C900C9E271 /* PrintReactors.swift in Sources */,
+				4024C5C720D9069000493A86 /* SpawnPositionPacket.swift in Sources */,
 				4024C5C520D9039F00493A86 /* SetSlotPacket.swift in Sources */,
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
 				4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */,
@@ -948,6 +968,7 @@
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
 				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
+				4024C5C920D9077A00493A86 /* WindowItemsPacket.swift in Sources */,
 				408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */,
 				408E641520BB08CD00AE9C2D /* SetExperiencePacket.swift in Sources */,
 				408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */,
@@ -966,6 +987,7 @@
 				40E314FA20B6079F00C9E271 /* KeepaliveReactor.swift in Sources */,
 				40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */,
 				408E63FE20BA080D00AE9C2D /* UUID+Serializable.swift in Sources */,
+				4024C5F020D9158900493A86 /* NBT.swift in Sources */,
 				40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */,
 				40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */,
 				408E640820BADD6E00AE9C2D /* ChunkColumn.swift in Sources */,

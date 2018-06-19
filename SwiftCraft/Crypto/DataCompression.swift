@@ -220,3 +220,62 @@ fileprivate func perform(_ config: Config, source: UnsafePointer<UInt8>, sourceS
         }
     }
 }
+
+
+// Addition of Noah Peeters
+import zlib
+
+extension Data {
+    func gzip() -> Data? {
+        var result = Data(bytes: [0x1f, 0x8b, 0x08, 0, 0, 0, 0, 0, 0, 0])
+
+        guard let deflated = self.deflate() else { return nil }
+        result.append(deflated)
+
+        var crc = crcHash()
+        result.append(Data(bytes: &crc, count: MemoryLayout<UInt32>.size))
+
+        var length = UInt32(count)
+        result.append(Data(bytes: &length, count: MemoryLayout<UInt32>.size))
+
+        return result
+    }
+
+    func ungzip(skipCheckSumValidation: Bool = true) -> Data? {
+        // 2 magic number + 1 alogrithm + 7 stuff + 4 checksum + 4 length
+        let overhead = 18
+        guard count > overhead else { return nil }
+
+        guard Array(self[0..<3]) == [0x1f, 0x8b, 0x08] else { return nil }
+
+        let cresult: Data? = withUnsafeBytes { (ptr: UnsafePointer<UInt8>) -> Data? in
+            let source = ptr.advanced(by: 10)
+            let config = (operation: COMPRESSION_STREAM_DECODE, algorithm: COMPRESSION_ZLIB)
+            return perform(config, source: source, sourceSize: count - overhead)
+        }
+
+        guard let inflated = cresult else { return nil }
+
+        if skipCheckSumValidation { return inflated }
+
+        let checkSums = withUnsafeBytes { (bytePtr: UnsafePointer<UInt8>) -> [UInt32] in
+            let advancedPtr = bytePtr.advanced(by: count - 8)
+            let buffer = advancedPtr.withMemoryRebound(to: UInt32.self, capacity: 2) { intPtr in
+                return UnsafeBufferPointer.init(start: intPtr, count: 2)
+            }
+            return Array(buffer)
+        }
+
+        guard checkSums[0] == inflated.crcHash(), checkSums[1] == UInt32(inflated.count) else {
+            return nil
+        }
+
+        return inflated
+    }
+
+    fileprivate func crcHash() -> UInt32 {
+        return UInt32(withUnsafeBytes {
+            crc32(uLong(0), $0, uInt(count))
+        })
+    }
+}

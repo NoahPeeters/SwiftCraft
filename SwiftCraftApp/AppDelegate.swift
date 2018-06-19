@@ -54,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             sessionServerService: SessionServerService(authenticationProvider: login))
 
         _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
-            for: PlayerPositionAndLookReceivedPacket.self))
+            for: WindowItemsPacket.self))
         _ = minecraftClient.addReactor(MinecraftClient.essentialReactors())
         _ = minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
 

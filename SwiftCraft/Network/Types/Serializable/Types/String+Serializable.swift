@@ -10,8 +10,19 @@ import Foundation
 
 extension String: Serializable {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
-        let length = try VarInt32(from: buffer).integer
-        let stringBytes = try buffer.read(lenght: length)
+        let count = try VarInt32(from: buffer).integer
+        let stringBytes = try buffer.read(lenght: count)
+        let stringData = Data(stringBytes)
+
+        guard let string = String(data: stringData, encoding: .utf8) else {
+            throw TypeDeserializeError.invalidStringData
+        }
+
+        self = string
+    }
+
+    public init<Buffer: ReadBuffer>(from buffer: Buffer, count: Int) throws where Buffer.Element == Byte {
+        let stringBytes = try buffer.read(lenght: count)
         let stringData = Data(stringBytes)
 
         guard let string = String(data: stringData, encoding: .utf8) else {

@@ -25,7 +25,7 @@ public class ChunkColumn {
         }
     }
 
-    public struct Location: Equatable, Hashable {
+    public struct Location: Hashable {
         public let x: Int
         public let z: Int
     }

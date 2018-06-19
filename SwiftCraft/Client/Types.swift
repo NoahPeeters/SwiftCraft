@@ -15,7 +15,7 @@ public typealias EntityID = Int32
 public typealias RecipeID = Int
 
 /// The gamemode of a player.
-public struct Gamemode: Hashable, Equatable {
+public struct Gamemode: Hashable {
     /// The mode of the gamemode.
     public enum Mode: Int {
         /// Survival mode.
@@ -57,7 +57,7 @@ public struct Gamemode: Hashable, Equatable {
 }
 
 /// Types of dimensions in minecraft.
-public struct Dimension: Hashable, Equatable {
+public struct Dimension: Hashable {
     /// The id of the dimension
     let id: Int32
 
@@ -77,7 +77,7 @@ public struct Dimension: Hashable, Equatable {
 }
 
 /// Difficulty of the game.
-public enum Difficulty: Byte, Hashable, Equatable {
+public enum Difficulty: Byte, Hashable {
     /// Peaceful
     case peaceful = 0
 
@@ -92,7 +92,7 @@ public enum Difficulty: Byte, Hashable, Equatable {
 }
 
 /// The level type of the current world.
-public enum LevelType: String, Hashable, Equatable {
+public enum LevelType: String, Hashable {
     /// The default level type.
     case `default`
 
@@ -110,7 +110,7 @@ public enum LevelType: String, Hashable, Equatable {
 }
 
 /// The location of a received chat messeage.
-public enum ChatMessageLocation: Byte, Hashable, Equatable {
+public enum ChatMessageLocation: Byte, Hashable {
     /// A normal chat message of another player.
     case chat = 0
 
@@ -122,7 +122,7 @@ public enum ChatMessageLocation: Byte, Hashable, Equatable {
 }
 
 /// The velocity of an entity
-public struct EntityVelocity: Hashable, Equatable, DeserializableDataType {
+public struct EntityVelocity: Hashable, DeserializableDataType {
     /// The velocity in the x direction.
     let x: Int16
 
@@ -152,7 +152,7 @@ public struct EntityVelocity: Hashable, Equatable, DeserializableDataType {
 }
 
 /// The location of an entity
-public struct EntityLocation: Hashable, Equatable, DeserializableDataType {
+public struct EntityLocation: Hashable, DeserializableDataType {
     /// The location in the x direction.
     let x: Double
 
@@ -182,12 +182,12 @@ public struct EntityLocation: Hashable, Equatable, DeserializableDataType {
 }
 
 /// Describes the content of a slot.
-public enum SlotContent: Equatable, DeserializableDataType {
+public enum SlotContent: Hashable, DeserializableDataType {
     /// The slot is empty.
     case empty
 
     /// The slot contains the given data.
-    case hasContent(blockID: Int16, count: Byte, damage: Byte, nbt: ByteArray)
+    case hasContent(blockID: Int16, count: Byte, damage: Int16, nbt: NBT)
 
     /// The amount of items in the slot.
     var count: Byte {
@@ -208,9 +208,9 @@ public enum SlotContent: Equatable, DeserializableDataType {
         }
 
         let count = try Byte(from: buffer)
-        let damage = try Byte(from: buffer)
-        let nbmData = buffer.readRemainingElements()
+        let damage = try Int16(from: buffer)
+        let nbt = try NBT(from: buffer)
 
-        self = .hasContent(blockID: blockID, count: count, damage: damage, nbt: nbmData)
+        self = .hasContent(blockID: blockID, count: count, damage: damage, nbt: nbt)
     }
 }

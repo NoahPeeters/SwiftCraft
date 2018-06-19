@@ -9,7 +9,7 @@
 import Foundation
 
 /// The id of a packet
-public struct PacketID: Equatable, Hashable {
+public struct PacketID: Hashable {
     /// The state of the connection
     public let connectionState: ConnectionState
 
@@ -18,7 +18,7 @@ public struct PacketID: Equatable, Hashable {
 }
 
 /// The connection state of a connection
-public enum ConnectionState: Int, Equatable, Hashable {
+public enum ConnectionState: Int, Hashable {
     /// Handshaking.
     case handshaking = 0
 

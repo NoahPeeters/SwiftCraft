@@ -45,6 +45,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         ServerDifficultyPacket.self,                        // 0x0D
         ReceiveChatMessagePacket.self,                      // 0x0F
         ReceiveMultiBlockChangePacket.self,                 // 0x10
+        WindowItemsPacket.self,                             // 0x14
         SetSlotPacket.self,                                 // 0x16
         PluginMessageReceivedPacket.self,                   // 0x18
         EntityStatusPacket.self,                            // 0x1B
@@ -63,6 +64,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         EntityEquipmentPacket.self,                         // 0x3F
         SetExperiencePacket.self,                           // 0x40
         UpdateHealthPacket.self,                            // 0x41
+        SpawnPositionPacket.self,                           // 0x46
         TimeUpdatePacket.self,                              // 0x47
         EntityPropertiesPacket.self                         // 0x4E
     ]

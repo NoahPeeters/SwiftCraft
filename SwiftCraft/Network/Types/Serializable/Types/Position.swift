@@ -9,7 +9,7 @@
 import Foundation
 
 /// A minecraft position struct.
-public struct Position: Serializable, Equatable, Hashable {
+public struct Position: Serializable, Hashable {
     /// The x position.
     let x: Int
 
