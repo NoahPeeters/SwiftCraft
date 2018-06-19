@@ -53,8 +53,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: SessionServerService(authenticationProvider: login))
 
-        _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
-            for: WindowItemsPacket.self))
+//        _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
+//            for: EntityHeadLookPacket.self))
         _ = minecraftClient.addReactor(MinecraftClient.essentialReactors())
         _ = minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
 

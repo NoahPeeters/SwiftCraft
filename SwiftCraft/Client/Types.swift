@@ -8,11 +8,14 @@
 
 import Foundation
 
-/// The ID of an entity
+/// The ID of an entity.
 public typealias EntityID = Int32
 
-/// The id of a recipe
+/// The id of a recipe.
 public typealias RecipeID = Int
+
+/// An angle.
+public typealias Angle = Byte
 
 /// The gamemode of a player.
 public struct Gamemode: Hashable {

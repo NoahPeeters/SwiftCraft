@@ -53,10 +53,14 @@ public struct DefaultPacketLibrary: PacketLibrary {
         KeepaliveRequestPacket.self,                        // 0x1F
         ChunkDataPacket.self,                               // 0x20
         JoinGamePacket.self,                                // 0x23
+        EntityRelativeMovePacket.self,                      // 0x26
+        EntityLookAndRelativeMovePacket.self,               // 0x27
+        EntityLookPacket.self,                              // 0x28
         ReceivedPlayerAbilitiesPacket.self,                 // 0x2C
         PlayerListPacket.self,                              // 0x2E
         PlayerPositionAndLookReceivedPacket.self,           // 0x2F
         UnlockRecipesPacket.self,                           // 0x31
+        EntityHeadLookPacket.self,                          // 0x36
         HeldItemChangedReceivedPacket.self,                 // 0x3A
         EntityMetadataPacket.self,                          // 0x3C
         AttachEntityPacket.self,                            // 0x3D
@@ -66,6 +70,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         UpdateHealthPacket.self,                            // 0x41
         SpawnPositionPacket.self,                           // 0x46
         TimeUpdatePacket.self,                              // 0x47
+        EntityTeleportPacket.self,                          // 0x4C
         EntityPropertiesPacket.self                         // 0x4E
     ]
 
