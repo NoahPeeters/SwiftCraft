@@ -15,7 +15,9 @@ extension MinecraftClient {
     public static func worldReactor(worldStatusManager: MinecraftWorldStatusManager) -> Reactor {
         return MultiReactor(reactors: [
             chunkDataReactor(blockManager: worldStatusManager),
-            unloadChunkReactor(blockManager: worldStatusManager)
+            unloadChunkReactor(blockManager: worldStatusManager),
+            blockChangeReactor(blockManager: worldStatusManager),
+            multiBlockChangeReactor(blockManager: worldStatusManager)
         ])
     }
 }

@@ -20,7 +20,6 @@ extension Bool: Serializable {
 }
 
 // MARK: - Integer
-
 extension FixedWidthInteger {
     public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
         let bigEndian: Self = try buffer.loadAsType()

@@ -17,6 +17,26 @@ public typealias RecipeID = Int
 /// An angle.
 public typealias Angle = Byte
 
+// The id of a block
+public struct BlockID: CustomStringConvertible, Hashable {
+    /// The raw underlying id
+    public let rawValue: UInt16
+
+    /// The block id.
+    public var id: UInt16 {
+        return rawValue >> 4
+    }
+
+    /// Metadata.
+    public var meta: UInt16 {
+        return rawValue & 0x15
+    }
+
+    public var description: String {
+        return "BlockID(id: \(id), meta: \(meta))"
+    }
+}
+
 /// The gamemode of a player.
 public struct Gamemode: Hashable {
     /// The mode of the gamemode.
@@ -190,7 +210,7 @@ public enum SlotContent: Hashable, DeserializableDataType {
     case empty
 
     /// The slot contains the given data.
-    case hasContent(blockID: Int16, count: Byte, damage: Int16, nbt: NBT)
+    case hasContent(blockID: BlockID, count: Byte, damage: Int16, nbt: NBT)
 
     /// The amount of items in the slot.
     var count: Byte {
@@ -214,6 +234,6 @@ public enum SlotContent: Hashable, DeserializableDataType {
         let damage = try Int16(from: buffer)
         let nbt = try NBT(from: buffer)
 
-        self = .hasContent(blockID: blockID, count: count, damage: damage, nbt: nbt)
+        self = .hasContent(blockID: BlockID(rawValue: UInt16(blockID)), count: count, damage: damage, nbt: nbt)
     }
 }

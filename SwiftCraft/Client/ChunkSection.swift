@@ -18,7 +18,15 @@ public class ChunkSection {
 
     public enum BlockData {
         case compressed(bitsPerBlock: Int, palette: [UInt16], dataArray: [UInt64])
-        case uncompressed(blockIDs: [UInt16])
+        case uncompressed(blockIDs: BlockIDsWrapper)
+    }
+
+    public class BlockIDsWrapper {
+        public var blockIDs: [BlockID]
+
+        init(blockIDs: [BlockID]) {
+            self.blockIDs = blockIDs
+        }
     }
 
     public init<Buffer: ReadBuffer>(from buffer: Buffer, hasSkylight: Bool) throws where Buffer.Element == Byte {
@@ -39,6 +47,10 @@ public class ChunkSection {
 
     public func blockIndex(x: Int, y: Int, z: Int) -> Int {
         return ((y * 16) + z) * 16 + x
+    }
+
+    public func blockIndex(block: Position) -> Int {
+        return blockIndex(x: block.xInChunk, y: block.yInChunk, z: block.zInChunk)
     }
 
     public func getBlockLight(blockIndex: Int) -> Byte {
@@ -89,31 +101,29 @@ public class ChunkSection {
         }
     }
 
-    public func getBlockId(blockIndex: Int) -> UInt16 {
+    public func getBlockID(blockIndex: Int) -> BlockID {
         switch blockData {
         case let .uncompressed(blockIDs):
-            return blockIDs[blockIndex]
+            return blockIDs.blockIDs[blockIndex]
         case let .compressed(bitsPerBlock, palette, dataArray):
             let blockIDs = decompress(bitsPerBlock: bitsPerBlock, palette: palette, dataArray: dataArray)
-            self.blockData = .uncompressed(blockIDs: blockIDs)
+            self.blockData = .uncompressed(blockIDs: BlockIDsWrapper(blockIDs: blockIDs))
             return blockIDs[blockIndex]
         }
     }
 
-    public func setBlockId(blockIndex: Int, newValue: UInt16) {
+    public func setBlockID(blockIndex: Int, newValue: BlockID) {
         switch blockData {
         case let .uncompressed(blockIDs):
-            var blockIDs = blockIDs
-            blockIDs[blockIndex] = newValue
-            blockData = .uncompressed(blockIDs: blockIDs)
+            blockIDs.blockIDs[blockIndex] = newValue
         case let .compressed(bitsPerBlock, palette, dataArray):
             var blockIDs = decompress(bitsPerBlock: bitsPerBlock, palette: palette, dataArray: dataArray)
             blockIDs[blockIndex] = newValue
-            self.blockData = .uncompressed(blockIDs: blockIDs)
+            self.blockData = .uncompressed(blockIDs: BlockIDsWrapper(blockIDs: blockIDs))
         }
     }
 
-    private func decompress(bitsPerBlock: Int, palette: [UInt16], dataArray: [UInt64]) -> [UInt16] {
+    private func decompress(bitsPerBlock: Int, palette: [UInt16], dataArray: [UInt64]) -> [BlockID] {
         let individualValueMask = UInt64((1 << bitsPerBlock) - 1)
 
         return (0..<16*16*16).map { blockIndex in
@@ -129,9 +139,9 @@ public class ChunkSection {
             }
 
             if bitsPerBlock < 8 {
-                return palette[Int(data & individualValueMask)]
+                return BlockID(rawValue: palette[Int(data & individualValueMask)])
             } else {
-                return UInt16(data & individualValueMask)
+                return BlockID(rawValue: UInt16(data & individualValueMask))
             }
         }
     }

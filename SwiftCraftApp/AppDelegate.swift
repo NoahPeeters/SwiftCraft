@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             case let .success(login):
                 print("Login succeeded: \(login)")
                 self.saveSessionCredentials(login)
-                self.createMincraftClient(login: login)
+                self.createMinecraftClient(login: login)
 
                 DispatchQueue.main.sync {
                     self.minecraftClient.connectAndLogin()
@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func createMincraftClient(login: AuthenticationProvider) {
+    func createMinecraftClient(login: AuthenticationProvider) {
         minecraftClient = MinecraftClient(
 //            tcpClient: TCPClient(host: "play.lemoncloud.org", port: 25565),
             tcpClient: TCPClient(host: "localhost", port: 25565),
@@ -56,10 +56,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
 //            for: EntityHeadLookPacket.self))
         _ = minecraftClient.addReactor(MinecraftClient.essentialReactors())
-        _ = minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
+        _ = minecraftClient.addReactor(MinecraftClient.worldReactor(worldStatusManager: minecraftWorld))
 
         minecraftClient.packetSignal(ReceiveChatMessagePacket.self).observeValues {
             print($0)
+        }
+
+        minecraftClient.packetSignal(ChunkDataPacket.self).observeValues {
+            print($0.location)
         }
     }
 

@@ -28,6 +28,20 @@ extension MinecraftClient {
             blockManager.unloadChunk(at: packet.location)
         }
     }
+
+    public static func blockChangeReactor(blockManager: BlockManager) -> Reactor {
+        return ClosureReactor<BlockChangePacket> { packet, _ in
+            blockManager.updateBlockID(at: packet.location, blockID: packet.blockID)
+        }
+    }
+
+    public static func multiBlockChangeReactor(blockManager: BlockManager) -> Reactor {
+        return ClosureReactor<MultiBlockChangePacket> { packet, _ in
+            for (location, blockID) in packet.changes {
+                blockManager.updateBlockID(at: location, blockID: blockID)
+            }
+        }
+    }
 }
 
 public protocol BlockManager {
@@ -42,4 +56,11 @@ public protocol BlockManager {
     ///   - location: The location of the chunk.
     ///   - chunk: The chunk data.
     func loadOrUpdateChunk(at location: ChunkColumn.Location, chunk: ChunkColumn)
+
+    /// Updates the block id of the block at the given locaation.
+    ///
+    /// - Parameters:
+    ///   - location: The location of the block.
+    ///   - blockID: THe new block id.
+    func updateBlockID(at location: Position, blockID: BlockID)
 }

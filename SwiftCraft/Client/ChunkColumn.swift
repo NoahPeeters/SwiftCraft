@@ -25,9 +25,25 @@ public class ChunkColumn {
         }
     }
 
+    func chunk(withIndex index: Int) -> ChunkSection? {
+        return chunkSections[index]
+    }
+
+    func chunk(forBlock block: Position) -> ChunkSection? {
+        return chunk(withIndex: block.chunkY)
+    }
+
     public struct Location: Hashable {
         public let x: Int
         public let z: Int
-    }
 
+        init(x: Int, z: Int) {
+            self.x = x
+            self.z = z
+        }
+
+        init(block: Position) {
+            self.init(x: block.chunkX, z: block.chunkY)
+        }
+    }
 }

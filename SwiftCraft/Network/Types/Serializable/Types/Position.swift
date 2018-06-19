@@ -19,6 +19,30 @@ public struct Position: Serializable, Hashable {
     /// The z position.
     let z: Int
 
+    var chunkX: Int {
+        return chunkLocation(x)
+    }
+
+    var chunkY: Int {
+        return chunkLocation(y)
+    }
+
+    var chunkZ: Int {
+        return chunkLocation(z)
+    }
+
+    var xInChunk: Int {
+        return relativeLocationInChunk(x)
+    }
+
+    var yInChunk: Int {
+        return relativeLocationInChunk(y)
+    }
+
+    var zInChunk: Int {
+        return relativeLocationInChunk(z)
+    }
+
     /// Creates a new position from the give coordinates.
     ///
     /// - Parameters:
@@ -69,5 +93,21 @@ extension Int64 {
         if self > maxNumbers.int64Value / 2 {
             self -= maxNumbers.int64Value
         }
+    }
+}
+
+private func relativeLocationInChunk(_ value: Int) -> Int {
+    if value >= 0 {
+        return value.remainderReportingOverflow(dividingBy: 16).partialValue
+    } else {
+        return 15 - (-1 - value).remainderReportingOverflow(dividingBy: 16).partialValue
+    }
+}
+
+private func chunkLocation(_ value: Int) -> Int {
+    if value >= 0 {
+        return value / 16
+    } else {
+        return (value - 15) / 16
     }
 }

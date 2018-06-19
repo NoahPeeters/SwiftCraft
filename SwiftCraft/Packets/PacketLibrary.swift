@@ -42,9 +42,10 @@ public struct DefaultPacketLibrary: PacketLibrary {
         SpawnExperienceOrbPacket.self,                      // 0x01
         SpawnMobPacket.self,                                // 0x03
         StatisticsPacket.self,                              // 0x07
+        BlockChangePacket.self,                             // 0x0B
         ServerDifficultyPacket.self,                        // 0x0D
         ReceiveChatMessagePacket.self,                      // 0x0F
-        ReceiveMultiBlockChangePacket.self,                 // 0x10
+        MultiBlockChangePacket.self,                 // 0x10
         WindowItemsPacket.self,                             // 0x14
         SetSlotPacket.self,                                 // 0x16
         PluginMessageReceivedPacket.self,                   // 0x18
@@ -60,6 +61,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         PlayerListPacket.self,                              // 0x2E
         PlayerPositionAndLookReceivedPacket.self,           // 0x2F
         UnlockRecipesPacket.self,                           // 0x31
+        DestroyEntitiesPacket.self,                         // 0x32
         EntityHeadLookPacket.self,                          // 0x36
         HeldItemChangedReceivedPacket.self,                 // 0x3A
         EntityMetadataPacket.self,                          // 0x3C

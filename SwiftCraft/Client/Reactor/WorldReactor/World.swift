@@ -31,4 +31,16 @@ extension MinecraftWorld: BlockManager {
             chunkData[location] = chunk
         }
     }
+
+    public func updateBlockID(at location: Position, blockID: BlockID) {
+        let chunkLocation = ChunkColumn.Location(block: location)
+
+        guard let chunk = chunkData[chunkLocation]?.chunk(forBlock: location) else {
+            // Ignore chunk updates in unloaded chunks
+            return
+        }
+
+        let blockIndex = chunk.blockIndex(block: location)
+        chunk.setBlockID(blockIndex: blockIndex, newValue: blockID)
+    }
 }
