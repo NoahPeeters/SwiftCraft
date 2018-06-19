@@ -26,7 +26,7 @@ open class MinecraftClient {
     public var connectionState = ConnectionState.handshaking
 
     /// List of `Reactors`. They handle incomming and outgoing messages.
-    public var reactors: [Reactor] = []
+    public var reactors: [UUID: Reactor] = [:]
 
     /// Creates a new `MinecraftClient`
     ///
@@ -163,8 +163,19 @@ open class MinecraftClient {
     /// Adds a new `Reactor`. This reactor will be called aber any other reactor added so far.
     ///
     /// - Parameter reactor: The reactor to add.
-    public func addReactor(_ reactor: Reactor) {
-        reactors.append(reactor)
+    /// - Returns: A uuid which can be used to remove the reacto
+    public func addReactor(_ reactor: Reactor) -> UUID {
+        let uuid = UUID()
+        reactors[uuid] = reactor
+        return uuid
+    }
+
+    /// Removes and returns the reactor with the given id.
+    ///
+    /// - Parameter uuid: The uuid of the reactor to remove.
+    /// - Returns: The removed reactor if one with the id existed.
+    @discardableResult public func removeReactor(with uuid: UUID) -> Reactor? {
+        return reactors.removeValue(forKey: uuid)
     }
 
     public var dimension: Dimension = .overworld
@@ -265,20 +276,20 @@ extension MinecraftClient {
 // MARK: - MinecraftClient+Reactor
 extension MinecraftClient: Reactor {
     public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
-        try reactors.forEach {
+        try reactors.values.forEach {
             try $0.didReceivedPacket(packet, client: client)
         }
     }
 
     public func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool {
         return reactors.reduce(true) {
-            return $0 && $1.shouldSendPacket(packet, client: client)
+            return $0 && $1.value.shouldSendPacket(packet, client: client)
         }
     }
 
     public func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) {
         reactors.forEach {
-            $0.didSendPacket(packet, client: client)
+            $0.value.didSendPacket(packet, client: client)
         }
     }
 }

@@ -1,5 +1,8 @@
 github "Alamofire/Alamofire" ~> 4.7
 
+# Reactive Extension
+github "ReactiveCocoa/ReactiveSwift" ~> 3.0
+
 # Testing
 github "quick/quick"
 github "quick/nimble"

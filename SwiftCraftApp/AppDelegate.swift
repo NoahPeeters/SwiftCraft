@@ -8,6 +8,9 @@
 
 import Cocoa
 import SwiftCraft
+import SwiftCraftReactive
+import ReactiveSwift
+import Result
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -25,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let loginService = UserLoginService()
 
         print("Logging in with \(passwordCredentials)")
-        loginService.login(credentials: passwordCredentials, requestUser: false) { response in
+        loginService.loginRequest(credentials: passwordCredentials, requestUser: false).startWithResult { response in
             switch response {
             case let .success(login):
                 print("Login succeeded: \(login)")
@@ -46,14 +49,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func createMincraftClient(login: AuthenticationProvider) {
         minecraftClient = MinecraftClient(
 //            tcpClient: TCPClient(host: "play.lemoncloud.org", port: 25565),
-            tcpClient: TCPClient(host: "192.168.200.36", port: 25565),
+            tcpClient: TCPClient(host: "localhost", port: 25565),
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: SessionServerService(authenticationProvider: login))
 
-        minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
+        _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
             for: PlayerPositionAndLookReceivedPacket.self))
-        minecraftClient.addReactor(MinecraftClient.essentialReactors())
-        minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
+        _ = minecraftClient.addReactor(MinecraftClient.essentialReactors())
+        _ = minecraftClient.addReactor(MinecraftClient.chunkDataReactor(blockManager: minecraftWorld))
+
+        minecraftClient.packetSignal(ReceiveChatMessagePacket.self).observeValues {
+            print($0)
+        }
     }
 
     /// Loads sessioncredentials from user default if present.
