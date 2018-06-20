@@ -20,7 +20,7 @@ open class MinecraftClient {
     private let packetLibrary: PacketLibrary
 
     /// Service to manage the authorization at mojang's session service.
-    public let sessionServerService: SessionServerServiceProtcol
+    public let sessionServerService: SessionServerServiceProtocol
 
     /// The current connection state. This will influence the interpretation of packet ids.
     public var connectionState = ConnectionState.handshaking
@@ -36,7 +36,7 @@ open class MinecraftClient {
     ///   - sessionServerService: The session server service used for authenticating.
     public init(tcpClient: TCPClientProtocol,
                 packetLibrary: PacketLibrary,
-                sessionServerService: SessionServerServiceProtcol) {
+                sessionServerService: SessionServerServiceProtocol) {
         self.tcpClient = tcpClient
         self.packetLibrary = packetLibrary
         self.sessionServerService = sessionServerService
@@ -96,18 +96,13 @@ open class MinecraftClient {
         let encryptedVerifyToken = try encrypt(verifyToken, withPublicKey: publicKey)
         let encryptedSharedSecret = try encrypt(sharedSecret, withPublicKey: publicKey)
 
-        // Calculate server hash
-        let serverHash = sessionServerService.serverHash(
-            serverID: serverID,
-            sharedSecret: sharedSecret,
-            publicKey: publicKey)
-
         let responsePacket = EncryptionResponsePacket(
             encryptedSharedSecret: Array(encryptedSharedSecret),
             encryptedVerifyToken: Array(encryptedVerifyToken))
 
         // Authenticate with the session server
-        sessionServerService.joinSession(serverHash: serverHash) { [weak self] _ in
+        sessionServerService.joinSession(serverID: serverID, sharedSecret: sharedSecret,
+                                         publicKey: publicKey) { [weak self] _ in
             self?.sendPacket(responsePacket)
             self?.enableEncryption(sharedSecret: sharedSecret)
         }

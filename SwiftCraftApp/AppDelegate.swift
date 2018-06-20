@@ -21,8 +21,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let minecraftWorld = MinecraftWorld()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        startOffline()
+    }
 
-//        UserDefaults.standard.removeObject(forKey: "accessToken")
+    func startOnline() {
+        //        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
         let loginService = UserLoginService()
@@ -31,9 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         loginService.loginRequest(credentials: passwordCredentials, requestUser: false).startWithResult { response in
             switch response {
             case let .success(login):
-                print("Login succeeded: \(login)")
                 self.saveSessionCredentials(login)
-                self.createMinecraftClient(login: login)
+                self.createMinecraftClient(sessionServerService: SessionServerService(authenticationProvider: login))
 
                 DispatchQueue.main.sync {
                     self.minecraftClient.connectAndLogin()
@@ -46,12 +48,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func createMinecraftClient(login: AuthenticationProvider) {
+    func startOffline() {
+        createMinecraftClient(sessionServerService: OfflineSessionService(username: "Gigameter"))
+        minecraftClient.connectAndLogin()
+    }
+
+    func createMinecraftClient(sessionServerService: SessionServerServiceProtocol) {
         minecraftClient = MinecraftClient(
-//            tcpClient: TCPClient(host: "play.lemoncloud.org", port: 25565),
             tcpClient: TCPClient(host: "localhost", port: 25565),
             packetLibrary: DefaultPacketLibrary(),
-            sessionServerService: SessionServerService(authenticationProvider: login))
+            sessionServerService: sessionServerService)
 
 //        _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
 //            for: EntityHeadLookPacket.self))
@@ -60,10 +66,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         minecraftClient.packetSignal(ReceiveChatMessagePacket.self).observeValues {
             print($0)
-        }
-
-        minecraftClient.packetSignal(ChunkDataPacket.self).observeValues {
-            print($0.location)
         }
     }
 
@@ -84,5 +86,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func saveSessionCredentials(_ credentials: UserLoginSessionCredentials) {
         UserDefaults.standard.set(credentials.accessToken, forKey: "accessToken")
         UserDefaults.standard.set(credentials.clientToken, forKey: "clientToken")
+    }
+}
+
+extension UserLoginPasswordCredentials {
+    /// Creates new credentials by reading the username and password from the environment variables
+    /// `username` and `password`.
+    ///
+    /// - Returns: The credentials.
+    public static func readFromEnvironment() -> UserLoginPasswordCredentials {
+        return UserLoginPasswordCredentials(
+            username: ProcessInfo.processInfo.environment["username"]!,
+            password: ProcessInfo.processInfo.environment["password"]!
+        )
     }
 }

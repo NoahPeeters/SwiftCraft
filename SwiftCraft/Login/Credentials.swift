@@ -53,16 +53,6 @@ public struct UserLoginPasswordCredentials: UserLoginCredentials {
         self.password = password
     }
 
-    /// Creates new credentials by reading the username and password from the environment variables
-    /// `username` and `password`.
-    ///
-    /// - Returns: The credentials.
-    public static func readFromEnvironment() -> UserLoginPasswordCredentials {
-        return UserLoginPasswordCredentials(
-            username: ProcessInfo.processInfo.environment["username"]!,
-            password: ProcessInfo.processInfo.environment["password"]!)
-        }
-
     public let endpoint: String = "authenticate"
 
     public func createPayload(requestUser: Bool) -> Parameters {
