@@ -69,7 +69,7 @@ public struct Position: Serializable, Hashable {
         let uintY = UInt64(bitPattern: Int64(y))
         let uintZ = UInt64(bitPattern: Int64(z))
 
-        let result = ((uintX & 0x3FFFFFF) << 38) | ((uintY & 0xFFF) << 26) | (uintZ & 0x3FFFFFF)
+        let result: UInt64 = ((uintX & 0x3FFFFFF) << 38) | ((uintY & 0xFFF) << 26) | (uintZ & 0x3FFFFFF)
         result.serialize(to: buffer)
     }
 }
