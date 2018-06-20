@@ -9,8 +9,10 @@
 import Foundation
 
 /// Informs the player about its abilities.
-public struct ReceivedPlayerAbilitiesPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x2C)
+public struct ReceivedPlayerAbilitiesPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x2C)
+    }
 
     /// Flag of the invulnerability of the player.
     public let invulnerable: Bool
@@ -30,7 +32,7 @@ public struct ReceivedPlayerAbilitiesPacket: SimpleDeserializablePacket {
     /// A modifier applied to the field of view. This is used for example for speed potions.
     public let fieldOfViewModifier: Float
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let flags = try Byte(from: buffer)
 
         invulnerable = flags & 0x01 != 0

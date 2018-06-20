@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the players health status
-public struct UpdateHealthPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x41)
+public struct UpdateHealthPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x41)
+    }
 
     /// The current health status. 0 or less is dead. Max is 20.
     let health: Float
@@ -21,7 +23,7 @@ public struct UpdateHealthPacket: SimpleDeserializablePacket {
     /// The food saturation. 0.0 - 5.0.
     let foodSaturation: Float
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         health = try Float(from: buffer)
         food = try VarInt32(from: buffer).integer
         foodSaturation = try Float(from: buffer)

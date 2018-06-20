@@ -40,3 +40,6 @@ extension WriteBuffer {
         saveRaw(&copy)
     }
 }
+
+/// A buffer used to write bytes to.
+public protocol ByteWriteBuffer: WriteBuffer where Element == Byte {}

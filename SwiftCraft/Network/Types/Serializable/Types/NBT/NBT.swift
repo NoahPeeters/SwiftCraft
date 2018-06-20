@@ -12,7 +12,7 @@ import Foundation
 public struct NBT: Hashable, DeserializableDataType {
     public let value: NamedNBTNodeWrapper?
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try NamedNBTNodeWrapper(from: buffer)
     }
 
@@ -60,7 +60,7 @@ public struct NBT: Hashable, DeserializableDataType {
 
 /// A node in an NBT tree.
 public protocol NBTNode {
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte
+    init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws
 }
 
 /// A node representing a byte.
@@ -68,7 +68,7 @@ public struct NBTByte: NBTNode {
     /// The value of the node.
     public let value: Byte
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try Byte(from: buffer)
     }
 }
@@ -78,7 +78,7 @@ public struct NBTInt16: NBTNode {
     /// The value of the node.
     public let value: Int16
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try Int16(from: buffer)
     }
 }
@@ -88,7 +88,7 @@ public struct NBTInt32: NBTNode {
     /// The value of the node.
     public let value: Int32
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try Int32(from: buffer)
     }
 }
@@ -98,7 +98,7 @@ public struct NBTInt64: NBTNode {
     /// The value of the node.
     public let value: Int64
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try Int64(from: buffer)
     }
 }
@@ -108,7 +108,7 @@ public struct NBTFloat: NBTNode {
     /// The value of the node.
     public let value: Float
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try Float(from: buffer)
     }
 }
@@ -117,7 +117,7 @@ public struct NBTFloat: NBTNode {
 public struct NBTDouble: NBTNode {
     public let value: Double
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         value = try Double(from: buffer)
     }
 }
@@ -127,7 +127,7 @@ public struct NBTByteArray: NBTNode {
     /// The value of the node.
     public let value: [Byte]
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let count = try Int32(from: buffer)
         value = try (0..<count).map { _ in
             try Byte(from: buffer)
@@ -140,7 +140,7 @@ public struct NBTString: NBTNode {
     /// The value of the node.
     public let value: String
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let count = try Int(Int16(from: buffer))
         value = try String(from: buffer, count: count)
     }
@@ -151,7 +151,7 @@ public struct NBTList: NBTNode {
     /// The value of the node.
     public let value: [NBTNode]
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let typeID = try Byte(from: buffer)
         let count = try Int32(from: buffer)
 
@@ -168,7 +168,7 @@ public struct NBTCompount: NBTNode {
     /// The value of the node.
     public let value: [String: NBTNode]
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         var values = [String: NBTNode]()
 
         while true {
@@ -190,7 +190,7 @@ public struct NamedNBTNodeWrapper {
     /// The value of the node.
     public let value: NBTNode
 
-    public init?<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init?<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let typeID = try Byte(from: buffer)
 
         guard typeID > 0 else {

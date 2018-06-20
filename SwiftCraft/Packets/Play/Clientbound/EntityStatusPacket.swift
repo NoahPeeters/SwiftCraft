@@ -9,8 +9,10 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct EntityStatusPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x1B)
+public struct EntityStatusPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x1B)
+    }
 
     /// The id of the affected entity
     let entityID: EntityID
@@ -18,7 +20,7 @@ public struct EntityStatusPacket: SimpleDeserializablePacket {
     /// The received status of the entity
     let entityStatus: Byte
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try EntityID(from: buffer)
         entityStatus = try Byte(from: buffer)
     }

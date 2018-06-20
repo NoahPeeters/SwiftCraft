@@ -55,7 +55,7 @@ public struct Position: Serializable, Hashable {
         self.z = z
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let data = try UInt64(from: buffer)
 
         self.init(
@@ -64,7 +64,7 @@ public struct Position: Serializable, Hashable {
             z: Int(Int64(from: data, length: 26, rightOffset: 0)))
     }
 
-    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         let uintX = UInt64(bitPattern: Int64(x))
         let uintY = UInt64(bitPattern: Int64(y))
         let uintZ = UInt64(bitPattern: Int64(z))

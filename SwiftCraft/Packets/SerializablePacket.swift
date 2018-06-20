@@ -10,27 +10,35 @@ import Foundation
 
 // MARK: - Serializing
 
+public protocol SerializationContext {
+    /// The minecraft client.
+    var client: MinecraftClient { get }
+
+    /// The version number of the used protocol.
+    var protocolVersion: Int { get }
+}
+
 /// A serializable minecaft packet.
 public protocol SerializablePacket {
     /// Serializes the packet and its packet id to a byte array.
     ///
     /// - Returns: The byte array.
-    func serialize() -> ByteArray
+    func serialize(context: SerializationContext) -> ByteArray
 
     /// Serializes the packets data to a byte array.
     ///
     /// - Returns: The serialized packet data
-    func serializedData() -> ByteArray
+    func serializedData(context: SerializationContext) -> ByteArray
 
     /// The id of the packet.
-    static var packetID: PacketID { get }
+    static func packetID(context: SerializationContext) -> PacketID
 }
 
 extension SerializablePacket {
-    public func serialize() -> ByteArray {
-        let serializedPacketID = VarInt32(Self.packetID.id).directSerialized()
+    public func serialize(context: SerializationContext) -> ByteArray {
+        let serializedPacketID = VarInt32(Self.packetID(context: context).id).directSerialized()
 
-        return serializedPacketID + serializedData()
+        return serializedPacketID + serializedData(context: context)
     }
 }
 
@@ -39,13 +47,13 @@ public protocol BufferSerializablePacket: SerializablePacket {
     /// Serializes the packets data to a buffer.
     ///
     /// - Parameter buffer: The buffer to serialize the data to.
-    func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte
+    func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext)
 }
 
 extension BufferSerializablePacket {
-    public func serializedData() -> ByteArray {
+    public func serializedData(context: SerializationContext) -> ByteArray {
         let writeBuffer = ByteBuffer()
-        serializeData(to: writeBuffer)
+        serializeData(to: writeBuffer, context: context)
         return writeBuffer.elements
     }
 }
@@ -55,17 +63,7 @@ extension BufferSerializablePacket {
 /// A deserializable minecaft packet.
 public protocol DeserializablePacket {
     /// The id of the packet.
-    static var packetID: PacketID { get }
+    static func packetID(context: SerializationContext) -> PacketID
 
-    init<Buffer: ReadBuffer>(from buffer: Buffer, client: MinecraftClient) throws where Buffer.Element == Byte
-}
-
-public protocol SimpleDeserializablePacket: DeserializablePacket {
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte
-}
-
-extension SimpleDeserializablePacket {
-    public init<Buffer: ReadBuffer>(from buffer: Buffer, client: MinecraftClient) throws where Buffer.Element == Byte {
-        try self.init(from: buffer)
-    }
+    init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws
 }

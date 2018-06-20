@@ -9,8 +9,10 @@
 import Foundation
 
 /// A packet received from the server after a successfull switch of the connection state from login to play.
-public struct JoinGamePacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x23)
+public struct JoinGamePacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x23)
+    }
 
     /// The id of the player.
     public let playerEntityID: EntityID
@@ -33,7 +35,7 @@ public struct JoinGamePacket: SimpleDeserializablePacket {
     /// Debug option.
     public let reducedDebugInfo: Bool
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         playerEntityID = try EntityID(from: buffer)
         gameMode = try Gamemode(id: Byte(from: buffer)).unwrap(JoinGamePacketError.unknownGamemode)
         dimension = try Dimension(id: Int32(from: buffer))

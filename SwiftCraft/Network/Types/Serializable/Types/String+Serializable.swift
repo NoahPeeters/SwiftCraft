@@ -9,10 +9,8 @@
 import Foundation
 
 extension String: Serializable {
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
-        let count = try VarInt32(from: buffer).integer
-        let stringBytes = try buffer.read(lenght: count)
-        let stringData = Data(stringBytes)
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
+        let stringData = try Data(from: buffer)
 
         guard let string = String(data: stringData, encoding: .utf8) else {
             throw TypeDeserializeError.invalidStringData
@@ -21,9 +19,8 @@ extension String: Serializable {
         self = string
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer, count: Int) throws where Buffer.Element == Byte {
-        let stringBytes = try buffer.read(lenght: count)
-        let stringData = Data(stringBytes)
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, count: Int) throws {
+        let stringData = try Data(from: buffer, count: count)
 
         guard let string = String(data: stringData, encoding: .utf8) else {
             throw TypeDeserializeError.invalidStringData
@@ -32,14 +29,9 @@ extension String: Serializable {
         self = string
     }
 
-    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         let stringData = data(using: .utf8)!
-        let stringBytes = Array(stringData)
-
-        let length = VarInt32(Int32(stringBytes.count))
-        length.serialize(to: buffer)
-
-        buffer.write(elements: stringBytes)
+        stringData.serialize(to: buffer)
     }
 
     /// Errors which can occure while deserializing a string.

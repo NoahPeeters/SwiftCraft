@@ -9,13 +9,15 @@
 import Foundation
 
 /// A packet received if multiple blocks changed in the same chunk in the same tick.
-public struct MultiBlockChangePacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x10)
+public struct MultiBlockChangePacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x10)
+    }
 
     /// List of block changes
     public let changes: [(Position, BlockID)]
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let chunkX = try Int(Int32(from: buffer))
         let chunkZ = try Int(Int32(from: buffer))
 

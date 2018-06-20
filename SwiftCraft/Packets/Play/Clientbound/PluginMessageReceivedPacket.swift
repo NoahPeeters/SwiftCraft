@@ -9,8 +9,10 @@
 import Foundation
 
 /// Packet send to transmitt plugin message.
-public struct PluginMessageReceivedPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x18)
+public struct PluginMessageReceivedPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x18)
+    }
 
     /// The string identifying the channel.
     ///
@@ -20,7 +22,7 @@ public struct PluginMessageReceivedPacket: SimpleDeserializablePacket {
     /// The data send over the channel.
     public let data: ByteArray
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         channel = try String(from: buffer)
         data = buffer.readRemainingElements()
     }

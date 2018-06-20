@@ -23,8 +23,8 @@ public protocol PacketLibrary {
     ///   - packetID: The packet if of the packet in the buffer.
     ///   - client: The client to handle the packet.
     /// - Throws: An error which might occure.
-    func parse<Buffer: ReadBuffer>(_ buffer: Buffer, packetID: PacketID, client: MinecraftClient)
-        throws -> DeserializablePacket where Buffer.Element == Byte
+    func parse<Buffer: ByteReadBuffer>(_ buffer: Buffer, packetID: PacketID,
+                                       context: SerializationContext) throws -> DeserializablePacket
 }
 
 /// The default packet library which includes all packets currently implemented
@@ -37,6 +37,9 @@ public struct DefaultPacketLibrary: PacketLibrary {
         LoginSuccessPacket.self,                            // 0x02
         SetCompressionPacket.self,                          // 0x03
 
+        // Status
+        StatusResponsePacket.self,                          // 0x00
+
         // Play
         SpawnObjectPacket.self,                             // 0x00
         SpawnExperienceOrbPacket.self,                      // 0x01
@@ -45,7 +48,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         BlockChangePacket.self,                             // 0x0B
         ServerDifficultyPacket.self,                        // 0x0D
         ReceiveChatMessagePacket.self,                      // 0x0F
-        MultiBlockChangePacket.self,                 // 0x10
+        MultiBlockChangePacket.self,                        // 0x10
         WindowItemsPacket.self,                             // 0x14
         SetSlotPacket.self,                                 // 0x16
         PluginMessageReceivedPacket.self,                   // 0x18
@@ -87,12 +90,12 @@ public struct DefaultPacketLibrary: PacketLibrary {
     /// - Returns: The parsed packet.
     /// - Throws: An `PacketLibraryError.unknowPacketID` error if the packet is unknown.
     ///           If the packet deserializing throws an error the error is forwared.
-    public func parse<Buffer: ReadBuffer>(_ buffer: Buffer, packetID: PacketID, client: MinecraftClient)
-        throws -> DeserializablePacket where Buffer.Element == Byte {
-        guard let packetType = packets.first(where: { $0.packetID == packetID }) else {
+    public func parse<Buffer: ByteReadBuffer>(_ buffer: Buffer, packetID: PacketID,
+                                              context: SerializationContext) throws -> DeserializablePacket {
+        guard let packetType = packets.first(where: { $0.packetID(context: context) == packetID }) else {
             throw PacketLibraryError.unknowPacketID(packetID: packetID)
         }
 
-        return try packetType.init(from: buffer, client: client)
+        return try packetType.init(from: buffer, context: context)
     }
 }

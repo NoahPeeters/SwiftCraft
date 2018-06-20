@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the equipment of an entity.
-public struct EntityEquipmentPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x3F)
+public struct EntityEquipmentPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x3F)
+    }
 
     /// The id of the entity.
     public let entityID: EntityID
@@ -21,7 +23,7 @@ public struct EntityEquipmentPacket: SimpleDeserializablePacket {
     /// The content of the slot.
     public let slotContent: SlotContent
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         slot = try Slot(rawValue: Byte(VarInt32(from: buffer).value)).unwrap(EntityEquipmentPacketError.invalidSlotID)
         slotContent = try SlotContent(from: buffer)

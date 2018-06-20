@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the look direction of an entity.
-public struct EntityLookPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x28)
+public struct EntityLookPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x28)
+    }
 
     /// The id of the entity.
     public let entityID: EntityID
@@ -24,7 +26,7 @@ public struct EntityLookPacket: SimpleDeserializablePacket {
     /// A flag whether the entity touches the ground.
     public let isOnGround: Bool
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         yaw = try Angle(from: buffer)
         pitch = try Angle(from: buffer)

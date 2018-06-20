@@ -46,7 +46,7 @@
 		4024AB7920B1F216008790F2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7820B1F216008790F2 /* Credentials.swift */; };
 		4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7A20B1F241008790F2 /* UserLoginResponse.swift */; };
 		4024AB7D20B20922008790F2 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7C20B20921008790F2 /* TestHelpers.swift */; };
-		4024AB8020B21E45008790F2 /* InputBuffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7F20B21E45008790F2 /* InputBuffers.swift */; };
+		4024AB8020B21E45008790F2 /* ReadBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7F20B21E45008790F2 /* ReadBuffer.swift */; };
 		4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8120B21E67008790F2 /* WriteBuffer.swift */; };
 		4024AB8620B220C0008790F2 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8520B220C0008790F2 /* Buffer.swift */; };
 		4024AB8820B22418008790F2 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8720B22418008790F2 /* BufferTests.swift */; };
@@ -64,6 +64,9 @@
 		4024C60020D951D800493A86 /* EntityTeleportPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C5FF20D951D800493A86 /* EntityTeleportPacket.swift */; };
 		4024C60220D953AB00493A86 /* BlockChangePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60120D953AB00493A86 /* BlockChangePacket.swift */; };
 		4024C60420D962A300493A86 /* DestroyEntitiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60320D962A300493A86 /* DestroyEntitiesPacket.swift */; };
+		4024C60620DA635300493A86 /* ProtocolVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60520DA635300493A86 /* ProtocolVersion.swift */; };
+		4024C60B20DA665F00493A86 /* StatusResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */; };
+		4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60C20DA680000493A86 /* StatusRequestPacket.swift */; };
 		406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* TCPClient.swift */; };
 		4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070020B3200600B116C4 /* TCPClientTests.swift */; };
 		4068070420B34D3F00B116C4 /* PacketID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070320B34D3F00B116C4 /* PacketID.swift */; };
@@ -104,6 +107,7 @@
 		408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */; };
 		408E642120BB134200AE9C2D /* SpawnObjectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */; };
 		408E642320BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */; };
+		40A0875920DA989B00F944FB /* Data+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0875820DA989B00F944FB /* Data+Serializable.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -214,7 +218,7 @@
 		4024AB7820B1F216008790F2 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		4024AB7A20B1F241008790F2 /* UserLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginResponse.swift; sourceTree = "<group>"; };
 		4024AB7C20B20921008790F2 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
-		4024AB7F20B21E45008790F2 /* InputBuffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBuffers.swift; sourceTree = "<group>"; };
+		4024AB7F20B21E45008790F2 /* ReadBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBuffer.swift; sourceTree = "<group>"; };
 		4024AB8120B21E67008790F2 /* WriteBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBuffer.swift; sourceTree = "<group>"; };
 		4024AB8520B220C0008790F2 /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		4024AB8720B22418008790F2 /* BufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferTests.swift; sourceTree = "<group>"; };
@@ -233,6 +237,9 @@
 		4024C5FF20D951D800493A86 /* EntityTeleportPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityTeleportPacket.swift; sourceTree = "<group>"; };
 		4024C60120D953AB00493A86 /* BlockChangePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockChangePacket.swift; sourceTree = "<group>"; };
 		4024C60320D962A300493A86 /* DestroyEntitiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyEntitiesPacket.swift; sourceTree = "<group>"; };
+		4024C60520DA635300493A86 /* ProtocolVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolVersion.swift; sourceTree = "<group>"; };
+		4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponsePacket.swift; sourceTree = "<group>"; };
+		4024C60C20DA680000493A86 /* StatusRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRequestPacket.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
 		4068070020B3200600B116C4 /* TCPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClientTests.swift; sourceTree = "<group>"; };
 		4068070320B34D3F00B116C4 /* PacketID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketID.swift; sourceTree = "<group>"; };
@@ -276,6 +283,7 @@
 		408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityEquipmentPacket.swift; sourceTree = "<group>"; };
 		408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnObjectPacket.swift; sourceTree = "<group>"; };
 		408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPositionAndLookReceivedPacket.swift; sourceTree = "<group>"; };
+		40A0875820DA989B00F944FB /* Data+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Serializable.swift"; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -365,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				4068070920B361E000B116C4 /* MinecraftClient.swift */,
+				4024C60520DA635300493A86 /* ProtocolVersion.swift */,
 				40E314F620B603D100C9E271 /* Reactor */,
 				4022B07220B4CCCF00B4E680 /* Types.swift */,
 				408E640720BADD6E00AE9C2D /* ChunkColumn.swift */,
@@ -561,7 +570,7 @@
 		4024AB8920B22BC1008790F2 /* Buffer */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB7F20B21E45008790F2 /* InputBuffers.swift */,
+				4024AB7F20B21E45008790F2 /* ReadBuffer.swift */,
 				4024AB8120B21E67008790F2 /* WriteBuffer.swift */,
 				4024AB8520B220C0008790F2 /* Buffer.swift */,
 			);
@@ -586,6 +595,31 @@
 			path = NBT;
 			sourceTree = "<group>";
 		};
+		4024C60720DA661800493A86 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				4024C60820DA661F00493A86 /* Serverbound */,
+				4024C60920DA662700493A86 /* Clientbound */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		4024C60820DA661F00493A86 /* Serverbound */ = {
+			isa = PBXGroup;
+			children = (
+				4024C60C20DA680000493A86 /* StatusRequestPacket.swift */,
+			);
+			path = Serverbound;
+			sourceTree = "<group>";
+		};
+		4024C60920DA662700493A86 /* Clientbound */ = {
+			isa = PBXGroup;
+			children = (
+				4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */,
+			);
+			path = Clientbound;
+			sourceTree = "<group>";
+		};
 		406806FD20B30D2500B116C4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,8 +637,9 @@
 				4068070520B355CF00B116C4 /* SerializablePacket.swift */,
 				40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */,
 				4068072220B3683E00B116C4 /* Handshake */,
-				4022B06E20B4CC2300B4E680 /* Play */,
+				4024C60720DA661800493A86 /* Status */,
 				4068072320B3686C00B116C4 /* Login */,
+				4022B06E20B4CC2300B4E680 /* Play */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
@@ -644,6 +679,7 @@
 				408E63F320BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift */,
 				408E63F520BA06FB00AE9C2D /* VarInt.swift */,
 				408E63F720BA07B500AE9C2D /* String+Serializable.swift */,
+				40A0875820DA989B00F944FB /* Data+Serializable.swift */,
 				408E63F920BA07CE00AE9C2D /* Position.swift */,
 				408E63FB20BA07F900AE9C2D /* Array+Serializable.swift */,
 				408E63FD20BA080D00AE9C2D /* UUID+Serializable.swift */,
@@ -969,6 +1005,7 @@
 				40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */,
 				4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */,
 				133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */,
+				4024C60B20DA665F00493A86 /* StatusResponsePacket.swift in Sources */,
 				40DAC2D920B985420017FEBD /* ServerDifficultyPacket.swift in Sources */,
 				1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */,
 				408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */,
@@ -978,16 +1015,18 @@
 				408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */,
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
+				4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */,
 				408E641920BB0B2400AE9C2D /* EntityMetadataPacket.swift in Sources */,
 				408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */,
 				408E63ED20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift in Sources */,
 				408E63F620BA06FB00AE9C2D /* VarInt.swift in Sources */,
+				40A0875920DA989B00F944FB /* Data+Serializable.swift in Sources */,
 				4022B07320B4CCCF00B4E680 /* Types.swift in Sources */,
 				4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */,
 				40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */,
 				408E640620BADD5C00AE9C2D /* ChunkSection.swift in Sources */,
 				1334250E20B4541A0097C45D /* AES.c in Sources */,
-				4024AB8020B21E45008790F2 /* InputBuffers.swift in Sources */,
+				4024AB8020B21E45008790F2 /* ReadBuffer.swift in Sources */,
 				408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
@@ -1020,6 +1059,7 @@
 				4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */,
 				408E642320BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift in Sources */,
 				408E63F420BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift in Sources */,
+				4024C60620DA635300493A86 /* ProtocolVersion.swift in Sources */,
 				4024C60220D953AB00493A86 /* BlockChangePacket.swift in Sources */,
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */,

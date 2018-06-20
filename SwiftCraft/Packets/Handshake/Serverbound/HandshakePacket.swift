@@ -10,7 +10,9 @@ import Foundation
 
 /// A packet to send to the server after connecting to start the communitation.
 public struct HandshakePacket: BufferSerializablePacket {
-    public static var packetID = PacketID(connectionState: .handshaking, id: 0x00)
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .handshaking, id: 0x00)
+    }
 
     /// The version of the protocol which is used.
     public let protocolVersion: Int
@@ -24,7 +26,7 @@ public struct HandshakePacket: BufferSerializablePacket {
     /// The state of the connection to switch to. This can be login or status.
     public let nextState: ConnectionState
 
-    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {
         VarInt32(protocolVersion).serialize(to: buffer)
         serverAddress.serialize(to: buffer)
         serverPort.serialize(to: buffer)

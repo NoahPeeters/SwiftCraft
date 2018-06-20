@@ -9,12 +9,14 @@
 import Foundation
 
 /// Updates for the player list.
-public struct PlayerListPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x2E)
+public struct PlayerListPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x2E)
+    }
 
     let action: Action
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let actionID = try VarInt32(from: buffer).value
 
         switch actionID {
@@ -75,7 +77,7 @@ public struct PlayerListPacket: SimpleDeserializablePacket {
         /// The display name of the player.
         let displayName: String?
 
-        public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
             uuid = try UUID(from: buffer)
             name = try String(from: buffer)
             properties = try [Property](from: buffer)
@@ -95,7 +97,7 @@ public struct PlayerListPacket: SimpleDeserializablePacket {
             /// The signature of the propery.
             let signature: String?
 
-            public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+            public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
                 name = try String(from: buffer)
                 value = try String(from: buffer)
                 signature = try String?(from: buffer)
@@ -121,7 +123,7 @@ private struct PlayerUpdate<Payload: DeserializableDataType>: DeserializableData
     /// The payload of the packet.
     let payload: Payload
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         uuid = try UUID(from: buffer)
         payload = try Payload(from: buffer)
     }

@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the location of an entity.
-public struct EntityRelativeMovePacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x26)
+public struct EntityRelativeMovePacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x26)
+    }
 
     /// The id of the entity.
     public let entityID: EntityID
@@ -48,7 +50,7 @@ public struct EntityRelativeMovePacket: SimpleDeserializablePacket {
         return Double(deltaYRaw) / (128 * 32)
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         deltaXRaw = try Int16(from: buffer)
         deltaYRaw = try Int16(from: buffer)

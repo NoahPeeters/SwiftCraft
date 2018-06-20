@@ -10,7 +10,9 @@ import Foundation
 
 /// Packet containing the chunk data.
 public struct ChunkDataPacket: DeserializablePacket, CustomStringConvertible {
-    public static var packetID = PacketID(connectionState: .play, id: 0x20)
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x20)
+    }
 
     public let location: ChunkColumn.Location
     public let chunkColumn: ChunkColumn
@@ -19,7 +21,7 @@ public struct ChunkDataPacket: DeserializablePacket, CustomStringConvertible {
         return "ChunkDataPacket(x: \(location.x), z: \(location.z))"
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer, client: MinecraftClient) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         location = try ChunkColumn.Location(
             x: Int(Int32(from: buffer)),
             z: Int(Int32(from: buffer)))
@@ -34,7 +36,7 @@ public struct ChunkDataPacket: DeserializablePacket, CustomStringConvertible {
                 return nil
             }
 
-            return try ChunkSection(from: buffer, hasSkylight: client.dimension.hasSkylight)
+            return try ChunkSection(from: buffer, hasSkylight: context.client.dimension.hasSkylight)
         }
 
         let biomes = try isInitial ? buffer.read(lenght: 256) : nil

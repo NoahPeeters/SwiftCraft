@@ -9,8 +9,10 @@
 import Foundation
 
 /// Sent by the server when items in multiple slots (in a window) are added/removed.
-public struct WindowItemsPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x14)
+public struct WindowItemsPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x14)
+    }
 
     /// The id of the inventory window. 0 For the players inventory.
     public let windowID: Int
@@ -18,7 +20,7 @@ public struct WindowItemsPacket: SimpleDeserializablePacket {
     /// The content of the slots.
     public let slotContent: [SlotContent]
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         windowID = try Int(Byte(from: buffer))
 
         let slotCount = try Int(Int16(from: buffer))

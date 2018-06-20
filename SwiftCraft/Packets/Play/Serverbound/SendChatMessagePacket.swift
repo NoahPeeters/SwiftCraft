@@ -10,14 +10,16 @@ import Foundation
 
 /// A packet which will send a chat message to the server.
 public struct SendChatMessagePacket: BufferSerializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x02)
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x02)
+    }
 
     /// The chat message to send.
     ///
     /// - Note: Most servers will interpret a message with a leading / as a command.
     let message: String
 
-    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {
         message.serialize(to: buffer)
     }
 }

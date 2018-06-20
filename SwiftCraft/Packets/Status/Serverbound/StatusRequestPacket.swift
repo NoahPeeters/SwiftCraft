@@ -1,24 +1,21 @@
 //
-//  KeepaliveResponsePacket.swift
+//  StatusRequestPacket.swift
 //  SwiftCraft
 //
-//  Created by Noah Peeters on 23.05.18.
+//  Created by Noah Peeters on 20.06.18.
 //  Copyright © 2018 Noah Peeters. All rights reserved.
 //
 
 import Foundation
 
 /// The packet to send after receiveing a keepalive packet from the server.
-public struct KeepaliveResponsePacket: BufferSerializablePacket {
+public struct StatusRequestPacket: BufferSerializablePacket {
     public static func packetID(context: SerializationContext) -> PacketID {
-        return PacketID(connectionState: .play, id: 0x0B)
+        return PacketID(connectionState: .status, id: 0x00)
     }
 
-    /// The id from the received keepalive packet.
-    let id: Int64
-
     public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {
-        id.serialize(to: buffer)
+        // Nothing todo. THis packet is empty.
     }
 }
 
@@ -27,7 +24,7 @@ extension MinecraftClient {
     /// This must be send after receiving a keepalive request or the client will be kicked.
     ///
     /// - Parameter id: The id from the received keepalive packet.
-    public func sendKeepaliveResponsePacket(id: Int64) {
-        sendPacket(KeepaliveResponsePacket(id: id))
+    public func sendStatusRequestPacket() {
+        sendPacket(StatusRequestPacket())
     }
 }

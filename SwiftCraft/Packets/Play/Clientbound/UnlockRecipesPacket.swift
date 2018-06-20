@@ -9,8 +9,10 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct UnlockRecipesPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x31)
+public struct UnlockRecipesPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x31)
+    }
 
     /// If true, then the crafting book will be open when the player opens its inventory.
     public let openCraftingBook: Bool
@@ -21,7 +23,7 @@ public struct UnlockRecipesPacket: SimpleDeserializablePacket {
     /// The action to perform.
     public let action: Action
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let mode = try VarInt32(from: buffer).value
 
         openCraftingBook = try Bool(from: buffer)

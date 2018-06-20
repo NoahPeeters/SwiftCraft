@@ -9,13 +9,15 @@
 import Foundation
 
 /// A packet indicating that the server difficulty changed.
-public struct ServerDifficultyPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x0D)
+public struct ServerDifficultyPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x0D)
+    }
 
     /// The difficulty of the world.
     public let difficulty: Difficulty
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         difficulty = try Difficulty(rawValue: Byte(from: buffer)).unwrap(ServerDifficultyPacketError.unknownDifficulty)
     }
 

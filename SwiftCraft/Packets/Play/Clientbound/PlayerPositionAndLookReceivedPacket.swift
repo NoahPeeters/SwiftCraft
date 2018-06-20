@@ -9,8 +9,10 @@
 import Foundation
 
 /// The server send the current player location and look direction.
-public struct PlayerPositionAndLookReceivedPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x2F)
+public struct PlayerPositionAndLookReceivedPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x2F)
+    }
 
     public let x: Value<Double>
     public let y: Value<Double>
@@ -18,7 +20,7 @@ public struct PlayerPositionAndLookReceivedPacket: SimpleDeserializablePacket {
     public let yaw: Value<Float>
     public let pitch: Value<Float>
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let x = try Double(from: buffer)
         let y = try Double(from: buffer)
         let z = try Double(from: buffer)

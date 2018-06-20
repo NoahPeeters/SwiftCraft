@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the metadata of an entity.
-public struct EntityMetadataPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x3C)
+public struct EntityMetadataPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x3C)
+    }
 
     /// The id of the entity.
     public let entityID: EntityID
@@ -18,7 +20,7 @@ public struct EntityMetadataPacket: SimpleDeserializablePacket {
     /// The new metadata. Currently not decoded.
     public let metadata: ByteArray
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         metadata = buffer.readRemainingElements()
     }

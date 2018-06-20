@@ -9,8 +9,10 @@
 import Foundation
 
 /// Spawns a new object in the world.
-public struct SpawnObjectPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x00)
+public struct SpawnObjectPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x00)
+    }
 
     /// The id of the object.
     public let entityID: EntityID
@@ -36,7 +38,7 @@ public struct SpawnObjectPacket: SimpleDeserializablePacket {
     /// Custom data of the object.
     public let data: Int32
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         uuid = try UUID(from: buffer)
         type = try Byte(from: buffer)

@@ -9,7 +9,7 @@
 import Foundation
 
 extension Optional: DeserializableDataType where Wrapped: DeserializableDataType {
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let hasValue = try Bool(from: buffer)
 
         if hasValue {
@@ -21,7 +21,7 @@ extension Optional: DeserializableDataType where Wrapped: DeserializableDataType
 }
 
 extension Optional: SerializableDataType where Wrapped: SerializableDataType {
-    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         if let wrapped = self {
             true.serialize(to: buffer)
             wrapped.serialize(to: buffer)

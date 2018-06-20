@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the head look direction of an entity.
-public struct EntityHeadLookPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x36)
+public struct EntityHeadLookPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x36)
+    }
 
     /// The id of the entity.
     public let entityID: EntityID
@@ -18,7 +20,7 @@ public struct EntityHeadLookPacket: SimpleDeserializablePacket {
     /// The new angle.
     public let yaw: Angle
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         yaw = try Angle(from: buffer)
     }

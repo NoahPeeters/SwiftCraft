@@ -29,7 +29,7 @@ public class ChunkSection {
         }
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer, hasSkylight: Bool) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, hasSkylight: Bool) throws {
         // load bits per block
         let rawBitsPerBlock = try Byte(from: buffer)
         let bitsPerBlock = Int(rawBitsPerBlock > 8 ? 13 : max(rawBitsPerBlock, 4))

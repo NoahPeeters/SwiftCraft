@@ -9,8 +9,10 @@
 import Foundation
 
 /// Spawns a new mob in the world
-public struct SpawnMobPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x03)
+public struct SpawnMobPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x03)
+    }
 
     /// The id of the entity.
     let entityID: EntityID
@@ -36,7 +38,7 @@ public struct SpawnMobPacket: SimpleDeserializablePacket {
     /// The head pitch of the entity.
     let headPitch: Byte
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         uuid = try UUID(from: buffer)
         type = try VarInt32(from: buffer).integer

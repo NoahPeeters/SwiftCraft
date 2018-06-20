@@ -137,9 +137,10 @@ extension Buffer: WriteBuffer {
     }
 }
 
-//extension Buffer {
-//    <#code#>
-//}
+// MARK: - Byte Buffer
+
+extension Buffer: ByteWriteBuffer where Element == Byte {}
+extension Buffer: ByteReadBuffer where Element == Byte {}
 
 /// Errors which can occure while using the buffer.
 public enum BufferError: Error {

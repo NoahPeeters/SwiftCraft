@@ -13,7 +13,7 @@ public protocol SerializableDataType {
     /// Serializes its content to the given buffer.
     ///
     /// - Parameter buffer: The buffer to serialize the data to.
-    func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte
+    func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer)
 }
 
 extension SerializableDataType {
@@ -33,7 +33,7 @@ public protocol DeserializableDataType {
     ///
     /// - Parameter buffer: The buffer to deserialize the data from.
     /// - Throws: Any deserializing error.
-    init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte
+    init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws
 }
 
 extension DeserializableDataType {

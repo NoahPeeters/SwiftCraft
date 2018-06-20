@@ -9,8 +9,10 @@
 import Foundation
 
 /// Send by the server when a experience orb spawns
-public struct SpawnExperienceOrbPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x01)
+public struct SpawnExperienceOrbPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x01)
+    }
 
     /// The id of the new experience orb.
     let entityID: EntityID
@@ -21,7 +23,7 @@ public struct SpawnExperienceOrbPacket: SimpleDeserializablePacket {
     /// The amount of experience this orb will reward once collected
     let amount: Int16
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try EntityID(VarInt32(from: buffer).value)
         location = try EntityLocation(from: buffer)
         amount = try Int16(from: buffer)

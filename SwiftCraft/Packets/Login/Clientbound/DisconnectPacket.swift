@@ -11,13 +11,15 @@ import Foundation
 /// Received when the server closes the connection while logging in.
 ///
 /// - Note: The reason will be described in the `message` field.
-public struct DisconnectPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .login, id: 0x00)
+public struct DisconnectPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .login, id: 0x00)
+    }
 
     /// The message with a description of the reason.
     public let message: String
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         message = try String(from: buffer)
     }
 }

@@ -20,7 +20,7 @@ public struct VarInt<IntegerType: VarIntIntegerType>: Serializable {
         self.value = value
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         var numRead: IntegerType = 0
         var result: IntegerType = 0
         var lastRead: IntegerType
@@ -38,7 +38,7 @@ public struct VarInt<IntegerType: VarIntIntegerType>: Serializable {
         self.init(result)
     }
 
-    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         var remainingData = self.value
         repeat {
             var currentByte: Byte = (Byte(remainingData & 0b01111111))

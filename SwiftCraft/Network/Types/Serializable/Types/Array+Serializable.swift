@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array: DeserializableDataType where Element: DeserializableDataType {
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let count = try VarInt32(from: buffer).value
 
         self = try (0..<count).map { _ in
@@ -17,7 +17,7 @@ extension Array: DeserializableDataType where Element: DeserializableDataType {
         }
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer, count: Int) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, count: Int) throws {
         self = try (0..<count).map { _ in
             return try Element(from: buffer)
         }
@@ -25,7 +25,7 @@ extension Array: DeserializableDataType where Element: DeserializableDataType {
 }
 
 extension Array: SerializableDataType where Element: SerializableDataType {
-    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         VarInt32(count).serialize(to: buffer)
         forEach {
             $0.serialize(to: buffer)

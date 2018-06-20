@@ -9,8 +9,10 @@
 import Foundation
 
 /// Requests the start of encryption.
-public struct EncryptionRequestPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .login, id: 0x01)
+public struct EncryptionRequestPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .login, id: 0x01)
+    }
 
     /// The server id of the server.
     ///
@@ -26,7 +28,7 @@ public struct EncryptionRequestPacket: SimpleDeserializablePacket {
     /// The verify token received from the server.
     public let verifyToken: ByteArray
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         serverID = try String(from: buffer)
 
         let publicKeyLength = try VarInt32(from: buffer)

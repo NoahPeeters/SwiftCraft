@@ -9,8 +9,10 @@
 import Foundation
 
 /// Packet to enable or disable compression
-public struct SetCompressionPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .login, id: 0x03)
+public struct SetCompressionPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .login, id: 0x03)
+    }
 
     /// The threshold describes how large a packet must be to be compressed.
     ///
@@ -19,7 +21,7 @@ public struct SetCompressionPacket: SimpleDeserializablePacket {
     ///     `SetCompressionPacket` received the connection will be closed by the server.
     public let threshold: Int
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         threshold = try VarInt32(from: buffer).integer
     }
 }

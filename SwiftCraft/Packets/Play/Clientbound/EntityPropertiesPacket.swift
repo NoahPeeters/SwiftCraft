@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the properties of an entity
-public struct EntityPropertiesPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x4E)
+public struct EntityPropertiesPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x4E)
+    }
 
     /// The id of the entity
     public let entityID: EntityID
@@ -18,7 +20,7 @@ public struct EntityPropertiesPacket: SimpleDeserializablePacket {
     /// The list of properies the entity has.
     public let properies: [Propery]
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
 
         let propertiesCount = try Int32(from: buffer)
@@ -37,7 +39,7 @@ public struct EntityPropertiesPacket: SimpleDeserializablePacket {
         /// A list of modifiers to apply to the value
         public let modifiers: [Modifier]
 
-        public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+        public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
             key = try String(from: buffer)
             value = try Double(from: buffer)
             modifiers = try [Modifier](from: buffer)
@@ -50,7 +52,7 @@ public struct EntityPropertiesPacket: SimpleDeserializablePacket {
             /// The operation of the modifer.
             public let operation: Operation
 
-            public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+            public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
                 uuid = try UUID(from: buffer)
 
                 let operationID = try Byte(from: buffer)

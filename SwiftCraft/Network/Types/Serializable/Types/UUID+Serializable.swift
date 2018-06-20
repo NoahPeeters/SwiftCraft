@@ -9,7 +9,7 @@
 import Foundation
 
 extension UUID: Serializable {
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         var data = try buffer.read(lenght: 16)
 
         self = withUnsafePointer(to: &data[0]) {
@@ -17,7 +17,7 @@ extension UUID: Serializable {
         }
     }
 
-    public func serialize<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         var uuid = self.uuid
         let data = withUnsafePointer(to: &uuid) {
             return Data(bytes: $0, count: 16)

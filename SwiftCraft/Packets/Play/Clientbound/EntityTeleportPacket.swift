@@ -9,8 +9,10 @@
 import Foundation
 
 /// Updates the location and look direction of an entity.
-public struct EntityTeleportPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x4C)
+public struct EntityTeleportPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x4C)
+    }
 
     /// The id of the entity.
     public let entityID: EntityID
@@ -33,7 +35,7 @@ public struct EntityTeleportPacket: SimpleDeserializablePacket {
     /// A flag whether the entity touches the ground.
     public let isOnGround: Bool
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         x = try Double(from: buffer)
         y = try Double(from: buffer)

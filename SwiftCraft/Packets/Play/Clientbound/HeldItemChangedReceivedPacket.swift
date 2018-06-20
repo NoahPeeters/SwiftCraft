@@ -9,13 +9,15 @@
 import Foundation
 
 /// Packet informing the client that its selected slot has changed.
-public struct HeldItemChangedReceivedPacket: SimpleDeserializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x3A)
+public struct HeldItemChangedReceivedPacket: DeserializablePacket {
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x3A)
+    }
 
     /// The new selected slot id
     public let selectedSlot: Byte
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         selectedSlot = try Byte(from: buffer)
     }
 }

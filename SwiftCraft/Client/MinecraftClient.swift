@@ -26,7 +26,10 @@ open class MinecraftClient {
     public var connectionState = ConnectionState.handshaking
 
     /// List of `Reactors`. They handle incomming and outgoing messages.
-    public var reactors: [UUID: Reactor] = [:]
+    public private(set) var reactors: [UUID: Reactor] = [:]
+
+    /// The version number used for the protocol
+    public private(set) var protocolVersion: Int = 0
 
     /// Creates a new `MinecraftClient`
     ///
@@ -53,11 +56,32 @@ open class MinecraftClient {
     }
 
     /// Connects the tcp client to the server and starts the login
-    public func connectAndLogin() {
+    public func connectAndLogin(protocolVersion: Int? = nil) {
+        guard let protocolVersion = protocolVersion else {
+            var reactorID: UUID!
+            reactorID = addReactor(ClosureReactor<StatusResponsePacket> { packet, _ in
+                self.connectAndLogin(protocolVersion: packet.response.version.protocolVersion)
+                self.removeReactor(with: reactorID)
+            })
+            connectAndRequestStatus()
+            return
+        }
+
+        self.protocolVersion = protocolVersion
         connect()
+        connectionState = .handshaking
         sendHandshake(nextState: .login)
-        sendLoginStart(username: sessionServerService.username)
         connectionState = .login
+        sendLoginStart(username: sessionServerService.username)
+    }
+
+    public func connectAndRequestStatus() {
+        self.protocolVersion = MinecraftClient.mostRecentSupportedProtocolVersion
+        connect()
+        connectionState = .handshaking
+        sendHandshake(nextState: .status)
+        connectionState = .status
+        sendStatusRequestPacket()
     }
 
     /// Closes the tcp client connection
@@ -191,7 +215,7 @@ extension MinecraftClient {
     public func sendPacket(_ packet: SerializablePacket) {
         do {
             if shouldSendPacket(packet, client: self) {
-                let compressedMessage = try compressMessageIfRequired(packet.serialize())
+                let compressedMessage = try compressMessageIfRequired(packet.serialize(context: self))
                 let messageSize = VarInt32(compressedMessage.count).directSerialized()
 
                 send(messageSize + compressedMessage)
@@ -263,8 +287,14 @@ extension MinecraftClient {
         let rawPacketID = try VarInt32(from: packetBuffer).integer
         let packetID = connectionState.packetID(with: rawPacketID)
 
-        let packet = try packetLibrary.parse(packetBuffer, packetID: packetID, client: self)
+        let packet = try packetLibrary.parse(packetBuffer, packetID: packetID, context: self)
         try self.didReceivedPacket(packet, client: self)
+    }
+}
+
+extension MinecraftClient: SerializationContext {
+    public var client: MinecraftClient {
+        return self
     }
 }
 

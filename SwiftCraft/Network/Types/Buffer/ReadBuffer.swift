@@ -1,5 +1,5 @@
 //
-//  InputBuffers.swift
+//  ReadBuffer.swift
 //  SwiftCraft
 //
 //  Created by Noah Peeters on 20.05.18.
@@ -37,7 +37,7 @@ public protocol ReadBuffer {
     /// - Throws: Throws an error if the buffer is empty.
     func advance(by length: Int) throws
 
-    /// Allows access to the raw bytes at the current position
+    /// Allows access to the raw bytes at the current position.
     ///
     /// - Parameter body: The body of the access.
     /// - Returns: The value returned by the body.
@@ -51,3 +51,6 @@ public protocol ReadBuffer {
     /// - Throws: Throws an error if the buffer is empty.
     func loadAsType<R>() throws -> R
 }
+
+/// A buffer used to read bytes from.
+public protocol ByteReadBuffer: ReadBuffer where Element == Byte {}

@@ -167,7 +167,7 @@ public struct EntityVelocity: Hashable, DeserializableDataType {
         self.z = z
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         x = try Int16(from: buffer)
         y = try Int16(from: buffer)
         z = try Int16(from: buffer)
@@ -197,7 +197,7 @@ public struct EntityLocation: Hashable, DeserializableDataType {
         self.z = z
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         x = try Double(from: buffer)
         y = try Double(from: buffer)
         z = try Double(from: buffer)
@@ -222,7 +222,7 @@ public enum SlotContent: Hashable, DeserializableDataType {
         }
     }
 
-    public init<Buffer: ReadBuffer>(from buffer: Buffer) throws where Buffer.Element == Byte {
+    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let blockID = try Int16(from: buffer)
 
         guard blockID >= 0 else {

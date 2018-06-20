@@ -10,12 +10,14 @@ import Foundation
 
 /// Sends a status update to the server.
 public struct ClientStatusPacket: BufferSerializablePacket {
-    public static var packetID = PacketID(connectionState: .play, id: 0x03)
+    public static func packetID(context: SerializationContext) -> PacketID {
+        return PacketID(connectionState: .play, id: 0x03)
+    }
 
     /// The action id of the packet. Send 0 to perform respawn and 1 for a statistics request.
     public let actionID: Int32
 
-    public func serializeData<Buffer: WriteBuffer>(to buffer: Buffer) where Buffer.Element == Byte {
+    public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {
         VarInt32(actionID).serialize(to: buffer)
     }
 }
