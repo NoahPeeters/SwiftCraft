@@ -75,6 +75,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         UpdateHealthPacket.self,                            // 0x41
         SpawnPositionPacket.self,                           // 0x46
         TimeUpdatePacket.self,                              // 0x47
+        SoundEffectPacket.self,                             // 0x49
         EntityTeleportPacket.self,                          // 0x4C
         EntityPropertiesPacket.self                         // 0x4E
     ]

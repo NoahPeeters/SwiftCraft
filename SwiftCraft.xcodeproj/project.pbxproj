@@ -77,6 +77,7 @@
 		4068071420B364A700B116C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4068071320B364A700B116C4 /* Assets.xcassets */; };
 		4068071720B364A700B116C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4068071520B364A700B116C4 /* MainMenu.xib */; };
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
+		408C67DB20DAA98E0090A1F0 /* SoundEffectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C67DA20DAA98E0090A1F0 /* SoundEffectPacket.swift */; };
 		408E63E520B992D900AE9C2D /* EntityStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */; };
 		408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
 		408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */; };
@@ -253,6 +254,7 @@
 		4068071820B364A700B116C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4068071920B364A700B116C4 /* SwiftCraftApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftApp.entitlements; sourceTree = "<group>"; };
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
+		408C67DA20DAA98E0090A1F0 /* SoundEffectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPacket.swift; sourceTree = "<group>"; };
 		408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityStatusPacket.swift; sourceTree = "<group>"; };
 		408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRecipesPacket.swift; sourceTree = "<group>"; };
 		408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPacket.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				408E641620BB096300AE9C2D /* UpdateHealthPacket.swift */,
 				4024C5C620D9069000493A86 /* SpawnPositionPacket.swift */,
 				40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */,
+				408C67DA20DAA98E0090A1F0 /* SoundEffectPacket.swift */,
 				4024C5FF20D951D800493A86 /* EntityTeleportPacket.swift */,
 				408E641220BB04A700AE9C2D /* EntityPropertiesPacket.swift */,
 			);
@@ -1016,6 +1019,7 @@
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
 				4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */,
+				408C67DB20DAA98E0090A1F0 /* SoundEffectPacket.swift in Sources */,
 				408E641920BB0B2400AE9C2D /* EntityMetadataPacket.swift in Sources */,
 				408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */,
 				408E63ED20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift in Sources */,
