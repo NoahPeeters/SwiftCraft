@@ -55,8 +55,8 @@ public struct EntityPropertiesPacket: DeserializablePacket {
             public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
                 uuid = try UUID(from: buffer)
 
-                let operationID = try Byte(from: buffer)
                 let value = try Double(from: buffer)
+                let operationID = try Byte(from: buffer)
 
                 switch operationID {
                 case 0:
