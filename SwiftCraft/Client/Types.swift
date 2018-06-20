@@ -147,13 +147,13 @@ public enum ChatMessageLocation: Byte, Hashable {
 /// The velocity of an entity
 public struct EntityVelocity: Hashable, DeserializableDataType {
     /// The velocity in the x direction.
-    let x: Int16
+    public let x: Int16
 
     /// The velocity in the y direction.
-    let y: Int16
+    public let y: Int16
 
     /// The velocity in the z direction.
-    let z: Int16
+    public let z: Int16
 
     /// Creates a new velocity from x, y, and z.
     ///
@@ -177,13 +177,13 @@ public struct EntityVelocity: Hashable, DeserializableDataType {
 /// The location of an entity
 public struct EntityLocation: Hashable, DeserializableDataType {
     /// The location in the x direction.
-    let x: Double
+    public let x: Double
 
     /// The location in the y direction.
-    let y: Double
+    public let y: Double
 
     /// The location in the z direction.
-    let z: Double
+    public let z: Double
 
     /// Creates a new location from x, y, and z.
     ///

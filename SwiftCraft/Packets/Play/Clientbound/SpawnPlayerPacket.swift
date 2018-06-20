@@ -15,22 +15,22 @@ public struct SpawnPlayerPacket: DeserializablePacket {
     }
 
     /// The id of the player entity.
-    let entityID: EntityID
+    public let entityID: EntityID
 
     /// The uuid of the player.
-    let playerUUID: UUID
+    public let playerUUID: UUID
 
     /// The location of the player.
-    let location: EntityLocation
+    public let location: EntityLocation
 
     /// The yaw of the player.
-    let yaw: Angle
+    public let yaw: Angle
 
     /// The pitch of the player
-    let pitch: Angle
+    public let pitch: Angle
 
     /// Additional metadata.
-    let metaData: ByteArray
+    public let metaData: ByteArray
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
@@ -39,6 +39,5 @@ public struct SpawnPlayerPacket: DeserializablePacket {
         yaw = try Angle(from: buffer)
         pitch = try Angle(from: buffer)
         metaData = buffer.readRemainingElements()
-        print(self)
     }
 }

@@ -43,9 +43,15 @@ public struct DefaultPacketLibrary: PacketLibrary {
         // Play
         SpawnObjectPacket.self,                             // 0x00
         SpawnExperienceOrbPacket.self,                      // 0x01
+        SpawnGlobalEntityPacket.self,                       // 0x02
         SpawnMobPacket.self,                                // 0x03
+        SpawnPaintingPacket.self,                           // 0x04
         SpawnPlayerPacket.self,                             // 0x05
+        ReceivedAnimationPacket.self,                       // 0x06
         StatisticsPacket.self,                              // 0x07
+        BlockBreakAnimationPacket.self,                     // 0x08
+        UpdateBlockEntityPacket.self,                       // 0x09
+        BlockActionPacket.self,                             // 0x0A
         BlockChangePacket.self,                             // 0x0B
         ServerDifficultyPacket.self,                        // 0x0D
         ReceiveChatMessagePacket.self,                      // 0x0F
@@ -55,8 +61,11 @@ public struct DefaultPacketLibrary: PacketLibrary {
         PluginMessageReceivedPacket.self,                   // 0x18
         EntityStatusPacket.self,                            // 0x1B
         UnloadChunkPacket.self,                             // 0x1D
+        ChangeGameStatePacket.self,                         // 0x1E
         KeepaliveRequestPacket.self,                        // 0x1F
         ChunkDataPacket.self,                               // 0x20
+        EffectPacket.self,                                  // 0x21
+        ParticlePacket.self,                                // 0x22
         JoinGamePacket.self,                                // 0x23
         EntityRelativeMovePacket.self,                      // 0x26
         EntityLookAndRelativeMovePacket.self,               // 0x27
@@ -67,6 +76,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         UnlockRecipesPacket.self,                           // 0x31
         DestroyEntitiesPacket.self,                         // 0x32
         EntityHeadLookPacket.self,                          // 0x36
+        WorldBorderPacket.self,                             // 0x38
         HeldItemChangedReceivedPacket.self,                 // 0x3A
         EntityMetadataPacket.self,                          // 0x3C
         AttachEntityPacket.self,                            // 0x3D
@@ -77,7 +87,9 @@ public struct DefaultPacketLibrary: PacketLibrary {
         SpawnPositionPacket.self,                           // 0x46
         TimeUpdatePacket.self,                              // 0x47
         SoundEffectPacket.self,                             // 0x49
+        CollectItemPacket.self,                             // 0x4B
         EntityTeleportPacket.self,                          // 0x4C
+        AdvancementsPacket.self,                            // 0x4D
         EntityPropertiesPacket.self                         // 0x4E
     ]
 

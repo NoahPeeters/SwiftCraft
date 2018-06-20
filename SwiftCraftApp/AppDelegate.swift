@@ -67,6 +67,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         minecraftClient.packetSignal(ReceiveChatMessagePacket.self).observeValues {
             print($0)
         }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.minecraftClient.performRespawn()
+        }
     }
 
     /// Loads sessioncredentials from user default if present.
