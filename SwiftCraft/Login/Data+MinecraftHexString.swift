@@ -20,11 +20,13 @@ extension Data {
             twoComplement(of: &bytes)
         }
 
-        let hexString = bytes.map { String(format: "%02X", $0) }.joined()
-        var foundNonNullCharacter: Bool = false
+        let hexString = bytes.map { (byte: Byte) -> String in
+            String(format: "%02X", byte)
+        }.joined()
 
-        let trimmedHexString = hexString.filter {
-            if $0 == "0" && !foundNonNullCharacter {
+        var foundNonNullCharacter: Bool = false
+        let trimmedHexString = hexString.filter { (character: Character) -> Bool in
+            if character == "0" && !foundNonNullCharacter {
                 return false
             } else {
                 foundNonNullCharacter = true
