@@ -38,6 +38,9 @@ public struct SpawnMobPacket: DeserializablePacket {
     /// The head pitch of the entity.
     let headPitch: Byte
 
+    /// Additional metadata.
+    let metaData: ByteArray
+
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value
         uuid = try UUID(from: buffer)
@@ -47,5 +50,6 @@ public struct SpawnMobPacket: DeserializablePacket {
         pitch = try Byte(from: buffer)
         headPitch = try Byte(from: buffer)
         velocity = try EntityVelocity(from: buffer)
+        metaData = buffer.readRemainingElements()
     }
 }

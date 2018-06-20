@@ -44,6 +44,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         SpawnObjectPacket.self,                             // 0x00
         SpawnExperienceOrbPacket.self,                      // 0x01
         SpawnMobPacket.self,                                // 0x03
+        SpawnPlayerPacket.self,                             // 0x05
         StatisticsPacket.self,                              // 0x07
         BlockChangePacket.self,                             // 0x0B
         ServerDifficultyPacket.self,                        // 0x0D

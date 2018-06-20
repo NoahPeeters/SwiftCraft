@@ -78,6 +78,7 @@
 		4068071720B364A700B116C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4068071520B364A700B116C4 /* MainMenu.xib */; };
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
 		408C67DB20DAA98E0090A1F0 /* SoundEffectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C67DA20DAA98E0090A1F0 /* SoundEffectPacket.swift */; };
+		408C67DD20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C67DC20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift */; };
 		408E63E520B992D900AE9C2D /* EntityStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */; };
 		408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
 		408E63E920B9A6D300AE9C2D /* StatisticsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */; };
@@ -255,6 +256,7 @@
 		4068071920B364A700B116C4 /* SwiftCraftApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftApp.entitlements; sourceTree = "<group>"; };
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
 		408C67DA20DAA98E0090A1F0 /* SoundEffectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPacket.swift; sourceTree = "<group>"; };
+		408C67DC20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnPlayerPacket.swift; sourceTree = "<group>"; };
 		408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityStatusPacket.swift; sourceTree = "<group>"; };
 		408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockRecipesPacket.swift; sourceTree = "<group>"; };
 		408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsPacket.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */,
 				408E63EC20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift */,
 				408E641020BB006200AE9C2D /* SpawnMobPacket.swift */,
+				408C67DC20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift */,
 				408E63E820B9A6D300AE9C2D /* StatisticsPacket.swift */,
 				4024C60120D953AB00493A86 /* BlockChangePacket.swift */,
 				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
@@ -1039,6 +1042,7 @@
 				4024C5C920D9077A00493A86 /* WindowItemsPacket.swift in Sources */,
 				408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */,
 				408E641520BB08CD00AE9C2D /* SetExperiencePacket.swift in Sources */,
+				408C67DD20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift in Sources */,
 				408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
 				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
