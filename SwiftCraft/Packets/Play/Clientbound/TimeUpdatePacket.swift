@@ -10,7 +10,7 @@ import Foundation
 
 /// Packet send once per second with the current time.
 public struct TimeUpdatePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x47)
     }
 

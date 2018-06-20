@@ -10,7 +10,7 @@ import Foundation
 
 /// Removes all entities with the given id from the world.
 public struct DestroyEntitiesPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x32)
     }
 

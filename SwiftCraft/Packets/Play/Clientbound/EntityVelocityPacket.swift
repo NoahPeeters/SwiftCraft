@@ -10,7 +10,7 @@ import Foundation
 
 /// Updaes the veloxity of an entity.
 public struct EntityVelocityPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x3E)
     }
 

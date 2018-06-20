@@ -12,7 +12,7 @@ import Foundation
 ///
 /// - Note: The reason will be described in the `message` field.
 public struct DisconnectPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .login, id: 0x00)
     }
 

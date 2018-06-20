@@ -215,7 +215,11 @@ extension MinecraftClient {
     public func sendPacket(_ packet: SerializablePacket) {
         do {
             if shouldSendPacket(packet, client: self) {
-                let compressedMessage = try compressMessageIfRequired(packet.serialize(context: self))
+                guard let serializedPacket = packet.serialize(context: self) else {
+                    print(" ❌ packet cannot be encoded \(packet)")
+                    return
+                }
+                let compressedMessage = try compressMessageIfRequired(serializedPacket)
                 let messageSize = VarInt32(compressedMessage.count).directSerialized()
 
                 send(messageSize + compressedMessage)

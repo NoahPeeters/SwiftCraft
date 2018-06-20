@@ -10,7 +10,7 @@ import Foundation
 
 /// Spawns a new mob in the world
 public struct SpawnMobPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x03)
     }
 

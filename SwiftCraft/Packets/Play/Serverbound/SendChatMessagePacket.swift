@@ -10,7 +10,7 @@ import Foundation
 
 /// A packet which will send a chat message to the server.
 public struct SendChatMessagePacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x02)
     }
 

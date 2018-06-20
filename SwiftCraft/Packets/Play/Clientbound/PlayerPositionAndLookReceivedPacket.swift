@@ -10,7 +10,7 @@ import Foundation
 
 /// The server send the current player location and look direction.
 public struct PlayerPositionAndLookReceivedPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x2F)
     }
 

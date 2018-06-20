@@ -10,7 +10,7 @@ import Foundation
 
 /// Sends the spawn location to the client.
 public struct SpawnPositionPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x46)
     }
 

@@ -10,7 +10,7 @@ import Foundation
 
 /// A packet indicating that the server difficulty changed.
 public struct ServerDifficultyPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x0D)
     }
 

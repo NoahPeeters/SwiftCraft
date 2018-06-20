@@ -10,7 +10,7 @@ import Foundation
 
 /// Tells the client to unload a chunk
 public struct UnloadChunkPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x1D)
     }
 

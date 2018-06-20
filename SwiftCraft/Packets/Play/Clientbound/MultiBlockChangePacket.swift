@@ -10,7 +10,7 @@ import Foundation
 
 /// A packet received if multiple blocks changed in the same chunk in the same tick.
 public struct MultiBlockChangePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x10)
     }
 

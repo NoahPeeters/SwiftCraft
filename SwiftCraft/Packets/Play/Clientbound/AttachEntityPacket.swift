@@ -10,7 +10,7 @@ import Foundation
 
 /// Attaches an entity to another one.
 public struct AttachEntityPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x3D)
     }
 

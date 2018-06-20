@@ -10,7 +10,7 @@ import Foundation
 
 /// Packet containing a new chat message received from the server.
 public struct ReceiveChatMessagePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x0F)
     }
 

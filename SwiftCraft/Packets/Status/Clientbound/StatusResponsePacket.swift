@@ -10,7 +10,7 @@ import Foundation
 
 /// Spawns a new object in the world.
 public struct StatusResponsePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .status, id: 0x00)
     }
 

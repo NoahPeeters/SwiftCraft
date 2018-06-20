@@ -10,7 +10,7 @@ import Foundation
 
 /// Sends a status update to the server.
 public struct ClientStatusPacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x03)
     }
 

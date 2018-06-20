@@ -10,7 +10,7 @@ import Foundation
 
 /// Packet to enable or disable compression
 public struct SetCompressionPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .login, id: 0x03)
     }
 

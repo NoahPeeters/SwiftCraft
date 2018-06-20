@@ -12,7 +12,7 @@ import Foundation
 ///
 /// - Attention: Every client must handle this packet or it will be kicked
 public struct KeepaliveRequestPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x1F)
     }
 

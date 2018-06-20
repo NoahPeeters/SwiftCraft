@@ -10,7 +10,7 @@ import Foundation
 
 /// Sent by the server when items in multiple slots (in a window) are added/removed.
 public struct WindowItemsPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x14)
     }
 

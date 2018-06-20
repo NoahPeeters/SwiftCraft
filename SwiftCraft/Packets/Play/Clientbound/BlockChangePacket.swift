@@ -10,7 +10,7 @@ import Foundation
 
 /// Informs the client about a change of a block.
 public struct BlockChangePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x0B)
     }
 

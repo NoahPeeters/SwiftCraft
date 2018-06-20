@@ -23,20 +23,23 @@ public protocol SerializablePacket {
     /// Serializes the packet and its packet id to a byte array.
     ///
     /// - Returns: The byte array.
-    func serialize(context: SerializationContext) -> ByteArray
+    func serialize(context: SerializationContext) -> ByteArray?
 
     /// Serializes the packets data to a byte array.
     ///
-    /// - Returns: The serialized packet data
+    /// - Returns: The serialized packet data.
     func serializedData(context: SerializationContext) -> ByteArray
 
     /// The id of the packet.
-    static func packetID(context: SerializationContext) -> PacketID
+    static func packetID(context: SerializationContext) -> PacketID?
 }
 
 extension SerializablePacket {
-    public func serialize(context: SerializationContext) -> ByteArray {
-        let serializedPacketID = VarInt32(Self.packetID(context: context).id).directSerialized()
+    public func serialize(context: SerializationContext) -> ByteArray? {
+        guard let packetID = Self.packetID(context: context)?.id else {
+            return nil
+        }
+        let serializedPacketID = VarInt32(packetID).directSerialized()
 
         return serializedPacketID + serializedData(context: context)
     }
@@ -63,7 +66,7 @@ extension BufferSerializablePacket {
 /// A deserializable minecaft packet.
 public protocol DeserializablePacket {
     /// The id of the packet.
-    static func packetID(context: SerializationContext) -> PacketID
+    static func packetID(context: SerializationContext) -> PacketID?
 
     init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws
 }

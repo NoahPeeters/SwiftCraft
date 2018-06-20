@@ -10,7 +10,7 @@ import Foundation
 
 /// Received from the server when the login was successful.
 public struct LoginSuccessPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .login, id: 0x02)
     }
 

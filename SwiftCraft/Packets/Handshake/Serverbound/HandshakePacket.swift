@@ -10,7 +10,7 @@ import Foundation
 
 /// A packet to send to the server after connecting to start the communitation.
 public struct HandshakePacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .handshaking, id: 0x00)
     }
 

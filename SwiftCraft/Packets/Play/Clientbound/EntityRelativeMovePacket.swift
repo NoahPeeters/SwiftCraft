@@ -10,7 +10,7 @@ import Foundation
 
 /// Updates the location of an entity.
 public struct EntityRelativeMovePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x26)
     }
 

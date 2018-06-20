@@ -10,7 +10,7 @@ import Foundation
 
 /// Sets the experience of the player.
 public struct SetExperiencePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x40)
     }
 

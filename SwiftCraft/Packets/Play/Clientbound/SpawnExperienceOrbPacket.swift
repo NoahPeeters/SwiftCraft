@@ -10,7 +10,7 @@ import Foundation
 
 /// Send by the server when a experience orb spawns
 public struct SpawnExperienceOrbPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x01)
     }
 

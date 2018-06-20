@@ -10,7 +10,7 @@ import Foundation
 
 /// Response to the `EncryptionRequestPacket`. This packet is essential for the login.
 public struct EncryptionResponsePacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .login, id: 0x01)
     }
 

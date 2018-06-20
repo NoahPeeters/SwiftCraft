@@ -10,7 +10,7 @@ import Foundation
 
 /// Updates the players health status
 public struct UpdateHealthPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID {
+    public static func packetID(context: SerializationContext) -> PacketID? {
         return PacketID(connectionState: .play, id: 0x41)
     }
 
