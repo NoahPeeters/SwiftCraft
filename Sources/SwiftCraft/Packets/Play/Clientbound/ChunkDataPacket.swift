@@ -42,6 +42,5 @@ public struct ChunkDataPacket: DeserializablePacket, PlayPacketIDProvider, Custo
         let biomes = try isInitial ? buffer.read(lenght: 256) : nil
 
         chunkColumn = ChunkColumn(chunkSections: chunkSections, biomes: biomes)
-        print(self)
     }
 }
