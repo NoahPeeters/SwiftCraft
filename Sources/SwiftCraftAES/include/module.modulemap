@@ -1,0 +1,4 @@
+module SwiftCraftAES [system] {
+    header "../SwiftCraftAES.h"
+    export *
+}

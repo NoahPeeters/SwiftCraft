@@ -1,0 +1,10 @@
+Carthage/
+Cartfile
+Cartfile.resolved
+.DS_Store
+.git/
+.gitignore
+.build/
+!.build/checkouts/
+!.build/repositories/
+!.build/workspace-state.json

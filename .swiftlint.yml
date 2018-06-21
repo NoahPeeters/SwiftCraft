@@ -1,7 +1,8 @@
 excluded:
+  - Package.swift
   - Carthage
-  - SwiftCraft/Network/Crypto/Encryption/RSA/SwCrypt.swift
-  - SwiftCraft/Network/Crypto/Compression/DataCompression.swift
+  - .build
+  - Sources/SwiftCraft/Network/Crypto/Encryption/SwCrypt.swift
 
 identifier_name:
   excluded:

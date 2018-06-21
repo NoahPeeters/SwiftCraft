@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		133424BD20B425660097C45D /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BC20B425660097C45D /* SwCrypt.swift */; };
 		133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */; };
-		1334250B20B453E60097C45D /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 1334250920B453E60097C45D /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1334250C20B453E60097C45D /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1334250A20B453E60097C45D /* AESCipher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1334250E20B4541A0097C45D /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 1334250D20B4541A0097C45D /* AES.c */; };
 		1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251120B460D60097C45D /* Data+MinecraftHexString.swift */; };
 		1334251520B4647A0097C45D /* SessionServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251420B4647A0097C45D /* SessionServerService.swift */; };
 		1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251720B469DB0097C45D /* AuthenticationProvider.swift */; };
@@ -23,11 +20,9 @@
 		4005B78F20C30D61001F09D2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */; };
 		4005B79020C30D61001F09D2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78E20C30D61001F09D2 /* Result.framework */; };
 		4005B79120C30EBA001F09D2 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4005B79220C30EBA001F09D2 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78E20C30D61001F09D2 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4005B79420C30FAA001F09D2 /* Reactor+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4005B79320C30FAA001F09D2 /* Reactor+Reactive.swift */; };
 		4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
 		4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */; };
-		4022B06620B4B88E00B4E680 /* DataCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06520B4B88E00B4E680 /* DataCompression.swift */; };
 		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
 		4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */; };
 		4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */; };
@@ -36,10 +31,9 @@
 		4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */; };
 		4024AB5220B1DB57008790F2 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 4024AB4B20B1DB57008790F2 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4024AB6820B1DD26008790F2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6520B1DD26008790F2 /* Alamofire.framework */; };
 		4024AB6C20B1DEA0008790F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6A20B1DEA0008790F2 /* Nimble.framework */; };
 		4024AB6D20B1DEA0008790F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6B20B1DEA0008790F2 /* Quick.framework */; };
-		4024AB6F20B1E093008790F2 /* Alamofire+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB6E20B1E093008790F2 /* Alamofire+Helper.swift */; };
+		4024AB6F20B1E093008790F2 /* URLRequest+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB6E20B1E093008790F2 /* URLRequest+Helper.swift */; };
 		4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7320B1EA6C008790F2 /* UserLoginService.swift */; };
 		4024AB7620B1EEC9008790F2 /* MinecraftUserLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7520B1EEC9008790F2 /* MinecraftUserLoginTests.swift */; };
 		4024AB7920B1F216008790F2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7820B1F216008790F2 /* Credentials.swift */; };
@@ -150,6 +144,16 @@
 		40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */; };
 		40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */; };
 		40DAC2DF20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */; };
+		40DC83EA20DBE8B1005F7EDE /* SwiftCraftAES.h in Headers */ = {isa = PBXBuildFile; fileRef = 40DC83E820DBE8B1005F7EDE /* SwiftCraftAES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40DC83ED20DBE8B1005F7EDE /* SwiftCraftAES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC83E620DBE8B1005F7EDE /* SwiftCraftAES.framework */; };
+		40DC83EE20DBE8B1005F7EDE /* SwiftCraftAES.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC83E620DBE8B1005F7EDE /* SwiftCraftAES.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40DC83F320DBE8BD005F7EDE /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 1334250D20B4541A0097C45D /* AES.c */; };
+		40DC83F420DBEFAA005F7EDE /* SwiftCraftAES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC83E620DBE8B1005F7EDE /* SwiftCraftAES.framework */; };
+		40DC83F520DBEFCA005F7EDE /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 1334251320B463350097C45D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40DC83FC20DBFBF3005F7EDE /* DataCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */; };
+		40DC83FE20DC23C5005F7EDE /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC83FD20DC23C5005F7EDE /* Gzip.framework */; };
+		40DC840720DC4003005F7EDE /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 40DC840320DC3FA5005F7EDE /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40DC840820DC4006005F7EDE /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC840420DC3FA6005F7EDE /* AESCipher.m */; };
 		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 		40E314F520B601F900C9E271 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F420B601F900C9E271 /* Reactor.swift */; };
 		40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F720B6048600C9E271 /* LoginReactor.swift */; };
@@ -181,6 +185,13 @@
 			remoteGlobalIDString = 4024AB4720B1DB57008790F2;
 			remoteInfo = SwiftCraft;
 		};
+		40DC83EB20DBE8B1005F7EDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4024AB3F20B1DB57008790F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40DC83E520DBE8B1005F7EDE;
+			remoteInfo = SwiftCraftAES;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -191,7 +202,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				4005B79120C30EBA001F09D2 /* ReactiveSwift.framework in Embed Frameworks */,
-				4005B79220C30EBA001F09D2 /* Result.framework in Embed Frameworks */,
+				40DC83EE20DBE8B1005F7EDE /* SwiftCraftAES.framework in Embed Frameworks */,
 				4005B78220C30C1A001F09D2 /* SwiftCraftReactive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -211,8 +222,6 @@
 /* Begin PBXFileReference section */
 		133424BC20B425660097C45D /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 		133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionResponsePacket.swift; sourceTree = "<group>"; };
-		1334250920B453E60097C45D /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
-		1334250A20B453E60097C45D /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		1334250D20B4541A0097C45D /* AES.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AES.c; sourceTree = "<group>"; };
 		1334251120B460D60097C45D /* Data+MinecraftHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+MinecraftHexString.swift"; sourceTree = "<group>"; };
 		1334251320B463350097C45D /* AES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
@@ -227,7 +236,6 @@
 		4005B79320C30FAA001F09D2 /* Reactor+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactor+Reactive.swift"; sourceTree = "<group>"; };
 		4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousMessageCryptor.swift; sourceTree = "<group>"; };
 		4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompressionPacket.swift; sourceTree = "<group>"; };
-		4022B06520B4B88E00B4E680 /* DataCompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCompression.swift; sourceTree = "<group>"; };
 		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
 		4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGamePacket.swift; sourceTree = "<group>"; };
 		4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
@@ -242,7 +250,7 @@
 		4024AB6520B1DD26008790F2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		4024AB6A20B1DEA0008790F2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		4024AB6B20B1DEA0008790F2 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		4024AB6E20B1E093008790F2 /* Alamofire+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Helper.swift"; sourceTree = "<group>"; };
+		4024AB6E20B1E093008790F2 /* URLRequest+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Helper.swift"; sourceTree = "<group>"; };
 		4024AB7320B1EA6C008790F2 /* UserLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginService.swift; sourceTree = "<group>"; };
 		4024AB7520B1EEC9008790F2 /* MinecraftUserLoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftUserLoginTests.swift; sourceTree = "<group>"; };
 		4024AB7820B1F216008790F2 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -346,6 +354,7 @@
 		40AEEE7A20DBD0D300E774CA /* EntityLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityLocation.swift; sourceTree = "<group>"; };
 		40AEEE7C20DBD0E800E774CA /* SlotContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotContent.swift; sourceTree = "<group>"; };
 		40AEEE7E20DBD0FF00E774CA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		40AEEE8220DBE5F900E774CA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -357,6 +366,14 @@
 		40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginMessageReceivedPacket.swift; sourceTree = "<group>"; };
 		40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedPlayerAbilitiesPacket.swift; sourceTree = "<group>"; };
 		40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeldItemChangedReceivedPacket.swift; sourceTree = "<group>"; };
+		40DC83E620DBE8B1005F7EDE /* SwiftCraftAES.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraftAES.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40DC83E820DBE8B1005F7EDE /* SwiftCraftAES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraftAES.h; sourceTree = "<group>"; };
+		40DC83E920DBE8B1005F7EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40DC83F720DBF4A6005F7EDE /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = ../include/module.modulemap; sourceTree = "<group>"; };
+		40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCompression.swift; sourceTree = "<group>"; };
+		40DC83FD20DC23C5005F7EDE /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/Mac/Gzip.framework; sourceTree = "<group>"; };
+		40DC840320DC3FA5005F7EDE /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		40DC840420DC3FA6005F7EDE /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
 		40E314F420B601F900C9E271 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
 		40E314F720B6048600C9E271 /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
@@ -381,7 +398,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4024AB6820B1DD26008790F2 /* Alamofire.framework in Frameworks */,
+				40DC83FE20DC23C5005F7EDE /* Gzip.framework in Frameworks */,
+				40DC83F420DBEFAA005F7EDE /* SwiftCraftAES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +418,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4005B78120C30C1A001F09D2 /* SwiftCraftReactive.framework in Frameworks */,
+				40DC83ED20DBE8B1005F7EDE /* SwiftCraftAES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40DC83E320DBE8B1005F7EDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,10 +581,9 @@
 		4024AB3E20B1DB57008790F2 = {
 			isa = PBXGroup;
 			children = (
-				4024AB4A20B1DB57008790F2 /* SwiftCraft */,
-				4024AB5520B1DB57008790F2 /* SwiftCraftTests */,
-				4005B77B20C30C1A001F09D2 /* SwiftCraftReactive */,
-				4068071020B364A600B116C4 /* SwiftCraftApp */,
+				40AEEE8220DBE5F900E774CA /* Package.swift */,
+				40AEEE8020DBDD3700E774CA /* Sources */,
+				40AEEE8120DBDD5D00E774CA /* Tests */,
 				4024AB4920B1DB57008790F2 /* Products */,
 				4024AB6220B1DD26008790F2 /* Frameworks */,
 			);
@@ -571,6 +596,7 @@
 				4024AB5120B1DB57008790F2 /* SwiftCraftTests.xctest */,
 				4068070F20B364A600B116C4 /* SwiftCraftApp.app */,
 				4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */,
+				40DC83E620DBE8B1005F7EDE /* SwiftCraftAES.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -603,6 +629,7 @@
 		4024AB6220B1DD26008790F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40DC83FD20DC23C5005F7EDE /* Gzip.framework */,
 				4024C5F520D9373300493A86 /* libz.tbd */,
 				4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */,
 				4005B78E20C30D61001F09D2 /* Result.framework */,
@@ -795,22 +822,10 @@
 			path = Meta;
 			sourceTree = "<group>";
 		};
-		409D94E220DBC83E00F2DCD4 /* AES */ = {
-			isa = PBXGroup;
-			children = (
-				1334251320B463350097C45D /* AES.h */,
-				1334250D20B4541A0097C45D /* AES.c */,
-				1334250920B453E60097C45D /* AESCipher.h */,
-				1334250A20B453E60097C45D /* AESCipher.m */,
-			);
-			path = AES;
-			sourceTree = "<group>";
-		};
 		409D94E320DBC85A00F2DCD4 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				409D94E220DBC83E00F2DCD4 /* AES */,
-				409D94E520DBC89A00F2DCD4 /* RSA */,
+				133424BC20B425660097C45D /* SwCrypt.swift */,
 				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
 			);
 			path = Encryption;
@@ -819,18 +834,10 @@
 		409D94E420DBC86700F2DCD4 /* Compression */ = {
 			isa = PBXGroup;
 			children = (
-				4022B06520B4B88E00B4E680 /* DataCompression.swift */,
+				40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */,
 				4022B06720B4B92600B4E680 /* MessageCompressor.swift */,
 			);
 			path = Compression;
-			sourceTree = "<group>";
-		};
-		409D94E520DBC89A00F2DCD4 /* RSA */ = {
-			isa = PBXGroup;
-			children = (
-				133424BC20B425660097C45D /* SwCrypt.swift */,
-			);
-			path = RSA;
 			sourceTree = "<group>";
 		};
 		409D94E620DBC8B900F2DCD4 /* Helper */ = {
@@ -878,7 +885,7 @@
 		40AEEE6520DBCF8B00E774CA /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB6E20B1E093008790F2 /* Alamofire+Helper.swift */,
+				4024AB6E20B1E093008790F2 /* URLRequest+Helper.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -925,6 +932,48 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		40AEEE8020DBDD3700E774CA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				40DC83E720DBE8B1005F7EDE /* SwiftCraftAES */,
+				4024AB4A20B1DB57008790F2 /* SwiftCraft */,
+				4005B77B20C30C1A001F09D2 /* SwiftCraftReactive */,
+				4068071020B364A600B116C4 /* SwiftCraftApp */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		40AEEE8120DBDD5D00E774CA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4024AB5520B1DB57008790F2 /* SwiftCraftTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		40DC83E720DBE8B1005F7EDE /* SwiftCraftAES */ = {
+			isa = PBXGroup;
+			children = (
+				40DC83E820DBE8B1005F7EDE /* SwiftCraftAES.h */,
+				1334251320B463350097C45D /* AES.h */,
+				1334250D20B4541A0097C45D /* AES.c */,
+				40DC840320DC3FA5005F7EDE /* AESCipher.h */,
+				40DC840420DC3FA6005F7EDE /* AESCipher.m */,
+				40DC83E920DBE8B1005F7EDE /* Info.plist */,
+				40DC83F820DBF53D005F7EDE /* include */,
+			);
+			path = SwiftCraftAES;
+			sourceTree = "<group>";
+		};
+		40DC83F820DBF53D005F7EDE /* include */ = {
+			isa = PBXGroup;
+			children = (
+				40DC83F720DBF4A6005F7EDE /* module.modulemap */,
+			);
+			name = include;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		40E314F620B603D100C9E271 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,7 +1000,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */,
-				1334250B20B453E60097C45D /* AESCipher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40DC83E120DBE8B1005F7EDE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40DC840720DC4003005F7EDE /* AESCipher.h in Headers */,
+				40DC83F520DBEFCA005F7EDE /* AES.h in Headers */,
+				40DC83EA20DBE8B1005F7EDE /* SwiftCraftAES.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,7 +1018,7 @@
 /* Begin PBXLegacyTarget section */
 		403464D220B8A94A002FBC11 /* Create Documentation */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--author \"Noah Peeters\" --author_url \"https://github.com/NoahPeeters\" --module SwiftCraft --min-acl private -e SwiftCraft/Crypto/SwCrypt.swift SwiftCraft/Crypto/DataCompression.swift";
+			buildArgumentsString = "--author \"Noah Peeters\" --author_url \"https://github.com/NoahPeeters\" --module SwiftCraft --source-directory Sources/SwiftCraft --min-acl private -e Sources/SwiftCraft/Crypto/SwCrypt.swift Sources/SwiftCraft/Crypto/DataCompression.swift";
 			buildConfigurationList = 403464D520B8A94A002FBC11 /* Build configuration list for PBXLegacyTarget "Create Documentation" */;
 			buildPhases = (
 			);
@@ -1047,11 +1105,30 @@
 			);
 			dependencies = (
 				4005B78020C30C1A001F09D2 /* PBXTargetDependency */,
+				40DC83EC20DBE8B1005F7EDE /* PBXTargetDependency */,
 			);
 			name = SwiftCraftApp;
 			productName = SwiftCraftApp;
 			productReference = 4068070F20B364A600B116C4 /* SwiftCraftApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		40DC83E520DBE8B1005F7EDE /* SwiftCraftAES */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40DC83F120DBE8B1005F7EDE /* Build configuration list for PBXNativeTarget "SwiftCraftAES" */;
+			buildPhases = (
+				40DC83E120DBE8B1005F7EDE /* Headers */,
+				40DC83E220DBE8B1005F7EDE /* Sources */,
+				40DC83E320DBE8B1005F7EDE /* Frameworks */,
+				40DC83E420DBE8B1005F7EDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCraftAES;
+			productName = SwiftCraftAES;
+			productReference = 40DC83E620DBE8B1005F7EDE /* SwiftCraftAES.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -1059,6 +1136,7 @@
 		4024AB3F20B1DB57008790F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Latest;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Noah Peeters";
@@ -1087,6 +1165,9 @@
 							};
 						};
 					};
+					40DC83E520DBE8B1005F7EDE = {
+						CreatedOnToolsVersion = 10.0;
+					};
 				};
 			};
 			buildConfigurationList = 4024AB4220B1DB57008790F2 /* Build configuration list for PBXProject "SwiftCraft" */;
@@ -1104,6 +1185,7 @@
 			targets = (
 				4024AB4720B1DB57008790F2 /* SwiftCraft */,
 				4024AB5020B1DB57008790F2 /* SwiftCraftTests */,
+				40DC83E520DBE8B1005F7EDE /* SwiftCraftAES */,
 				4005B77920C30C1A001F09D2 /* SwiftCraftReactive */,
 				4068070E20B364A600B116C4 /* SwiftCraftApp */,
 				403464D220B8A94A002FBC11 /* Create Documentation */,
@@ -1142,6 +1224,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40DC83E420DBE8B1005F7EDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1151,16 +1240,16 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		4024AB7020B1E14D008790F2 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1182,14 +1271,15 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1260,7 +1350,6 @@
 				40AEEE6D20DBD05500E774CA /* BlockID.swift in Sources */,
 				408C67DF20DAAEFC0090A1F0 /* SpawnGlobalEntityPacket.swift in Sources */,
 				408E640620BADD5C00AE9C2D /* ChunkSection.swift in Sources */,
-				1334250E20B4541A0097C45D /* AES.c in Sources */,
 				4024AB8020B21E45008790F2 /* ReadBuffer.swift in Sources */,
 				40AEEE7520DBD0A400E774CA /* LevelType.swift in Sources */,
 				408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */,
@@ -1290,13 +1379,13 @@
 				408E640B20BAF60E00AE9C2D /* World.swift in Sources */,
 				408C67EF20DABC270090A1F0 /* WorldBorderPacket.swift in Sources */,
 				408C67E320DAB1D70090A1F0 /* ReceivedAnimationPacket.swift in Sources */,
-				4022B06620B4B88E00B4E680 /* DataCompression.swift in Sources */,
 				4024AB7920B1F216008790F2 /* Credentials.swift in Sources */,
 				4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */,
 				4022B07720B4D20C00B4E680 /* ReceiveChatMessagePacket.swift in Sources */,
 				40E314F520B601F900C9E271 /* Reactor.swift in Sources */,
 				40DAC2DF20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift in Sources */,
 				404352F220DAE29600C2E737 /* CollectItemPacket.swift in Sources */,
+				40DC83FC20DBFBF3005F7EDE /* DataCompression.swift in Sources */,
 				40E314FA20B6079F00C9E271 /* KeepaliveReactor.swift in Sources */,
 				40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */,
 				408E63FE20BA080D00AE9C2D /* UUID+Serializable.swift in Sources */,
@@ -1313,7 +1402,6 @@
 				4024C60220D953AB00493A86 /* BlockChangePacket.swift in Sources */,
 				4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */,
 				406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */,
-				1334250C20B453E60097C45D /* AESCipher.m in Sources */,
 				4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */,
 				1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */,
 				4068070420B34D3F00B116C4 /* PacketID.swift in Sources */,
@@ -1331,7 +1419,7 @@
 				40E3150020B612EB00C9E271 /* TimeUpdatePacket.swift in Sources */,
 				4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */,
 				40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */,
-				4024AB6F20B1E093008790F2 /* Alamofire+Helper.swift in Sources */,
+				4024AB6F20B1E093008790F2 /* URLRequest+Helper.swift in Sources */,
 				408E63E720B9944500AE9C2D /* UnlockRecipesPacket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1356,6 +1444,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40DC83E220DBE8B1005F7EDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40DC840820DC4006005F7EDE /* AESCipher.m in Sources */,
+				40DC83F320DBE8BD005F7EDE /* AES.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1373,6 +1470,11 @@
 			isa = PBXTargetDependency;
 			target = 4024AB4720B1DB57008790F2 /* SwiftCraft */;
 			targetProxy = 4024AB5320B1DB57008790F2 /* PBXContainerItemProxy */;
+		};
+		40DC83EC20DBE8B1005F7EDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40DC83E520DBE8B1005F7EDE /* SwiftCraftAES */;
+			targetProxy = 40DC83EB20DBE8B1005F7EDE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1404,7 +1506,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftCraftReactive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1435,7 +1537,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftCraftReactive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1585,7 +1687,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/SwiftCraft/Supporting Files/Meta/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1598,7 +1700,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1619,7 +1721,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/SwiftCraft/Supporting Files/Meta/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1631,7 +1733,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1645,7 +1747,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SwiftCraftTests/Info.plist;
+				INFOPLIST_FILE = Tests/SwiftCraftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1667,7 +1769,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SwiftCraftTests/Info.plist;
+				INFOPLIST_FILE = Tests/SwiftCraftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1713,7 +1815,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SwiftCraftApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1735,13 +1837,64 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SwiftCraftApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		40DC83EF20DBE8B1005F7EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftAES/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftAES;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		40DC83F020DBE8B1005F7EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftAES/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftAES;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -1799,6 +1952,15 @@
 			buildConfigurations = (
 				4068071B20B364A700B116C4 /* Debug */,
 				4068071C20B364A700B116C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40DC83F120DBE8B1005F7EDE /* Build configuration list for PBXNativeTarget "SwiftCraftAES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40DC83EF20DBE8B1005F7EDE /* Debug */,
+				40DC83F020DBE8B1005F7EDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
