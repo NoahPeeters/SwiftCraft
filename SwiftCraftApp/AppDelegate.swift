@@ -25,7 +25,7 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func startOnline() {
-        //        UserDefaults.standard.removeObject(forKey: "accessToken")
+//        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
         let loginService = UserLoginService()
