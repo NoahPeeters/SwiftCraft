@@ -12,3 +12,4 @@ identifier_name:
 
 disabled_rules:
   - nesting
+  - identifier_name

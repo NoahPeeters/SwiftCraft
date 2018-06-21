@@ -119,8 +119,8 @@ public class TCPClient: NSObject, TCPClientProtocol {
         outputStream!.delegate = self
 
         // schedule
-        inputStream!.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
-        outputStream!.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        inputStream!.schedule(in: RunLoop.current, forMode: RunLoop.Mode.default)
+        outputStream!.schedule(in: RunLoop.current, forMode: RunLoop.Mode.default)
 
         // open
         inputStream!.open()
@@ -145,7 +145,7 @@ public class TCPClient: NSObject, TCPClientProtocol {
     /// - Attention: The close function must be called on the same runloop as the connect function.
     private func closeStream(_ stream: Stream) {
         stream.close()
-        stream.remove(from: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        stream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
     }
 
     /// Sends the given bytes if the outout stream is open.

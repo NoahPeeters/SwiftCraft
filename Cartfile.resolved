@@ -1,5 +1,5 @@
 github "Alamofire/Alamofire" "4.7.2"
 github "ReactiveCocoa/ReactiveSwift" "3.1.0"
 github "antitypical/Result" "3.2.4"
-github "quick/nimble" "v7.1.1"
+github "quick/nimble" "v7.1.2"
 github "quick/quick" "v1.3.0"
