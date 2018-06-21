@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 import Gzip
 
 extension Data {
@@ -146,6 +147,8 @@ extension Data {
     }
 
     fileprivate func crcHash() -> UInt32 {
-        return UInt32((try? CC.CRC.crc(self, mode: .crc32Adler)) ?? 0)
+        return self.crc32().withUnsafeBytes { (dataPointer: UnsafePointer<UInt32>) -> UInt32 in
+            return dataPointer.pointee.bigEndian
+        }
     }
 }
