@@ -18,6 +18,15 @@
 		4005B78F20C30D61001F09D2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */; };
 		4005B79020C30D61001F09D2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78E20C30D61001F09D2 /* Result.framework */; };
 		4005B79420C30FAA001F09D2 /* Reactor+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4005B79320C30FAA001F09D2 /* Reactor+Reactive.swift */; };
+		4012529B20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */; };
+		4012529C20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		401252A120DC604C00802FCA /* SwiftCraft.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		401252A220DC604F00802FCA /* SwiftCraftReactive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		401252A320DC606F00802FCA /* SwiftCraftAppGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4012528D20DC5DCE00802FCA /* SwiftCraftAppGame.swift */; };
+		401252A420DC608300802FCA /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
+		401252A520DC608500802FCA /* SwiftCraftReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */; };
+		401252A620DC60B900802FCA /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC83FD20DC23C5005F7EDE /* Gzip.framework */; };
+		401252A720DC60BB00802FCA /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC840920DC4B5A005F7EDE /* CryptoSwift.framework */; };
 		4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
 		4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */; };
 		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
@@ -144,8 +153,6 @@
 		40DC842520DC5418005F7EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC842420DC5418005F7EDE /* AppDelegate.swift */; };
 		40DC842720DC541A005F7EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DC842620DC541A005F7EDE /* Assets.xcassets */; };
 		40DC842A20DC541A005F7EDE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DC842820DC541A005F7EDE /* MainMenu.xib */; };
-		40DC843120DC55AC005F7EDE /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
-		40DC843220DC55AE005F7EDE /* SwiftCraftReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */; };
 		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 		40E314F520B601F900C9E271 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F420B601F900C9E271 /* Reactor.swift */; };
 		40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F720B6048600C9E271 /* LoginReactor.swift */; };
@@ -163,6 +170,13 @@
 			remoteGlobalIDString = 4024AB4720B1DB57008790F2;
 			remoteInfo = SwiftCraft;
 		};
+		4012529920DC5FAA00802FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4024AB3F20B1DB57008790F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4012529320DC5FAA00802FCA;
+			remoteInfo = SwiftCraftAppShared;
+		};
 		4024AB5320B1DB57008790F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4024AB3F20B1DB57008790F2 /* Project object */;
@@ -171,6 +185,22 @@
 			remoteInfo = SwiftCraft;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		401252A020DC5FAA00802FCA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4012529C20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Embed Frameworks */,
+				401252A120DC604C00802FCA /* SwiftCraft.framework in Embed Frameworks */,
+				401252A220DC604F00802FCA /* SwiftCraftReactive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		133424BC20B425660097C45D /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
@@ -185,6 +215,11 @@
 		4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/Mac/ReactiveSwift.framework; sourceTree = "<group>"; };
 		4005B78E20C30D61001F09D2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		4005B79320C30FAA001F09D2 /* Reactor+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactor+Reactive.swift"; sourceTree = "<group>"; };
+		4012528820DC5ABA00802FCA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4012528D20DC5DCE00802FCA /* SwiftCraftAppGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCraftAppGame.swift; sourceTree = "<group>"; };
+		4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraftAppShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4012529620DC5FAA00802FCA /* SwiftCraftAppShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraftAppShared.h; sourceTree = "<group>"; };
+		4012529720DC5FAA00802FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousMessageCryptor.swift; sourceTree = "<group>"; };
 		4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompressionPacket.swift; sourceTree = "<group>"; };
 		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
@@ -340,6 +375,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4012529120DC5FAA00802FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				401252A420DC608300802FCA /* SwiftCraft.framework in Frameworks */,
+				401252A520DC608500802FCA /* SwiftCraftReactive.framework in Frameworks */,
+				401252A620DC60B900802FCA /* Gzip.framework in Frameworks */,
+				401252A720DC60BB00802FCA /* CryptoSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4024AB4420B1DB57008790F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,8 +409,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40DC843120DC55AC005F7EDE /* SwiftCraft.framework in Frameworks */,
-				40DC843220DC55AE005F7EDE /* SwiftCraftReactive.framework in Frameworks */,
+				4012529B20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +454,45 @@
 				4005B77D20C30C1A001F09D2 /* Info.plist */,
 			);
 			path = SwiftCraftReactive;
+			sourceTree = "<group>";
+		};
+		4012528A20DC5B0C00802FCA /* SwiftCraftCommandlineApp */ = {
+			isa = PBXGroup;
+			children = (
+				4012528820DC5ABA00802FCA /* main.swift */,
+			);
+			path = SwiftCraftCommandlineApp;
+			sourceTree = "<group>";
+		};
+		4012528B20DC5B3600802FCA /* SwiftCraftApp */ = {
+			isa = PBXGroup;
+			children = (
+				40DC842320DC5418005F7EDE /* SwiftCraftApp */,
+				4012528A20DC5B0C00802FCA /* SwiftCraftCommandlineApp */,
+				4012528C20DC5C0E00802FCA /* Shared */,
+			);
+			path = SwiftCraftApp;
+			sourceTree = "<group>";
+		};
+		4012528C20DC5C0E00802FCA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4012529720DC5FAA00802FCA /* Info.plist */,
+				4012529620DC5FAA00802FCA /* SwiftCraftAppShared.h */,
+				4012528D20DC5DCE00802FCA /* SwiftCraftAppGame.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		401252A820DC628E00802FCA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40DC842620DC541A005F7EDE /* Assets.xcassets */,
+				40DC842820DC541A005F7EDE /* MainMenu.xib */,
+				40DC842B20DC541A005F7EDE /* Info.plist */,
+				40DC842C20DC541A005F7EDE /* SwiftCraftApp.entitlements */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		4022B06B20B4CBDB00B4E680 /* Serverbound */ = {
@@ -535,6 +619,7 @@
 				4024AB5120B1DB57008790F2 /* SwiftCraftTests.xctest */,
 				4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */,
 				40DC842220DC5418005F7EDE /* SwiftCraftApp.app */,
+				4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -864,7 +949,7 @@
 			children = (
 				4024AB4A20B1DB57008790F2 /* SwiftCraft */,
 				4005B77B20C30C1A001F09D2 /* SwiftCraftReactive */,
-				40DC842320DC5418005F7EDE /* SwiftCraftApp */,
+				4012528B20DC5B3600802FCA /* SwiftCraftApp */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -880,11 +965,8 @@
 		40DC842320DC5418005F7EDE /* SwiftCraftApp */ = {
 			isa = PBXGroup;
 			children = (
+				401252A820DC628E00802FCA /* Supporting Files */,
 				40DC842420DC5418005F7EDE /* AppDelegate.swift */,
-				40DC842620DC541A005F7EDE /* Assets.xcassets */,
-				40DC842820DC541A005F7EDE /* MainMenu.xib */,
-				40DC842B20DC541A005F7EDE /* Info.plist */,
-				40DC842C20DC541A005F7EDE /* SwiftCraftApp.entitlements */,
 			);
 			path = SwiftCraftApp;
 			sourceTree = "<group>";
@@ -907,6 +989,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4005B77E20C30C1A001F09D2 /* SwiftCraftReactive.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4012528F20DC5FAA00802FCA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +1045,23 @@
 			productReference = 4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		4012529320DC5FAA00802FCA /* SwiftCraftAppShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4012529D20DC5FAA00802FCA /* Build configuration list for PBXNativeTarget "SwiftCraftAppShared" */;
+			buildPhases = (
+				4012528F20DC5FAA00802FCA /* Headers */,
+				4012529020DC5FAA00802FCA /* Sources */,
+				4012529120DC5FAA00802FCA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCraftAppShared;
+			productName = SwiftCraftAppShared;
+			productReference = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		4024AB4720B1DB57008790F2 /* SwiftCraft */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4024AB5C20B1DB57008790F2 /* Build configuration list for PBXNativeTarget "SwiftCraft" */;
@@ -1000,10 +1106,12 @@
 				40DC841F20DC5418005F7EDE /* Frameworks */,
 				40DC842020DC5418005F7EDE /* Resources */,
 				4012528720DC561400802FCA /* Copy Frameworks */,
+				401252A020DC5FAA00802FCA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4012529A20DC5FAA00802FCA /* PBXTargetDependency */,
 			);
 			name = SwiftCraftApp;
 			productName = SwiftCraftApp;
@@ -1024,6 +1132,9 @@
 					4005B77920C30C1A001F09D2 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1000;
+					};
+					4012529320DC5FAA00802FCA = {
+						CreatedOnToolsVersion = 10.0;
 					};
 					4024AB4720B1DB57008790F2 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -1058,6 +1169,7 @@
 				4024AB5020B1DB57008790F2 /* SwiftCraftTests */,
 				4005B77920C30C1A001F09D2 /* SwiftCraftReactive */,
 				40DC842120DC5418005F7EDE /* SwiftCraftApp */,
+				4012529320DC5FAA00802FCA /* SwiftCraftAppShared */,
 				403464D220B8A94A002FBC11 /* Create Documentation */,
 			);
 		};
@@ -1137,6 +1249,14 @@
 			files = (
 				4005B78820C30D18001F09D2 /* Login+Reactive.swift in Sources */,
 				4005B79420C30FAA001F09D2 /* Reactor+Reactive.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4012529020DC5FAA00802FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				401252A320DC606F00802FCA /* SwiftCraftAppGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1299,6 +1419,11 @@
 			target = 4024AB4720B1DB57008790F2 /* SwiftCraft */;
 			targetProxy = 4005B78B20C30D3C001F09D2 /* PBXContainerItemProxy */;
 		};
+		4012529A20DC5FAA00802FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4012529320DC5FAA00802FCA /* SwiftCraftAppShared */;
+			targetProxy = 4012529920DC5FAA00802FCA /* PBXContainerItemProxy */;
+		};
 		4024AB5420B1DB57008790F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4024AB4720B1DB57008790F2 /* SwiftCraft */;
@@ -1373,6 +1498,67 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftReactive;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		4012529E20DC5FAA00802FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 52A793VRAY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/Shared/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftAppShared;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		4012529F20DC5FAA00802FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 52A793VRAY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/Shared/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftAppShared;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1635,15 +1821,16 @@
 		40DC842E20DC541A005F7EDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Sources/SwiftCraftApp/SwiftCraftApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/SwiftCraftApp/SwiftCraftApp/SwiftCraftApp.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 52A793VRAY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/SwiftCraftApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1658,15 +1845,16 @@
 		40DC842F20DC541A005F7EDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Sources/SwiftCraftApp/SwiftCraftApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/SwiftCraftApp/SwiftCraftApp/SwiftCraftApp.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 52A793VRAY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftApp/SwiftCraftApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1685,6 +1873,15 @@
 			buildConfigurations = (
 				4005B78320C30C1A001F09D2 /* Debug */,
 				4005B78420C30C1A001F09D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4012529D20DC5FAA00802FCA /* Build configuration list for PBXNativeTarget "SwiftCraftAppShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4012529E20DC5FAA00802FCA /* Debug */,
+				4012529F20DC5FAA00802FCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

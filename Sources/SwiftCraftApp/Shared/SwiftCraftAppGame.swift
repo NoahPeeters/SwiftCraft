@@ -1,31 +1,23 @@
 //
-//  AppDelegate.swift
+//  SwiftCraftAppGame.swift
 //  SwiftCraftApp
 //
-//  Created by Noah Peeters on 21.05.18.
+//  Created by Noah Peeters on 22.06.18.
 //  Copyright © 2018 Noah Peeters. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import SwiftCraft
 import SwiftCraftReactive
-import ReactiveSwift
-import Result
 
-@NSApplicationMain
-public class AppDelegate: NSObject, NSApplicationDelegate {
-
-    @IBOutlet public weak var window: NSWindow!
-
+public class SwiftCraftAppGame {
     private var minecraftClient: MinecraftClient!
     private let minecraftWorld = MinecraftWorld()
 
-    public func applicationDidFinishLaunching(_ aNotification: Notification) {
-        startOffline()
-    }
+    public init() {}
 
-    private func startOnline() {
-//        UserDefaults.standard.removeObject(forKey: "accessToken")
+    public func startOnline() {
+        //        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
         let loginService = UserLoginService()
@@ -48,7 +40,7 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    private func startOffline() {
+    public func startOffline() {
         createMinecraftClient(sessionServerService: OfflineSessionService(username: "Gigameter"))
         minecraftClient.connectAndLogin()
     }

@@ -8,7 +8,8 @@ let package = Package(
     products: [
         .library(name: "SwiftCraft", targets: ["SwiftCraft"]),
         .library(name: "SwiftCraftReactive", targets: ["SwiftCraftReactive"]),
-        .executable(name: "SwiftCraftApp", targets: ["SwiftCraftApp"])
+        .executable(name: "SwiftCraftApp", targets: ["SwiftCraftApp"]),
+        .executable(name: "SwiftCraftCommandlineApp", targets: ["SwiftCraftCommandlineApp"])
     ],
     dependencies: [
         .package(url: "https://github.com/1024jp/GzipSwift.git", from: "4.0.4"),
@@ -20,7 +21,18 @@ let package = Package(
     targets: [
         .target(name: "SwiftCraft", dependencies: ["CryptoSwift", "Gzip"]),
         .target(name: "SwiftCraftReactive", dependencies: ["SwiftCraft", "ReactiveSwift"]),
-        .target(name: "SwiftCraftApp", dependencies: ["SwiftCraft", "SwiftCraftReactive"]),
+        .target(
+            name: "SwiftCraftApp",
+            dependencies: ["SwiftCraftAppShared"],
+            path: "Sources/SwiftCraftApp/SwiftCraftApp"),
+        .target(
+            name: "SwiftCraftCommandlineApp",
+            dependencies: ["SwiftCraftAppShared"],
+            path: "Sources/SwiftCraftApp/SwiftCraftCommandlineApp"),
+        .target(
+            name: "SwiftCraftAppShared",
+            dependencies: ["SwiftCraft", "SwiftCraftReactive"],
+            path: "Sources/SwiftCraftApp/Shared"),
         .testTarget(name: "SwiftCraftTests", dependencies: ["SwiftCraft", "Quick", "Nimble"])
     ]
 )
