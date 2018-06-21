@@ -11,9 +11,9 @@ import Nimble
 import Alamofire
 @testable import SwiftCraft
 
-class MinecraftUserLoginTests: QuickSpec {
+public class MinecraftUserLoginTests: QuickSpec {
     // swiftlint:disable:next function_body_length
-    override func spec() {
+    public override func spec() {
         let loginService = UserLoginService()
 
         context("when using correct credentials") {
@@ -161,5 +161,18 @@ class MinecraftUserLoginTests: QuickSpec {
                 expect(response?.error).toNot(beNil())
             }
         }
+    }
+}
+
+extension UserLoginPasswordCredentials {
+    /// Creates new credentials by reading the username and password from the environment variables
+    /// `username` and `password`.
+    ///
+    /// - Returns: The credentials.
+    public static func readFromEnvironment() -> UserLoginPasswordCredentials {
+        return UserLoginPasswordCredentials(
+            username: ProcessInfo.processInfo.environment["username"]!,
+            password: ProcessInfo.processInfo.environment["password"]!
+        )
     }
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 /// Tells the client to spawn a player.
-public struct SpawnPlayerPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x05)
+public struct SpawnPlayerPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x05
     }
 
     /// The id of the player entity.

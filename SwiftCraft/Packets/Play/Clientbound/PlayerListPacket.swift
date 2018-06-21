@@ -9,12 +9,12 @@
 import Foundation
 
 /// Updates for the player list.
-public struct PlayerListPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x2E)
+public struct PlayerListPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x2E
     }
 
-    let action: Action
+    public let action: Action
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let actionID = try VarInt32(from: buffer).value
@@ -60,22 +60,22 @@ public struct PlayerListPacket: DeserializablePacket {
     /// The payload of a add player packet.
     public struct AddPlayerPayload: DeserializableDataType {
         /// The uuid of the new player.
-        let uuid: UUID
+        public let uuid: UUID
 
         /// A list of properties of the player.
-        let properties: [Property]
+        public let properties: [Property]
 
         /// The name of the player.
-        let name: String
+        public let name: String
 
         /// The gamemode of the player.
-        let gamemode: Gamemode
+        public let gamemode: Gamemode
 
         /// The ping to the player.
-        let ping: Int
+        public let ping: Int
 
         /// The display name of the player.
-        let displayName: String?
+        public let displayName: String?
 
         public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
             uuid = try UUID(from: buffer)
@@ -87,15 +87,15 @@ public struct PlayerListPacket: DeserializablePacket {
         }
 
         /// A property of a player.
-        struct Property: DeserializableDataType {
+        public struct Property: DeserializableDataType {
             /// The name of the property.
-            let name: String
+            public let name: String
 
             /// The value of the property
-            let value: String
+            public let value: String
 
             /// The signature of the propery.
-            let signature: String?
+            public let signature: String?
 
             public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
                 name = try String(from: buffer)
@@ -106,7 +106,7 @@ public struct PlayerListPacket: DeserializablePacket {
     }
 
     /// Error which might occure while decoding a `PlayerListPacket`.
-    enum PlayerListPacketError: Error {
+    public enum PlayerListPacketError: Error {
         /// The given gamemode is not valid.
         case unknownGamemode
 
@@ -118,12 +118,12 @@ public struct PlayerListPacket: DeserializablePacket {
 /// Temporary type for decoding action data.
 private struct PlayerUpdate<Payload: DeserializableDataType>: DeserializableDataType {
     /// The uuid of the player.
-    let uuid: UUID
+    fileprivate let uuid: UUID
 
     /// The payload of the packet.
-    let payload: Payload
+    fileprivate let payload: Payload
 
-    public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
+    fileprivate init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         uuid = try UUID(from: buffer)
         payload = try Payload(from: buffer)
     }
@@ -144,7 +144,7 @@ extension Array {
     /// - Throws: Retrhows errors of mapper.
     fileprivate func toDictionary<InPayload, OutPayload>(mapper: (InPayload) throws -> OutPayload) rethrows
         -> [UUID: OutPayload] where Element == PlayerUpdate<InPayload> {
-        return try Dictionary.init(uniqueKeysWithValues: map {
+        return try Dictionary(uniqueKeysWithValues: map {
             try ($0.uuid, mapper($0.payload))
         })
     }

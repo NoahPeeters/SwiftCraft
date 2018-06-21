@@ -9,16 +9,16 @@
 import Foundation
 
 /// Plays an effect.
-public struct EffectPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x21)
+public struct EffectPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x21
     }
 
     /// The id of the effect.
     public let effectID: Int
 
     /// The location of the effect.
-    public let location: Position
+    public let location: BlockPosition
 
     /// Additional data used for some effects.
     public let data: Int
@@ -28,7 +28,7 @@ public struct EffectPacket: DeserializablePacket {
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         effectID = try Int(Int32(from: buffer))
-        location = try Position(from: buffer)
+        location = try BlockPosition(from: buffer)
         data = try Int(Int32(from: buffer))
         disableRelativeVolume = try Bool(from: buffer)
     }

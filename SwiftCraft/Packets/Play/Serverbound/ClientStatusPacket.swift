@@ -9,9 +9,9 @@
 import Foundation
 
 /// Sends a status update to the server.
-public struct ClientStatusPacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x03)
+public struct ClientStatusPacket: BufferSerializablePacket, PlayPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x03
     }
 
     /// The action id of the packet. Send 0 to perform respawn and 1 for a statistics request.

@@ -9,9 +9,9 @@
 import Foundation
 
 /// Received from the server when the login was successful.
-public struct LoginSuccessPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .login, id: 0x02)
+public struct LoginSuccessPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x02
     }
 
     /// The uuid of the user.
@@ -27,7 +27,7 @@ public struct LoginSuccessPacket: DeserializablePacket {
 }
 
 /// Errors which might occure while decoding login success packets
-enum LoginSuccessPacketError: Error {
+public enum LoginSuccessPacketError: Error {
     /// The uuid received is not valid.
     case invalidUUID
 }

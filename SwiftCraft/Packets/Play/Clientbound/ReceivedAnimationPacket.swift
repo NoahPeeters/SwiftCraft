@@ -9,9 +9,9 @@
 import Foundation
 
 /// Tells the client to play an animation.
-public struct ReceivedAnimationPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x06)
+public struct ReceivedAnimationPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x06
     }
 
     /// The id of the entity to play the animation

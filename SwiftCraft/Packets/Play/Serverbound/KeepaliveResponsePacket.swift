@@ -9,13 +9,13 @@
 import Foundation
 
 /// The packet to send after receiveing a keepalive packet from the server.
-public struct KeepaliveResponsePacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x0B)
+public struct KeepaliveResponsePacket: BufferSerializablePacket, PlayPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x0B
     }
 
     /// The id from the received keepalive packet.
-    let id: Int64
+    public let id: Int64
 
     public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {
         id.serialize(to: buffer)

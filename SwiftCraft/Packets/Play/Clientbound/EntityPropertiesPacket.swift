@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the properties of an entity
-public struct EntityPropertiesPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x4E)
+public struct EntityPropertiesPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x4E
     }
 
     /// The id of the entity
@@ -84,7 +84,7 @@ public struct EntityPropertiesPacket: DeserializablePacket {
         }
 
         /// A error which might occure while decoding a Modifier.
-        enum ModifierError: Error {
+        public enum ModifierError: Error {
             /// The received operation id is invalid.
             case invalidOperation(operationID: Byte)
         }

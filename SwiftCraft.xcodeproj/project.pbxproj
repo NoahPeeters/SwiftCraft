@@ -30,7 +30,6 @@
 		4022B06620B4B88E00B4E680 /* DataCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06520B4B88E00B4E680 /* DataCompression.swift */; };
 		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
 		4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */; };
-		4022B07320B4CCCF00B4E680 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07220B4CCCF00B4E680 /* Types.swift */; };
 		4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */; };
 		4022B07720B4D20C00B4E680 /* ReceiveChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */; };
 		4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */; };
@@ -79,6 +78,11 @@
 		4068071420B364A700B116C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4068071320B364A700B116C4 /* Assets.xcassets */; };
 		4068071720B364A700B116C4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4068071520B364A700B116C4 /* MainMenu.xib */; };
 		4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068071F20B3678D00B116C4 /* LoginStartPacket.swift */; };
+		40695B8F20DAEDAB007C1C36 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695B8E20DAEDAB007C1C36 /* Entity.swift */; };
+		40695B9120DAEE27007C1C36 /* PlayerReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695B9020DAEE27007C1C36 /* PlayerReactor.swift */; };
+		40695BA220DAF6A1007C1C36 /* TeleportConfirmPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */; };
+		40695BA420DAF738007C1C36 /* TeleportationConfirmReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695BA320DAF738007C1C36 /* TeleportationConfirmReactor.swift */; };
+		40695BA620DB0088007C1C36 /* PlayerLookPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */; };
 		40778F8720DAC8E500B8BB99 /* AdvancementsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */; };
 		40778F8920DAC94900B8BB99 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8820DAC94900B8BB99 /* Identifier.swift */; };
 		40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */; };
@@ -101,8 +105,7 @@
 		408E63EF20B9D4FC00AE9C2D /* PlayerListPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63EE20B9D4FC00AE9C2D /* PlayerListPacket.swift */; };
 		408E63F420BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63F320BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift */; };
 		408E63F620BA06FB00AE9C2D /* VarInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63F520BA06FB00AE9C2D /* VarInt.swift */; };
-		408E63F820BA07B500AE9C2D /* String+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63F720BA07B500AE9C2D /* String+Serializable.swift */; };
-		408E63FA20BA07CE00AE9C2D /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63F920BA07CE00AE9C2D /* Position.swift */; };
+		408E63FA20BA07CE00AE9C2D /* BlockPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63F920BA07CE00AE9C2D /* BlockPosition.swift */; };
 		408E63FC20BA07F900AE9C2D /* Array+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63FB20BA07F900AE9C2D /* Array+Serializable.swift */; };
 		408E63FE20BA080D00AE9C2D /* UUID+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63FD20BA080D00AE9C2D /* UUID+Serializable.swift */; };
 		408E640020BA082700AE9C2D /* Optional+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63FF20BA082700AE9C2D /* Optional+Serializable.swift */; };
@@ -123,7 +126,19 @@
 		408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */; };
 		408E642120BB134200AE9C2D /* SpawnObjectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */; };
 		408E642320BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */; };
+		409D94DF20DBC45A00F2DCD4 /* PacketIDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D94DE20DBC45A00F2DCD4 /* PacketIDProvider.swift */; };
 		40A0875920DA989B00F944FB /* Data+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0875820DA989B00F944FB /* Data+Serializable.swift */; };
+		40AEEE6320DBC92600E774CA /* String+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE6220DBC92600E774CA /* String+Serializable.swift */; };
+		40AEEE6D20DBD05500E774CA /* BlockID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE6C20DBD05500E774CA /* BlockID.swift */; };
+		40AEEE6F20DBD06900E774CA /* Gamemode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE6E20DBD06900E774CA /* Gamemode.swift */; };
+		40AEEE7120DBD07A00E774CA /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7020DBD07A00E774CA /* Dimension.swift */; };
+		40AEEE7320DBD09600E774CA /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7220DBD09600E774CA /* Difficulty.swift */; };
+		40AEEE7520DBD0A400E774CA /* LevelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7420DBD0A400E774CA /* LevelType.swift */; };
+		40AEEE7720DBD0B500E774CA /* ChatMessageLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7620DBD0B500E774CA /* ChatMessageLocation.swift */; };
+		40AEEE7920DBD0C300E774CA /* EntityVelocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7820DBD0C300E774CA /* EntityVelocity.swift */; };
+		40AEEE7B20DBD0D300E774CA /* EntityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7A20DBD0D300E774CA /* EntityLocation.swift */; };
+		40AEEE7D20DBD0E800E774CA /* SlotContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7C20DBD0E800E774CA /* SlotContent.swift */; };
+		40AEEE7F20DBD0FF00E774CA /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7E20DBD0FF00E774CA /* General.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -215,7 +230,6 @@
 		4022B06520B4B88E00B4E680 /* DataCompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCompression.swift; sourceTree = "<group>"; };
 		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
 		4022B07020B4CC5300B4E680 /* JoinGamePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGamePacket.swift; sourceTree = "<group>"; };
-		4022B07220B4CCCF00B4E680 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveChatMessagePacket.swift; sourceTree = "<group>"; };
 		4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepaliveRequestPacket.swift; sourceTree = "<group>"; };
@@ -271,6 +285,11 @@
 		4068071820B364A700B116C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4068071920B364A700B116C4 /* SwiftCraftApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftApp.entitlements; sourceTree = "<group>"; };
 		4068071F20B3678D00B116C4 /* LoginStartPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStartPacket.swift; sourceTree = "<group>"; };
+		40695B8E20DAEDAB007C1C36 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		40695B9020DAEE27007C1C36 /* PlayerReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReactor.swift; sourceTree = "<group>"; };
+		40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportConfirmPacket.swift; sourceTree = "<group>"; };
+		40695BA320DAF738007C1C36 /* TeleportationConfirmReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportationConfirmReactor.swift; sourceTree = "<group>"; };
+		40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLookPacket.swift; sourceTree = "<group>"; };
 		40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancementsPacket.swift; sourceTree = "<group>"; };
 		40778F8820DAC94900B8BB99 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Serializable.swift"; sourceTree = "<group>"; };
@@ -293,8 +312,7 @@
 		408E63EE20B9D4FC00AE9C2D /* PlayerListPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListPacket.swift; sourceTree = "<group>"; };
 		408E63F320BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixedWidthNumbers+Serializable.swift"; sourceTree = "<group>"; };
 		408E63F520BA06FB00AE9C2D /* VarInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarInt.swift; sourceTree = "<group>"; };
-		408E63F720BA07B500AE9C2D /* String+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Serializable.swift"; sourceTree = "<group>"; };
-		408E63F920BA07CE00AE9C2D /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		408E63F920BA07CE00AE9C2D /* BlockPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPosition.swift; sourceTree = "<group>"; };
 		408E63FB20BA07F900AE9C2D /* Array+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Serializable.swift"; sourceTree = "<group>"; };
 		408E63FD20BA080D00AE9C2D /* UUID+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Serializable.swift"; sourceTree = "<group>"; };
 		408E63FF20BA082700AE9C2D /* Optional+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Serializable.swift"; sourceTree = "<group>"; };
@@ -315,7 +333,19 @@
 		408E641E20BB0D4200AE9C2D /* EntityEquipmentPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityEquipmentPacket.swift; sourceTree = "<group>"; };
 		408E642020BB134200AE9C2D /* SpawnObjectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpawnObjectPacket.swift; sourceTree = "<group>"; };
 		408E642220BB155000AE9C2D /* PlayerPositionAndLookReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPositionAndLookReceivedPacket.swift; sourceTree = "<group>"; };
+		409D94DE20DBC45A00F2DCD4 /* PacketIDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketIDProvider.swift; sourceTree = "<group>"; };
 		40A0875820DA989B00F944FB /* Data+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Serializable.swift"; sourceTree = "<group>"; };
+		40AEEE6220DBC92600E774CA /* String+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Serializable.swift"; sourceTree = "<group>"; };
+		40AEEE6C20DBD05500E774CA /* BlockID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockID.swift; sourceTree = "<group>"; };
+		40AEEE6E20DBD06900E774CA /* Gamemode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gamemode.swift; sourceTree = "<group>"; };
+		40AEEE7020DBD07A00E774CA /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		40AEEE7220DBD09600E774CA /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		40AEEE7420DBD0A400E774CA /* LevelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelType.swift; sourceTree = "<group>"; };
+		40AEEE7620DBD0B500E774CA /* ChatMessageLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageLocation.swift; sourceTree = "<group>"; };
+		40AEEE7820DBD0C300E774CA /* EntityVelocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityVelocity.swift; sourceTree = "<group>"; };
+		40AEEE7A20DBD0D300E774CA /* EntityLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityLocation.swift; sourceTree = "<group>"; };
+		40AEEE7C20DBD0E800E774CA /* SlotContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotContent.swift; sourceTree = "<group>"; };
+		40AEEE7E20DBD0FF00E774CA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -379,14 +409,8 @@
 		133424C220B439320097C45D /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				1334251320B463350097C45D /* AES.h */,
-				1334250D20B4541A0097C45D /* AES.c */,
-				1334250920B453E60097C45D /* AESCipher.h */,
-				1334250A20B453E60097C45D /* AESCipher.m */,
-				133424BC20B425660097C45D /* SwCrypt.swift */,
-				4022B06520B4B88E00B4E680 /* DataCompression.swift */,
-				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
-				4022B06720B4B92600B4E680 /* MessageCompressor.swift */,
+				409D94E320DBC85A00F2DCD4 /* Encryption */,
+				409D94E420DBC86700F2DCD4 /* Compression */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -394,9 +418,8 @@
 		1334250F20B460BC0097C45D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB4C20B1DB57008790F2 /* Info.plist */,
-				4024AB4B20B1DB57008790F2 /* SwiftCraft.h */,
-				4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */,
+				409D94E120DBC82700F2DCD4 /* Meta */,
+				409D94E020DBC81C00F2DCD4 /* Helper */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -406,10 +429,8 @@
 			children = (
 				4068070920B361E000B116C4 /* MinecraftClient.swift */,
 				4024C60520DA635300493A86 /* ProtocolVersion.swift */,
+				40695B9220DAF174007C1C36 /* World */,
 				40E314F620B603D100C9E271 /* Reactor */,
-				4022B07220B4CCCF00B4E680 /* Types.swift */,
-				408E640720BADD6E00AE9C2D /* ChunkColumn.swift */,
-				408E640520BADD5C00AE9C2D /* ChunkSection.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -522,7 +543,9 @@
 		4022B07820B4E11200B4E680 /* Serverbound */ = {
 			isa = PBXGroup;
 			children = (
+				40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */,
 				4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */,
+				40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */,
 				408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */,
 				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
 			);
@@ -555,12 +578,11 @@
 		4024AB4A20B1DB57008790F2 /* SwiftCraft */ = {
 			isa = PBXGroup;
 			children = (
-				1334250F20B460BC0097C45D /* Supporting Files */,
 				1334251620B469C90097C45D /* Client */,
-				133424C220B439320097C45D /* Crypto */,
-				4024AB7720B1F20C008790F2 /* Login */,
+				4024AB7720B1F20C008790F2 /* Mojang Login */,
 				406806FD20B30D2500B116C4 /* Network */,
 				4068070220B34D3300B116C4 /* Packets */,
+				1334250F20B460BC0097C45D /* Supporting Files */,
 			);
 			path = SwiftCraft;
 			sourceTree = "<group>";
@@ -591,26 +613,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4024AB7720B1F20C008790F2 /* Login */ = {
+		4024AB7720B1F20C008790F2 /* Mojang Login */ = {
 			isa = PBXGroup;
 			children = (
+				409D94E620DBC8B900F2DCD4 /* Helper */,
 				4024AB7320B1EA6C008790F2 /* UserLoginService.swift */,
 				1334251420B4647A0097C45D /* SessionServerService.swift */,
 				1334251720B469DB0097C45D /* AuthenticationProvider.swift */,
-				1334251120B460D60097C45D /* Data+MinecraftHexString.swift */,
 				4024AB7820B1F216008790F2 /* Credentials.swift */,
 				4024AB7A20B1F241008790F2 /* UserLoginResponse.swift */,
 			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		4024AB7E20B21E39008790F2 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				4024AB8920B22BC1008790F2 /* Buffer */,
-				4024AB8C20B22DA9008790F2 /* Serializable */,
-			);
-			path = Types;
+			path = "Mojang Login";
 			sourceTree = "<group>";
 		};
 		4024AB8920B22BC1008790F2 /* Buffer */ = {
@@ -626,9 +639,9 @@
 		4024AB8C20B22DA9008790F2 /* Serializable */ = {
 			isa = PBXGroup;
 			children = (
-				408E63F220BA06CB00AE9C2D /* Types */,
 				4024AB8A20B22C37008790F2 /* Serializable.swift */,
-				4024AB9320B2C1AD008790F2 /* BitShifting.swift */,
+				409D94E720DBC8EC00F2DCD4 /* Minecraft */,
+				409D94E920DBC8FB00F2DCD4 /* Foundation */,
 			);
 			path = Serializable;
 			sourceTree = "<group>";
@@ -669,9 +682,10 @@
 		406806FD20B30D2500B116C4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB7E20B21E39008790F2 /* Types */,
-				4024AB6E20B1E093008790F2 /* Alamofire+Helper.swift */,
-				406806FE20B30D3500B116C4 /* TCPClient.swift */,
+				40AEEE6420DBCF7B00E774CA /* Network Comunication */,
+				133424C220B439320097C45D /* Crypto */,
+				4024AB8920B22BC1008790F2 /* Buffer */,
+				4024AB8C20B22DA9008790F2 /* Serializable */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -680,6 +694,7 @@
 			isa = PBXGroup;
 			children = (
 				4068070320B34D3F00B116C4 /* PacketID.swift */,
+				409D94DE20DBC45A00F2DCD4 /* PacketIDProvider.swift */,
 				4068070520B355CF00B116C4 /* SerializablePacket.swift */,
 				40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */,
 				4068072220B3683E00B116C4 /* Handshake */,
@@ -719,22 +734,37 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		408E63F220BA06CB00AE9C2D /* Types */ = {
+		40695B9220DAF174007C1C36 /* World */ = {
 			isa = PBXGroup;
 			children = (
-				408E63F920BA07CE00AE9C2D /* Position.swift */,
-				40778F8820DAC94900B8BB99 /* Identifier.swift */,
-				408E63F520BA06FB00AE9C2D /* VarInt.swift */,
-				408E63F720BA07B500AE9C2D /* String+Serializable.swift */,
-				40A0875820DA989B00F944FB /* Data+Serializable.swift */,
-				408E63FB20BA07F900AE9C2D /* Array+Serializable.swift */,
-				40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */,
-				408E63FD20BA080D00AE9C2D /* UUID+Serializable.swift */,
-				408E63FF20BA082700AE9C2D /* Optional+Serializable.swift */,
-				408E63F320BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift */,
-				4024C5EE20D9154C00493A86 /* NBT */,
+				408E640A20BAF60E00AE9C2D /* World.swift */,
+				40AEEE6B20DBD04000E774CA /* Model */,
+				40AEEE6720DBCFC200E774CA /* Block Data */,
+				40AEEE6A20DBCFEE00E774CA /* Entities */,
 			);
-			path = Types;
+			path = World;
+			sourceTree = "<group>";
+		};
+		40695B9420DAF19F007C1C36 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				40E314F420B601F900C9E271 /* Reactor.swift */,
+				40CA046020B8CCC50088EC44 /* MultiReactor.swift */,
+				40CA046420B8CCF00088EC44 /* SingleReactor.swift */,
+				40CA046220B8CCD80088EC44 /* ClosureReactor.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		40695B9520DAF1AA007C1C36 /* Essentials */ = {
+			isa = PBXGroup;
+			children = (
+				40E314F720B6048600C9E271 /* LoginReactor.swift */,
+				40E314F920B6079F00C9E271 /* KeepaliveReactor.swift */,
+				40695BA320DAF738007C1C36 /* TeleportationConfirmReactor.swift */,
+				40E314FB20B609C900C9E271 /* PrintReactors.swift */,
+			);
+			path = Essentials;
 			sourceTree = "<group>";
 		};
 		408E640920BAF5FE00AE9C2D /* WorldReactor */ = {
@@ -742,21 +772,164 @@
 			children = (
 				408E640320BAB67200AE9C2D /* WorldReactor.swift */,
 				408E640C20BAFC3200AE9C2D /* BlockReactor.swift */,
-				408E640A20BAF60E00AE9C2D /* World.swift */,
+				40695B9020DAEE27007C1C36 /* PlayerReactor.swift */,
 			);
 			path = WorldReactor;
+			sourceTree = "<group>";
+		};
+		409D94E020DBC81C00F2DCD4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */,
+				4024AB9320B2C1AD008790F2 /* BitShifting.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		409D94E120DBC82700F2DCD4 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				4024AB4C20B1DB57008790F2 /* Info.plist */,
+				4024AB4B20B1DB57008790F2 /* SwiftCraft.h */,
+			);
+			path = Meta;
+			sourceTree = "<group>";
+		};
+		409D94E220DBC83E00F2DCD4 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				1334251320B463350097C45D /* AES.h */,
+				1334250D20B4541A0097C45D /* AES.c */,
+				1334250920B453E60097C45D /* AESCipher.h */,
+				1334250A20B453E60097C45D /* AESCipher.m */,
+			);
+			path = AES;
+			sourceTree = "<group>";
+		};
+		409D94E320DBC85A00F2DCD4 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				409D94E220DBC83E00F2DCD4 /* AES */,
+				409D94E520DBC89A00F2DCD4 /* RSA */,
+				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		409D94E420DBC86700F2DCD4 /* Compression */ = {
+			isa = PBXGroup;
+			children = (
+				4022B06520B4B88E00B4E680 /* DataCompression.swift */,
+				4022B06720B4B92600B4E680 /* MessageCompressor.swift */,
+			);
+			path = Compression;
+			sourceTree = "<group>";
+		};
+		409D94E520DBC89A00F2DCD4 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				133424BC20B425660097C45D /* SwCrypt.swift */,
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
+		409D94E620DBC8B900F2DCD4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1334251120B460D60097C45D /* Data+MinecraftHexString.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		409D94E720DBC8EC00F2DCD4 /* Minecraft */ = {
+			isa = PBXGroup;
+			children = (
+				408E63F920BA07CE00AE9C2D /* BlockPosition.swift */,
+				40778F8820DAC94900B8BB99 /* Identifier.swift */,
+				408E63F520BA06FB00AE9C2D /* VarInt.swift */,
+				4024C5EE20D9154C00493A86 /* NBT */,
+			);
+			path = Minecraft;
+			sourceTree = "<group>";
+		};
+		409D94E920DBC8FB00F2DCD4 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				408E63FF20BA082700AE9C2D /* Optional+Serializable.swift */,
+				408E63F320BA06DA00AE9C2D /* FixedWidthNumbers+Serializable.swift */,
+				408E63FD20BA080D00AE9C2D /* UUID+Serializable.swift */,
+				40A0875820DA989B00F944FB /* Data+Serializable.swift */,
+				40AEEE6220DBC92600E774CA /* String+Serializable.swift */,
+				408E63FB20BA07F900AE9C2D /* Array+Serializable.swift */,
+				40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		40AEEE6420DBCF7B00E774CA /* Network Comunication */ = {
+			isa = PBXGroup;
+			children = (
+				40AEEE6520DBCF8B00E774CA /* HTTP */,
+				40AEEE6620DBCF9000E774CA /* TCP */,
+			);
+			path = "Network Comunication";
+			sourceTree = "<group>";
+		};
+		40AEEE6520DBCF8B00E774CA /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				4024AB6E20B1E093008790F2 /* Alamofire+Helper.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		40AEEE6620DBCF9000E774CA /* TCP */ = {
+			isa = PBXGroup;
+			children = (
+				406806FE20B30D3500B116C4 /* TCPClient.swift */,
+			);
+			path = TCP;
+			sourceTree = "<group>";
+		};
+		40AEEE6720DBCFC200E774CA /* Block Data */ = {
+			isa = PBXGroup;
+			children = (
+				408E640720BADD6E00AE9C2D /* ChunkColumn.swift */,
+				408E640520BADD5C00AE9C2D /* ChunkSection.swift */,
+				40AEEE6C20DBD05500E774CA /* BlockID.swift */,
+			);
+			path = "Block Data";
+			sourceTree = "<group>";
+		};
+		40AEEE6A20DBCFEE00E774CA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				40695B8E20DAEDAB007C1C36 /* Entity.swift */,
+				40AEEE7820DBD0C300E774CA /* EntityVelocity.swift */,
+				40AEEE7A20DBD0D300E774CA /* EntityLocation.swift */,
+				40AEEE6E20DBD06900E774CA /* Gamemode.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		40AEEE6B20DBD04000E774CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40AEEE7E20DBD0FF00E774CA /* General.swift */,
+				40AEEE7020DBD07A00E774CA /* Dimension.swift */,
+				40AEEE7220DBD09600E774CA /* Difficulty.swift */,
+				40AEEE7420DBD0A400E774CA /* LevelType.swift */,
+				40AEEE7620DBD0B500E774CA /* ChatMessageLocation.swift */,
+				40AEEE7C20DBD0E800E774CA /* SlotContent.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		40E314F620B603D100C9E271 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
-				40E314F420B601F900C9E271 /* Reactor.swift */,
-				40CA046020B8CCC50088EC44 /* MultiReactor.swift */,
-				40CA046420B8CCF00088EC44 /* SingleReactor.swift */,
-				40CA046220B8CCD80088EC44 /* ClosureReactor.swift */,
-				40E314F720B6048600C9E271 /* LoginReactor.swift */,
-				40E314F920B6079F00C9E271 /* KeepaliveReactor.swift */,
-				40E314FB20B609C900C9E271 /* PrintReactors.swift */,
+				40695B9420DAF19F007C1C36 /* Helper */,
+				40695B9520DAF1AA007C1C36 /* Essentials */,
 				408E640920BAF5FE00AE9C2D /* WorldReactor */,
 			);
 			path = Reactor;
@@ -900,6 +1073,7 @@
 					};
 					4024AB5020B1DB57008790F2 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1000;
 					};
 					403464D220B8A94A002FBC11 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -1034,12 +1208,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				408E63FC20BA07F900AE9C2D /* Array+Serializable.swift in Sources */,
+				40AEEE6F20DBD06900E774CA /* Gamemode.swift in Sources */,
 				4024C60020D951D800493A86 /* EntityTeleportPacket.swift in Sources */,
 				40E314FC20B609C900C9E271 /* PrintReactors.swift in Sources */,
 				4024C5C720D9069000493A86 /* SpawnPositionPacket.swift in Sources */,
 				4024C5C520D9039F00493A86 /* SetSlotPacket.swift in Sources */,
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
 				4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */,
+				40AEEE7120DBD07A00E774CA /* Dimension.swift in Sources */,
 				4024C5FA20D94D7700493A86 /* EntityLookAndRelativeMovePacket.swift in Sources */,
 				408C67E520DAB3A80090A1F0 /* BlockBreakAnimationPacket.swift in Sources */,
 				408E641720BB096300AE9C2D /* UpdateHealthPacket.swift in Sources */,
@@ -1049,12 +1225,12 @@
 				408E63EF20B9D4FC00AE9C2D /* PlayerListPacket.swift in Sources */,
 				40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */,
 				4024C5FE20D9507400493A86 /* EntityLookPacket.swift in Sources */,
-				408E63FA20BA07CE00AE9C2D /* Position.swift in Sources */,
+				408E63FA20BA07CE00AE9C2D /* BlockPosition.swift in Sources */,
 				408E641B20BB0BA500AE9C2D /* AttachEntityPacket.swift in Sources */,
 				408E642120BB134200AE9C2D /* SpawnObjectPacket.swift in Sources */,
-				408E63F820BA07B500AE9C2D /* String+Serializable.swift in Sources */,
 				40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */,
 				40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */,
+				40695BA420DAF738007C1C36 /* TeleportationConfirmReactor.swift in Sources */,
 				4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */,
 				133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */,
 				4024C60B20DA665F00493A86 /* StatusResponsePacket.swift in Sources */,
@@ -1068,39 +1244,48 @@
 				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
 				4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */,
+				40AEEE7320DBD09600E774CA /* Difficulty.swift in Sources */,
 				408C67DB20DAA98E0090A1F0 /* SoundEffectPacket.swift in Sources */,
+				40AEEE7920DBD0C300E774CA /* EntityVelocity.swift in Sources */,
 				408C67EB20DAB7370090A1F0 /* EffectPacket.swift in Sources */,
 				408E641920BB0B2400AE9C2D /* EntityMetadataPacket.swift in Sources */,
 				408E641F20BB0D4200AE9C2D /* EntityEquipmentPacket.swift in Sources */,
+				40AEEE7B20DBD0D300E774CA /* EntityLocation.swift in Sources */,
 				408E63ED20B9AB8D00AE9C2D /* SpawnExperienceOrbPacket.swift in Sources */,
 				408E63F620BA06FB00AE9C2D /* VarInt.swift in Sources */,
 				40A0875920DA989B00F944FB /* Data+Serializable.swift in Sources */,
-				4022B07320B4CCCF00B4E680 /* Types.swift in Sources */,
 				408C67E120DAAF930090A1F0 /* SpawnPaintingPacket.swift in Sources */,
 				4068072020B3678D00B116C4 /* LoginStartPacket.swift in Sources */,
 				40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */,
+				40AEEE6D20DBD05500E774CA /* BlockID.swift in Sources */,
 				408C67DF20DAAEFC0090A1F0 /* SpawnGlobalEntityPacket.swift in Sources */,
 				408E640620BADD5C00AE9C2D /* ChunkSection.swift in Sources */,
 				1334250E20B4541A0097C45D /* AES.c in Sources */,
 				4024AB8020B21E45008790F2 /* ReadBuffer.swift in Sources */,
+				40AEEE7520DBD0A400E774CA /* LevelType.swift in Sources */,
 				408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */,
 				408C67ED20DAB8620090A1F0 /* ParticlePacket.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				408C67E720DAB5380090A1F0 /* UpdateBlockEntityPacket.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
 				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
+				40695BA620DB0088007C1C36 /* PlayerLookPacket.swift in Sources */,
 				4024C60420D962A300493A86 /* DestroyEntitiesPacket.swift in Sources */,
 				4024C5C920D9077A00493A86 /* WindowItemsPacket.swift in Sources */,
+				40AEEE7720DBD0B500E774CA /* ChatMessageLocation.swift in Sources */,
 				408C67E920DAB5F90090A1F0 /* BlockActionPacket.swift in Sources */,
 				408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */,
 				408E641520BB08CD00AE9C2D /* SetExperiencePacket.swift in Sources */,
 				408C67DD20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift in Sources */,
 				408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
+				40AEEE7D20DBD0E800E774CA /* SlotContent.swift in Sources */,
 				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
 				4024C5FC20D9503F00493A86 /* EntityRelativeMovePacket.swift in Sources */,
+				40AEEE7F20DBD0FF00E774CA /* General.swift in Sources */,
 				408E640020BA082700AE9C2D /* Optional+Serializable.swift in Sources */,
 				408E640F20BAFCEE00AE9C2D /* UnloadChunkPacket.swift in Sources */,
+				40695B9120DAEE27007C1C36 /* PlayerReactor.swift in Sources */,
 				40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */,
 				408E640B20BAF60E00AE9C2D /* World.swift in Sources */,
 				408C67EF20DABC270090A1F0 /* WorldBorderPacket.swift in Sources */,
@@ -1115,6 +1300,7 @@
 				40E314FA20B6079F00C9E271 /* KeepaliveReactor.swift in Sources */,
 				40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */,
 				408E63FE20BA080D00AE9C2D /* UUID+Serializable.swift in Sources */,
+				40695BA220DAF6A1007C1C36 /* TeleportConfirmPacket.swift in Sources */,
 				4024C5F020D9158900493A86 /* NBT.swift in Sources */,
 				40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */,
 				40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */,
@@ -1132,7 +1318,10 @@
 				1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */,
 				4068070420B34D3F00B116C4 /* PacketID.swift in Sources */,
 				40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */,
+				40AEEE6320DBC92600E774CA /* String+Serializable.swift in Sources */,
+				409D94DF20DBC45A00F2DCD4 /* PacketIDProvider.swift in Sources */,
 				4024C5F820D94B8500493A86 /* EntityHeadLookPacket.swift in Sources */,
+				40695B8F20DAEDAB007C1C36 /* Entity.swift in Sources */,
 				1334251520B4647A0097C45D /* SessionServerService.swift in Sources */,
 				408E640420BAB67200AE9C2D /* WorldReactor.swift in Sources */,
 				404352F020DADE7C00C2E737 /* ChangeGameStatePacket.swift in Sources */,
@@ -1396,7 +1585,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "SwiftCraft/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftCraft/Supporting Files/Meta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1430,7 +1619,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "SwiftCraft/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftCraft/Supporting Files/Meta/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1464,7 +1653,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1486,7 +1675,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

@@ -9,9 +9,9 @@
 import Foundation
 
 /// Spawns a new object in the world.
-public struct SpawnObjectPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x00)
+public struct SpawnObjectPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x00
     }
 
     /// The id of the object.

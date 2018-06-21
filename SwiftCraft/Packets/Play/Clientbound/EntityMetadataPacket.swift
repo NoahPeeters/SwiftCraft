@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the metadata of an entity.
-public struct EntityMetadataPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x3C)
+public struct EntityMetadataPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x3C
     }
 
     /// The id of the entity.

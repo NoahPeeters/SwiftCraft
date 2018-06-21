@@ -9,9 +9,9 @@
 import Foundation
 
 /// Packet containing a new chat message received from the server.
-public struct ReceiveChatMessagePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x0F)
+public struct ReceiveChatMessagePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x0F
     }
 
     /// The message received from the server.
@@ -27,7 +27,7 @@ public struct ReceiveChatMessagePacket: DeserializablePacket {
 }
 
 /// A error which can occure while deserializing a chat message packet.
-enum ChatMessagePacketError: Error {
+public enum ChatMessagePacketError: Error {
     /// The received position is unknown.
     case unknownPosition
 }

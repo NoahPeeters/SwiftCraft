@@ -9,37 +9,37 @@
 import Foundation
 
 /// Spawns a new mob in the world
-public struct SpawnMobPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x03)
+public struct SpawnMobPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x03
     }
 
     /// The id of the entity.
-    let entityID: EntityID
+    public let entityID: EntityID
 
     /// The uuid of the entity.
-    let uuid: UUID
+    public let uuid: UUID
 
     /// The type of the entity.
-    let type: Int
+    public let type: Int
 
     /// The location of the new entity.
-    let location: EntityLocation
+    public let location: EntityLocation
 
     /// The velocity of the new entity.
-    let velocity: EntityVelocity
+    public let velocity: EntityVelocity
 
     /// The yaw of the entity.
-    let yaw: Byte
+    public let yaw: Byte
 
     /// The pitch of the entity.
-    let pitch: Byte
+    public let pitch: Byte
 
     /// The head pitch of the entity.
-    let headPitch: Byte
+    public let headPitch: Byte
 
     /// Additional metadata.
-    let metaData: ByteArray
+    public let metaData: ByteArray
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         entityID = try VarInt32(from: buffer).value

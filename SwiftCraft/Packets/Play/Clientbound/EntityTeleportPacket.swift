@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the location and look direction of an entity.
-public struct EntityTeleportPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x4C)
+public struct EntityTeleportPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x4C
     }
 
     /// The id of the entity.

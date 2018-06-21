@@ -30,7 +30,7 @@ public protocol PacketLibrary {
 /// The default packet library which includes all packets currently implemented
 public struct DefaultPacketLibrary: PacketLibrary {
     /// List of packet types.
-    let packets: [DeserializablePacket.Type] = [
+    private let packets: [DeserializablePacket.Type] = [
         // Login
         DisconnectPacket.self,                              // 0x00
         EncryptionRequestPacket.self,                       // 0x01

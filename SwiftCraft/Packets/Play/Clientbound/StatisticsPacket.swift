@@ -9,9 +9,9 @@
 import Foundation
 
 /// Send as response to to a statistics request.
-public struct StatisticsPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x07)
+public struct StatisticsPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x07
     }
 
     public let statistics: [Statistic]

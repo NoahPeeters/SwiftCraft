@@ -9,15 +9,15 @@
 import Foundation
 
 /// Requests the initiation of the login request.
-public struct LoginStartPacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .login, id: 0x00)
+public struct LoginStartPacket: BufferSerializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x00
     }
 
     /// The username of the user which connects.
     ///
     /// - Attention: This username will be verified with the mojang server while logging in.
-    let username: String
+    public let username: String
 
     public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {
         username.serialize(to: buffer)

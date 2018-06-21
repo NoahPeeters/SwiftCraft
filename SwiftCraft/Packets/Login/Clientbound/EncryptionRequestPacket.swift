@@ -9,9 +9,9 @@
 import Foundation
 
 /// Requests the start of encryption.
-public struct EncryptionRequestPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .login, id: 0x01)
+public struct EncryptionRequestPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x01
     }
 
     /// The server id of the server.

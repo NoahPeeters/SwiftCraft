@@ -11,8 +11,8 @@ import Quick
 import Nimble
 @testable import SwiftCraft
 
-class ReadBufferTests: QuickSpec {
-    override func spec() {
+public class ReadBufferTests: QuickSpec {
+    public override func spec() {
         describe("creating a buffer with data") {
             var buffer: ByteBuffer!
 
@@ -91,8 +91,8 @@ class ReadBufferTests: QuickSpec {
     }
 }
 
-class WriteBufferTests: QuickSpec {
-    override func spec() {
+public class WriteBufferTests: QuickSpec {
+    public override func spec() {
         describe("creating a buffer without data") {
             var buffer: ByteBuffer!
 

@@ -11,19 +11,19 @@ import Foundation
 /// Sent by the server when someone picks up an item lying on the ground.
 ///
 /// - Attention: The entity is destroyed in a seperated packet.
-public struct CollectItemPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x4B)
+public struct CollectItemPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x4B
     }
 
     /// The id of the item.
-    let collectedEntityID: EntityID
+    public let collectedEntityID: EntityID
 
     /// The id of the entity which collected the items.
-    let collectorEntityID: EntityID
+    public let collectorEntityID: EntityID
 
     /// The number of items collected.
-    let itemCount: Int
+    public let itemCount: Int
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         collectedEntityID = try VarInt32(from: buffer).value

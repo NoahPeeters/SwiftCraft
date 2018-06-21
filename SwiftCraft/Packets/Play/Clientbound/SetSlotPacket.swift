@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the content of a slot
-public struct SetSlotPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x16)
+public struct SetSlotPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x16
     }
 
     /// The id of the inventory window. 0 For the players inventory.

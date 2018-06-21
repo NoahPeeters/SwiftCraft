@@ -9,9 +9,9 @@
 import Foundation
 
 /// Informs the player about its abilities.
-public struct ReceivedPlayerAbilitiesPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x2C)
+public struct ReceivedPlayerAbilitiesPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x2C
     }
 
     /// Flag of the invulnerability of the player.

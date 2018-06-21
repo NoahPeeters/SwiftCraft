@@ -9,9 +9,9 @@
 import Foundation
 
 /// Packet informing the client that its selected slot has changed.
-public struct HeldItemChangedReceivedPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x3A)
+public struct HeldItemChangedReceivedPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x3A
     }
 
     /// The new selected slot id

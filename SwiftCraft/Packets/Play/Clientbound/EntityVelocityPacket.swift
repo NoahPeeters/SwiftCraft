@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updaes the veloxity of an entity.
-public struct EntityVelocityPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x3E)
+public struct EntityVelocityPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x3E
     }
 
     /// The id of the entity.

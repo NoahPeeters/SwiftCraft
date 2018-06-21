@@ -9,13 +9,13 @@
 import Foundation
 
 /// Spawns a new object in the world.
-public struct StatusResponsePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .status, id: 0x00)
+public struct StatusResponsePacket: DeserializablePacket, StatusPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x00
     }
 
     /// The response of the server
-    let response: Response
+    public let response: Response
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         let jsonPayload = try Data(from: buffer)
@@ -27,16 +27,16 @@ public struct StatusResponsePacket: DeserializablePacket {
     /// The response of the server
     public struct Response: Decodable {
         /// Information about the version of the server.
-        let version: Version
+        public let version: Version
 
         /// A description of the server.
-        let description: Description
+        public let description: Description
 
         /// Information about the players on the server.
-        let players: PlayersInfo
+        public let players: PlayersInfo
 
         /// The favicon of the server. The format is "data:image/png;base64,<data>".
-        let favicon: String?
+        public let favicon: String?
 
         /// Information about the version of the server.
         public struct Version: Decodable {
@@ -47,7 +47,7 @@ public struct StatusResponsePacket: DeserializablePacket {
             public let protocolVersion: Int
 
             private enum CodingKeys: String, CodingKey {
-                case name
+                case name = "name"
                 case protocolVersion = "protocol"
             }
         }
@@ -55,27 +55,27 @@ public struct StatusResponsePacket: DeserializablePacket {
         /// A description of the server.
         public struct Description: Decodable {
             /// A short text to describe the server.
-            let text: String
+            public let text: String
         }
 
         /// Information about the players on the server.
         public struct PlayersInfo: Decodable {
             /// The maximum of allowed connection.
-            let max: Int
+            public let max: Int
 
             /// The current number of connections.
-            let online: Int
+            public let online: Int
 
             /// A short list of some connected users. If no user is connected this will be nil.
-            let sample: [PlayerSample]?
+            public let sample: [PlayerSample]?
 
             /// A entry of the players sample list.
             public struct PlayerSample: Decodable {
                 /// The name of the player.
-                let name: String
+                public let name: String
 
                 /// The user id of the player.
-                let id: UUID
+                public let id: UUID
             }
         }
     }

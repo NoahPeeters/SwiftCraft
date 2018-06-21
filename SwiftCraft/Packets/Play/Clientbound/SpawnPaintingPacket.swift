@@ -9,9 +9,9 @@
 import Foundation
 
 /// Tells the client to spawn a painting.
-public struct SpawnPaintingPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x04)
+public struct SpawnPaintingPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x04
     }
 
     /// The id of the painting.
@@ -24,7 +24,7 @@ public struct SpawnPaintingPacket: DeserializablePacket {
     public let title: String
 
     /// The location of the painting.
-    public let location: Position
+    public let location: BlockPosition
 
     /// The direction of the painting.
     public let direction: Direction
@@ -33,7 +33,7 @@ public struct SpawnPaintingPacket: DeserializablePacket {
         entityID = try VarInt32(from: buffer).value
         entityUUID = try UUID(from: buffer)
         title = try String(from: buffer)
-        location = try Position(from: buffer)
+        location = try BlockPosition(from: buffer)
 
         let directionID = try Byte(from: buffer)
         direction = try Direction(rawValue: directionID).unwrap(SpawnPaintingPacketError.invalidDirection(directionID))

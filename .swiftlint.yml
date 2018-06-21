@@ -1,7 +1,7 @@
 excluded:
   - Carthage
-  - SwiftCraft/Crypto/SwCrypt.swift
-  - SwiftCraft/Crypto/DataCompression.swift
+  - SwiftCraft/Network/Crypto/Encryption/RSA/SwCrypt.swift
+  - SwiftCraft/Network/Crypto/Compression/DataCompression.swift
 
 identifier_name:
   excluded:
@@ -13,3 +13,18 @@ identifier_name:
 disabled_rules:
   - nesting
   - identifier_name
+
+enabled_rules:
+  - explicit_acl
+  - explicit_init
+  - closure_end_indentation
+  - conditional_returns_on_newline
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - explicit_enum_raw_value
+  - fallthrough
+  - file_name
+  - implicit_return
+  - let_var_whitespace
+  - literal_expression_end_indentation

@@ -10,8 +10,8 @@ import Quick
 import Nimble
 @testable import SwiftCraft
 
-class TCPClientTests: QuickSpec {
-    override func spec() {
+public class TCPClientTests: QuickSpec {
+    public override func spec() {
         it("connects to a valid host") {
             let client = TCPClient(host: "example.com", port: 80)
 

@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the equipment of an entity.
-public struct EntityEquipmentPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x3F)
+public struct EntityEquipmentPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x3F
     }
 
     /// The id of the entity.

@@ -9,13 +9,13 @@
 import Foundation
 
 /// Updates data of a block entity
-public struct UpdateBlockEntityPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x09)
+public struct UpdateBlockEntityPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x09
     }
 
     /// The location of the block.
-    public let location: Position
+    public let location: BlockPosition
 
     /// The action to perform.
     public let action: Byte
@@ -24,7 +24,7 @@ public struct UpdateBlockEntityPacket: DeserializablePacket {
     public let data: NBT
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
-        location = try Position(from: buffer)
+        location = try BlockPosition(from: buffer)
         action = try Byte(from: buffer)
         data = try NBT(from: buffer)
     }

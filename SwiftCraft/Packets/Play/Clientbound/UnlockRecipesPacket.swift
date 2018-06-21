@@ -9,9 +9,9 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct UnlockRecipesPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x31)
+public struct UnlockRecipesPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x31
     }
 
     /// If true, then the crafting book will be open when the player opens its inventory.

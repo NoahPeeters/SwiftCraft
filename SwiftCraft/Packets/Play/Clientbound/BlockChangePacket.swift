@@ -9,19 +9,19 @@
 import Foundation
 
 /// Informs the client about a change of a block.
-public struct BlockChangePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x0B)
+public struct BlockChangePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x0B
     }
 
     /// The location of the block.
-    let location: Position
+    public let location: BlockPosition
 
     /// The new block id.
-    let blockID: BlockID
+    public let blockID: BlockID
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
-        location = try Position(from: buffer)
+        location = try BlockPosition(from: buffer)
         blockID = try BlockID(rawValue: UInt16(VarInt32(from: buffer).value))
     }
 }

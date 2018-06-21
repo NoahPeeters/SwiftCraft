@@ -9,9 +9,9 @@
 import Foundation
 
 /// A packet received from the server after a successfull switch of the connection state from login to play.
-public struct JoinGamePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x23)
+public struct JoinGamePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x23
     }
 
     /// The id of the player.

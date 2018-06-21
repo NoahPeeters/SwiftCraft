@@ -48,19 +48,19 @@ public protocol BlockManager {
     /// Unloads the chunk at the specified location.
     ///
     /// - Parameter location: The location of the chunk to unload.
-    func unloadChunk(at location: ChunkColumn.Location)
+    func unloadChunk(at location: ChunkColumn.Position)
 
     /// Loads the chunk at the location if not preseant. Otherwise updates it.
     ///
     /// - Parameters:
     ///   - location: The location of the chunk.
     ///   - chunk: The chunk data.
-    func loadOrUpdateChunk(at location: ChunkColumn.Location, chunk: ChunkColumn)
+    func loadOrUpdateChunk(at location: ChunkColumn.Position, chunk: ChunkColumn)
 
     /// Updates the block id of the block at the given locaation.
     ///
     /// - Parameters:
     ///   - location: The location of the block.
     ///   - blockID: THe new block id.
-    func updateBlockID(at location: Position, blockID: BlockID)
+    func updateBlockID(at location: BlockPosition, blockID: BlockID)
 }

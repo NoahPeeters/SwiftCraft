@@ -11,9 +11,9 @@ import Foundation
 /// A packet send in regular time intervalls to request a confirmation that the connection is still alive.
 ///
 /// - Attention: Every client must handle this packet or it will be kicked
-public struct KeepaliveRequestPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x1F)
+public struct KeepaliveRequestPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x1F
     }
 
     /// An id which must be used in the reply.

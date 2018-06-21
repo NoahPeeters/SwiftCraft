@@ -13,7 +13,9 @@ extension QuickSpec {
         var isFirst = true
 
         beforeEach {
-            guard isFirst else { return }
+            guard isFirst else {
+                return
+            }
             isFirst = false
             closure()
         }

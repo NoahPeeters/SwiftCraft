@@ -9,9 +9,9 @@
 import Foundation
 
 /// Response to the `EncryptionRequestPacket`. This packet is essential for the login.
-public struct EncryptionResponsePacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .login, id: 0x01)
+public struct EncryptionResponsePacket: BufferSerializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x01
     }
 
     /// The encrypted shared secret.

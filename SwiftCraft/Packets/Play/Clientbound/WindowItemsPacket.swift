@@ -9,9 +9,9 @@
 import Foundation
 
 /// Sent by the server when items in multiple slots (in a window) are added/removed.
-public struct WindowItemsPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x14)
+public struct WindowItemsPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x14
     }
 
     /// The id of the inventory window. 0 For the players inventory.

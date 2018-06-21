@@ -9,12 +9,12 @@
 import Foundation
 
 /// Packet containing the chunk data.
-public struct ChunkDataPacket: DeserializablePacket, CustomStringConvertible {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x20)
+public struct ChunkDataPacket: DeserializablePacket, PlayPacketIDProvider, CustomStringConvertible {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x20
     }
 
-    public let location: ChunkColumn.Location
+    public let location: ChunkColumn.Position
     public let chunkColumn: ChunkColumn
 
     public var description: String {
@@ -22,7 +22,7 @@ public struct ChunkDataPacket: DeserializablePacket, CustomStringConvertible {
     }
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
-        location = try ChunkColumn.Location(
+        location = try ChunkColumn.Position(
             x: Int(Int32(from: buffer)),
             z: Int(Int32(from: buffer)))
 

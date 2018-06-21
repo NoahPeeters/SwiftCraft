@@ -13,18 +13,18 @@ import ReactiveSwift
 import Result
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+public class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
+    @IBOutlet public weak var window: NSWindow!
 
-    var minecraftClient: MinecraftClient!
-    let minecraftWorld = MinecraftWorld()
+    private var minecraftClient: MinecraftClient!
+    private let minecraftWorld = MinecraftWorld()
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    public func applicationDidFinishLaunching(_ aNotification: Notification) {
         startOffline()
     }
 
-    func startOnline() {
+    private func startOnline() {
         //        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
@@ -48,19 +48,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func startOffline() {
+    private func startOffline() {
         createMinecraftClient(sessionServerService: OfflineSessionService(username: "Gigameter"))
         minecraftClient.connectAndLogin()
     }
 
-    func createMinecraftClient(sessionServerService: SessionServerServiceProtocol) {
+    private func createMinecraftClient(sessionServerService: SessionServerServiceProtocol) {
         minecraftClient = MinecraftClient(
             tcpClient: TCPClient(host: "localhost", port: 25565),
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: sessionServerService)
 
-//        _ = minecraftClient.addReactor(MinecraftClient.singleTypeDebugPrintReactor(
-//            for: EntityHeadLookPacket.self))
         _ = minecraftClient.addReactor(MinecraftClient.essentialReactors())
         _ = minecraftClient.addReactor(MinecraftClient.worldReactor(worldStatusManager: minecraftWorld))
 
@@ -76,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// Loads sessioncredentials from user default if present.
     ///
     /// - Returns: The loaded credentials or nil if not present.
-    func loadCredentials() -> UserLoginCredentials? {
+    private func loadCredentials() -> UserLoginCredentials? {
         guard let accessToken = UserDefaults.standard.string(forKey: "accessToken"),
             let clientToken = UserDefaults.standard.string(forKey: "clientToken") else {
                 return nil
@@ -87,7 +85,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     /// Saves credentials to user defaults
     ///
     /// - Parameter credentials: The credentials to save.
-    func saveSessionCredentials(_ credentials: UserLoginSessionCredentials) {
+    private func saveSessionCredentials(_ credentials: UserLoginSessionCredentials) {
         UserDefaults.standard.set(credentials.accessToken, forKey: "accessToken")
         UserDefaults.standard.set(credentials.clientToken, forKey: "clientToken")
     }

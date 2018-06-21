@@ -9,13 +9,13 @@
 import Foundation
 
 /// Perfroms an action of a block.
-public struct BlockActionPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x0A)
+public struct BlockActionPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x0A
     }
 
     /// The location of the block.
-    public let location: Position
+    public let location: BlockPosition
 
     /// The action to perfrom.
     public let action: Byte
@@ -27,7 +27,7 @@ public struct BlockActionPacket: DeserializablePacket {
     public let blockType: Int
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
-        location = try Position(from: buffer)
+        location = try BlockPosition(from: buffer)
         action = try Byte(from: buffer)
         param = try Byte(from: buffer)
         blockType = try VarInt32(from: buffer).integer

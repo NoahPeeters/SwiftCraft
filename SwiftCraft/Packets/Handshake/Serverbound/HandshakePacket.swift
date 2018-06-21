@@ -9,9 +9,9 @@
 import Foundation
 
 /// A packet to send to the server after connecting to start the communitation.
-public struct HandshakePacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .handshaking, id: 0x00)
+public struct HandshakePacket: BufferSerializablePacket, HandshakePacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x00
     }
 
     /// The version of the protocol which is used.

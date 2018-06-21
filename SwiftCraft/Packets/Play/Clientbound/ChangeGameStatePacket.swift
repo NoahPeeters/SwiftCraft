@@ -9,18 +9,18 @@
 import Foundation
 
 /// Changes the game state.
-public struct ChangeGameStatePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x1E)
+public struct ChangeGameStatePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x1E
     }
 
     /// The action to perform.
-    let action: Action
+    public let action: Action
 
     /// Additional value
-    let value: Float
+    public let value: Float
 
-    enum Action: Byte {
+    public enum Action: Byte {
         case invalidBed = 0
         case beginRaining = 1
         case endRaining = 2
@@ -40,6 +40,6 @@ public struct ChangeGameStatePacket: DeserializablePacket {
     }
 }
 
-enum ChangeGameStatePacketError: Error {
+public enum ChangeGameStatePacketError: Error {
     case invalidAction(Byte)
 }

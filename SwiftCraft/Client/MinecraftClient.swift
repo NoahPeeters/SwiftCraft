@@ -236,7 +236,7 @@ extension MinecraftClient {
     /// Handels a new `TCPClientEvent`.
     ///
     /// - Parameter event: The event to handle.
-    func handleEvent(_ event: TCPClientEvent) {
+    private func handleEvent(_ event: TCPClientEvent) {
         switch event {
         case let .received(data):
             self.handleMessage(Array(data))

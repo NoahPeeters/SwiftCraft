@@ -9,31 +9,31 @@
 import Foundation
 
 /// Tells the client to play a sound.
-public struct SoundEffectPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x49)
+public struct SoundEffectPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x49
     }
 
     /// The id of the sound to play.
-    let soundID: Int
+    public let soundID: Int
 
     /// The category of the sound.
-    let soundCategory: Int
+    public let soundCategory: Int
 
     /// The x location of the effect.
-    let effectPositionX: Double
+    public let effectPositionX: Double
 
     /// The y location of the effect.
-    let effectPositionY: Double
+    public let effectPositionY: Double
 
     /// The z location of the effect.
-    let effectPositionZ: Double
+    public let effectPositionZ: Double
 
     /// The volume of the sound (0.0 - 1.0)
-    let volume: Float
+    public let volume: Float
 
     /// The pitch of the sound (0.5 - 2.0)
-    let pitch: Float
+    public let pitch: Float
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         soundID = try VarInt32(from: buffer).integer

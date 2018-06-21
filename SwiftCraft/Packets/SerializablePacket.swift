@@ -8,8 +8,6 @@
 
 import Foundation
 
-// MARK: - Serializing
-
 public protocol SerializationContext {
     /// The minecraft client.
     var client: MinecraftClient { get }
@@ -18,8 +16,10 @@ public protocol SerializationContext {
     var protocolVersion: Int { get }
 }
 
+// MARK: - Serializing
+
 /// A serializable minecaft packet.
-public protocol SerializablePacket {
+public protocol SerializablePacket: PacketIDProvider {
     /// Serializes the packet and its packet id to a byte array.
     ///
     /// - Returns: The byte array.
@@ -29,9 +29,6 @@ public protocol SerializablePacket {
     ///
     /// - Returns: The serialized packet data.
     func serializedData(context: SerializationContext) -> ByteArray
-
-    /// The id of the packet.
-    static func packetID(context: SerializationContext) -> PacketID?
 }
 
 extension SerializablePacket {
@@ -61,12 +58,9 @@ extension BufferSerializablePacket {
     }
 }
 
-// MARK: - Docoding
+// MARK: - Deserializing
 
 /// A deserializable minecaft packet.
-public protocol DeserializablePacket {
-    /// The id of the packet.
-    static func packetID(context: SerializationContext) -> PacketID?
-
+public protocol DeserializablePacket: PacketIDProvider {
     init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws
 }

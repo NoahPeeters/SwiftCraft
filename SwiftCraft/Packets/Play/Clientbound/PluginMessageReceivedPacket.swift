@@ -9,9 +9,9 @@
 import Foundation
 
 /// Packet send to transmitt plugin message.
-public struct PluginMessageReceivedPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x18)
+public struct PluginMessageReceivedPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x18
     }
 
     /// The string identifying the channel.

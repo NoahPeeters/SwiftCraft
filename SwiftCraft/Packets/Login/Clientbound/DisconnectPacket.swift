@@ -11,9 +11,9 @@ import Foundation
 /// Received when the server closes the connection while logging in.
 ///
 /// - Note: The reason will be described in the `message` field.
-public struct DisconnectPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .login, id: 0x00)
+public struct DisconnectPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x00
     }
 
     /// The message with a description of the reason.

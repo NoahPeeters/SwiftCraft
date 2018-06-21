@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the advancments of the player.
-public struct AdvancementsPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x4D)
+public struct AdvancementsPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x4D
     }
 
     public typealias AdvancementMapping = [Identifier: Advancement]
@@ -86,6 +86,6 @@ public struct AdvancementsPacket: DeserializablePacket {
     }
 }
 
-enum AdvancementsPacketError: Error {
+public enum AdvancementsPacketError: Error {
     case invalidFrameType(Int)
 }

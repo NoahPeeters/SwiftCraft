@@ -9,9 +9,9 @@
 import Foundation
 
 /// A packet indicating that the server difficulty changed.
-public struct ServerDifficultyPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x0D)
+public struct ServerDifficultyPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x0D
     }
 
     /// The difficulty of the world.

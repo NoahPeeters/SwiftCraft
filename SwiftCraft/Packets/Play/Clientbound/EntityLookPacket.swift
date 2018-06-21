@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the look direction of an entity.
-public struct EntityLookPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x28)
+public struct EntityLookPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x28
     }
 
     /// The id of the entity.

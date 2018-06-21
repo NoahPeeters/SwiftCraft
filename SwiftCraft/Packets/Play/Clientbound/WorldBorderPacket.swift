@@ -9,9 +9,9 @@
 import Foundation
 
 /// Updates the world border.
-public struct WorldBorderPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x38)
+public struct WorldBorderPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x38
     }
 
     public let action: Action

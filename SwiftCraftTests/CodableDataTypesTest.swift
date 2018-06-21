@@ -10,8 +10,8 @@ import Quick
 import Nimble
 @testable import SwiftCraft
 
-class BoolCodableTests: QuickSpec {
-    override func spec() {
+public class BoolCodableTests: QuickSpec {
+    public override func spec() {
         describe("serializing") {
             it("serializes false") {
                 expect(false.directSerialized()).to(equal([0]))
@@ -38,8 +38,8 @@ class BoolCodableTests: QuickSpec {
     }
 }
 
-class UInt8CodableTest: QuickSpec {
-    override func spec() {
+public class UInt8CodableTest: QuickSpec {
+    public override func spec() {
         describe("serializing") {
             it("serializes correctly") {
                 expect(UInt8(42).directSerialized()).to(equal([42]))
@@ -58,8 +58,8 @@ class UInt8CodableTest: QuickSpec {
     }
 }
 
-class Int8CodableTest: QuickSpec {
-    override func spec() {
+public class Int8CodableTest: QuickSpec {
+    public override func spec() {
         describe("serializing") {
             it("serializes positive number correctly") {
                 expect(Int8(42).directSerialized()).to(equal([42]))
@@ -85,8 +85,8 @@ class Int8CodableTest: QuickSpec {
     }
 }
 
-class UInt64CodableTest: QuickSpec {
-    override func spec() {
+public class UInt64CodableTest: QuickSpec {
+    public override func spec() {
         describe("serializing") {
             it("serializes correctly") {
                 expect(UInt64(0x0102030405060708).directSerialized()).to(equal(Array(1...8)))
@@ -109,8 +109,8 @@ class UInt64CodableTest: QuickSpec {
     }
 }
 
-class DoubleCodableTest: QuickSpec {
-    override func spec() {
+public class DoubleCodableTest: QuickSpec {
+    public override func spec() {
         let serializedData: ByteArray = [0b01000000, 0b00110111, 0, 0, 0, 0, 0, 0]
         let deserializedDouble: Double = 23
 
@@ -136,8 +136,8 @@ class DoubleCodableTest: QuickSpec {
     }
 }
 
-class VarInt32CodableTest: QuickSpec {
-    override func spec() {
+public class VarInt32CodableTest: QuickSpec {
+    public override func spec() {
         let data: [Int32: ByteArray] = [
             0: [0x00],
             1: [0x01],
@@ -191,8 +191,8 @@ class VarInt32CodableTest: QuickSpec {
     }
 }
 
-class VarInt64CodableTest: QuickSpec {
-    override func spec() {
+public class VarInt64CodableTest: QuickSpec {
+    public override func spec() {
         let data: [Int64: ByteArray] = [
             0: [0x00],
             1: [0x01],
@@ -248,8 +248,8 @@ class VarInt64CodableTest: QuickSpec {
     }
 }
 
-class StringCodableTest: QuickSpec {
-    override func spec() {
+public class StringCodableTest: QuickSpec {
+    public override func spec() {
         describe("ascii") {
             let serializedData: ByteArray = [12, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64, 0x21]
             let deserializedStrign = "Hello World!"
@@ -316,11 +316,11 @@ class StringCodableTest: QuickSpec {
     }
 }
 
-class PositionCodableTest: QuickSpec {
-    override func spec() {
+public class PositionCodableTest: QuickSpec {
+    public override func spec() {
         describe("zero position") {
             let serializedData: ByteArray = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-            let deserializedPosition = Position(x: 0, y: 0, z: 0)
+            let deserializedPosition = BlockPosition(x: 0, y: 0, z: 0)
 
             describe("serializing") {
                 it("serializes correctly") {
@@ -330,14 +330,14 @@ class PositionCodableTest: QuickSpec {
 
             describe("deserializing") {
                 it("deserializes correctly") {
-                    expect(try? Position(from: serializedData)).to(equal(deserializedPosition))
+                    expect(try? BlockPosition(from: serializedData)).to(equal(deserializedPosition))
                 }
             }
         }
 
         describe("positive position") {
             let serializedData: ByteArray = [0x00, 0x00, 0x0a, 0x80, 0xac, 0x00, 0x00, 0x2c]
-            let deserializedPosition = Position(x: 42, y: 43, z: 44)
+            let deserializedPosition = BlockPosition(x: 42, y: 43, z: 44)
 
             describe("serializing") {
                 it("serializes correctly") {
@@ -347,14 +347,14 @@ class PositionCodableTest: QuickSpec {
 
             describe("deserializing") {
                 it("deserializes correctly") {
-                    expect(try? Position(from: serializedData)).to(equal(deserializedPosition))
+                    expect(try? BlockPosition(from: serializedData)).to(equal(deserializedPosition))
                 }
             }
         }
 
         describe("negative position") {
             let serializedData: ByteArray = [0xff, 0xff, 0xf5, 0x80, 0x03, 0xff, 0xff, 0xd4]
-            let deserializedPosition = Position(x: -42, y: 0, z: -44)
+            let deserializedPosition = BlockPosition(x: -42, y: 0, z: -44)
 
             describe("serializing") {
                 it("serializes correctly") {
@@ -364,15 +364,15 @@ class PositionCodableTest: QuickSpec {
 
             describe("deserializing") {
                 it("deserializes correctly") {
-                    expect(try? Position(from: serializedData)).to(equal(deserializedPosition))
+                    expect(try? BlockPosition(from: serializedData)).to(equal(deserializedPosition))
                 }
             }
         }
     }
 }
 
-class UUIDCodableTest: QuickSpec {
-    override func spec() {
+public class UUIDCodableTest: QuickSpec {
+    public override func spec() {
         describe("when creating a uuid") {
             let uuid = UUID()
 

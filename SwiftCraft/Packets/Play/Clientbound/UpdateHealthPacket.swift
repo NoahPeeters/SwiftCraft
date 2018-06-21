@@ -9,19 +9,19 @@
 import Foundation
 
 /// Updates the players health status
-public struct UpdateHealthPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x41)
+public struct UpdateHealthPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x41
     }
 
     /// The current health status. 0 or less is dead. Max is 20.
-    let health: Float
+    public let health: Float
 
     /// The food level. Max is 20.
-    let food: Int
+    public let food: Int
 
     /// The food saturation. 0.0 - 5.0.
-    let foodSaturation: Float
+    public let foodSaturation: Float
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         health = try Float(from: buffer)

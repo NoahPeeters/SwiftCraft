@@ -9,9 +9,9 @@
 import Foundation
 
 /// Packet send once per second with the current time.
-public struct TimeUpdatePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x47)
+public struct TimeUpdatePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x47
     }
 
     /// The ticks since the world first started.

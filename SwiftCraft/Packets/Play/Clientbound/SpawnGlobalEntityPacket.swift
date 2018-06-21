@@ -9,9 +9,9 @@
 import Foundation
 
 /// Tells the client to spawn a global entity. Currently the only global entity is the thunderbolt strikes.
-public struct SpawnGlobalEntityPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x02)
+public struct SpawnGlobalEntityPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x02
     }
 
     /// The id of the entity.

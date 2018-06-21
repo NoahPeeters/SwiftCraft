@@ -17,10 +17,11 @@ extension MinecraftClient {
             chunkDataReactor(blockManager: worldStatusManager),
             unloadChunkReactor(blockManager: worldStatusManager),
             blockChangeReactor(blockManager: worldStatusManager),
-            multiBlockChangeReactor(blockManager: worldStatusManager)
+            multiBlockChangeReactor(blockManager: worldStatusManager),
+            playerPositionAndLookReactor(playerManager: worldStatusManager)
         ])
     }
 }
 
 /// Manager for the world status
-public typealias MinecraftWorldStatusManager = BlockManager
+public typealias MinecraftWorldStatusManager = BlockManager & PlayerManager

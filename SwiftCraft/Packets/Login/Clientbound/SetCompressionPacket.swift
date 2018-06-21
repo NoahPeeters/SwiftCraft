@@ -9,9 +9,9 @@
 import Foundation
 
 /// Packet to enable or disable compression
-public struct SetCompressionPacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .login, id: 0x03)
+public struct SetCompressionPacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x03
     }
 
     /// The threshold describes how large a packet must be to be compressed.

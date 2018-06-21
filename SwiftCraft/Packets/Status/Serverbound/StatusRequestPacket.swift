@@ -9,9 +9,9 @@
 import Foundation
 
 /// The packet to send after receiveing a keepalive packet from the server.
-public struct StatusRequestPacket: BufferSerializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .status, id: 0x00)
+public struct StatusRequestPacket: BufferSerializablePacket, StatusPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x00
     }
 
     public func serializeData<Buffer: ByteWriteBuffer>(to buffer: Buffer, context: SerializationContext) {

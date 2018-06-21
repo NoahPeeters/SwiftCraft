@@ -9,9 +9,9 @@
 import Foundation
 
 /// Spawns a new particle
-public struct ParticlePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x22)
+public struct ParticlePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x22
     }
 
     public let particleID: Int

@@ -9,20 +9,20 @@
 import Foundation
 
 /// Sets the experience of the player.
-public struct SetExperiencePacket: DeserializablePacket {
-    public static func packetID(context: SerializationContext) -> PacketID? {
-        return PacketID(connectionState: .play, id: 0x40)
+public struct SetExperiencePacket: DeserializablePacket, LoginPacketIDProvider {
+    public static func packetIndex(context: SerializationContext) -> Int? {
+        return 0x40
     }
 
     /// The current position of the experience bar. (0-1)
-    let experienceBar: Float
+    public let experienceBar: Float
 
     /// The level of the player.
-    let level: Int
+    public let level: Int
 
     /// The total experience of the player.
     /// [More information](https://minecraft.gamepedia.com/g00/Experience?i10c.encReferrer=&i10c.ua=4#Leveling_up)
-    let totalExperience: Int
+    public let totalExperience: Int
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
         experienceBar = try Float(from: buffer)
