@@ -128,15 +128,15 @@ open class MinecraftClient {
         sessionServerService.joinSession(serverID: serverID, sharedSecret: sharedSecret,
                                          publicKey: publicKey) { [weak self] _ in
             self?.sendPacket(responsePacket)
-            self?.enableEncryption(sharedSecret: sharedSecret)
+            try? self?.enableEncryption(sharedSecret: sharedSecret)
         }
     }
 
     /// Enables aes encryption.
     ///
     /// - Parameter sharedSecret: The shared secret used for both key and iv.
-    public func enableEncryption(sharedSecret: Data) {
-        messageCryptor = ContinuousMessageCryptor(sharedSecret: sharedSecret)
+    public func enableEncryption(sharedSecret: Data) throws {
+        messageCryptor = try ContinuousMessageCryptor(sharedSecret: sharedSecret)
     }
 
     /// Disables encryption.
@@ -205,8 +205,8 @@ extension MinecraftClient {
     /// Sends raw bytes to the server. This function should not be called manually when sending packets.
     ///
     /// - Parameter bytes: The bytes to send.
-    public func send(_ bytes: ByteArray) {
-        tcpClient.send(bytes: encryptMessageIfRequired(bytes))
+    public func send(_ bytes: ByteArray) throws {
+        try tcpClient.send(bytes: encryptMessageIfRequired(bytes))
     }
 
     /// Sends a packet to the server.
@@ -222,7 +222,7 @@ extension MinecraftClient {
                 let compressedMessage = try compressMessageIfRequired(serializedPacket)
                 let messageSize = VarInt32(compressedMessage.count).directSerialized()
 
-                send(messageSize + compressedMessage)
+                try send(messageSize + compressedMessage)
                 didSendPacket(packet, client: self)
             }
         } catch {
@@ -249,7 +249,10 @@ extension MinecraftClient {
     ///
     /// - Parameter bytes: The message to handle.
     private func handleMessage(_ bytes: ByteArray) {
-        let decryptedBytes = decryptMessageIfRequired(bytes)
+        guard let decryptedBytes = try? decryptMessageIfRequired(bytes) else {
+            return
+        }
+
         incommingDataBuffer.write(elements: decryptedBytes)
 
         while true {
@@ -329,24 +332,24 @@ extension MinecraftClient {
     ///
     /// - Parameter bytes: The bytes to encrypt.
     /// - Returns: The encrypted bytes of encryption is enabled. Otherwise the input bytes.
-    private func encryptMessageIfRequired(_ bytes: ByteArray) -> ByteArray {
+    private func encryptMessageIfRequired(_ bytes: ByteArray) throws -> ByteArray {
         guard let messageCryptor = messageCryptor else {
             return bytes
         }
 
-        return Array(messageCryptor.encryptOutgoingMessage(Data(bytes: bytes)))
+        return try messageCryptor.encryptOutgoingMessage(bytes)
     }
 
     /// Decryptes a message if encryption is enabled.
     ///
     /// - Parameter bytes: The bytes to encrypt.
     /// - Returns: The decrypted bytes of encryption is enabled. Otherwise the input bytes.
-    private func decryptMessageIfRequired(_ bytes: ByteArray) -> ByteArray {
+    private func decryptMessageIfRequired(_ bytes: ByteArray) throws -> ByteArray {
         guard let messageCryptor = messageCryptor else {
             return bytes
         }
 
-        return Array(messageCryptor.decryptIncommingMessage(Data(bytes: bytes)))
+        return try messageCryptor.decryptIncommingMessage(bytes)
     }
 }
 

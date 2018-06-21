@@ -21,11 +21,11 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
     private let minecraftWorld = MinecraftWorld()
 
     public func applicationDidFinishLaunching(_ aNotification: Notification) {
-        startOnline()
+        startOffline()
     }
 
     private func startOnline() {
-        UserDefaults.standard.removeObject(forKey: "accessToken")
+//        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
         let loginService = UserLoginService()
