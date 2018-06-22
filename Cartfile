@@ -1,5 +1,6 @@
 github "1024jp/GzipSwift"
 github "krzyzanowskim/CryptoSwift"
+github "vapor/crypto"
 
 # Reactive Extension
 github "ReactiveCocoa/ReactiveSwift" ~> 3.0

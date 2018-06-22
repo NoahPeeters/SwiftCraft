@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Crypto
 
 /// Baseclass for the library. It manages everything a client have to do.
 open class MinecraftClient {
@@ -51,33 +52,34 @@ open class MinecraftClient {
     }
 
     /// Connect the tcp client to the server
-    public func connect() {
-        tcpClient.connect()
+    public func connect() throws {
+        try tcpClient.connect()
     }
 
     /// Connects the tcp client to the server and starts the login
-    public func connectAndLogin(protocolVersion: Int? = nil) {
+    public func connectAndLogin(protocolVersion: Int? = nil) throws {
         guard let protocolVersion = protocolVersion else {
             var reactorID: UUID!
             reactorID = addReactor(ClosureReactor<StatusResponsePacket> { packet, _ in
-                self.connectAndLogin(protocolVersion: packet.response.version.protocolVersion)
                 self.removeReactor(with: reactorID)
+                self.close()
+                try? self.connectAndLogin(protocolVersion: packet.response.version.protocolVersion)
             })
-            connectAndRequestStatus()
+            try connectAndRequestStatus()
             return
         }
 
         self.protocolVersion = protocolVersion
-        connect()
+        try connect()
         connectionState = .handshaking
         sendHandshake(nextState: .login)
         connectionState = .login
         sendLoginStart(username: sessionServerService.username)
     }
 
-    public func connectAndRequestStatus() {
+    public func connectAndRequestStatus() throws {
         self.protocolVersion = MinecraftClient.mostRecentSupportedProtocolVersion
-        connect()
+        try connect()
         connectionState = .handshaking
         sendHandshake(nextState: .status)
         connectionState = .status
@@ -91,11 +93,11 @@ open class MinecraftClient {
 
     /// The host of the server.
     public var host: String {
-        return tcpClient.stringHost
+        return tcpClient.host
     }
 
     /// The port of the server.
-    public var port: UInt32 {
+    public var port: Int {
         return tcpClient.port
     }
 
@@ -114,7 +116,7 @@ open class MinecraftClient {
     /// - Throws: Encryption errors.
     open func startEncryption(serverID: Data, publicKey: Data, verifyToken: Data) throws {
         // Generate shared secret used for aes
-        let sharedSecret = generateSharedSecret()
+        let sharedSecret = try generateSharedSecret()
 
         // Encrypt data.
         let encryptedVerifyToken = try encrypt(verifyToken, withPublicKey: publicKey)
@@ -147,8 +149,8 @@ open class MinecraftClient {
     /// Generates a shared secret used for aes key and iv.
     ///
     /// - Returns: The generated shared secret.
-    private func generateSharedSecret() -> Data {
-        return CC.generateRandom(16)
+    private func generateSharedSecret() throws -> Data {
+        return try CryptoRandom().generateData(count: 16)
     }
 
     /// Encrptes data with rsa.
@@ -159,12 +161,14 @@ open class MinecraftClient {
     /// - Returns: The encrypted data.
     /// - Throws: An encryption error.
     private func encrypt(_ data: Data, withPublicKey keyData: Data) throws -> Data {
-        return try CC.RSA.encrypt(
-            data,
-            derKey: keyData,
-            tag: Data(),
-            padding: .pkcs1,
-            digest: .none)
+        let pemString = """
+            -----BEGIN PUBLIC KEY-----
+            \(keyData.base64EncodedString())
+            -----END PUBLIC KEY-----
+            """
+
+        let key = try RSAKey.public(pem: pemString)
+        return try RSA.encrypt(data, padding: .pkcs1, key: key)
     }
 
     /// Enables compression for all following packets with at least the size of the threshold.

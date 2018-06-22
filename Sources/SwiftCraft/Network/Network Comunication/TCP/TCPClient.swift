@@ -7,7 +7,16 @@
 //
 
 import Foundation
-import CoreFoundation
+#if os(Linux)
+import Glibc
+import COperatingSystem
+
+// fix some constants on linux
+let SOCK_STREAM = Int32(COperatingSystem.SOCK_STREAM.rawValue)
+let IPPROTO_TCP = Int32(COperatingSystem.IPPROTO_TCP)
+#else
+import Darwin
+#endif
 
 /// Events of a TCPClient.
 public enum TCPClientEvent: Hashable {
@@ -39,7 +48,7 @@ public enum TCPClientEvent: Hashable {
 /// A protocol for a tcp client like object.
 public protocol TCPClientProtocol {
     /// Connects the client to its server.
-    func connect()
+    func connect() throws
 
     /// Closes the connection
     func close()
@@ -50,119 +59,156 @@ public protocol TCPClientProtocol {
     func events(handler: ((TCPClientEvent) -> Void)?)
 
     /// The host to connect to.
-    var host: CFString { get }
+    var host: String { get }
 
     /// The port to connect to
-    var port: UInt32 { get }
+    var port: Int { get }
 
     /// Sends the given bytes if the outout stream is open.
     ///
     /// - Parameter bytes: The bytes to send.
-    func send(bytes: ByteArray)
+    func send(data: Data) throws
 }
 
 extension TCPClientProtocol {
-    /// The host as a swift string.
-    public var stringHost: String {
-        return (host as NSString) as String
+    public func send(bytes: ByteArray) throws {
+        try send(data: Data(bytes: bytes))
     }
 }
 
 /// A simple TCP client to send and receive tcp messages.
 public class TCPClient: NSObject, TCPClientProtocol {
     /// The underlying input stream.
-    private var inputStream: InputStream?
-
-    /// The underlying output stream.
-    private var outputStream: OutputStream?
+    private var sockID: Int32?
 
     /// The host to connect to.
-    public let host: CFString
+    public let host: String
 
     /// The port to connect to
-    public let port: UInt32
+    public let port: Int
 
     /// Handler for events.
     public var eventsHandler: ((TCPClientEvent) -> Void)?
 
     /// The maximum buffer size.
-    public var maxBufferSize: Int = 1024
+    public var maxBufferSize: Int = 4096
 
     /// Creates a new tcp client.
     ///
     /// - Parameters:
     ///   - host: The host to connect to.
     ///   - port: The port to connect to.
-    public init(host: CFString, port: UInt32) {
+    public init(host: String, port: Int) {
         self.host = host
         self.port = port
 
         super.init()
     }
 
-    /// Creates a new tcp client.
-    ///
-    /// - Parameters:
-    ///   - host: The host to connect to.
-    ///   - port: The port to connect to.
-    public convenience init(host: String, port: Int) {
-        self.init(host: host as CFString, port: UInt32(port))
+    private func createSocket(host: String, port: String) -> Int32? {
+        var hints = addrinfo()
+
+        hints.ai_family = AF_INET
+        hints.ai_socktype = SOCK_STREAM
+
+        var remotes: UnsafeMutablePointer<addrinfo>?
+        let remotesError = getaddrinfo(host, "\(port)", &hints, &remotes)
+
+        guard remotesError == 0 else {
+            return nil
+        }
+
+        defer {
+            freeaddrinfo(remotes)
+        }
+
+        guard let firstRemote = remotes else {
+            return nil
+        }
+
+        for address in sequence(first: firstRemote, next: { $0.pointee.ai_next }) {
+            let socketID = socket(address.pointee.ai_family, address.pointee.ai_socktype, address.pointee.ai_protocol)
+            guard socketID != -1 else {
+                continue
+            }
+
+            #if os(Linux)
+            let connectStatus = Glibc.connect(socketID, address.pointee.ai_addr, address.pointee.ai_addrlen)
+            #else
+            let connectStatus = Darwin.connect(socketID, address.pointee.ai_addr, address.pointee.ai_addrlen)
+            #endif
+
+            guard connectStatus != -1 else {
+                continue
+            }
+
+            return socketID
+        }
+
+        return nil
     }
 
     /// Connects to the host and port of the client.
-    public func connect() {
-        var readStream: Unmanaged<CFReadStream>?
-        var writeStream: Unmanaged<CFWriteStream>?
+    public func connect() throws {
+        self.sockID = createSocket(host: host, port: "\(port)")
+        startReading()
+    }
 
-        CFStreamCreatePairWithSocketToHost(nil, host, port, &readStream, &writeStream)
+    private var hasReader: Bool = false
 
-        // close streams
-        inputStream?.close()
-        outputStream?.close()
+    private func startReading() {
+        if hasReader {
+            return
+        }
+        hasReader = true
+        DispatchQueue.main.async { [weak self] in
+            defer {
+                self?.hasReader = false
+            }
+            while let unwrappedSelf = self, let sockID = self?.sockID {
+                let readSize = unwrappedSelf.maxBufferSize
+                let dataPointer = UnsafeMutableRawPointer.allocate(
+                    byteCount: readSize,
+                    alignment: MemoryLayout<Byte>.alignment)
 
-        // create new steams
-        inputStream = readStream!.takeRetainedValue()
-        outputStream = writeStream!.takeRetainedValue()
+                let readLength = recv(sockID, dataPointer, readSize, 0)
+                guard readLength > 0 else {
+                    return
+                }
 
-        // set delegates
-        inputStream!.delegate = self
-        outputStream!.delegate = self
-
-        // schedule
-        inputStream!.schedule(in: RunLoop.current, forMode: RunLoop.Mode.default)
-        outputStream!.schedule(in: RunLoop.current, forMode: RunLoop.Mode.default)
-
-        // open
-        inputStream!.open()
-        outputStream!.open()
+                let data = Data(bytes: dataPointer, count: readLength)
+                unwrappedSelf.eventsHandler?(TCPClientEvent.received(data: data))
+            }
+        }
     }
 
     /// Closes the connection to the server.
     /// - Attention: The close function must be called on the same runloop as the connect function.
     public func close() {
-        if let inputStream = inputStream {
-            closeStream(inputStream)
-        }
-
-        if let outputStream = outputStream {
-            closeStream(outputStream)
+        if let sockID = sockID {
+            #if os(Linux)
+            Glibc.close(sockID)
+            #else
+            Darwin.close(sockID)
+            #endif
         }
     }
 
-    /// Closes a stream and removes it from the current runloop.
-    ///
-    /// - Parameter stream: The stream to close.
-    /// - Attention: The close function must be called on the same runloop as the connect function.
-    private func closeStream(_ stream: Stream) {
-        stream.close()
-        stream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
-    }
 
     /// Sends the given bytes if the outout stream is open.
     ///
     /// - Parameter bytes: The bytes to send.
-    public func send(bytes: ByteArray) {
-        outputStream?.write(UnsafePointer<UInt8>(bytes), maxLength: bytes.count)
+    public func send(data: Data) {
+        if let sockID = sockID {
+            let dataCount = data.count
+            data.withUnsafeBytes { (pointer: UnsafePointer<Byte>) in
+                #if os(Linux)
+                _ = Glibc.send(sockID, UnsafeRawPointer(pointer), dataCount, 0)
+                #else
+                _ = Darwin.send(sockID, UnsafeRawPointer(pointer), dataCount, 0)
+                #endif
+            }
+        }
     }
 
     /// Sets the handler for all future events.
@@ -170,87 +216,5 @@ public class TCPClient: NSObject, TCPClientProtocol {
     /// - Parameter handler: The handler to use for future events.
     public func events(handler: ((TCPClientEvent) -> Void)?) {
         self.eventsHandler = handler
-    }
-}
-
-extension TCPClient: StreamDelegate {
-    /// Handels a incomming stream event.
-    ///
-    /// - Parameters:
-    ///   - stream: The stream which received the event.
-    ///   - eventCode: The code of the event.
-    public func stream(_ stream: Stream, handle eventCode: Stream.Event) {
-        switch eventCode {
-        case .openCompleted:
-            streamOpened(stream)
-        case .hasSpaceAvailable:
-            streamHasSpaceAvailable(stream)
-        case .hasBytesAvailable:
-            streamHasBytesAvailable(stream)
-        case .errorOccurred:
-            eventsHandler?(.unknownError)
-        case .endEncountered:
-            streamEndOccured(stream)
-        default:
-            break
-        }
-    }
-
-    /// Handels the opening of a stream.
-    ///
-    /// - Parameter stream: The steram.
-    private func streamOpened(_ stream: Stream) {
-        if stream == inputStream {
-            eventsHandler?(.inputStreamOpened)
-        } else if stream == outputStream {
-            eventsHandler?(.outputStreamOpened)
-        }
-    }
-
-    /// Handles space available in a steream buffer event.
-    ///
-    /// - Parameter stream: The stream which has space available.
-    private func streamHasSpaceAvailable(_ stream: Stream) {
-        if stream == inputStream {
-            eventsHandler?(.inputStreamHasSpaceAvailable)
-        } else if stream == outputStream {
-            eventsHandler?(.outputStreamHasSpaceAvailable)
-        }
-    }
-
-    /// Handels an event which indicates that the input buffer of a stream has new data.
-    ///
-    /// - Parameter stream: The stream which has bytes available.
-    private func streamHasBytesAvailable(_ stream: Stream) {
-        guard stream == inputStream else {
-            return
-        }
-
-        guard let inputStream = inputStream else {
-            return
-        }
-
-        var buffer = [UInt8](repeating: 0, count: self.maxBufferSize)
-        var length: Int!
-
-        while inputStream.hasBytesAvailable {
-            length = inputStream.read(&buffer, maxLength: self.maxBufferSize)
-            if length > 0 {
-                let data = Data(bytes: &buffer, count: length)
-                eventsHandler?(.received(data: data))
-            }
-        }
-    }
-
-    /// Handels an event which indicated that the steram was closed.
-    ///
-    /// - Parameter stream: The stream which was closed.
-    private func streamEndOccured(_ stream: Stream) {
-        closeStream(stream)
-        if stream == inputStream {
-            eventsHandler?(.inputStreamClosed)
-        } else if stream == outputStream {
-            eventsHandler?(.outputStreamClosed)
-        }
     }
 }

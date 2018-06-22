@@ -97,11 +97,11 @@ extension Int64 {
     ///   10010110101011011001011010101101100101101010110110_01011010_101101
     ///   Which will result in 90.
     public init(from bytes: UInt64, length: Int, rightOffset: Int) {
-        let maxNumbers = NSDecimalNumber(decimal: pow(2, length))
+        let maxNumbers = UInt64(pow(Double(2), Double(length)))
 
-        self = Int64((bytes >> rightOffset) & (maxNumbers.uint64Value - 1))
-        if self > maxNumbers.int64Value / 2 {
-            self -= maxNumbers.int64Value
+        self = Int64((bytes >> rightOffset) & (maxNumbers - 1))
+        if self > Int64(maxNumbers) / 2 {
+            self -= Int64(maxNumbers)
         }
     }
 }

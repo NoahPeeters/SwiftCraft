@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		133424BD20B425660097C45D /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BC20B425660097C45D /* SwCrypt.swift */; };
 		133424BF20B42EBC0097C45D /* EncryptionResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */; };
 		1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251120B460D60097C45D /* Data+MinecraftHexString.swift */; };
 		1334251520B4647A0097C45D /* SessionServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251420B4647A0097C45D /* SessionServerService.swift */; };
@@ -201,7 +200,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		133424BC20B425660097C45D /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 		133424BE20B42EBC0097C45D /* EncryptionResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionResponsePacket.swift; sourceTree = "<group>"; };
 		1334251120B460D60097C45D /* Data+MinecraftHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+MinecraftHexString.swift"; sourceTree = "<group>"; };
 		1334251420B4647A0097C45D /* SessionServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServerService.swift; sourceTree = "<group>"; };
@@ -843,7 +841,6 @@
 		409D94E320DBC85A00F2DCD4 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				133424BC20B425660097C45D /* SwCrypt.swift */,
 				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
 			);
 			path = Encryption;
@@ -1389,7 +1386,6 @@
 				404352F020DADE7C00C2E737 /* ChangeGameStatePacket.swift in Sources */,
 				40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */,
 				408E640220BA09E400AE9C2D /* ChunkDataPacket.swift in Sources */,
-				133424BD20B425660097C45D /* SwCrypt.swift in Sources */,
 				40E3150020B612EB00C9E271 /* TimeUpdatePacket.swift in Sources */,
 				4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */,
 				40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Crypto
 
 /// Protocol for a service capable to join a session.
 public protocol SessionServerServiceProtocol {
@@ -46,7 +47,12 @@ public struct SessionServerService: SessionServerServiceProtocol {
     }
 
     public func joinSession(serverID: Data, sharedSecret: Data, publicKey: Data, handler: @escaping ResponseHandler) {
-        let serverHash = calculateServerHash(serverID: serverID, sharedSecret: sharedSecret, publicKey: publicKey)
+        guard let serverHash = try? calculateServerHash(serverID: serverID,
+                                                        sharedSecret: sharedSecret,
+                                                        publicKey: publicKey) else {
+            handler(false)
+            return
+        }
         let payload = createPayload(serverHash: serverHash)
 
         guard let request = try? URLRequest(postRequest: SessionServerService.url, jsonData: payload) else {
@@ -64,8 +70,8 @@ public struct SessionServerService: SessionServerServiceProtocol {
     ///   - sharedSecret: The shared secret used for encrypting the connection.
     ///   - publicKey: The public key of the server.
     /// - Returns: The server hash.
-    private func calculateServerHash(serverID: Data, sharedSecret: Data, publicKey: Data) -> String {
-        let hashData = CC.digest(serverID + sharedSecret + publicKey, alg: .sha1)
+    private func calculateServerHash(serverID: Data, sharedSecret: Data, publicKey: Data) throws -> String {
+        let hashData = try SHA1.hash(serverID + sharedSecret + publicKey)
         return hashData.minecraftHexString()
     }
 
