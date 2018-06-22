@@ -25,8 +25,6 @@
 		401252A320DC606F00802FCA /* SwiftCraftAppGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4012528D20DC5DCE00802FCA /* SwiftCraftAppGame.swift */; };
 		401252A420DC608300802FCA /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		401252A520DC608500802FCA /* SwiftCraftReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */; };
-		401252A620DC60B900802FCA /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC83FD20DC23C5005F7EDE /* Gzip.framework */; };
-		401252A720DC60BB00802FCA /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC840920DC4B5A005F7EDE /* CryptoSwift.framework */; };
 		4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
 		4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */; };
 		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
@@ -382,8 +380,6 @@
 			files = (
 				401252A420DC608300802FCA /* SwiftCraft.framework in Frameworks */,
 				401252A520DC608500802FCA /* SwiftCraftReactive.framework in Frameworks */,
-				401252A620DC60B900802FCA /* Gzip.framework in Frameworks */,
-				401252A720DC60BB00802FCA /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,6 +1205,7 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputFileListPaths = (
