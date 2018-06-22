@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Crypto
 
 /// Protocol for a service capable to join a session.
 public protocol SessionServerServiceProtocol {
@@ -71,7 +70,7 @@ public struct SessionServerService: SessionServerServiceProtocol {
     ///   - publicKey: The public key of the server.
     /// - Returns: The server hash.
     private func calculateServerHash(serverID: Data, sharedSecret: Data, publicKey: Data) throws -> String {
-        let hashData = try SHA1.hash(serverID + sharedSecret + publicKey)
+        let hashData = try CryptoWrapper.sha1Hash(serverID + sharedSecret + publicKey)
         return hashData.minecraftHexString()
     }
 

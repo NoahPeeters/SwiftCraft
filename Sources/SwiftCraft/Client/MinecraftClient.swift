@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Crypto
 
 /// Baseclass for the library. It manages everything a client have to do.
 open class MinecraftClient {
@@ -52,38 +51,43 @@ open class MinecraftClient {
     }
 
     /// Connect the tcp client to the server
-    public func connect() throws {
-        try tcpClient.connect()
+    public func connect() -> Bool {
+        return tcpClient.connect()
     }
 
     /// Connects the tcp client to the server and starts the login
-    public func connectAndLogin(protocolVersion: Int? = nil) throws {
+    public func connectAndLogin(protocolVersion: Int? = nil) -> Bool {
         guard let protocolVersion = protocolVersion else {
             var reactorID: UUID!
             reactorID = addReactor(ClosureReactor<StatusResponsePacket> { packet, _ in
                 self.removeReactor(with: reactorID)
                 self.close()
-                try? self.connectAndLogin(protocolVersion: packet.response.version.protocolVersion)
+                _ = self.connectAndLogin(protocolVersion: packet.response.version.protocolVersion)
             })
-            try connectAndRequestStatus()
-            return
+            return connectAndRequestStatus()
         }
 
         self.protocolVersion = protocolVersion
-        try connect()
+        guard connect() else {
+            return false
+        }
         connectionState = .handshaking
         sendHandshake(nextState: .login)
         connectionState = .login
         sendLoginStart(username: sessionServerService.username)
+        return true
     }
 
-    public func connectAndRequestStatus() throws {
+    public func connectAndRequestStatus() -> Bool {
         self.protocolVersion = MinecraftClient.mostRecentSupportedProtocolVersion
-        try connect()
+        guard connect() else {
+            return false
+        }
         connectionState = .handshaking
         sendHandshake(nextState: .status)
         connectionState = .status
         sendStatusRequestPacket()
+        return true
     }
 
     /// Closes the tcp client connection
@@ -116,11 +120,11 @@ open class MinecraftClient {
     /// - Throws: Encryption errors.
     open func startEncryption(serverID: Data, publicKey: Data, verifyToken: Data) throws {
         // Generate shared secret used for aes
-        let sharedSecret = try generateSharedSecret()
+        let sharedSecret = try CryptoWrapper.generateRandomData(count: 16)
 
         // Encrypt data.
-        let encryptedVerifyToken = try encrypt(verifyToken, withPublicKey: publicKey)
-        let encryptedSharedSecret = try encrypt(sharedSecret, withPublicKey: publicKey)
+        let encryptedVerifyToken = try CryptoWrapper.encrypt(verifyToken, withPublicKey: publicKey)
+        let encryptedSharedSecret = try CryptoWrapper.encrypt(sharedSecret, withPublicKey: publicKey)
 
         let responsePacket = EncryptionResponsePacket(
             encryptedSharedSecret: Array(encryptedSharedSecret),
@@ -144,31 +148,6 @@ open class MinecraftClient {
     /// Disables encryption.
     public func disableEncryption() {
         messageCryptor = nil
-    }
-
-    /// Generates a shared secret used for aes key and iv.
-    ///
-    /// - Returns: The generated shared secret.
-    private func generateSharedSecret() throws -> Data {
-        return try CryptoRandom().generateData(count: 16)
-    }
-
-    /// Encrptes data with rsa.
-    ///
-    /// - Parameters:
-    ///   - data: The data to encrypt.
-    ///   - keyData: The public key.
-    /// - Returns: The encrypted data.
-    /// - Throws: An encryption error.
-    private func encrypt(_ data: Data, withPublicKey keyData: Data) throws -> Data {
-        let pemString = """
-            -----BEGIN PUBLIC KEY-----
-            \(keyData.base64EncodedString())
-            -----END PUBLIC KEY-----
-            """
-
-        let key = try RSAKey.public(pem: pemString)
-        return try RSA.encrypt(data, padding: .pkcs1, key: key)
     }
 
     /// Enables compression for all following packets with at least the size of the threshold.

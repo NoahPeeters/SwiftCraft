@@ -133,6 +133,8 @@
 		40AEEE7B20DBD0D300E774CA /* EntityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7A20DBD0D300E774CA /* EntityLocation.swift */; };
 		40AEEE7D20DBD0E800E774CA /* SlotContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7C20DBD0E800E774CA /* SlotContent.swift */; };
 		40AEEE7F20DBD0FF00E774CA /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7E20DBD0FF00E774CA /* General.swift */; };
+		40C74D1720DD8B9F008CC291 /* CrypoWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */; };
+		40C74D1920DD8D2D008CC291 /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74D1820DD8D2D008CC291 /* SwCrypt.swift */; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -230,7 +232,6 @@
 		4024AB4C20B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4024AB5120B1DB57008790F2 /* SwiftCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4024AB5820B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4024AB6520B1DD26008790F2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		4024AB6A20B1DEA0008790F2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		4024AB6B20B1DEA0008790F2 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		4024AB6E20B1E093008790F2 /* URLRequest+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Helper.swift"; sourceTree = "<group>"; };
@@ -332,6 +333,8 @@
 		40AEEE7C20DBD0E800E774CA /* SlotContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotContent.swift; sourceTree = "<group>"; };
 		40AEEE7E20DBD0FF00E774CA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		40AEEE8220DBE5F900E774CA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypoWrapper.swift; sourceTree = "<group>"; };
+		40C74D1820DD8D2D008CC291 /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
 		40CA046420B8CCF00088EC44 /* SingleReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleReactor.swift; sourceTree = "<group>"; };
@@ -663,7 +666,6 @@
 				4005B78E20C30D61001F09D2 /* Result.framework */,
 				4024AB6A20B1DEA0008790F2 /* Nimble.framework */,
 				4024AB6B20B1DEA0008790F2 /* Quick.framework */,
-				4024AB6520B1DD26008790F2 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -842,6 +844,8 @@
 			isa = PBXGroup;
 			children = (
 				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
+				40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */,
+				40C74D1820DD8D2D008CC291 /* SwCrypt.swift */,
 			);
 			path = Encryption;
 			sourceTree = "<group>";
@@ -1242,7 +1246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1325,6 +1329,7 @@
 				40AEEE7520DBD0A400E774CA /* LevelType.swift in Sources */,
 				408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */,
 				408C67ED20DAB8620090A1F0 /* ParticlePacket.swift in Sources */,
+				40C74D1920DD8D2D008CC291 /* SwCrypt.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				408C67E720DAB5380090A1F0 /* UpdateBlockEntityPacket.swift in Sources */,
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
@@ -1379,6 +1384,7 @@
 				40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */,
 				40AEEE6320DBC92600E774CA /* String+Serializable.swift in Sources */,
 				409D94DF20DBC45A00F2DCD4 /* PacketIDProvider.swift in Sources */,
+				40C74D1720DD8B9F008CC291 /* CrypoWrapper.swift in Sources */,
 				4024C5F820D94B8500493A86 /* EntityHeadLookPacket.swift in Sources */,
 				40695B8F20DAEDAB007C1C36 /* Entity.swift in Sources */,
 				1334251520B4647A0097C45D /* SessionServerService.swift in Sources */,
@@ -1711,7 +1717,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies -DSWCRYPT";
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraft;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1745,7 +1751,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies -DSWCRYPT";
 				PRODUCT_BUNDLE_IDENTIFIER = to.us.peeters.SwiftCraft;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

@@ -29,13 +29,10 @@ public class SwiftCraftAppGame {
                 self.saveSessionCredentials(login)
                 self.createMinecraftClient(sessionServerService: SessionServerService(authenticationProvider: login))
 
-                do {
-                    try self.minecraftClient.connectAndLogin()
-                } catch {
-                    print(error)
-                    exit(0)
+                guard self.minecraftClient.connectAndLogin() else {
+                    print("Connection failed")
+                    exit(1)
                 }
-
             case let .failure(error):
                 print("Login failed \(error)")
                 exit(1)
@@ -45,17 +42,15 @@ public class SwiftCraftAppGame {
 
     public func startOffline() {
         createMinecraftClient(sessionServerService: OfflineSessionService(username: "Gigameter"))
-        do {
-            try self.minecraftClient.connectAndLogin()
-        } catch {
-            print(error)
+        guard self.minecraftClient.connectAndLogin() else {
+            print("Connection failed")
             exit(0)
         }
     }
 
     private func createMinecraftClient(sessionServerService: SessionServerServiceProtocol) {
         minecraftClient = MinecraftClient(
-            tcpClient: TCPClient(host: "192.168.150.61", port: 25565),
+            tcpClient: TCPClient(host: "192.168.200.36", port: 25565),
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: sessionServerService)
 

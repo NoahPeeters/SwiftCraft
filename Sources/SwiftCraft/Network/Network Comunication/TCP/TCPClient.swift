@@ -12,43 +12,28 @@ import Glibc
 import COperatingSystem
 
 // fix some constants on linux
-let SOCK_STREAM = Int32(COperatingSystem.SOCK_STREAM.rawValue)
-let IPPROTO_TCP = Int32(COperatingSystem.IPPROTO_TCP)
+private let SOCK_STREAM = Int32(COperatingSystem.SOCK_STREAM.rawValue)
+private let IPPROTO_TCP = Int32(COperatingSystem.IPPROTO_TCP)
 #else
 import Darwin
 #endif
 
 /// Events of a TCPClient.
 public enum TCPClientEvent: Hashable {
-    /// The output stream has opened.
-    case outputStreamOpened
+    /// The stream has opened.
+    case streamOpened
 
-    /// The input stream has opened.
-    case inputStreamOpened
-
-    /// The output stream has space available.
-    case outputStreamHasSpaceAvailable
-
-    /// The input stream has space available.
-    case inputStreamHasSpaceAvailable
+    /// The stream has closed.
+    case streamClosed
 
     /// The input stream received new data.
     case received(data: Data)
-
-    /// The output stream closed.
-    case outputStreamClosed
-
-    /// The input stream closed.
-    case inputStreamClosed
-
-    /// A unknown error occured.
-    case unknownError
 }
 
 /// A protocol for a tcp client like object.
 public protocol TCPClientProtocol {
     /// Connects the client to its server.
-    func connect() throws
+    func connect() -> Bool
 
     /// Closes the connection
     func close()
@@ -79,7 +64,7 @@ extension TCPClientProtocol {
 /// A simple TCP client to send and receive tcp messages.
 public class TCPClient: NSObject, TCPClientProtocol {
     /// The underlying input stream.
-    private var sockID: Int32?
+    private var socketID: Int32?
 
     /// The host to connect to.
     public let host: String
@@ -149,9 +134,15 @@ public class TCPClient: NSObject, TCPClientProtocol {
     }
 
     /// Connects to the host and port of the client.
-    public func connect() throws {
-        self.sockID = createSocket(host: host, port: "\(port)")
-        startReading()
+    public func connect() -> Bool {
+        if let socketID = createSocket(host: host, port: "\(port)") {
+            self.socketID = socketID
+            startReading()
+            eventsHandler?(.streamOpened)
+            return true
+        } else {
+            return false
+        }
     }
 
     private var hasReader: Bool = false
@@ -164,14 +155,16 @@ public class TCPClient: NSObject, TCPClientProtocol {
         DispatchQueue.main.async { [weak self] in
             defer {
                 self?.hasReader = false
+                self?.eventsHandler?(.streamClosed)
             }
-            while let unwrappedSelf = self, let sockID = self?.sockID {
+
+            while let unwrappedSelf = self, let socketID = self?.socketID {
                 let readSize = unwrappedSelf.maxBufferSize
                 let dataPointer = UnsafeMutableRawPointer.allocate(
                     byteCount: readSize,
                     alignment: MemoryLayout<Byte>.alignment)
 
-                let readLength = recv(sockID, dataPointer, readSize, 0)
+                let readLength = recv(socketID, dataPointer, readSize, 0)
                 guard readLength > 0 else {
                     return
                 }
@@ -185,27 +178,27 @@ public class TCPClient: NSObject, TCPClientProtocol {
     /// Closes the connection to the server.
     /// - Attention: The close function must be called on the same runloop as the connect function.
     public func close() {
-        if let sockID = sockID {
+        if let socketID = socketID {
             #if os(Linux)
-            Glibc.close(sockID)
+            Glibc.close(socketID)
             #else
-            Darwin.close(sockID)
+            Darwin.close(socketID)
             #endif
         }
+        self.socketID = nil
     }
-
 
     /// Sends the given bytes if the outout stream is open.
     ///
     /// - Parameter bytes: The bytes to send.
     public func send(data: Data) {
-        if let sockID = sockID {
+        if let socketID = socketID {
             let dataCount = data.count
             data.withUnsafeBytes { (pointer: UnsafePointer<Byte>) in
                 #if os(Linux)
-                _ = Glibc.send(sockID, UnsafeRawPointer(pointer), dataCount, 0)
+                _ = Glibc.send(socketID, UnsafeRawPointer(pointer), dataCount, 0)
                 #else
-                _ = Darwin.send(sockID, UnsafeRawPointer(pointer), dataCount, 0)
+                _ = Darwin.send(socketID, UnsafeRawPointer(pointer), dataCount, 0)
                 #endif
             }
         }
