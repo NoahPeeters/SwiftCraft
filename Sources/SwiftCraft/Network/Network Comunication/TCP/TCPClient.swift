@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreFoundation
 
 /// Events of a TCPClient.
 public enum TCPClientEvent: Hashable {
@@ -58,6 +59,13 @@ public protocol TCPClientProtocol {
     ///
     /// - Parameter bytes: The bytes to send.
     func send(bytes: ByteArray)
+}
+
+extension TCPClientProtocol {
+    /// The host as a swift string.
+    public var stringHost: String {
+        return (host as NSString) as String
+    }
 }
 
 /// A simple TCP client to send and receive tcp messages.

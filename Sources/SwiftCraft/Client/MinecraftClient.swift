@@ -90,8 +90,8 @@ open class MinecraftClient {
     }
 
     /// The host of the server.
-    public var host: CFString {
-        return tcpClient.host
+    public var host: String {
+        return tcpClient.stringHost
     }
 
     /// The port of the server.

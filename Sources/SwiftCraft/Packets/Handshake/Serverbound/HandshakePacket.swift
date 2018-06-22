@@ -41,7 +41,7 @@ extension MinecraftClient {
     public func sendHandshake(nextState: ConnectionState) {
         let packet = HandshakePacket(
             protocolVersion: 340,
-            serverAddress: host as String,
+            serverAddress: host,
             serverPort: UInt16(port),
             nextState: nextState)
 
