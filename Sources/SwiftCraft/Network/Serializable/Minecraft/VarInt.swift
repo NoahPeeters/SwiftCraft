@@ -57,6 +57,8 @@ public struct VarInt<IntegerType: VarIntIntegerType>: Serializable {
     }
 }
 
+// MARK: - VarIntIntegerType
+
 /// A type which can be used as the base integer type for varints
 public protocol VarIntIntegerType: FixedWidthInteger & BitPatternShiftable {
     /// The maxium number of bytes allowed in minecraft's VarInt types.
@@ -74,6 +76,8 @@ extension Int64: VarIntIntegerType {
         return 10
     }
 }
+
+// MARK: - Minecraft types
 
 /// Minecraft's VarInt type
 public typealias VarInt32 = VarInt<Int32>

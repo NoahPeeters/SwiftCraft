@@ -13,7 +13,3 @@ FOUNDATION_EXPORT double SwiftCraftReactiveVersionNumber;
 
 //! Project version string for SwiftCraftReactive.
 FOUNDATION_EXPORT const unsigned char SwiftCraftReactiveVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <SwiftCraftReactive/PublicHeader.h>
-
-

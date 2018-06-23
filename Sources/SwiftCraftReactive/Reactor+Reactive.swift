@@ -11,6 +11,9 @@ import Result
 import ReactiveSwift
 
 extension MinecraftClient {
+    /// Creates a signal producer for all packets.
+    ///
+    /// - Returns: A signal producer which will forward all received packets.
     public func packetsSignal() -> Signal<DeserializablePacket, NoError> {
         return Signal { observer, lifetime in
             let reactor = ReactivePacketReactor(observer: observer)
@@ -22,7 +25,11 @@ extension MinecraftClient {
         }
     }
 
-    public func packetSignal<PacketType: DeserializablePacket>(_ : PacketType.Type) -> Signal<PacketType, NoError> {
+    /// Creats a signal producer for all packets of a specific type.
+    ///
+    /// - Parameter _: The packet type to receive.
+    /// - Returns: A signal producer which will forward all received packets of the given type.
+    public func packetSignal<PacketType: DeserializablePacket>(_: PacketType.Type) -> Signal<PacketType, NoError> {
         return Signal { observer, lifetime in
             let reactor = ClosureReactor { packet, _ in
                 observer.send(value: packet)
@@ -36,14 +43,16 @@ extension MinecraftClient {
     }
 }
 
-private class ReactivePacketReactor: Reactor {
-    weak var observer: Signal<DeserializablePacket, NoError>.Observer?
+// MARK: - Private reactor.
 
-    init(observer: Signal<DeserializablePacket, NoError>.Observer) {
+private class ReactivePacketReactor: Reactor {
+    private weak var observer: Signal<DeserializablePacket, NoError>.Observer?
+
+    fileprivate init(observer: Signal<DeserializablePacket, NoError>.Observer) {
         self.observer = observer
     }
 
-    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
+    fileprivate func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
         observer?.send(value: packet)
     }
 }

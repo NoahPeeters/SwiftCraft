@@ -9,7 +9,8 @@
 import Foundation
 
 extension Data {
-    /// Creates a hex string in the format required by minecraft.
+    /// Creates a hex string in the format required by Minecraft.
+    /// More information can be found [here](http://wiki.vg/Protocol_Encryption#Client).
     ///
     /// - Returns: The hex string.
     public func minecraftHexString() -> String {

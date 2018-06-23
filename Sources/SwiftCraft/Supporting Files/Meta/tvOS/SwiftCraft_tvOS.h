@@ -13,7 +13,3 @@ FOUNDATION_EXPORT double SwiftCraft_tvOSVersionNumber;
 
 //! Project version string for SwiftCraft_tvOS.
 FOUNDATION_EXPORT const unsigned char SwiftCraft_tvOSVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <SwiftCraft_tvOS/PublicHeader.h>
-
-
