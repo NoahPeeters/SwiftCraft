@@ -673,6 +673,7 @@
 		40AEEE7C20DBD0E800E774CA /* SlotContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotContent.swift; sourceTree = "<group>"; };
 		40AEEE7E20DBD0FF00E774CA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		40AEEE8220DBE5F900E774CA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		40BCC65A20DE7C2E0023BC2E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypoWrapper.swift; sourceTree = "<group>"; };
 		40C74D1820DD8D2D008CC291 /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 		40C74D1F20DDB21D008CC291 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -998,6 +999,7 @@
 		4024AB3E20B1DB57008790F2 = {
 			isa = PBXGroup;
 			children = (
+				40BCC65A20DE7C2E0023BC2E /* README.md */,
 				401252B820DD03DF00802FCA /* Package Manager */,
 				40AEEE8020DBDD3700E774CA /* Sources */,
 				40AEEE8120DBDD5D00E774CA /* Tests */,
