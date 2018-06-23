@@ -15,15 +15,16 @@ matrix:
   include:
     - script:
        - set -o pipefail
-       - carthage bootstrap --platform iOS --no-use-binaries --cache-builds
+       - carthage bootstrap --no-use-binaries --cache-builds
        - xcodebuild -project "$PROJECT" -scheme "SwiftCraft iOS" -destination "OS=11.3,name=iPhone X" build | xcpretty
     - script:
        - set -o pipefail
-       - carthage bootstrap --platform tvOS --no-use-binaries --cache-builds
+       - carthage bootstrap --no-use-binaries --cache-builds
        - xcodebuild -project "$PROJECT" -scheme "SwiftCraft tvOS" -destination "OS=11.3,name=Apple TV 4K" build | xcpretty
     - script:
        - set -o pipefail
-       - carthage bootstrap --platform macOS --no-use-binaries --cache-builds
+       - carthage bootstrap --no-use-binaries --cache-builds
        - xcodebuild -project "$PROJECT" -scheme "SwiftCraft macOS" -destination "arch=x86_64" build | xcpretty
     - script:
+       - brew install openssl
        - swift build
