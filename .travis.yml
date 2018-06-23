@@ -7,11 +7,12 @@ env:
     - LANG=en_US.UTF-8
     - PROJECT=SwiftCraft.xcodeproj
   matrix:
-    - DESTINATION="OS=11.3,name=iPhone X"          SCHEME="SwiftCraft iOS"
-    - DESTINATION="OS=11.3,name=Apple TV 4K"       SCHEME="SwiftCraft tvOS"
-    - DESTINATION="arch=x86_64"                    SCHEME="SwiftCraft macOS"
+    - DESTINATION="OS=11.3,name=iPhone X"     SCHEME="SwiftCraft iOS"   CARTHAGE_PLATFORM="iOS"
+    - DESTINATION="OS=11.3,name=Apple TV 4K"  SCHEME="SwiftCraft tvOS"  CARTHAGE_PLATFORM="tvOS"
+    - DESTINATION="arch=x86_64"               SCHEME="SwiftCraft macOS" CARTHAGE_PLATFORM="macOS"
 
 
 script:
   - xcodebuild -version
+  - carthage bootstrap --platform $CARTHAGE_PLATFORM --no-use-binaries
   - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" build | xcpretty;
