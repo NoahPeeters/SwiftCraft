@@ -1,4 +1,4 @@
-language: objective-c
+language: swift
 osx_image: xcode9.3
 
 cache:
@@ -14,9 +14,9 @@ env:
     - DESTINATION="OS=11.3,name=iPhone X"     SCHEME="SwiftCraft iOS"   CARTHAGE_PLATFORM="iOS"
     - DESTINATION="OS=11.3,name=Apple TV 4K"  SCHEME="SwiftCraft tvOS"  CARTHAGE_PLATFORM="tvOS"
     - DESTINATION="arch=x86_64"               SCHEME="SwiftCraft macOS" CARTHAGE_PLATFORM="macOS"
-
+    - SPM="YES"
 
 script:
-  - xcodebuild -version
-  - carthage bootstrap --platform $CARTHAGE_PLATFORM --no-use-binaries --cache-builds
-  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" build | xcpretty;
+  - if [[ "$SPM" == "YES" ]]; then swift build; fi
+  - if [[ "$SPM" != "YES" ]]; then carthage bootstrap --platform $CARTHAGE_PLATFORM --no-use-binaries --cache-builds ; fi
+  - if [[ "$SPM" != "YES" ]]; then xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" build; fi

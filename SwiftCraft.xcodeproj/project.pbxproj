@@ -17,6 +17,10 @@
 		4005B78F20C30D61001F09D2 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */; };
 		4005B79020C30D61001F09D2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78E20C30D61001F09D2 /* Result.framework */; };
 		4005B79420C30FAA001F09D2 /* Reactor+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4005B79320C30FAA001F09D2 /* Reactor+Reactive.swift */; };
+		400990C920DEE1C500EC8778 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F320DE907000C58B7A /* ChatMessage.swift */; };
+		400990CA20DEE1C500EC8778 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* Translations.swift */; };
+		400990CB20DEE1C500EC8778 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F320DE907000C58B7A /* ChatMessage.swift */; };
+		400990CC20DEE1C500EC8778 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* Translations.swift */; };
 		4012529B20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */; };
 		4012529C20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		401252A120DC604C00802FCA /* SwiftCraft.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -2043,6 +2047,7 @@
 				4068070A20B361E000B116C4 /* MinecraftClient.swift in Sources */,
 				4022B07520B4D04100B4E680 /* Optional+Unwrap.swift in Sources */,
 				40695BA620DB0088007C1C36 /* PlayerLookPacket.swift in Sources */,
+				400990C920DEE1C500EC8778 /* ChatMessage.swift in Sources */,
 				4024C60420D962A300493A86 /* DestroyEntitiesPacket.swift in Sources */,
 				4024C5C920D9077A00493A86 /* WindowItemsPacket.swift in Sources */,
 				40AEEE7720DBD0B500E774CA /* ChatMessageLocation.swift in Sources */,
@@ -2052,6 +2057,7 @@
 				408C67DD20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift in Sources */,
 				408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
+				400990CA20DEE1C500EC8778 /* Translations.swift in Sources */,
 				40AEEE7D20DBD0E800E774CA /* SlotContent.swift in Sources */,
 				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
 				4024C5FC20D9503F00493A86 /* EntityRelativeMovePacket.swift in Sources */,
@@ -2197,6 +2203,7 @@
 				4084643E20DDB99300C2ACC4 /* ChangeGameStatePacket.swift in Sources */,
 				4084647420DDB99300C2ACC4 /* SoundEffectPacket.swift in Sources */,
 				4084649820DDB99300C2ACC4 /* HandshakePacket.swift in Sources */,
+				400990CB20DEE1C500EC8778 /* ChatMessage.swift in Sources */,
 				4084646120DDB99300C2ACC4 /* LoginStartPacket.swift in Sources */,
 				4084649120DDB99300C2ACC4 /* EntityPropertiesPacket.swift in Sources */,
 				4084645620DDB99300C2ACC4 /* DataCompression.swift in Sources */,
@@ -2206,6 +2213,7 @@
 				4084647120DDB99300C2ACC4 /* TimeUpdatePacket.swift in Sources */,
 				4084647320DDB99300C2ACC4 /* PacketLibrary.swift in Sources */,
 				4084649C20DDB99300C2ACC4 /* General.swift in Sources */,
+				400990CC20DEE1C500EC8778 /* Translations.swift in Sources */,
 				4084648D20DDB99300C2ACC4 /* PrintReactors.swift in Sources */,
 				4084644420DDB99300C2ACC4 /* JoinGamePacket.swift in Sources */,
 				4084645720DDB99300C2ACC4 /* ProtocolVersion.swift in Sources */,

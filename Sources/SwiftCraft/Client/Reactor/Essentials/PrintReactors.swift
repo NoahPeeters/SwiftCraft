@@ -15,7 +15,7 @@ extension MinecraftClient {
     /// - Returns: The reactor.
     public static func chatPrintReactor(prefix: String = "chat: ") -> Reactor {
         return ClosureReactor<ReceiveChatMessagePacket> { packet, _ in
-            print("\(prefix)\(packet.message)")
+            print("\(prefix)\(packet.message.message.string)")
         }
     }
 
