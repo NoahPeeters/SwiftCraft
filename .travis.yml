@@ -5,12 +5,11 @@ cache:
   directories:
   - Carthage
 
-
-
 env:
-  - LC_CTYPE=en_US.UTF-8
-  - LANG=en_US.UTF-8
-  - PROJECT=SwiftCraft.xcodeproj
+  global:
+    - LC_CTYPE=en_US.UTF-8
+    - LANG=en_US.UTF-8
+    - PROJECT=SwiftCraft.xcodeproj
 
 matrix:
   include:
