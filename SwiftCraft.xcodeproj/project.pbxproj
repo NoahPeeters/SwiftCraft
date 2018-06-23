@@ -81,7 +81,31 @@
 		40695BA220DAF6A1007C1C36 /* TeleportConfirmPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */; };
 		40695BA420DAF738007C1C36 /* TeleportationConfirmReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695BA320DAF738007C1C36 /* TeleportationConfirmReactor.swift */; };
 		40695BA620DB0088007C1C36 /* PlayerLookPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */; };
-		40767E2720DF05540082A6D1 /* MinecraftUserLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40767E2520DF05000082A6D1 /* MinecraftUserLoginTests.swift */; };
+		40767E2A20DF05DB0082A6D1 /* MinecraftHexStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */; };
+		40767E3720DF07E10082A6D1 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C74D1F20DDB21D008CC291 /* SwiftCraft.framework */; };
+		40767E4620DF08060082A6D1 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408463D420DDB90D00C2ACC4 /* SwiftCraft.framework */; };
+		40767E4E20DF09050082A6D1 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8720B22418008790F2 /* BufferTests.swift */; };
+		40767E4F20DF09050082A6D1 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
+		40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070020B3200600B116C4 /* TCPClientTests.swift */; };
+		40767E5120DF09050082A6D1 /* MinecraftHexStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */; };
+		40767E5220DF09060082A6D1 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8720B22418008790F2 /* BufferTests.swift */; };
+		40767E5320DF09060082A6D1 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
+		40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070020B3200600B116C4 /* TCPClientTests.swift */; };
+		40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */; };
+		40767E5620DF09150082A6D1 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7C20B20921008790F2 /* TestHelpers.swift */; };
+		40767E5720DF09160082A6D1 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7C20B20921008790F2 /* TestHelpers.swift */; };
+		40767E5A20DF09600082A6D1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5820DF09600082A6D1 /* Quick.framework */; };
+		40767E5B20DF09600082A6D1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5920DF09600082A6D1 /* Nimble.framework */; };
+		40767E6020DF097D0082A6D1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5E20DF097C0082A6D1 /* Quick.framework */; };
+		40767E6120DF097D0082A6D1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5F20DF097C0082A6D1 /* Nimble.framework */; };
+		40767E6320DF0A4B0082A6D1 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5920DF09600082A6D1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6420DF0A4F0082A6D1 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5820DF09600082A6D1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6520DF0A540082A6D1 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408463C820DDB58C00C2ACC4 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6620DF0A5D0082A6D1 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408463C620DDB51A00C2ACC4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6820DF0A940082A6D1 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5F20DF097C0082A6D1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6920DF0A980082A6D1 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5E20DF097C0082A6D1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6A20DF0AA00082A6D1 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408464A220DDBA0800C2ACC4 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		40767E6B20DF0AA30082A6D1 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408464A120DDBA0800C2ACC4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40778F8720DAC8E500B8BB99 /* AdvancementsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */; };
 		40778F8920DAC94900B8BB99 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8820DAC94900B8BB99 /* Identifier.swift */; };
 		40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */; };
@@ -465,6 +489,20 @@
 			remoteGlobalIDString = 4024AB4720B1DB57008790F2;
 			remoteInfo = SwiftCraft;
 		};
+		40767E3820DF07E10082A6D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4024AB3F20B1DB57008790F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40C74D1E20DDB21D008CC291;
+			remoteInfo = "SwiftCraft iOS";
+		};
+		40767E4720DF08060082A6D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4024AB3F20B1DB57008790F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 408463D320DDB90D00C2ACC4;
+			remoteInfo = "SwiftCraft tvOS";
+		};
 		407F2C2020DDC2C90078B8F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4024AB3F20B1DB57008790F2 /* Project object */;
@@ -505,6 +543,34 @@
 				4012529C20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Embed Frameworks */,
 				401252A120DC604C00802FCA /* SwiftCraft.framework in Embed Frameworks */,
 				401252A220DC604F00802FCA /* SwiftCraftReactive.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40767E6220DF0A3B0082A6D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				40767E6420DF0A4F0082A6D1 /* Quick.framework in Embed Frameworks */,
+				40767E6320DF0A4B0082A6D1 /* Nimble.framework in Embed Frameworks */,
+				40767E6520DF0A540082A6D1 /* Gzip.framework in Embed Frameworks */,
+				40767E6620DF0A5D0082A6D1 /* CryptoSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40767E6720DF0A8B0082A6D1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				40767E6820DF0A940082A6D1 /* Nimble.framework in Embed Frameworks */,
+				40767E6920DF0A980082A6D1 /* Quick.framework in Embed Frameworks */,
+				40767E6A20DF0AA00082A6D1 /* Gzip.framework in Embed Frameworks */,
+				40767E6B20DF0AA30082A6D1 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +617,7 @@
 		4024AB4820B1DB57008790F2 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4024AB4B20B1DB57008790F2 /* SwiftCraft_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft_macOS.h; sourceTree = "<group>"; };
 		4024AB4C20B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4024AB5120B1DB57008790F2 /* SwiftCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4024AB5120B1DB57008790F2 /* SwiftCraftTests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftCraftTests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4024AB5820B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4024AB6A20B1DEA0008790F2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		4024AB6B20B1DEA0008790F2 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
@@ -597,7 +663,15 @@
 		40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportConfirmPacket.swift; sourceTree = "<group>"; };
 		40695BA320DAF738007C1C36 /* TeleportationConfirmReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleportationConfirmReactor.swift; sourceTree = "<group>"; };
 		40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLookPacket.swift; sourceTree = "<group>"; };
-		40767E2520DF05000082A6D1 /* MinecraftUserLoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinecraftUserLoginTests.swift; sourceTree = "<group>"; };
+		40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftHexStringTests.swift; sourceTree = "<group>"; };
+		40767E3220DF07E10082A6D1 /* SwiftCraftTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftCraftTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40767E3620DF07E10082A6D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40767E4120DF08060082A6D1 /* SwiftCraftTests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftCraftTests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40767E4520DF08060082A6D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40767E5820DF09600082A6D1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		40767E5920DF09600082A6D1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		40767E5E20DF097C0082A6D1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
+		40767E5F20DF097C0082A6D1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancementsPacket.swift; sourceTree = "<group>"; };
 		40778F8820DAC94900B8BB99 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Serializable.swift"; sourceTree = "<group>"; };
@@ -752,6 +826,26 @@
 				4024AB6C20B1DEA0008790F2 /* Nimble.framework in Frameworks */,
 				4024AB6D20B1DEA0008790F2 /* Quick.framework in Frameworks */,
 				4024AB5220B1DB57008790F2 /* SwiftCraft.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40767E2F20DF07E10082A6D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40767E5A20DF09600082A6D1 /* Quick.framework in Frameworks */,
+				40767E5B20DF09600082A6D1 /* Nimble.framework in Frameworks */,
+				40767E3720DF07E10082A6D1 /* SwiftCraft.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40767E3E20DF08060082A6D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40767E6020DF097D0082A6D1 /* Quick.framework in Frameworks */,
+				40767E6120DF097D0082A6D1 /* Nimble.framework in Frameworks */,
+				40767E4620DF08060082A6D1 /* SwiftCraft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,7 +1116,7 @@
 			isa = PBXGroup;
 			children = (
 				4024AB4820B1DB57008790F2 /* SwiftCraft.framework */,
-				4024AB5120B1DB57008790F2 /* SwiftCraftTests.xctest */,
+				4024AB5120B1DB57008790F2 /* SwiftCraftTests macOS.xctest */,
 				4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */,
 				40DC842220DC5418005F7EDE /* SwiftCraftMacApp.app */,
 				4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */,
@@ -1031,6 +1125,8 @@
 				408464AA20DDBA9200C2ACC4 /* SwiftCraftReactive.framework */,
 				408464BC20DDBB1100C2ACC4 /* SwiftCraftReactive.framework */,
 				407F2C0420DDC10F0078B8F1 /* SwiftCraftiOSApp.app */,
+				40767E3220DF07E10082A6D1 /* SwiftCraftTests iOS.xctest */,
+				40767E4120DF08060082A6D1 /* SwiftCraftTests tvOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1051,10 +1147,10 @@
 			isa = PBXGroup;
 			children = (
 				40767E2420DF048C0082A6D1 /* Supporting Files */,
-				40767E2520DF05000082A6D1 /* MinecraftUserLoginTests.swift */,
 				4024AB8720B22418008790F2 /* BufferTests.swift */,
 				4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */,
 				4068070020B3200600B116C4 /* TCPClientTests.swift */,
+				40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */,
 			);
 			path = SwiftCraftTests;
 			sourceTree = "<group>";
@@ -1062,6 +1158,10 @@
 		4024AB6220B1DD26008790F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40767E5920DF09600082A6D1 /* Nimble.framework */,
+				40767E5F20DF097C0082A6D1 /* Nimble.framework */,
+				40767E5820DF09600082A6D1 /* Quick.framework */,
+				40767E5E20DF097C0082A6D1 /* Quick.framework */,
 				408463C620DDB51A00C2ACC4 /* CryptoSwift.framework */,
 				408464CC20DDBBCD00C2ACC4 /* ReactiveSwift.framework */,
 				408464CD20DDBBCD00C2ACC4 /* Result.framework */,
@@ -1226,10 +1326,52 @@
 		40767E2420DF048C0082A6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB7C20B20921008790F2 /* TestHelpers.swift */,
-				4024AB5820B1DB57008790F2 /* Info.plist */,
+				40767E2C20DF07A90082A6D1 /* Meta */,
+				40767E2D20DF07AF0082A6D1 /* Helper */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40767E2B20DF079D0082A6D1 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				4024AB5820B1DB57008790F2 /* Info.plist */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		40767E2C20DF07A90082A6D1 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				40767E3320DF07E10082A6D1 /* iOS */,
+				40767E2B20DF079D0082A6D1 /* macOS */,
+				40767E4220DF08060082A6D1 /* tvOS */,
+			);
+			path = Meta;
+			sourceTree = "<group>";
+		};
+		40767E2D20DF07AF0082A6D1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4024AB7C20B20921008790F2 /* TestHelpers.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		40767E3320DF07E10082A6D1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				40767E3620DF07E10082A6D1 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		40767E4220DF08060082A6D1 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				40767E4520DF08060082A6D1 /* Info.plist */,
+			);
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 		407F2C0520DDC10F0078B8F1 /* SwiftCraftiOSApp */ = {
@@ -1629,9 +1771,9 @@
 			productReference = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4024AB5020B1DB57008790F2 /* SwiftCraftTests */ = {
+		4024AB5020B1DB57008790F2 /* SwiftCraftTests macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4024AB5F20B1DB57008790F2 /* Build configuration list for PBXNativeTarget "SwiftCraftTests" */;
+			buildConfigurationList = 4024AB5F20B1DB57008790F2 /* Build configuration list for PBXNativeTarget "SwiftCraftTests macOS" */;
 			buildPhases = (
 				4024AB4D20B1DB57008790F2 /* Sources */,
 				4024AB4E20B1DB57008790F2 /* Frameworks */,
@@ -1642,9 +1784,45 @@
 			dependencies = (
 				4024AB5420B1DB57008790F2 /* PBXTargetDependency */,
 			);
-			name = SwiftCraftTests;
+			name = "SwiftCraftTests macOS";
 			productName = SwiftCraftTests;
-			productReference = 4024AB5120B1DB57008790F2 /* SwiftCraftTests.xctest */;
+			productReference = 4024AB5120B1DB57008790F2 /* SwiftCraftTests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		40767E3120DF07E10082A6D1 /* SwiftCraftTests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40767E3A20DF07E10082A6D1 /* Build configuration list for PBXNativeTarget "SwiftCraftTests iOS" */;
+			buildPhases = (
+				40767E2E20DF07E10082A6D1 /* Sources */,
+				40767E2F20DF07E10082A6D1 /* Frameworks */,
+				40767E6220DF0A3B0082A6D1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40767E3920DF07E10082A6D1 /* PBXTargetDependency */,
+			);
+			name = "SwiftCraftTests iOS";
+			productName = "SwiftCraftTests iOS";
+			productReference = 40767E3220DF07E10082A6D1 /* SwiftCraftTests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		40767E4020DF08060082A6D1 /* SwiftCraftTests tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40767E4920DF08060082A6D1 /* Build configuration list for PBXNativeTarget "SwiftCraftTests tvOS" */;
+			buildPhases = (
+				40767E3D20DF08060082A6D1 /* Sources */,
+				40767E3E20DF08060082A6D1 /* Frameworks */,
+				40767E6720DF0A8B0082A6D1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40767E4820DF08060082A6D1 /* PBXTargetDependency */,
+			);
+			name = "SwiftCraftTests tvOS";
+			productName = "SwiftCraftTests tvOS";
+			productReference = 40767E4120DF08060082A6D1 /* SwiftCraftTests tvOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		407F2C0320DDC10F0078B8F1 /* SwiftCraftiOSApp */ = {
@@ -1790,6 +1968,12 @@
 					403464D220B8A94A002FBC11 = {
 						CreatedOnToolsVersion = 9.3.1;
 					};
+					40767E3120DF07E10082A6D1 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					40767E4020DF08060082A6D1 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					407F2C0320DDC10F0078B8F1 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -1826,7 +2010,9 @@
 				40C74D1E20DDB21D008CC291 /* SwiftCraft iOS */,
 				4024AB4720B1DB57008790F2 /* SwiftCraft macOS */,
 				408463D320DDB90D00C2ACC4 /* SwiftCraft tvOS */,
-				4024AB5020B1DB57008790F2 /* SwiftCraftTests */,
+				40767E3120DF07E10082A6D1 /* SwiftCraftTests iOS */,
+				4024AB5020B1DB57008790F2 /* SwiftCraftTests macOS */,
+				40767E4020DF08060082A6D1 /* SwiftCraftTests tvOS */,
 				408464A920DDBA9200C2ACC4 /* SwiftCraftReactive iOS */,
 				4005B77920C30C1A001F09D2 /* SwiftCraftReactive macOS */,
 				408464BB20DDBB1100C2ACC4 /* SwiftCraftReactive tvOS */,
@@ -1902,6 +2088,7 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -2126,11 +2313,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40767E2720DF05540082A6D1 /* MinecraftUserLoginTests.swift in Sources */,
+				40767E2A20DF05DB0082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				4024AB8820B22418008790F2 /* BufferTests.swift in Sources */,
 				4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */,
 				4024AB7D20B20922008790F2 /* TestHelpers.swift in Sources */,
 				4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40767E2E20DF07E10082A6D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */,
+				40767E5620DF09150082A6D1 /* TestHelpers.swift in Sources */,
+				40767E5320DF09060082A6D1 /* CodableDataTypesTest.swift in Sources */,
+				40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */,
+				40767E5220DF09060082A6D1 /* BufferTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40767E3D20DF08060082A6D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40767E5120DF09050082A6D1 /* MinecraftHexStringTests.swift in Sources */,
+				40767E5720DF09160082A6D1 /* TestHelpers.swift in Sources */,
+				40767E4F20DF09050082A6D1 /* CodableDataTypesTest.swift in Sources */,
+				40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */,
+				40767E4E20DF09050082A6D1 /* BufferTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2455,6 +2666,16 @@
 			isa = PBXTargetDependency;
 			target = 4024AB4720B1DB57008790F2 /* SwiftCraft macOS */;
 			targetProxy = 4024AB5320B1DB57008790F2 /* PBXContainerItemProxy */;
+		};
+		40767E3920DF07E10082A6D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40C74D1E20DDB21D008CC291 /* SwiftCraft iOS */;
+			targetProxy = 40767E3820DF07E10082A6D1 /* PBXContainerItemProxy */;
+		};
+		40767E4820DF08060082A6D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 408463D320DDB90D00C2ACC4 /* SwiftCraft tvOS */;
+			targetProxy = 40767E4720DF08060082A6D1 /* PBXContainerItemProxy */;
 		};
 		407F2C2120DDC2C90078B8F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2826,13 +3047,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = Tests/SwiftCraftTests/Info.plist;
+				INFOPLIST_FILE = "Tests/SwiftCraftTests/Supporting Files/Meta/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2848,13 +3068,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = Tests/SwiftCraftTests/Info.plist;
+				INFOPLIST_FILE = "Tests/SwiftCraftTests/Supporting Files/Meta/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2886,6 +3105,98 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+			};
+			name = Release;
+		};
+		40767E3B20DF07E10082A6D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Tests/SwiftCraftTests/Supporting Files/Meta/iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40767E3C20DF07E10082A6D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Tests/SwiftCraftTests/Supporting Files/Meta/iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40767E4A20DF08060082A6D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "Tests/SwiftCraftTests/Supporting Files/Meta/tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Debug;
+		};
+		40767E4B20DF08060082A6D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "Tests/SwiftCraftTests/Supporting Files/Meta/tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -3279,7 +3590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4024AB5F20B1DB57008790F2 /* Build configuration list for PBXNativeTarget "SwiftCraftTests" */ = {
+		4024AB5F20B1DB57008790F2 /* Build configuration list for PBXNativeTarget "SwiftCraftTests macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4024AB6020B1DB57008790F2 /* Debug */,
@@ -3293,6 +3604,24 @@
 			buildConfigurations = (
 				403464D320B8A94A002FBC11 /* Debug */,
 				403464D420B8A94A002FBC11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40767E3A20DF07E10082A6D1 /* Build configuration list for PBXNativeTarget "SwiftCraftTests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40767E3B20DF07E10082A6D1 /* Debug */,
+				40767E3C20DF07E10082A6D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40767E4920DF08060082A6D1 /* Build configuration list for PBXNativeTarget "SwiftCraftTests tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40767E4A20DF08060082A6D1 /* Debug */,
+				40767E4B20DF08060082A6D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

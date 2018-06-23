@@ -28,7 +28,27 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "40767E3120DF07E10082A6D1"
+               BuildableName = "SwiftCraftTests iOS.xctest"
+               BlueprintName = "SwiftCraftTests iOS"
+               ReferencedContainer = "container:SwiftCraft.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "40C74D1E20DDB21D008CC291"
+            BuildableName = "SwiftCraft.framework"
+            BlueprintName = "SwiftCraft iOS"
+            ReferencedContainer = "container:SwiftCraft.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

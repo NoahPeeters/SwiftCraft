@@ -29,12 +29,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4024AB5020B1DB57008790F2"
-               BuildableName = "SwiftCraftTests.xctest"
-               BlueprintName = "SwiftCraftTests"
+               BuildableName = "SwiftCraftTests macOS.xctest"
+               BlueprintName = "SwiftCraftTests macOS"
                ReferencedContainer = "container:SwiftCraft.xcodeproj">
             </BuildableReference>
          </TestableReference>
