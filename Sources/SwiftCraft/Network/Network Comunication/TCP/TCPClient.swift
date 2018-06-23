@@ -152,7 +152,7 @@ public class TCPClient: NSObject, TCPClientProtocol {
             return
         }
         hasReader = true
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             defer {
                 self?.hasReader = false
                 self?.eventsHandler?(.streamClosed)
@@ -170,7 +170,9 @@ public class TCPClient: NSObject, TCPClientProtocol {
                 }
 
                 let data = Data(bytes: dataPointer, count: readLength)
-                unwrappedSelf.eventsHandler?(TCPClientEvent.received(data: data))
+                DispatchQueue.main.async {
+                    unwrappedSelf.eventsHandler?(TCPClientEvent.received(data: data))
+                }
             }
         }
     }

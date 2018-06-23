@@ -8,7 +8,6 @@ let package = Package(
     products: [
         .library(name: "SwiftCraft", targets: ["SwiftCraft"]),
         .library(name: "SwiftCraftReactive", targets: ["SwiftCraftReactive"]),
-        .executable(name: "SwiftCraftApp", targets: ["SwiftCraftApp"]),
         .executable(name: "SwiftCraftCommandlineApp", targets: ["SwiftCraftCommandlineApp"])
     ],
     dependencies: [
@@ -22,10 +21,6 @@ let package = Package(
     targets: [
         .target(name: "SwiftCraft", dependencies: ["CryptoSwift", "Gzip", "Crypto"]),
         .target(name: "SwiftCraftReactive", dependencies: ["SwiftCraft", "ReactiveSwift"]),
-        .target(
-            name: "SwiftCraftApp",
-            dependencies: ["SwiftCraftAppShared"],
-            path: "Sources/SwiftCraftApp/SwiftCraftApp"),
         .target(
             name: "SwiftCraftCommandlineApp",
             dependencies: ["SwiftCraftAppShared"],
