@@ -31,6 +31,12 @@ open class MinecraftClient {
     /// The version number used for the protocol
     public private(set) var protocolVersion: Int = 0
 
+    /// Handler to call on open.
+    private var openHandler: (() -> Void)?
+
+    /// Handler to call on close.
+    private var closeHandler: ((ConnectionState) -> Void)?
+
     /// Creates a new `MinecraftClient`
     ///
     /// - Parameters:
@@ -93,6 +99,20 @@ open class MinecraftClient {
     /// Closes the tcp client connection
     public func close() {
         tcpClient.close()
+    }
+
+    /// Sets a handler to be called on connection open.
+    ///
+    /// - Parameter handler: The handler to set
+    public func onOpen(handler: (() -> Void)?) {
+        openHandler = handler
+    }
+
+    /// Sets a handler to be called on connection close.
+    ///
+    /// - Parameter handler: The handler to set
+    public func onClose(handler: ((ConnectionState) -> Void)?) {
+        closeHandler = handler
     }
 
     /// The host of the server.
@@ -222,9 +242,11 @@ extension MinecraftClient {
     private func handleEvent(_ event: TCPClientEvent) {
         switch event {
         case let .received(data):
-            self.handleMessage(Array(data))
-        default:
-            break
+            handleMessage(Array(data))
+        case .streamOpened:
+            openHandler?()
+        case .streamClosed:
+            closeHandler?(connectionState)
         }
     }
 

@@ -63,6 +63,7 @@
 		4024C60620DA635300493A86 /* ProtocolVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60520DA635300493A86 /* ProtocolVersion.swift */; };
 		4024C60B20DA665F00493A86 /* StatusResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */; };
 		4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60C20DA680000493A86 /* StatusRequestPacket.swift */; };
+		4024E0BE20DE81EA0033D1E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024E0BC20DE81A60033D1E4 /* LoginViewController.swift */; };
 		404352F020DADE7C00C2E737 /* ChangeGameStatePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404352EF20DADE7C00C2E737 /* ChangeGameStatePacket.swift */; };
 		404352F220DAE29600C2E737 /* CollectItemPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404352F120DAE29600C2E737 /* CollectItemPacket.swift */; };
 		406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* TCPClient.swift */; };
@@ -81,7 +82,6 @@
 		40778F8920DAC94900B8BB99 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8820DAC94900B8BB99 /* Identifier.swift */; };
 		40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */; };
 		407F2C0720DDC10F0078B8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F2C0620DDC10F0078B8F1 /* AppDelegate.swift */; };
-		407F2C0920DDC10F0078B8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F2C0820DDC10F0078B8F1 /* ViewController.swift */; };
 		407F2C0C20DDC10F0078B8F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407F2C0A20DDC10F0078B8F1 /* Main.storyboard */; };
 		407F2C0E20DDC10F0078B8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407F2C0D20DDC10F0078B8F1 /* Assets.xcassets */; };
 		407F2C1120DDC10F0078B8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407F2C0F20DDC10F0078B8F1 /* LaunchScreen.storyboard */; };
@@ -423,6 +423,9 @@
 		40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */; };
 		40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */; };
 		40DAC2DF20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */; };
+		40DAC5F220DE85B600C58B7A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F020DE84F300C58B7A /* GameViewController.swift */; };
+		40DAC5F420DE907000C58B7A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F320DE907000C58B7A /* ChatMessage.swift */; };
+		40DAC5F620DEB7EF00C58B7A /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* Translations.swift */; };
 		40DC83FC20DBFBF3005F7EDE /* DataCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */; };
 		40DC842520DC5418005F7EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC842420DC5418005F7EDE /* AppDelegate.swift */; };
 		40DC842720DC541A005F7EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DC842620DC541A005F7EDE /* Assets.xcassets */; };
@@ -576,6 +579,7 @@
 		4024C60520DA635300493A86 /* ProtocolVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolVersion.swift; sourceTree = "<group>"; };
 		4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponsePacket.swift; sourceTree = "<group>"; };
 		4024C60C20DA680000493A86 /* StatusRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRequestPacket.swift; sourceTree = "<group>"; };
+		4024E0BC20DE81A60033D1E4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		404352EF20DADE7C00C2E737 /* ChangeGameStatePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameStatePacket.swift; sourceTree = "<group>"; };
 		404352F120DAE29600C2E737 /* CollectItemPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectItemPacket.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
@@ -595,7 +599,6 @@
 		40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Serializable.swift"; sourceTree = "<group>"; };
 		407F2C0420DDC10F0078B8F1 /* SwiftCraftiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCraftiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407F2C0620DDC10F0078B8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		407F2C0820DDC10F0078B8F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		407F2C0B20DDC10F0078B8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		407F2C0D20DDC10F0078B8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		407F2C1020DDC10F0078B8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -690,6 +693,9 @@
 		40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginMessageReceivedPacket.swift; sourceTree = "<group>"; };
 		40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedPlayerAbilitiesPacket.swift; sourceTree = "<group>"; };
 		40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeldItemChangedReceivedPacket.swift; sourceTree = "<group>"; };
+		40DAC5F020DE84F300C58B7A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		40DAC5F320DE907000C58B7A /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		40DAC5F520DEB7EF00C58B7A /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 		40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCompression.swift; sourceTree = "<group>"; };
 		40DC842220DC5418005F7EDE /* SwiftCraftMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCraftMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DC842420DC5418005F7EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1220,7 +1226,8 @@
 				407F2C1620DDC1F50078B8F1 /* Supporting Files */,
 				407F2C0A20DDC10F0078B8F1 /* Main.storyboard */,
 				407F2C0620DDC10F0078B8F1 /* AppDelegate.swift */,
-				407F2C0820DDC10F0078B8F1 /* ViewController.swift */,
+				4024E0BC20DE81A60033D1E4 /* LoginViewController.swift */,
+				40DAC5F020DE84F300C58B7A /* GameViewController.swift */,
 			);
 			path = SwiftCraftiOSApp;
 			sourceTree = "<group>";
@@ -1352,6 +1359,8 @@
 				408E63F920BA07CE00AE9C2D /* BlockPosition.swift */,
 				40778F8820DAC94900B8BB99 /* Identifier.swift */,
 				408E63F520BA06FB00AE9C2D /* VarInt.swift */,
+				40DAC5F320DE907000C58B7A /* ChatMessage.swift */,
+				40DAC5F520DEB7EF00C58B7A /* Translations.swift */,
 				4024C5EE20D9154C00493A86 /* NBT */,
 			);
 			path = Minecraft;
@@ -1859,8 +1868,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
@@ -1868,8 +1875,6 @@
 				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1912,15 +1917,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Gzip.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1932,13 +1933,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = Swiftlint;
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1950,13 +1947,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = Swiftlint;
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2131,7 +2124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407F2C0920DDC10F0078B8F1 /* ViewController.swift in Sources */,
+				40DAC5F220DE85B600C58B7A /* GameViewController.swift in Sources */,
+				4024E0BE20DE81EA0033D1E4 /* LoginViewController.swift in Sources */,
 				407F2C0720DDC10F0078B8F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2363,6 +2357,7 @@
 				4084635720DDB3DD00C2ACC4 /* EntityLookPacket.swift in Sources */,
 				4084634720DDB3DD00C2ACC4 /* Gamemode.swift in Sources */,
 				4084636220DDB3DD00C2ACC4 /* Data+MinecraftHexString.swift in Sources */,
+				40DAC5F620DEB7EF00C58B7A /* Translations.swift in Sources */,
 				408463A620DDB3DD00C2ACC4 /* LoginReactor.swift in Sources */,
 				4084638F20DDB3DD00C2ACC4 /* MultiReactor.swift in Sources */,
 				408463AE20DDB3DD00C2ACC4 /* UserLoginService.swift in Sources */,
@@ -2411,6 +2406,7 @@
 				4084638C20DDB3DD00C2ACC4 /* EntityVelocityPacket.swift in Sources */,
 				4084636F20DDB3DD00C2ACC4 /* EntityMetadataPacket.swift in Sources */,
 				4084639120DDB3DD00C2ACC4 /* General.swift in Sources */,
+				40DAC5F420DE907000C58B7A /* ChatMessage.swift in Sources */,
 				4084638620DDB3DD00C2ACC4 /* WindowItemsPacket.swift in Sources */,
 				4084639220DDB3DD00C2ACC4 /* Optional+Serializable.swift in Sources */,
 				408463B120DDB3DD00C2ACC4 /* AuthenticationProvider.swift in Sources */,

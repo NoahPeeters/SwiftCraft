@@ -15,13 +15,13 @@ public struct ReceiveChatMessagePacket: DeserializablePacket, PlayPacketIDProvid
     }
 
     /// The message received from the server.
-    public let message: String
+    public let message: ChatMessage
 
     /// The location to show the message.
     public let position: ChatMessageLocation
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws {
-        message = try String(from: buffer)
+        message = try ChatMessage(from: buffer)
         position = try ChatMessageLocation(rawValue: Byte(from: buffer)).unwrap(ChatMessagePacketError.unknownPosition)
     }
 }

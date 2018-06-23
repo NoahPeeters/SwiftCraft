@@ -32,6 +32,8 @@ public enum TCPClientEvent: Hashable {
 
 /// A protocol for a tcp client like object.
 public protocol TCPClientProtocol {
+    typealias EventsHandler = (TCPClientEvent) -> Void
+
     /// Connects the client to its server.
     func connect() -> Bool
 
@@ -41,7 +43,7 @@ public protocol TCPClientProtocol {
     /// Sets the handler for events
     ///
     /// - Parameter handler: Handler for events.
-    func events(handler: ((TCPClientEvent) -> Void)?)
+    func events(handler: EventsHandler?)
 
     /// The host to connect to.
     var host: String { get }
@@ -73,7 +75,7 @@ public class TCPClient: NSObject, TCPClientProtocol {
     public let port: Int
 
     /// Handler for events.
-    public var eventsHandler: ((TCPClientEvent) -> Void)?
+    public var eventsHandler: EventsHandler?
 
     /// The maximum buffer size.
     public var maxBufferSize: Int = 4096
@@ -209,7 +211,7 @@ public class TCPClient: NSObject, TCPClientProtocol {
     /// Sets the handler for all future events.
     ///
     /// - Parameter handler: The handler to use for future events.
-    public func events(handler: ((TCPClientEvent) -> Void)?) {
+    public func events(handler: EventsHandler?) {
         self.eventsHandler = handler
     }
 }
