@@ -23,10 +23,10 @@ public class ViewController: UIViewController, Reactor {
         _ = client.addReactor(MinecraftClient.essentialReactors())
         _ = client.addReactor(self)
 
-        if !client.connectAndLogin() {
-            print("Connection failed.")
-        } else {
+        if client.connectAndLogin() {
             print("Connected.")
+        } else {
+            print("Connection failed.")
         }
     }
 
