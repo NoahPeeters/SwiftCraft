@@ -82,13 +82,13 @@ public struct SessionServerService: SessionServerServiceProtocol {
         return Payload(
             accessToken: authenticationProvider.accessToken,
             selectedProfile: authenticationProvider.profileID,
-            serverID: serverHash)
+            serverId: serverHash)
     }
 
     private struct Payload: Encodable {
         let accessToken: String
         let selectedProfile: String
-        let serverID: String
+        let serverId: String
     }
 }
 
