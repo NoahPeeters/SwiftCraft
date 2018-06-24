@@ -12,6 +12,7 @@ import Nimble
 @testable import SwiftCraft
 
 public class ReadBufferTests: QuickSpec {
+    //swiftlint:disable:next function_body_length
     public override func spec() {
         describe("creating a buffer with data") {
             var buffer: ByteBuffer!
@@ -45,7 +46,7 @@ public class ReadBufferTests: QuickSpec {
             }
 
             it("reads all remaining bytes correctly") {
-                expect(try? buffer.read(lenght: buffer.remainingData())).to(equal(Array(0..<42)))
+                expect(buffer.readRemainingElements()).to(equal(Array(0..<42)))
             }
 
             it("reading one throws after reading to many bytes") {
@@ -69,6 +70,77 @@ public class ReadBufferTests: QuickSpec {
 
                 it("is empty") {
                     expect(buffer.remainingData()).to(equal(0))
+                }
+            }
+
+            describe("when reading 10 elements") {
+                beforeEach {
+                    _ = try? buffer.read(lenght: 10)
+                }
+
+                describe("when resetting the read position") {
+                    beforeEach {
+                        buffer.resetPosition()
+                    }
+
+                    it("reads the correct element") {
+                        expect(try? buffer.readOne()).to(equal(0))
+                    }
+
+                    it("has the correct length") {
+                        expect(buffer.remainingData()).to(equal(42))
+                    }
+                }
+
+                describe("when dropping read elements") {
+                    beforeEach {
+                        buffer.dropReadElements()
+                    }
+
+                    it("reads the correct element") {
+                        expect(try? buffer.readOne()).to(equal(10))
+                    }
+
+                    it("has the correct length") {
+                        expect(buffer.remainingData()).to(equal(32))
+                    }
+                }
+            }
+
+            context("when accessing the data as unsafe buffer") {
+                var readData: ByteArray = []
+
+                beforeEach {
+                    readData = buffer.withUnsafePointer { (pointer: UnsafePointer<Byte>) -> ByteArray in
+                        let buffer = UnsafeBufferPointer(start: pointer, count: 10)
+                        return Array(buffer)
+                    }
+                }
+
+                it("accesses the correct data") {
+                    expect(readData).to(equal(Array(0..<10)))
+                }
+
+                it("does not change the read position") {
+                    expect(buffer.position).to(equal(0))
+                }
+            }
+
+            context("when loading the data as other type") {
+                it("updates the read position correctly when reading UInt8") {
+                    let _: UInt8? = try? buffer.loadAsType()
+                    expect(buffer.position).to(equal(1))
+                }
+
+                it("updates the read position correctly when reading UInt64") {
+                    let _: UInt64? = try? buffer.loadAsType()
+                    expect(buffer.position).to(equal(8))
+                }
+
+                it("does not throw an error") {
+                    expect { () -> UInt8 in
+                        try buffer.loadAsType()
+                    }.toNot(throwError())
                 }
             }
         }

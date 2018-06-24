@@ -93,7 +93,7 @@ extension Buffer: ReadBuffer {
         position += length
     }
 
-    public func withUnsafeBufferPointer<R>(_ body: (UnsafePointer<Element>) throws -> R) rethrows -> R {
+    public func withUnsafePointer<R>(_ body: (UnsafePointer<Element>) throws -> R) rethrows -> R {
         return try elements.withUnsafeBufferPointer { pointer in
             return try body(pointer.baseAddress!.advanced(by: position))
         }

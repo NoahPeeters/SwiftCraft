@@ -53,7 +53,6 @@
 		4024AB7420B1EA6C008790F2 /* UserLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7320B1EA6C008790F2 /* UserLoginService.swift */; };
 		4024AB7920B1F216008790F2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7820B1F216008790F2 /* Credentials.swift */; };
 		4024AB7B20B1F241008790F2 /* UserLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7A20B1F241008790F2 /* UserLoginResponse.swift */; };
-		4024AB7D20B20922008790F2 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7C20B20921008790F2 /* TestHelpers.swift */; };
 		4024AB8020B21E45008790F2 /* ReadBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7F20B21E45008790F2 /* ReadBuffer.swift */; };
 		4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8120B21E67008790F2 /* WriteBuffer.swift */; };
 		4024AB8620B220C0008790F2 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8520B220C0008790F2 /* Buffer.swift */; };
@@ -101,8 +100,6 @@
 		40767E5320DF09060082A6D1 /* CodableDataTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */; };
 		40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070020B3200600B116C4 /* TCPClientTests.swift */; };
 		40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */; };
-		40767E5620DF09150082A6D1 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7C20B20921008790F2 /* TestHelpers.swift */; };
-		40767E5720DF09160082A6D1 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB7C20B20921008790F2 /* TestHelpers.swift */; };
 		40767E5A20DF09600082A6D1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5820DF09600082A6D1 /* Quick.framework */; };
 		40767E5B20DF09600082A6D1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5920DF09600082A6D1 /* Nimble.framework */; };
 		40767E6020DF097D0082A6D1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5E20DF097C0082A6D1 /* Quick.framework */; };
@@ -633,7 +630,6 @@
 		4024AB7320B1EA6C008790F2 /* UserLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginService.swift; sourceTree = "<group>"; };
 		4024AB7820B1F216008790F2 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		4024AB7A20B1F241008790F2 /* UserLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginResponse.swift; sourceTree = "<group>"; };
-		4024AB7C20B20921008790F2 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		4024AB7F20B21E45008790F2 /* ReadBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBuffer.swift; sourceTree = "<group>"; };
 		4024AB8120B21E67008790F2 /* WriteBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBuffer.swift; sourceTree = "<group>"; };
 		4024AB8520B220C0008790F2 /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
@@ -1339,7 +1335,6 @@
 			isa = PBXGroup;
 			children = (
 				40767E2C20DF07A90082A6D1 /* Meta */,
-				40767E2D20DF07AF0082A6D1 /* Helper */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -1360,14 +1355,6 @@
 				40767E4220DF08060082A6D1 /* tvOS */,
 			);
 			path = Meta;
-			sourceTree = "<group>";
-		};
-		40767E2D20DF07AF0082A6D1 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				4024AB7C20B20921008790F2 /* TestHelpers.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		40767E3320DF07E10082A6D1 /* iOS */ = {
@@ -2333,7 +2320,6 @@
 				40767E2A20DF05DB0082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				4024AB8820B22418008790F2 /* BufferTests.swift in Sources */,
 				4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */,
-				4024AB7D20B20922008790F2 /* TestHelpers.swift in Sources */,
 				4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2343,7 +2329,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */,
-				40767E5620DF09150082A6D1 /* TestHelpers.swift in Sources */,
 				40767E5320DF09060082A6D1 /* CodableDataTypesTest.swift in Sources */,
 				40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */,
 				40767E5220DF09060082A6D1 /* BufferTests.swift in Sources */,
@@ -2355,7 +2340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				40767E5120DF09050082A6D1 /* MinecraftHexStringTests.swift in Sources */,
-				40767E5720DF09160082A6D1 /* TestHelpers.swift in Sources */,
 				40767E4F20DF09050082A6D1 /* CodableDataTypesTest.swift in Sources */,
 				40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */,
 				40767E4E20DF09050082A6D1 /* BufferTests.swift in Sources */,

@@ -43,7 +43,7 @@ public protocol ReadBuffer {
     /// - Returns: The value returned by the body.
     /// - Throws: Errors throws by the body.
     /// - Attention: Dont forget to use `advance(by:)` after reading elements.
-    func withUnsafeBufferPointer<R>(_ body: (UnsafePointer<Element>) throws -> R) rethrows -> R
+    func withUnsafePointer<R>(_ body: (UnsafePointer<Element>) throws -> R) rethrows -> R
 
     /// Reads one element .
     ///
