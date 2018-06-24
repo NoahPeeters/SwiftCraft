@@ -9,6 +9,7 @@ SwiftCraft is a simple library to connect to and communicate with a Minecraft se
 
 - [Features](#features)
 - [Requirements](#requirements)
+- [Dependencies](#dependencies)
 - [Installation](#installation)
   - [Carthage](#carthage)
   - [Swift Package Manager](#swift-package-manager)
@@ -30,6 +31,10 @@ SwiftCraft is a simple library to connect to and communicate with a Minecraft se
 - Swift 4.1+
 
 The library will work with a configuration from above. It might also work with older versions but this is not testet.
+
+## Dependencies
+
+This library uses the library [ObjC-PyCrypto](https://github.com/alexlehn/ObjC-PyCrypto) which was released under [this](https://github.com/NoahPeeters/SwiftCraft/blob/master/ObjC-PyCrypto-LICENSE) license.
 
 ## Installation
 

@@ -612,6 +612,8 @@
 		401C5ACC20DFB8FB00E9B461 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
 		401C5ACD20DFB8FB00E9B461 /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
 		401C5ACE20DFB8FC00E9B461 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
+		401C5ADB20DFCA0700E9B461 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ObjC-PyCrypto-LICENSE"; sourceTree = "<group>"; };
 		4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousMessageCryptor.swift; sourceTree = "<group>"; };
 		4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompressionPacket.swift; sourceTree = "<group>"; };
 		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
@@ -1115,6 +1117,8 @@
 			isa = PBXGroup;
 			children = (
 				40BCC65A20DE7C2E0023BC2E /* README.md */,
+				401C5ADB20DFCA0700E9B461 /* LICENSE */,
+				401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */,
 				401252B820DD03DF00802FCA /* Package Manager */,
 				40AEEE8020DBDD3700E774CA /* Sources */,
 				40AEEE8120DBDD5D00E774CA /* Tests */,
