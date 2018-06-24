@@ -58,13 +58,13 @@ internal class MessageCompressor {
             throw MessageCompressorError.cannotDecompresData
         }
     }
+}
 
-    /// Errors of the `MessageCompressor`.
-    public enum MessageCompressorError: Error {
-        /// A general decompression error.
-        case cannotDecompresData
+/// Errors of the `MessageCompressor`.
+public enum MessageCompressorError: Error {
+    /// A general decompression error.
+    case cannotDecompresData
 
-        /// A general compression error.
-        case cannotCompressData
-    }
+    /// A general compression error.
+    case cannotCompressData
 }

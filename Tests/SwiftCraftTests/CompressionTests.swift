@@ -42,3 +42,41 @@ public class ZipTest: QuickSpec {
         }
     }
 }
+
+public class MessageCompressorTests: QuickSpec {
+    public override func spec() {
+        describe("when creating compressor with threshold") {
+            var compressor: MessageCompressor!
+
+            beforeEach {
+                compressor = MessageCompressor(threshold: 10)
+            }
+
+            it("does not compress short data") {
+                expect(try? compressor.compressMessage(Array(1..<7))).to(equal(Array(0..<7)))
+            }
+
+            it("compresses long data") {
+                let uncompressedLengthData = VarInt32(TestData.uncompressedData.count).directSerialized()
+                expect(try? compressor.compressMessage(Array(TestData.uncompressedData)))
+                    .to(equal(uncompressedLengthData + Array(TestData.zippedData)))
+            }
+
+            it("does not have to decompress short data") {
+                expect(try? compressor.decompressMessage(Array(0..<7))).to(equal(Array(1..<7)))
+            }
+
+            it("decompresses long data") {
+                let uncompressedLengthData = VarInt32(TestData.uncompressedData.count).directSerialized()
+                expect(try? compressor.decompressMessage(uncompressedLengthData + Array(TestData.zippedData)))
+                    .to(equal(Array(TestData.uncompressedData)))
+            }
+
+            it("cannot decompress invalid data") {
+                expect {
+                    try compressor.decompressMessage([1] + Array(TestData.uncompressedData))
+                }.to(throwError(MessageCompressorError.cannotDecompresData))
+            }
+        }
+    }
+}
