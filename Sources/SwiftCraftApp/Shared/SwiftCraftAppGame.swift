@@ -50,7 +50,7 @@ public class SwiftCraftAppGame {
 
     private func createMinecraftClient(sessionServerService: SessionServerServiceProtocol) {
         minecraftClient = MinecraftClient(
-            tcpClient: TCPClient(host: "192.168.200.36", port: 25565),
+            tcpClient: TCPClient(host: "localhost", port: 25565),
             packetLibrary: DefaultPacketLibrary(),
             sessionServerService: sessionServerService)
 
@@ -61,8 +61,8 @@ public class SwiftCraftAppGame {
             print($0)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.minecraftClient.performRespawn()
+        minecraftClient.onClose {
+            print("Connection closed \($0)")
         }
     }
 

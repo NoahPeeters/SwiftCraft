@@ -154,15 +154,15 @@ open class MinecraftClient {
         sessionServerService.joinSession(serverID: serverID, sharedSecret: sharedSecret,
                                          publicKey: publicKey) { [weak self] _ in
             self?.sendPacket(responsePacket)
-            try? self?.enableEncryption(sharedSecret: sharedSecret)
+            self?.enableEncryption(sharedSecret: sharedSecret)
         }
     }
 
     /// Enables aes encryption.
     ///
     /// - Parameter sharedSecret: The shared secret used for both key and iv.
-    public func enableEncryption(sharedSecret: Data) throws {
-        messageCryptor = try ContinuousMessageCryptor(sharedSecret: sharedSecret)
+    public func enableEncryption(sharedSecret: Data) {
+        messageCryptor = ContinuousMessageCryptor(sharedSecret: sharedSecret)
     }
 
     /// Disables encryption.
@@ -254,10 +254,7 @@ extension MinecraftClient {
     ///
     /// - Parameter bytes: The message to handle.
     private func handleMessage(_ bytes: ByteArray) {
-        guard let decryptedBytes = try? decryptMessageIfRequired(bytes) else {
-            return
-        }
-
+        let decryptedBytes = decryptMessageIfRequired(bytes)
         incommingDataBuffer.write(elements: decryptedBytes)
 
         while true {
@@ -337,24 +334,24 @@ extension MinecraftClient {
     ///
     /// - Parameter bytes: The bytes to encrypt.
     /// - Returns: The encrypted bytes of encryption is enabled. Otherwise the input bytes.
-    private func encryptMessageIfRequired(_ bytes: ByteArray) throws -> ByteArray {
+    private func encryptMessageIfRequired(_ bytes: ByteArray) -> ByteArray {
         guard let messageCryptor = messageCryptor else {
             return bytes
         }
 
-        return try messageCryptor.encryptOutgoingMessage(bytes)
+        return Array(messageCryptor.encryptOutgoingMessage(Data(bytes: bytes)))
     }
 
     /// Decryptes a message if encryption is enabled.
     ///
     /// - Parameter bytes: The bytes to encrypt.
     /// - Returns: The decrypted bytes of encryption is enabled. Otherwise the input bytes.
-    private func decryptMessageIfRequired(_ bytes: ByteArray) throws -> ByteArray {
+    private func decryptMessageIfRequired(_ bytes: ByteArray) -> ByteArray {
         guard let messageCryptor = messageCryptor else {
             return bytes
         }
 
-        return try messageCryptor.decryptIncommingMessage(bytes)
+        return Array(messageCryptor.decryptIncommingMessage(Data(bytes: bytes)))
     }
 }
 

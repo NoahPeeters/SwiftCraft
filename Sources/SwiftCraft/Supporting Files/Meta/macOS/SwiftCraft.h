@@ -13,3 +13,5 @@ FOUNDATION_EXPORT double SwiftCraftVersionNumber;
 
 //! Project version string for SwiftCraft.
 FOUNDATION_EXPORT const unsigned char SwiftCraftVersionString[];
+
+#import "AESCipher.h"

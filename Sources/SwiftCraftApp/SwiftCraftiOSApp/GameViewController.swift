@@ -1,6 +1,6 @@
 //
 //  GameViewController.swift
-//  SwiftCraft iOS
+//  SwiftCraftiOSApp
 //
 //  Created by Noah Peeters on 23.06.18.
 //  Copyright © 2018 Noah Peeters. All rights reserved.

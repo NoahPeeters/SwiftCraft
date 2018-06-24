@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 //! Project version number for SwiftCraft_tvOS.
-FOUNDATION_EXPORT double SwiftCraft_tvOSVersionNumber;
+FOUNDATION_EXPORT double SwiftCraftVersionNumber;
 
 //! Project version string for SwiftCraft_tvOS.
-FOUNDATION_EXPORT const unsigned char SwiftCraft_tvOSVersionString[];
+FOUNDATION_EXPORT const unsigned char SwiftCraftVersionString[];
+
+#import "AESCipher.h"

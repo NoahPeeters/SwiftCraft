@@ -12,14 +12,16 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/1024jp/GzipSwift.git", from: "4.0.4"),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "0.10.0"),
         .package(url: "https://github.com/ReactiveCocoa/ReactiveSwift.git", from: "3.0.0"),
         .package(url: "https://github.com/vapor/crypto.git", from: "3.2.0"),
         .package(url: "https://github.com/Quick/Quick.git", from: "1.3.0"),
         .package(url: "https://github.com/Quick/Nimble.git", from: "7.1.2")
     ],
     targets: [
-        .target(name: "SwiftCraft", dependencies: ["CryptoSwift", "Gzip", "Crypto"]),
+        .target(
+            name: "SwiftCraft",
+            dependencies: ["Gzip", "Crypto"],
+            exclude: ["Network/Crypto/Encryption/AES"]),
         .target(name: "SwiftCraftReactive", dependencies: ["SwiftCraft", "ReactiveSwift"]),
         .target(
             name: "SwiftCraftCommandlineApp",

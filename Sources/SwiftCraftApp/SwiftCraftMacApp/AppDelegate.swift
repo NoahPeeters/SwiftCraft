@@ -17,6 +17,6 @@ public class AppDelegate: NSObject, NSApplicationDelegate {
     private let game = SwiftCraftAppGame()
 
     public func applicationDidFinishLaunching(_ aNotification: Notification) {
-        game.startOffline()
+        game.startOnline()
     }
 }

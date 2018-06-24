@@ -28,6 +28,15 @@
 		401252A320DC606F00802FCA /* SwiftCraftAppGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4012528D20DC5DCE00802FCA /* SwiftCraftAppGame.swift */; };
 		401252A420DC608300802FCA /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
 		401252A520DC608500802FCA /* SwiftCraftReactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */; };
+		401C5ACF20DFB8FC00E9B461 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACB20DFB8FB00E9B461 /* AES.c */; };
+		401C5AD020DFB8FC00E9B461 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACB20DFB8FB00E9B461 /* AES.c */; };
+		401C5AD120DFB8FC00E9B461 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACB20DFB8FB00E9B461 /* AES.c */; };
+		401C5AD220DFB8FC00E9B461 /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 401C5ACC20DFB8FB00E9B461 /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		401C5AD320DFB8FC00E9B461 /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 401C5ACC20DFB8FB00E9B461 /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		401C5AD420DFB8FC00E9B461 /* AESCipher.h in Headers */ = {isa = PBXBuildFile; fileRef = 401C5ACC20DFB8FB00E9B461 /* AESCipher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		401C5AD820DFB8FC00E9B461 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACE20DFB8FC00E9B461 /* AESCipher.m */; };
+		401C5AD920DFB8FC00E9B461 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACE20DFB8FC00E9B461 /* AESCipher.m */; };
+		401C5ADA20DFB8FC00E9B461 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACE20DFB8FC00E9B461 /* AESCipher.m */; };
 		4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
 		4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */; };
 		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
@@ -37,7 +46,7 @@
 		4022B07A20B4E12100B4E680 /* KeepaliveRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */; };
 		4022B07C20B4E13B00B4E680 /* KeepaliveResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */; };
 		4024AB5220B1DB57008790F2 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
-		4024AB5920B1DB57008790F2 /* SwiftCraft_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4024AB4B20B1DB57008790F2 /* SwiftCraft_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 4024AB4B20B1DB57008790F2 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4024AB6C20B1DEA0008790F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6A20B1DEA0008790F2 /* Nimble.framework */; };
 		4024AB6D20B1DEA0008790F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB6B20B1DEA0008790F2 /* Quick.framework */; };
 		4024AB6F20B1E093008790F2 /* URLRequest+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB6E20B1E093008790F2 /* URLRequest+Helper.swift */; };
@@ -101,11 +110,9 @@
 		40767E6320DF0A4B0082A6D1 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5920DF09600082A6D1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40767E6420DF0A4F0082A6D1 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5820DF09600082A6D1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40767E6520DF0A540082A6D1 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408463C820DDB58C00C2ACC4 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		40767E6620DF0A5D0082A6D1 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408463C620DDB51A00C2ACC4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40767E6820DF0A940082A6D1 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5F20DF097C0082A6D1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40767E6920DF0A980082A6D1 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40767E5E20DF097C0082A6D1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40767E6A20DF0AA00082A6D1 /* Gzip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408464A220DDBA0800C2ACC4 /* Gzip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		40767E6B20DF0AA30082A6D1 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 408464A120DDBA0800C2ACC4 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40778F8720DAC8E500B8BB99 /* AdvancementsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */; };
 		40778F8920DAC94900B8BB99 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8820DAC94900B8BB99 /* Identifier.swift */; };
 		40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */; };
@@ -241,10 +248,8 @@
 		408463C120DDB3DD00C2ACC4 /* URLRequest+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB6E20B1E093008790F2 /* URLRequest+Helper.swift */; };
 		408463C220DDB3DD00C2ACC4 /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
 		408463C920DDB58C00C2ACC4 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408463C820DDB58C00C2ACC4 /* Gzip.framework */; };
-		408463CA20DDB5B200C2ACC4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408463C620DDB51A00C2ACC4 /* CryptoSwift.framework */; };
-		408463CD20DDB68500C2ACC4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408463CB20DDB68500C2ACC4 /* CryptoSwift.framework */; };
 		408463CE20DDB68500C2ACC4 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408463CC20DDB68500C2ACC4 /* Gzip.framework */; };
-		408463D820DDB90D00C2ACC4 /* SwiftCraft_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 408463D620DDB90D00C2ACC4 /* SwiftCraft_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		408463D820DDB90D00C2ACC4 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 408463D620DDB90D00C2ACC4 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4084642420DDB99300C2ACC4 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E640A20BAF60E00AE9C2D /* World.swift */; };
 		4084642520DDB99300C2ACC4 /* UnlockRecipesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63E620B9944500AE9C2D /* UnlockRecipesPacket.swift */; };
 		4084642620DDB99300C2ACC4 /* ChunkColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E640720BADD6E00AE9C2D /* ChunkColumn.swift */; };
@@ -370,7 +375,6 @@
 		4084649E20DDB99300C2ACC4 /* Optional+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63FF20BA082700AE9C2D /* Optional+Serializable.swift */; };
 		4084649F20DDB99300C2ACC4 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251720B469DB0097C45D /* AuthenticationProvider.swift */; };
 		408464A020DDB99300C2ACC4 /* ReceiveChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */; };
-		408464A320DDBA0800C2ACC4 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408464A120DDBA0800C2ACC4 /* CryptoSwift.framework */; };
 		408464A420DDBA0800C2ACC4 /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408464A220DDBA0800C2ACC4 /* Gzip.framework */; };
 		408464AE20DDBA9200C2ACC4 /* SwiftCraftReactive_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 408464AC20DDBA9200C2ACC4 /* SwiftCraftReactive_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		408464B220DDBAA800C2ACC4 /* Login+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4005B78720C30D18001F09D2 /* Login+Reactive.swift */; };
@@ -439,7 +443,7 @@
 		40AEEE7F20DBD0FF00E774CA /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7E20DBD0FF00E774CA /* General.swift */; };
 		40C74D1720DD8B9F008CC291 /* CrypoWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */; };
 		40C74D1920DD8D2D008CC291 /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74D1820DD8D2D008CC291 /* SwCrypt.swift */; };
-		40C74D2320DDB21D008CC291 /* SwiftCraft_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C74D2120DDB21D008CC291 /* SwiftCraft_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40C74D2320DDB21D008CC291 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C74D2120DDB21D008CC291 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046020B8CCC50088EC44 /* MultiReactor.swift */; };
 		40CA046320B8CCD80088EC44 /* ClosureReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046220B8CCD80088EC44 /* ClosureReactor.swift */; };
 		40CA046520B8CCF00088EC44 /* SingleReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA046420B8CCF00088EC44 /* SingleReactor.swift */; };
@@ -556,7 +560,6 @@
 				40767E6420DF0A4F0082A6D1 /* Quick.framework in Embed Frameworks */,
 				40767E6320DF0A4B0082A6D1 /* Nimble.framework in Embed Frameworks */,
 				40767E6520DF0A540082A6D1 /* Gzip.framework in Embed Frameworks */,
-				40767E6620DF0A5D0082A6D1 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,7 +573,6 @@
 				40767E6820DF0A940082A6D1 /* Nimble.framework in Embed Frameworks */,
 				40767E6920DF0A980082A6D1 /* Quick.framework in Embed Frameworks */,
 				40767E6A20DF0AA00082A6D1 /* Gzip.framework in Embed Frameworks */,
-				40767E6B20DF0AA30082A6D1 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +608,10 @@
 		4012529620DC5FAA00802FCA /* SwiftCraftAppShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraftAppShared.h; sourceTree = "<group>"; };
 		4012529720DC5FAA00802FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401252B920DD03FA00802FCA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		401C5ACB20DFB8FB00E9B461 /* AES.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AES.c; sourceTree = "<group>"; };
+		401C5ACC20DFB8FB00E9B461 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		401C5ACD20DFB8FB00E9B461 /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
+		401C5ACE20DFB8FC00E9B461 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousMessageCryptor.swift; sourceTree = "<group>"; };
 		4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompressionPacket.swift; sourceTree = "<group>"; };
 		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
@@ -615,7 +621,7 @@
 		4022B07920B4E12100B4E680 /* KeepaliveRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepaliveRequestPacket.swift; sourceTree = "<group>"; };
 		4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepaliveResponsePacket.swift; sourceTree = "<group>"; };
 		4024AB4820B1DB57008790F2 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4024AB4B20B1DB57008790F2 /* SwiftCraft_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft_macOS.h; sourceTree = "<group>"; };
+		4024AB4B20B1DB57008790F2 /* SwiftCraft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft.h; sourceTree = "<group>"; };
 		4024AB4C20B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4024AB5120B1DB57008790F2 /* SwiftCraftTests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftCraftTests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4024AB5820B1DB57008790F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -686,7 +692,7 @@
 		408463CB20DDB68500C2ACC4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
 		408463CC20DDB68500C2ACC4 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/Mac/Gzip.framework; sourceTree = "<group>"; };
 		408463D420DDB90D00C2ACC4 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		408463D620DDB90D00C2ACC4 /* SwiftCraft_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft_tvOS.h; sourceTree = "<group>"; };
+		408463D620DDB90D00C2ACC4 /* SwiftCraft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft.h; sourceTree = "<group>"; };
 		408463D720DDB90D00C2ACC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		408464A120DDBA0800C2ACC4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/tvOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		408464A220DDBA0800C2ACC4 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/tvOS/Gzip.framework; sourceTree = "<group>"; };
@@ -758,7 +764,7 @@
 		40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypoWrapper.swift; sourceTree = "<group>"; };
 		40C74D1820DD8D2D008CC291 /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 		40C74D1F20DDB21D008CC291 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40C74D2120DDB21D008CC291 /* SwiftCraft_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft_iOS.h; sourceTree = "<group>"; };
+		40C74D2120DDB21D008CC291 /* SwiftCraft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft.h; sourceTree = "<group>"; };
 		40C74D2220DDB21D008CC291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40CA046020B8CCC50088EC44 /* MultiReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiReactor.swift; sourceTree = "<group>"; };
 		40CA046220B8CCD80088EC44 /* ClosureReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureReactor.swift; sourceTree = "<group>"; };
@@ -814,7 +820,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408463CD20DDB68500C2ACC4 /* CryptoSwift.framework in Frameworks */,
 				408463CE20DDB68500C2ACC4 /* Gzip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -861,7 +866,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408464A320DDBA0800C2ACC4 /* CryptoSwift.framework in Frameworks */,
 				408464A420DDBA0800C2ACC4 /* Gzip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,7 +894,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408463CA20DDB5B200C2ACC4 /* CryptoSwift.framework in Frameworks */,
 				408463C920DDB58C00C2ACC4 /* Gzip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -992,6 +995,17 @@
 				401252B920DD03FA00802FCA /* Cartfile */,
 			);
 			name = "Package Manager";
+			sourceTree = "<group>";
+		};
+		401C5ACA20DFB8E700E9B461 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				401C5ACB20DFB8FB00E9B461 /* AES.c */,
+				401C5ACD20DFB8FB00E9B461 /* AES.h */,
+				401C5ACC20DFB8FB00E9B461 /* AESCipher.h */,
+				401C5ACE20DFB8FC00E9B461 /* AESCipher.m */,
+			);
+			path = AES;
 			sourceTree = "<group>";
 		};
 		4022B06B20B4CBDB00B4E680 /* Serverbound */ = {
@@ -1399,7 +1413,7 @@
 		408463C320DDB3F900C2ACC4 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				4024AB4B20B1DB57008790F2 /* SwiftCraft_macOS.h */,
+				4024AB4B20B1DB57008790F2 /* SwiftCraft.h */,
 				4024AB4C20B1DB57008790F2 /* Info.plist */,
 			);
 			path = macOS;
@@ -1408,7 +1422,7 @@
 		408463D520DDB90D00C2ACC4 /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				408463D620DDB90D00C2ACC4 /* SwiftCraft_tvOS.h */,
+				408463D620DDB90D00C2ACC4 /* SwiftCraft.h */,
 				408463D720DDB90D00C2ACC4 /* Info.plist */,
 			);
 			path = tvOS;
@@ -1483,6 +1497,7 @@
 		409D94E320DBC85A00F2DCD4 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
+				401C5ACA20DFB8E700E9B461 /* AES */,
 				4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */,
 				40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */,
 				40C74D1820DD8D2D008CC291 /* SwCrypt.swift */,
@@ -1614,7 +1629,7 @@
 		40C74D2020DDB21D008CC291 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				40C74D2120DDB21D008CC291 /* SwiftCraft_iOS.h */,
+				40C74D2120DDB21D008CC291 /* SwiftCraft.h */,
 				40C74D2220DDB21D008CC291 /* Info.plist */,
 			);
 			path = iOS;
@@ -1661,7 +1676,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4024AB5920B1DB57008790F2 /* SwiftCraft_macOS.h in Headers */,
+				4024AB5920B1DB57008790F2 /* SwiftCraft.h in Headers */,
+				401C5AD320DFB8FC00E9B461 /* AESCipher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1669,7 +1685,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408463D820DDB90D00C2ACC4 /* SwiftCraft_tvOS.h in Headers */,
+				408463D820DDB90D00C2ACC4 /* SwiftCraft.h in Headers */,
+				401C5AD420DFB8FC00E9B461 /* AESCipher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1693,7 +1710,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C74D2320DDB21D008CC291 /* SwiftCraft_iOS.h in Headers */,
+				40C74D2320DDB21D008CC291 /* SwiftCraft.h in Headers */,
+				401C5AD220DFB8FC00E9B461 /* AESCipher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1979,6 +1997,7 @@
 					};
 					408463D320DDB90D00C2ACC4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					408464A920DDBA9200C2ACC4 = {
 						CreatedOnToolsVersion = 10.0;
@@ -1988,6 +2007,7 @@
 					};
 					40C74D1E20DDB21D008CC291 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					40DC842120DC5418005F7EDE = {
 						CreatedOnToolsVersion = 10.0;
@@ -2070,7 +2090,6 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -2088,7 +2107,6 @@
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Gzip.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -2118,7 +2136,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Gzip.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			name = "Copy Frameworks";
 			outputPaths = (
@@ -2236,6 +2253,7 @@
 				40AEEE7520DBD0A400E774CA /* LevelType.swift in Sources */,
 				408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */,
 				408C67ED20DAB8620090A1F0 /* ParticlePacket.swift in Sources */,
+				401C5AD920DFB8FC00E9B461 /* AESCipher.m in Sources */,
 				40C74D1920DD8D2D008CC291 /* SwCrypt.swift in Sources */,
 				4024AB9420B2C1AD008790F2 /* BitShifting.swift in Sources */,
 				408C67E720DAB5380090A1F0 /* UpdateBlockEntityPacket.swift in Sources */,
@@ -2258,6 +2276,7 @@
 				4024C5FC20D9503F00493A86 /* EntityRelativeMovePacket.swift in Sources */,
 				40AEEE7F20DBD0FF00E774CA /* General.swift in Sources */,
 				408E640020BA082700AE9C2D /* Optional+Serializable.swift in Sources */,
+				401C5AD020DFB8FC00E9B461 /* AES.c in Sources */,
 				408E640F20BAFCEE00AE9C2D /* UnloadChunkPacket.swift in Sources */,
 				40695B9120DAEE27007C1C36 /* PlayerReactor.swift in Sources */,
 				40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */,
@@ -2416,6 +2435,7 @@
 				4084646920DDB99300C2ACC4 /* ClientStatusPacket.swift in Sources */,
 				4084643620DDB99300C2ACC4 /* KeepaliveReactor.swift in Sources */,
 				4084648220DDB99300C2ACC4 /* SetExperiencePacket.swift in Sources */,
+				401C5ADA20DFB8FC00E9B461 /* AESCipher.m in Sources */,
 				4084646620DDB99300C2ACC4 /* KeepaliveResponsePacket.swift in Sources */,
 				4084647E20DDB99300C2ACC4 /* TCPClient.swift in Sources */,
 				4084642D20DDB99300C2ACC4 /* EntityRelativeMovePacket.swift in Sources */,
@@ -2438,6 +2458,7 @@
 				4084645720DDB99300C2ACC4 /* ProtocolVersion.swift in Sources */,
 				4084648020DDB99300C2ACC4 /* PlayerReactor.swift in Sources */,
 				4084647B20DDB99300C2ACC4 /* ChunkDataPacket.swift in Sources */,
+				401C5AD120DFB8FC00E9B461 /* AES.c in Sources */,
 				4084645420DDB99300C2ACC4 /* CrypoWrapper.swift in Sources */,
 				4084643220DDB99300C2ACC4 /* CollectItemPacket.swift in Sources */,
 				4084643820DDB99300C2ACC4 /* PacketIDProvider.swift in Sources */,
@@ -2568,6 +2589,7 @@
 				4084636B20DDB3DD00C2ACC4 /* Difficulty.swift in Sources */,
 				4084638B20DDB3DD00C2ACC4 /* SpawnPlayerPacket.swift in Sources */,
 				408463A820DDB3DD00C2ACC4 /* UserLoginResponse.swift in Sources */,
+				401C5AD820DFB8FC00E9B461 /* AESCipher.m in Sources */,
 				4084635D20DDB3DD00C2ACC4 /* TeleportationConfirmReactor.swift in Sources */,
 				4084636920DDB3DD00C2ACC4 /* Buffer.swift in Sources */,
 				4084637720DDB3DD00C2ACC4 /* SingleReactor.swift in Sources */,
@@ -2590,6 +2612,7 @@
 				408463AE20DDB3DD00C2ACC4 /* UserLoginService.swift in Sources */,
 				4084639820DDB3DD00C2ACC4 /* ReceivedAnimationPacket.swift in Sources */,
 				408463BE20DDB3DD00C2ACC4 /* TimeUpdatePacket.swift in Sources */,
+				401C5ACF20DFB8FC00E9B461 /* AES.c in Sources */,
 				4084636E20DDB3DD00C2ACC4 /* EffectPacket.swift in Sources */,
 				408463A520DDB3DD00C2ACC4 /* PacketLibrary.swift in Sources */,
 				4084636C20DDB3DD00C2ACC4 /* SoundEffectPacket.swift in Sources */,
@@ -2999,11 +3022,12 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "-Xfrontend -DSWCRYPT";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -DSWCRYPT -DMESSAGE_ENCRYPTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-macOS";
 				PRODUCT_NAME = SwiftCraft;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -3034,11 +3058,12 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies -DSWCRYPT";
+				OTHER_SWIFT_FLAGS = "-Xfrontend -DSWCRYPT -DMESSAGE_ENCRYPTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-macOS";
 				PRODUCT_NAME = SwiftCraft;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -3256,6 +3281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3273,11 +3299,12 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT";
+				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-tvOS";
 				PRODUCT_NAME = SwiftCraft;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -3288,6 +3315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3304,7 +3332,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT";
+				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-tvOS";
 				PRODUCT_NAME = SwiftCraft;
 				SDKROOT = appletvos;
@@ -3444,6 +3472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3462,11 +3491,12 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT";
+				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-iOS";
 				PRODUCT_NAME = SwiftCraft;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3476,6 +3506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -3493,7 +3524,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT";
+				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-iOS";
 				PRODUCT_NAME = SwiftCraft;
 				SDKROOT = iphoneos;
