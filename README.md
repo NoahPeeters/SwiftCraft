@@ -1,9 +1,11 @@
 # SwiftCraft
 
-[![Build Status](https://travis-ci.com/NoahPeeters/SwiftCraft.svg?token=HsyqpG6RFpdTFfmvYcAF&branch=master)](https://travis-ci.com/NoahPeeters/SwiftCraft)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![Platform](https://img.shields.io/badge/Platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20Linux-909090.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.com/NoahPeeters/SwiftCraft.svg?token=HsyqpG6RFpdTFfmvYcAF&branch=master)](https://travis-ci.com/NoahPeeters/SwiftCraft)
+[![codecov](https://codecov.io/gh/NoahPeeters/SwiftCraft/branch/master/graph/badge.svg)](https://codecov.io/gh/NoahPeeters/SwiftCraft)
 
 SwiftCraft is a simple library to connect to and communicate with a Minecraft server.
 

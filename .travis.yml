@@ -19,3 +19,6 @@ script:
   - set -o pipefail
   - carthage bootstrap --platform $CARTHAGE_PLATFORM --no-use-binaries --cache-builds
   - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" test | xcpretty;
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
