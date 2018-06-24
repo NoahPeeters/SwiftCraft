@@ -687,14 +687,11 @@
 		407F2C0D20DDC10F0078B8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		407F2C1020DDC10F0078B8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		407F2C1220DDC10F0078B8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		408463C620DDB51A00C2ACC4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		408463C820DDB58C00C2ACC4 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/iOS/Gzip.framework; sourceTree = "<group>"; };
-		408463CB20DDB68500C2ACC4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
 		408463CC20DDB68500C2ACC4 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/Mac/Gzip.framework; sourceTree = "<group>"; };
 		408463D420DDB90D00C2ACC4 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		408463D620DDB90D00C2ACC4 /* SwiftCraft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraft.h; sourceTree = "<group>"; };
 		408463D720DDB90D00C2ACC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		408464A120DDBA0800C2ACC4 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/tvOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		408464A220DDBA0800C2ACC4 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/tvOS/Gzip.framework; sourceTree = "<group>"; };
 		408464AA20DDBA9200C2ACC4 /* SwiftCraftReactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraftReactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		408464AC20DDBA9200C2ACC4 /* SwiftCraftReactive_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraftReactive_iOS.h; sourceTree = "<group>"; };
@@ -1176,15 +1173,12 @@
 				40767E5F20DF097C0082A6D1 /* Nimble.framework */,
 				40767E5820DF09600082A6D1 /* Quick.framework */,
 				40767E5E20DF097C0082A6D1 /* Quick.framework */,
-				408463C620DDB51A00C2ACC4 /* CryptoSwift.framework */,
 				408464CC20DDBBCD00C2ACC4 /* ReactiveSwift.framework */,
 				408464CD20DDBBCD00C2ACC4 /* Result.framework */,
 				408464D220DDBD9300C2ACC4 /* ReactiveSwift.framework */,
 				408464D320DDBD9300C2ACC4 /* Result.framework */,
 				408463C820DDB58C00C2ACC4 /* Gzip.framework */,
-				408463CB20DDB68500C2ACC4 /* CryptoSwift.framework */,
 				408463CC20DDB68500C2ACC4 /* Gzip.framework */,
-				408464A120DDBA0800C2ACC4 /* CryptoSwift.framework */,
 				408464A220DDBA0800C2ACC4 /* Gzip.framework */,
 				4024C5F520D9373300493A86 /* libz.tbd */,
 				4005B78D20C30D61001F09D2 /* ReactiveSwift.framework */,
