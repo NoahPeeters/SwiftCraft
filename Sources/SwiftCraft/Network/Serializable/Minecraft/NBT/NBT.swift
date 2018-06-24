@@ -21,7 +21,7 @@ public struct NBT: Hashable, DeserializableDataType {
     /// - Parameter data: The data to deserialize.
     /// - Throws: Deserialization errors.
     public init(data: Data) throws {
-        let decompressedData = data.ungzip() ?? data.unzip() ?? data
+        let decompressedData = data.unzip() ?? data
         try self.init(from: Array(decompressedData))
     }
 

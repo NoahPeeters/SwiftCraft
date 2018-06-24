@@ -37,6 +37,9 @@
 		401C5AD820DFB8FC00E9B461 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACE20DFB8FC00E9B461 /* AESCipher.m */; };
 		401C5AD920DFB8FC00E9B461 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACE20DFB8FC00E9B461 /* AESCipher.m */; };
 		401C5ADA20DFB8FC00E9B461 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ACE20DFB8FC00E9B461 /* AESCipher.m */; };
+		401C5ADE20E0025500E9B461 /* CompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ADD20E0025500E9B461 /* CompressionTests.swift */; };
+		401C5ADF20E0025500E9B461 /* CompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ADD20E0025500E9B461 /* CompressionTests.swift */; };
+		401C5AE020E0025500E9B461 /* CompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401C5ADD20E0025500E9B461 /* CompressionTests.swift */; };
 		4022B06220B4AC8400B4E680 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
 		4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */; };
 		4022B06820B4B92600B4E680 /* MessageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06720B4B92600B4E680 /* MessageCompressor.swift */; };
@@ -611,6 +614,7 @@
 		401C5ACE20DFB8FC00E9B461 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		401C5ADB20DFCA0700E9B461 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ObjC-PyCrypto-LICENSE"; sourceTree = "<group>"; };
+		401C5ADD20E0025500E9B461 /* CompressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressionTests.swift; sourceTree = "<group>"; };
 		4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousMessageCryptor.swift; sourceTree = "<group>"; };
 		4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCompressionPacket.swift; sourceTree = "<group>"; };
 		4022B06720B4B92600B4E680 /* MessageCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCompressor.swift; sourceTree = "<group>"; };
@@ -1162,6 +1166,7 @@
 				4024AB9120B231A2008790F2 /* CodableDataTypesTest.swift */,
 				4068070020B3200600B116C4 /* TCPClientTests.swift */,
 				40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */,
+				401C5ADD20E0025500E9B461 /* CompressionTests.swift */,
 			);
 			path = SwiftCraftTests;
 			sourceTree = "<group>";
@@ -2318,6 +2323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40767E2A20DF05DB0082A6D1 /* MinecraftHexStringTests.swift in Sources */,
+				401C5ADF20E0025500E9B461 /* CompressionTests.swift in Sources */,
 				4024AB8820B22418008790F2 /* BufferTests.swift in Sources */,
 				4024AB9220B231A2008790F2 /* CodableDataTypesTest.swift in Sources */,
 				4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */,
@@ -2329,6 +2335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */,
+				401C5ADE20E0025500E9B461 /* CompressionTests.swift in Sources */,
 				40767E5320DF09060082A6D1 /* CodableDataTypesTest.swift in Sources */,
 				40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */,
 				40767E5220DF09060082A6D1 /* BufferTests.swift in Sources */,
@@ -2340,6 +2347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40767E5120DF09050082A6D1 /* MinecraftHexStringTests.swift in Sources */,
+				401C5AE020E0025500E9B461 /* CompressionTests.swift in Sources */,
 				40767E4F20DF09050082A6D1 /* CodableDataTypesTest.swift in Sources */,
 				40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */,
 				40767E4E20DF09050082A6D1 /* BufferTests.swift in Sources */,
