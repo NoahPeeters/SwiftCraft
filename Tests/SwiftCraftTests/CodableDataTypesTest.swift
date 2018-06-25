@@ -109,6 +109,33 @@ public class UInt64CodableTest: QuickSpec {
     }
 }
 
+public class FloatCodableTest: QuickSpec {
+    public override func spec() {
+        let serializedData: ByteArray = [0b01000001, 0b10111000, 0, 0]
+        let deserializedFloat: Float = 23
+
+        describe("serializing") {
+            it("serializes correctly") {
+                expect(deserializedFloat.directSerialized()).to(equal(serializedData))
+            }
+        }
+
+        describe("deserializing") {
+            it("deserializes correctly") {
+                expect(try? Float(from: serializedData)).to(equal(deserializedFloat))
+            }
+
+            it("throws when deserializing empty data") {
+                expect { try Float(from: []) }.to(throwError(BufferError.noDataAvailable))
+            }
+
+            it("throws when deserializing short data") {
+                expect { try Float(from: Array(1...3)) }.to(throwError(BufferError.noDataAvailable))
+            }
+        }
+    }
+}
+
 public class DoubleCodableTest: QuickSpec {
     public override func spec() {
         let serializedData: ByteArray = [0b01000000, 0b00110111, 0, 0, 0, 0, 0, 0]
