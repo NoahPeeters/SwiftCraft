@@ -13,7 +13,7 @@ env:
   matrix:
     - DESTINATION="OS=11.3,name=iPhone X"     SCHEME="SwiftCraft iOS"   CARTHAGE_PLATFORM="iOS"
     - DESTINATION="OS=11.3,name=Apple TV 4K"  SCHEME="SwiftCraft tvOS"  CARTHAGE_PLATFORM="tvOS"
-    - DESTINATION="arch=x86_64"               SCHEME="SwiftCraft macOS" CARTHAGE_PLATFORM="macOS"
+    - DESTINATION="arch=x86_64"               SCHEME="SwiftCraft macOS" CARTHAGE_PLATFORM="macOS" MAIN_BUILD="YES"
 
 script:
   - set -o pipefail
@@ -21,4 +21,4 @@ script:
   - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" test | xcpretty;
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - if [[ "$MAIN_BUILD" == "YES" ]]; then bash <(curl -s https://codecov.io/bash); fi
