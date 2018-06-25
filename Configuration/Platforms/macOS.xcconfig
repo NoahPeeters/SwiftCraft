@@ -1,0 +1,16 @@
+//
+//  macOS.xcconfig
+//  SwiftCraft
+//
+//  Created by Noah Peeters on 25.06.18.
+//  Copyright © 2018 Noah Peeters. All rights reserved.
+//
+
+// Mac SDK.
+SDKROOT = macosx
+
+// Pre- and suffix used in the app.
+PRODUCT_BUNDLE_IDENTIFIER_PLATFORM = macOS
+
+// Search path.
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/Frameworks

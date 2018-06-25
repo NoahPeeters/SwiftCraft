@@ -666,6 +666,17 @@
 		4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusResponsePacket.swift; sourceTree = "<group>"; };
 		4024C60C20DA680000493A86 /* StatusRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRequestPacket.swift; sourceTree = "<group>"; };
 		4024E0BC20DE81A60033D1E4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4034B0A120E1649C00FFA816 /* SwiftCraft-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraft-Base.xcconfig"; sourceTree = "<group>"; };
+		4034B0A220E164AA00FFA816 /* SwiftCraftReactive-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-Base.xcconfig"; sourceTree = "<group>"; };
+		4034B0A620E165AF00FFA816 /* iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = iOS.xcconfig; sourceTree = "<group>"; };
+		4034B0A720E165B900FFA816 /* macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = macOS.xcconfig; sourceTree = "<group>"; };
+		4034B0A820E165C300FFA816 /* tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = tvOS.xcconfig; sourceTree = "<group>"; };
+		4034B0A920E1668D00FFA816 /* SwiftCraft-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraft-iOS.xcconfig"; sourceTree = "<group>"; };
+		4034B0AA20E1669900FFA816 /* SwiftCraft-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraft-macOS.xcconfig"; sourceTree = "<group>"; };
+		4034B0AB20E166A600FFA816 /* SwiftCraft-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraft-tvOS.xcconfig"; sourceTree = "<group>"; };
+		4034B0AD20E1706A00FFA816 /* SwiftCraftReactive-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-iOS.xcconfig"; sourceTree = "<group>"; };
+		4034B0AE20E1707200FFA816 /* SwiftCraftReactive-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-macOS.xcconfig"; sourceTree = "<group>"; };
+		4034B0AF20E1707B00FFA816 /* SwiftCraftReactive-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-tvOS.xcconfig"; sourceTree = "<group>"; };
 		404352EF20DADE7C00C2E737 /* ChangeGameStatePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameStatePacket.swift; sourceTree = "<group>"; };
 		404352F120DAE29600C2E737 /* CollectItemPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectItemPacket.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
@@ -956,12 +967,12 @@
 			path = SerializationTests;
 			sourceTree = "<group>";
 		};
-		13DF9A0B20E11649005A3252 /* scripts */ = {
+		13DF9A0B20E11649005A3252 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
 				13DF9A0A20E11641005A3252 /* build_docs.sh */,
 			);
-			path = scripts;
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 		4005B77B20C30C1A001F09D2 /* SwiftCraftReactive */ = {
@@ -1144,10 +1155,10 @@
 			isa = PBXGroup;
 			children = (
 				40BCC65A20DE7C2E0023BC2E /* README.md */,
-				401C5ADB20DFCA0700E9B461 /* LICENSE */,
-				401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */,
-				13DF9A0B20E11649005A3252 /* scripts */,
+				40E2140820E177F000730052 /* LICENSE */,
 				401252B820DD03DF00802FCA /* Package Manager */,
+				13DF9A0B20E11649005A3252 /* Scripts */,
+				4034B0A020E1638F00FFA816 /* Configuration */,
 				40AEEE8020DBDD3700E774CA /* Sources */,
 				40AEEE8120DBDD5D00E774CA /* Tests */,
 				4024AB4920B1DB57008790F2 /* Products */,
@@ -1286,6 +1297,48 @@
 				4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */,
 			);
 			path = Clientbound;
+			sourceTree = "<group>";
+		};
+		4034B0A020E1638F00FFA816 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4034B0A520E165A400FFA816 /* Platforms */,
+				4034B0A420E1657700FFA816 /* SwiftCraft */,
+				4034B0AC20E1704E00FFA816 /* SwiftCraftReactive */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		4034B0A420E1657700FFA816 /* SwiftCraft */ = {
+			isa = PBXGroup;
+			children = (
+				4034B0A120E1649C00FFA816 /* SwiftCraft-Base.xcconfig */,
+				4034B0A920E1668D00FFA816 /* SwiftCraft-iOS.xcconfig */,
+				4034B0AA20E1669900FFA816 /* SwiftCraft-macOS.xcconfig */,
+				4034B0AB20E166A600FFA816 /* SwiftCraft-tvOS.xcconfig */,
+			);
+			path = SwiftCraft;
+			sourceTree = "<group>";
+		};
+		4034B0A520E165A400FFA816 /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				4034B0A620E165AF00FFA816 /* iOS.xcconfig */,
+				4034B0A720E165B900FFA816 /* macOS.xcconfig */,
+				4034B0A820E165C300FFA816 /* tvOS.xcconfig */,
+			);
+			path = Platforms;
+			sourceTree = "<group>";
+		};
+		4034B0AC20E1704E00FFA816 /* SwiftCraftReactive */ = {
+			isa = PBXGroup;
+			children = (
+				4034B0A220E164AA00FFA816 /* SwiftCraftReactive-Base.xcconfig */,
+				4034B0AD20E1706A00FFA816 /* SwiftCraftReactive-iOS.xcconfig */,
+				4034B0AE20E1707200FFA816 /* SwiftCraftReactive-macOS.xcconfig */,
+				4034B0AF20E1707B00FFA816 /* SwiftCraftReactive-tvOS.xcconfig */,
+			);
+			path = SwiftCraftReactive;
 			sourceTree = "<group>";
 		};
 		406806FD20B30D2500B116C4 /* Network */ = {
@@ -1660,6 +1713,15 @@
 				40DC842420DC5418005F7EDE /* AppDelegate.swift */,
 			);
 			path = SwiftCraftMacApp;
+			sourceTree = "<group>";
+		};
+		40E2140820E177F000730052 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				401C5ADB20DFCA0700E9B461 /* LICENSE */,
+				401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */,
+			);
+			name = LICENSE;
 			sourceTree = "<group>";
 		};
 		40E314F620B603D100C9E271 /* Reactor */ = {
@@ -2755,64 +2817,15 @@
 /* Begin XCBuildConfiguration section */
 		4005B78320C30C1A001F09D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AE20E1707200FFA816 /* SwiftCraftReactive-macOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Supporting Files/macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftReactive-macOS";
-				PRODUCT_NAME = SwiftCraftReactive;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		4005B78420C30C1A001F09D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AE20E1707200FFA816 /* SwiftCraftReactive-macOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Supporting Files/macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftReactive-macOS";
-				PRODUCT_NAME = SwiftCraftReactive;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -2934,9 +2947,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2992,9 +3004,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3002,72 +3014,15 @@
 		};
 		4024AB5D20B1DB57008790F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AA20E1669900FFA816 /* SwiftCraft-macOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "-Xfrontend -DSWCRYPT -DMESSAGE_ENCRYPTION";
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-macOS";
-				PRODUCT_NAME = SwiftCraft;
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		4024AB5E20B1DB57008790F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AA20E1669900FFA816 /* SwiftCraft-macOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_SWIFT_FLAGS = "-Xfrontend -DSWCRYPT -DMESSAGE_ENCRYPTION";
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-macOS";
-				PRODUCT_NAME = SwiftCraft;
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -3259,259 +3214,57 @@
 		};
 		408463DA20DDB90D00C2ACC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AB20E166A600FFA816 /* SwiftCraft-tvOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-tvOS";
-				PRODUCT_NAME = SwiftCraft;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		408463DB20DDB90D00C2ACC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AB20E166A600FFA816 /* SwiftCraft-tvOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-tvOS";
-				PRODUCT_NAME = SwiftCraft;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		408464B020DDBA9200C2ACC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AD20E1706A00FFA816 /* SwiftCraftReactive-iOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Supporting Files/iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftReactive-iOS";
-				PRODUCT_NAME = SwiftCraftReactive;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		408464B120DDBA9200C2ACC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AD20E1706A00FFA816 /* SwiftCraftReactive-iOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Supporting Files/iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftReactive-iOS";
-				PRODUCT_NAME = SwiftCraftReactive;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		408464C220DDBB1100C2ACC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AF20E1707B00FFA816 /* SwiftCraftReactive-tvOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Supporting Files/tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftReactive-tvOS";
-				PRODUCT_NAME = SwiftCraftReactive;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		408464C320DDBB1100C2ACC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0AF20E1707B00FFA816 /* SwiftCraftReactive-tvOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraftReactive/Supporting Files/tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraftReactive-tvOS";
-				PRODUCT_NAME = SwiftCraftReactive;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		40C74D2520DDB21D008CC291 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0A920E1668D00FFA816 /* SwiftCraft-iOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-iOS";
-				PRODUCT_NAME = SwiftCraft;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		40C74D2620DDB21D008CC291 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4034B0A920E1668D00FFA816 /* SwiftCraft-iOS.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftCraft/Supporting Files/Meta/iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				OTHER_SWIFT_FLAGS = "-DSWCRYPT -DMESSAGE_ENCRYPTION";
-				PRODUCT_BUNDLE_IDENTIFIER = "to.us.peeters.SwiftCraft-iOS";
-				PRODUCT_NAME = SwiftCraft;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};

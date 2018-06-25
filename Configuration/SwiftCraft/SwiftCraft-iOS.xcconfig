@@ -1,0 +1,16 @@
+//
+//  SwiftCraftiOS.xcconfig
+//  SwiftCraft
+//
+//  Created by Noah Peeters on 25.06.18.
+//  Copyright © 2018 Noah Peeters. All rights reserved.
+//
+
+#include "../Platforms/iOS.xcconfig"
+#include "SwiftCraft-Base.xcconfig"
+
+// Minimum iOS version.
+IPHONEOS_DEPLOYMENT_TARGET = 9.0
+
+// Framework search path.
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/iOS

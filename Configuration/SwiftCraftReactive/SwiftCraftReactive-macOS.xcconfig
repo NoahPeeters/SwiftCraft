@@ -1,0 +1,19 @@
+//
+//  SwiftCraftReactive-macOS.xcconfig
+//  SwiftCraft
+//
+//  Created by Noah Peeters on 25.06.18.
+//  Copyright © 2018 Noah Peeters. All rights reserved.
+//
+
+#include "../Platforms/macOS.xcconfig"
+#include "SwiftCraftReactive-Base.xcconfig"
+
+// Minimum macOS version.
+MACOSX_DEPLOYMENT_TARGET = 10.10
+
+// Framework search path.
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/Mac
+
+COMBINE_HIDPI_IMAGES = YES
+SWIFT_OBJC_INTERFACE_HEADER_NAME = $(SWIFT_MODULE_NAME)-Swift.h
