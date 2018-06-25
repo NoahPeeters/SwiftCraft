@@ -26,7 +26,7 @@ public class GameViewController: UIViewController, UITextFieldDelegate {
 
         _ = client.addReactor(MinecraftClient.essentialReactors())
         _ = client.addReactor(ClosureReactor<ReceiveChatMessagePacket> { [weak self] packet, _ in
-            self?.addMessage(packet.message.message.string)
+            self?.addMessage(packet.message.message.string(translationManager: EnglishTranslationManager()))
         })
 
         client.onOpen { [weak self] in

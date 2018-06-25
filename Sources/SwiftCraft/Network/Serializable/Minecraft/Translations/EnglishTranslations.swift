@@ -10,63 +10,9 @@ import Foundation
 
 // swiftlint:disable file_length
 // swiftlint:disable:next type_body_length
-public enum MinecraftTranslations {
-    public static func string(withKey key: String, substitutions: [String]?) -> String {
-        guard let pattern = MinecraftTranslations.patterns[key] else {
-            return key
-        }
-
-        guard let substitutions = substitutions else {
-            return pattern
-        }
-
-        var resultString = pattern
-        var index = resultString.startIndex
-        var substitutionIndex = 0
-
-        while index < resultString.endIndex {
-            guard resultString[index] == "%" else {
-                index = resultString.index(after: index)
-                continue
-            }
-
-            var placeholderIndex = resultString.index(after: index)
-
-            guard resultString[placeholderIndex] != "%" else {
-                resultString.replaceSubrange(index...placeholderIndex, with: "%")
-                index = resultString.index(after: index)
-                continue
-            }
-
-            guard resultString[placeholderIndex] != "s" else {
-                let substitution = substitutions[substitutionIndex]
-                resultString.replaceSubrange(index...placeholderIndex, with: substitution)
-                index = resultString.index(index, offsetBy: substitution.count)
-                substitutionIndex += 1
-                continue
-            }
-
-            var substitutionIndexString = ""
-            while true {
-                let char = resultString[placeholderIndex]
-                if char == "$" {
-                    break
-                } else {
-                    substitutionIndexString.append(char)
-                    placeholderIndex = resultString.index(after: placeholderIndex)
-                }
-            }
-
-            let substitutionIndex = (Int(substitutionIndexString) ?? 1) - 1
-            let substitution = substitutions[substitutionIndex]
-            resultString.replaceSubrange(index...placeholderIndex, with: substitution)
-            index = resultString.index(index, offsetBy: substitution.count)
-        }
-        return resultString
-    }
-
+public enum MinecraftEnglishTranslations {
     // swiftlint:disable line_length
-    private static let patterns: [String: String] = [
+    public static let patterns: [String: String] = [
         "addServer.add": "Done",
         "addServer.enterIp": "Server Address",
         "addServer.enterName": "Server Name",
@@ -3353,7 +3299,8 @@ public enum MinecraftTranslations {
         "translation.test.complex": "Prefix, %s%2$s again %s and %1$s lastly %s and also %1$s again!",
         "translation.test.escape": "%%s %%%s %%%%s %%%%%s",
         "translation.test.invalid": "hi %",
-        "translation.test.invalid2": "hi %s",
+        "translation.test.invalid2": "hi %1",
+        "translation.test.invalid3": "hi %d$s world",
         "translation.test.none": "Hello, world!",
         "translation.test.world": "world",
         "tutorial.craft_planks.description": "The recipe book can help",

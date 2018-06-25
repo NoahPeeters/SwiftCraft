@@ -76,19 +76,23 @@ public enum ChatMessageComponent: Decodable {
     }
 
     /// String representation of the component as it appears in the minecraft client.
-    public var string: String {
-        return stringWithoutSiblings + (options.extra ?? []).map {
-            $0.string
+    public func string(translationManager: TranslationManager) -> String {
+        return stringWithoutSiblings(translationManager: translationManager) + (options.extra ?? []).map {
+            $0.string(translationManager: translationManager)
         }.joined()
     }
 
     /// String represetnation of the the component without the siblings.
-    private var stringWithoutSiblings: String {
+    private func stringWithoutSiblings(translationManager: TranslationManager) -> String {
         switch self {
         case let .text(text, _):
             return text
         case let .translate(key, substitutions, _):
-            return MinecraftTranslations.string(withKey: key, substitutions: substitutions?.map { $0.string })
+            return translationManager.string(
+                withKey: key,
+                substitutions: substitutions?.map {
+                    $0.string(translationManager: translationManager)
+                } ?? [])
         case .unknown:
             return "<unknow message type>"
         }

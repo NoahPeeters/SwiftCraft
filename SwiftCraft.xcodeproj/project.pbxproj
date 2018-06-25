@@ -24,9 +24,9 @@
 		4005B79020C30D61001F09D2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4005B78E20C30D61001F09D2 /* Result.framework */; };
 		4005B79420C30FAA001F09D2 /* Reactor+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4005B79320C30FAA001F09D2 /* Reactor+Reactive.swift */; };
 		400990C920DEE1C500EC8778 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F320DE907000C58B7A /* ChatMessage.swift */; };
-		400990CA20DEE1C500EC8778 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* Translations.swift */; };
+		400990CA20DEE1C500EC8778 /* EnglishTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* EnglishTranslations.swift */; };
 		400990CB20DEE1C500EC8778 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F320DE907000C58B7A /* ChatMessage.swift */; };
-		400990CC20DEE1C500EC8778 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* Translations.swift */; };
+		400990CC20DEE1C500EC8778 /* EnglishTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* EnglishTranslations.swift */; };
 		4012529B20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */; };
 		4012529C20DC5FAA00802FCA /* SwiftCraftAppShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4012529420DC5FAA00802FCA /* SwiftCraftAppShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		401252A120DC604C00802FCA /* SwiftCraft.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -463,7 +463,7 @@
 		40DAC2DF20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */; };
 		40DAC5F220DE85B600C58B7A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F020DE84F300C58B7A /* GameViewController.swift */; };
 		40DAC5F420DE907000C58B7A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F320DE907000C58B7A /* ChatMessage.swift */; };
-		40DAC5F620DEB7EF00C58B7A /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* Translations.swift */; };
+		40DAC5F620DEB7EF00C58B7A /* EnglishTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC5F520DEB7EF00C58B7A /* EnglishTranslations.swift */; };
 		40DC83FC20DBFBF3005F7EDE /* DataCompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */; };
 		40DC842520DC5418005F7EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DC842420DC5418005F7EDE /* AppDelegate.swift */; };
 		40DC842720DC541A005F7EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40DC842620DC541A005F7EDE /* Assets.xcassets */; };
@@ -471,6 +471,12 @@
 		40E2141020E1905700730052 /* BlockPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2140C20E18EA900730052 /* BlockPositionTests.swift */; };
 		40E2141120E1905700730052 /* BlockPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2140C20E18EA900730052 /* BlockPositionTests.swift */; };
 		40E2141320E1915A00730052 /* BlockPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2140C20E18EA900730052 /* BlockPositionTests.swift */; };
+		40E2141620E196F100730052 /* TranslationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2141420E1930800730052 /* TranslationTests.swift */; };
+		40E2141720E196F200730052 /* TranslationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2141420E1930800730052 /* TranslationTests.swift */; };
+		40E2141820E196F300730052 /* TranslationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2141420E1930800730052 /* TranslationTests.swift */; };
+		40E2141A20E19DC500730052 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2141920E19DC500730052 /* TranslationManager.swift */; };
+		40E2141B20E19E6F00730052 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2141920E19DC500730052 /* TranslationManager.swift */; };
+		40E2141C20E19E7000730052 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2141920E19DC500730052 /* TranslationManager.swift */; };
 		40E314F320B5F65300C9E271 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 		40E314F520B601F900C9E271 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F420B601F900C9E271 /* Reactor.swift */; };
 		40E314F820B6048600C9E271 /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F720B6048600C9E271 /* LoginReactor.swift */; };
@@ -801,7 +807,7 @@
 		40DAC2DE20B98CDD0017FEBD /* HeldItemChangedReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeldItemChangedReceivedPacket.swift; sourceTree = "<group>"; };
 		40DAC5F020DE84F300C58B7A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		40DAC5F320DE907000C58B7A /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
-		40DAC5F520DEB7EF00C58B7A /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		40DAC5F520DEB7EF00C58B7A /* EnglishTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishTranslations.swift; sourceTree = "<group>"; };
 		40DC83FB20DBFBF3005F7EDE /* DataCompression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCompression.swift; sourceTree = "<group>"; };
 		40DC842220DC5418005F7EDE /* SwiftCraftMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCraftMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DC842420DC5418005F7EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -811,6 +817,8 @@
 		40DC842C20DC541A005F7EDE /* SwiftCraftMacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftMacApp.entitlements; sourceTree = "<group>"; };
 		40E2140B20E17D7600730052 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		40E2140C20E18EA900730052 /* BlockPositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPositionTests.swift; sourceTree = "<group>"; };
+		40E2141420E1930800730052 /* TranslationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationTests.swift; sourceTree = "<group>"; };
+		40E2141920E19DC500730052 /* TranslationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationManager.swift; sourceTree = "<group>"; };
 		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
 		40E314F420B601F900C9E271 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
 		40E314F720B6048600C9E271 /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
@@ -1212,6 +1220,7 @@
 				4068070020B3200600B116C4 /* TCPClientTests.swift */,
 				40767E2820DF05D80082A6D1 /* MinecraftHexStringTests.swift */,
 				401C5ADD20E0025500E9B461 /* CompressionTests.swift */,
+				40E2141420E1930800730052 /* TranslationTests.swift */,
 			);
 			path = SwiftCraftTests;
 			sourceTree = "<group>";
@@ -1607,7 +1616,7 @@
 				40778F8820DAC94900B8BB99 /* Identifier.swift */,
 				408E63F520BA06FB00AE9C2D /* VarInt.swift */,
 				40DAC5F320DE907000C58B7A /* ChatMessage.swift */,
-				40DAC5F520DEB7EF00C58B7A /* Translations.swift */,
+				40E2141D20E19F5200730052 /* Translations */,
 				4024C5EE20D9154C00493A86 /* NBT */,
 			);
 			path = Minecraft;
@@ -1729,6 +1738,15 @@
 				401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */,
 			);
 			name = LICENSE;
+			sourceTree = "<group>";
+		};
+		40E2141D20E19F5200730052 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				40DAC5F520DEB7EF00C58B7A /* EnglishTranslations.swift */,
+				40E2141920E19DC500730052 /* TranslationManager.swift */,
+			);
+			path = Translations;
 			sourceTree = "<group>";
 		};
 		40E314F620B603D100C9E271 /* Reactor */ = {
@@ -2269,6 +2287,7 @@
 				4024C5C720D9069000493A86 /* SpawnPositionPacket.swift in Sources */,
 				4024C5C520D9039F00493A86 /* SetSlotPacket.swift in Sources */,
 				4068070820B35FDF00B116C4 /* HandshakePacket.swift in Sources */,
+				40E2141B20E19E6F00730052 /* TranslationManager.swift in Sources */,
 				4022B06420B4B02700B4E680 /* SetCompressionPacket.swift in Sources */,
 				40AEEE7120DBD07A00E774CA /* Dimension.swift in Sources */,
 				4024C5FA20D94D7700493A86 /* EntityLookAndRelativeMovePacket.swift in Sources */,
@@ -2336,7 +2355,7 @@
 				408C67DD20DAAC6C0090A1F0 /* SpawnPlayerPacket.swift in Sources */,
 				408E641D20BB0BEF00AE9C2D /* EntityVelocityPacket.swift in Sources */,
 				4022B07120B4CC5300B4E680 /* JoinGamePacket.swift in Sources */,
-				400990CA20DEE1C500EC8778 /* Translations.swift in Sources */,
+				400990CA20DEE1C500EC8778 /* EnglishTranslations.swift in Sources */,
 				40AEEE7D20DBD0E800E774CA /* SlotContent.swift in Sources */,
 				40CA046120B8CCC50088EC44 /* MultiReactor.swift in Sources */,
 				4024C5FC20D9503F00493A86 /* EntityRelativeMovePacket.swift in Sources */,
@@ -2402,6 +2421,7 @@
 				40767E2A20DF05DB0082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				401C5ADF20E0025500E9B461 /* CompressionTests.swift in Sources */,
 				13879E2920E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
+				40E2141820E196F300730052 /* TranslationTests.swift in Sources */,
 				4024AB8820B22418008790F2 /* BufferTests.swift in Sources */,
 				4024AB9220B231A2008790F2 /* DataTypesSerializationTests.swift in Sources */,
 				40E2141320E1915A00730052 /* BlockPositionTests.swift in Sources */,
@@ -2417,6 +2437,7 @@
 				40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				401C5ADE20E0025500E9B461 /* CompressionTests.swift in Sources */,
 				13879E2820E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
+				40E2141620E196F100730052 /* TranslationTests.swift in Sources */,
 				40767E5320DF09060082A6D1 /* DataTypesSerializationTests.swift in Sources */,
 				40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */,
 				40E2141020E1905700730052 /* BlockPositionTests.swift in Sources */,
@@ -2432,6 +2453,7 @@
 				40767E5120DF09050082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				401C5AE020E0025500E9B461 /* CompressionTests.swift in Sources */,
 				13879E2A20E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
+				40E2141720E196F200730052 /* TranslationTests.swift in Sources */,
 				40767E4F20DF09050082A6D1 /* DataTypesSerializationTests.swift in Sources */,
 				40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */,
 				40E2141120E1905700730052 /* BlockPositionTests.swift in Sources */,
@@ -2460,6 +2482,7 @@
 				4084649A20DDB99300C2ACC4 /* EntityVelocityPacket.swift in Sources */,
 				4084648B20DDB99300C2ACC4 /* UpdateHealthPacket.swift in Sources */,
 				4084644E20DDB99300C2ACC4 /* Identifier.swift in Sources */,
+				40E2141C20E19E7000730052 /* TranslationManager.swift in Sources */,
 				4084644120DDB99300C2ACC4 /* PlayerPositionAndLookReceivedPacket.swift in Sources */,
 				4084644920DDB99300C2ACC4 /* BlockBreakAnimationPacket.swift in Sources */,
 				4084642920DDB99300C2ACC4 /* BlockPosition.swift in Sources */,
@@ -2527,7 +2550,7 @@
 				4084647120DDB99300C2ACC4 /* TimeUpdatePacket.swift in Sources */,
 				4084647320DDB99300C2ACC4 /* PacketLibrary.swift in Sources */,
 				4084649C20DDB99300C2ACC4 /* General.swift in Sources */,
-				400990CC20DEE1C500EC8778 /* Translations.swift in Sources */,
+				400990CC20DEE1C500EC8778 /* EnglishTranslations.swift in Sources */,
 				4084648D20DDB99300C2ACC4 /* PrintReactors.swift in Sources */,
 				4084644420DDB99300C2ACC4 /* JoinGamePacket.swift in Sources */,
 				4084645720DDB99300C2ACC4 /* ProtocolVersion.swift in Sources */,
@@ -2614,6 +2637,7 @@
 				408463AD20DDB3DD00C2ACC4 /* BlockChangePacket.swift in Sources */,
 				4084635820DDB3DD00C2ACC4 /* BlockPosition.swift in Sources */,
 				408463B920DDB3DD00C2ACC4 /* SessionServerService.swift in Sources */,
+				40E2141A20E19DC500730052 /* TranslationManager.swift in Sources */,
 				408463B720DDB3DD00C2ACC4 /* EntityHeadLookPacket.swift in Sources */,
 				4084638420DDB3DD00C2ACC4 /* PlayerLookPacket.swift in Sources */,
 				4084639020DDB3DD00C2ACC4 /* EntityRelativeMovePacket.swift in Sources */,
@@ -2681,7 +2705,7 @@
 				4084635720DDB3DD00C2ACC4 /* EntityLookPacket.swift in Sources */,
 				4084634720DDB3DD00C2ACC4 /* Gamemode.swift in Sources */,
 				4084636220DDB3DD00C2ACC4 /* Data+MinecraftHexString.swift in Sources */,
-				40DAC5F620DEB7EF00C58B7A /* Translations.swift in Sources */,
+				40DAC5F620DEB7EF00C58B7A /* EnglishTranslations.swift in Sources */,
 				408463A620DDB3DD00C2ACC4 /* LoginReactor.swift in Sources */,
 				4084638F20DDB3DD00C2ACC4 /* MultiReactor.swift in Sources */,
 				408463AE20DDB3DD00C2ACC4 /* UserLoginService.swift in Sources */,
