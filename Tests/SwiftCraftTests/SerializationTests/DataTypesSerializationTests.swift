@@ -1,5 +1,5 @@
 //
-//  DataTypesSerializationTest.swift
+//  DataTypesSerializationTests.swift
 //  SwiftCraftTests
 //
 //  Created by Noah Peeters on 21.05.18.

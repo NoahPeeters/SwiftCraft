@@ -125,7 +125,7 @@ public struct NBTDouble: NBTNode {
 /// A node representing a byte array.
 public struct NBTByteArray: NBTNode {
     /// The value of the node.
-    public let value: [Byte]
+    public let value: ByteArray
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let count = try Int32(from: buffer)
