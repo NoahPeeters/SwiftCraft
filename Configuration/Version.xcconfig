@@ -1,0 +1,10 @@
+//
+//  Version.xcconfig
+//  SwiftCraft
+//
+//  Created by Noah Peeters on 25.06.18.
+//  Copyright © 2018 Noah Peeters. All rights reserved.
+//
+
+// The current version of the framework.
+MARKETING_VERSION = 0.1.0

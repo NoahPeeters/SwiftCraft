@@ -6,8 +6,7 @@
 //  Copyright © 2018 Noah Peeters. All rights reserved.
 //
 
-// The current version of the framework.
-MARKETING_VERSION = 1.0.0
+#include "../Version.xcconfig"
 
 // Swift Version
 SWIFT_VERSION = 4.2

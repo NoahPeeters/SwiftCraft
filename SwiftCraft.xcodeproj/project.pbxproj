@@ -806,6 +806,7 @@
 		40DC842920DC541A005F7EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		40DC842B20DC541A005F7EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40DC842C20DC541A005F7EDE /* SwiftCraftMacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftCraftMacApp.entitlements; sourceTree = "<group>"; };
+		40E2140B20E17D7600730052 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatMessagePacket.swift; sourceTree = "<group>"; };
 		40E314F420B601F900C9E271 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
 		40E314F720B6048600C9E271 /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
@@ -1302,6 +1303,7 @@
 		4034B0A020E1638F00FFA816 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				40E2140B20E17D7600730052 /* Version.xcconfig */,
 				4034B0A520E165A400FFA816 /* Platforms */,
 				4034B0A420E1657700FFA816 /* SwiftCraft */,
 				4034B0AC20E1704E00FFA816 /* SwiftCraftReactive */,

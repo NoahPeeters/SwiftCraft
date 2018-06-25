@@ -54,7 +54,7 @@ To integrate SwiftCraft into your project using Swift Package Manager, specify i
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/NoahPeeters/SwiftCraft.git", from: "1.0.0")
+    .package(url: "https://github.com/NoahPeeters/SwiftCraft.git", from: "0.1.0")
 ]
 ```
 
