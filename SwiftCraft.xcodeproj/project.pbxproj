@@ -1144,10 +1144,10 @@
 			isa = PBXGroup;
 			children = (
 				40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */,
+				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
+				408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */,
 				4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */,
 				40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */,
-				408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */,
-				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
 			);
 			path = Serverbound;
 			sourceTree = "<group>";
