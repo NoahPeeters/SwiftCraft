@@ -11,8 +11,12 @@
 		1334251220B460D60097C45D /* Data+MinecraftHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251120B460D60097C45D /* Data+MinecraftHexString.swift */; };
 		1334251520B4647A0097C45D /* SessionServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251420B4647A0097C45D /* SessionServerService.swift */; };
 		1334251820B469DB0097C45D /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1334251720B469DB0097C45D /* AuthenticationProvider.swift */; };
-		13879E2020E1387000EEED99 /* NumberSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E1F20E1387000EEED99 /* NumberSerializationTests.swift */; };
-		13879E2220E1389600EEED99 /* CollectionsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E2120E1389600EEED99 /* CollectionsSerializationTests.swift */; };
+		13879E2520E13B9300EEED99 /* CollectionsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E2120E1389600EEED99 /* CollectionsSerializationTests.swift */; };
+		13879E2620E13B9400EEED99 /* CollectionsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E2120E1389600EEED99 /* CollectionsSerializationTests.swift */; };
+		13879E2720E13B9400EEED99 /* CollectionsSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E2120E1389600EEED99 /* CollectionsSerializationTests.swift */; };
+		13879E2820E13BA100EEED99 /* NumberSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E1F20E1387000EEED99 /* NumberSerializationTests.swift */; };
+		13879E2920E13BA100EEED99 /* NumberSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E1F20E1387000EEED99 /* NumberSerializationTests.swift */; };
+		13879E2A20E13BA100EEED99 /* NumberSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13879E1F20E1387000EEED99 /* NumberSerializationTests.swift */; };
 		4005B77E20C30C1A001F09D2 /* SwiftCraftReactive_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4005B77C20C30C1A001F09D2 /* SwiftCraftReactive_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4005B78820C30D18001F09D2 /* Login+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4005B78720C30D18001F09D2 /* Login+Reactive.swift */; };
 		4005B78A20C30D38001F09D2 /* SwiftCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4024AB4820B1DB57008790F2 /* SwiftCraft.framework */; };
@@ -2325,8 +2329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13879E2620E13B9400EEED99 /* CollectionsSerializationTests.swift in Sources */,
 				40767E2A20DF05DB0082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				401C5ADF20E0025500E9B461 /* CompressionTests.swift in Sources */,
+				13879E2920E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
 				4024AB8820B22418008790F2 /* BufferTests.swift in Sources */,
 				4024AB9220B231A2008790F2 /* DataTypesSerializationTest.swift in Sources */,
 				4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */,
@@ -2337,8 +2343,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13879E2520E13B9300EEED99 /* CollectionsSerializationTests.swift in Sources */,
 				40767E5520DF09060082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				401C5ADE20E0025500E9B461 /* CompressionTests.swift in Sources */,
+				13879E2820E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
 				40767E5320DF09060082A6D1 /* DataTypesSerializationTest.swift in Sources */,
 				40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */,
 				40767E5220DF09060082A6D1 /* BufferTests.swift in Sources */,
@@ -2349,8 +2357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13879E2720E13B9400EEED99 /* CollectionsSerializationTests.swift in Sources */,
 				40767E5120DF09050082A6D1 /* MinecraftHexStringTests.swift in Sources */,
 				401C5AE020E0025500E9B461 /* CompressionTests.swift in Sources */,
+				13879E2A20E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
 				40767E4F20DF09050082A6D1 /* DataTypesSerializationTest.swift in Sources */,
 				40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */,
 				40767E4E20DF09050082A6D1 /* BufferTests.swift in Sources */,
@@ -2526,7 +2536,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4084639620DDB3DD00C2ACC4 /* World.swift in Sources */,
-				13879E2020E1387000EEED99 /* NumberSerializationTests.swift in Sources */,
 				408463C220DDB3DD00C2ACC4 /* UnlockRecipesPacket.swift in Sources */,
 				408463A720DDB3DD00C2ACC4 /* ChunkColumn.swift in Sources */,
 				4084634F20DDB3DD00C2ACC4 /* EntityLookAndRelativeMovePacket.swift in Sources */,
@@ -2602,7 +2611,6 @@
 				4084636220DDB3DD00C2ACC4 /* Data+MinecraftHexString.swift in Sources */,
 				40DAC5F620DEB7EF00C58B7A /* Translations.swift in Sources */,
 				408463A620DDB3DD00C2ACC4 /* LoginReactor.swift in Sources */,
-				13879E2220E1389600EEED99 /* CollectionsSerializationTests.swift in Sources */,
 				4084638F20DDB3DD00C2ACC4 /* MultiReactor.swift in Sources */,
 				408463AE20DDB3DD00C2ACC4 /* UserLoginService.swift in Sources */,
 				4084639820DDB3DD00C2ACC4 /* ReceivedAnimationPacket.swift in Sources */,

@@ -18,17 +18,17 @@ public class OptionalSerializationTests: QuickSpec {
             }
 
             it("serializes 42 correctly") {
-                expect(Optional(42).directSerialized()).to(equal([0x01, 42]))
+                expect(Optional(UInt8(42)).directSerialized()).to(equal([0x01, 42]))
             }
         }
 
         describe("when deserializes an optional UInt8") {
             it("deserializes nil correctly") {
-                expect(UInt8?(from: [0x00])).to(beNil())
+                expect(try? UInt8?(from: [0x00])).to(equal(UInt8??.some(nil)))
             }
 
             it("deserializes 42 correctly") {
-                expect(UInt8?(from: [0x01, 42])).to(equal(42))
+                expect(try? UInt8?(from: [0x01, 42])).to(equal(42))
             }
         }
     }
@@ -38,17 +38,17 @@ public class StringSerializationTests: QuickSpec {
     public override func spec() {
         describe("ascii") {
             let serializedData: ByteArray = [12, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x20, 0x57, 0x6f, 0x72, 0x6c, 0x64, 0x21]
-            let deserializedStrign = "Hello World!"
+            let deserializedString = "Hello World!"
 
             describe("serializing") {
                 it("serializes correctly") {
-                    expect(deserializedStrign.directSerialized()).to(equal(serializedData))
+                    expect(deserializedString.directSerialized()).to(equal(serializedData))
                 }
             }
 
             describe("deserializing") {
                 it("deserializes correctly") {
-                    expect(try? String(from: serializedData)).to(equal(deserializedStrign))
+                    expect(try? String(from: serializedData)).to(equal(deserializedString))
                 }
             }
         }
