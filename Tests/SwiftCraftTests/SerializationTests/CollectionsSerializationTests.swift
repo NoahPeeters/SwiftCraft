@@ -10,6 +10,30 @@ import Quick
 import Nimble
 @testable import SwiftCraft
 
+public class OptionalSerializationTests: QuickSpec {
+    public override func spec() {
+        describe("when serializes an optional UInt8") {
+            it("serializes nil correctly") {
+                expect(UInt8?.none.directSerialized()).to(equal([0x00]))
+            }
+
+            it("serializes 42 correctly") {
+                expect(Optional(42).directSerialized()).to(equal([0x01, 42]))
+            }
+        }
+
+        describe("when deserializes an optional UInt8") {
+            it("deserializes nil correctly") {
+                expect(UInt8?(from: [0x00])).to(beNil())
+            }
+
+            it("deserializes 42 correctly") {
+                expect(UInt8?(from: [0x01, 42])).to(equal(42))
+            }
+        }
+    }
+}
+
 public class StringSerializationTests: QuickSpec {
     public override func spec() {
         describe("ascii") {
