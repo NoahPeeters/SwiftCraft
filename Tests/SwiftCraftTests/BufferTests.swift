@@ -12,7 +12,7 @@ import Nimble
 @testable import SwiftCraft
 
 public class ReadBufferTests: QuickSpec {
-    //swiftlint:disable:next function_body_length
+    // swiftlint:disable:next function_body_length
     public override func spec() {
         describe("creating a buffer with data") {
             var buffer: ByteBuffer!

@@ -32,13 +32,13 @@ public enum ChatMessageComponent: Decodable {
     }
 
     public struct Options: Decodable {
-        //swiftlint:disable discouraged_optional_boolean
+        // swiftlint:disable discouraged_optional_boolean
         public let bold: Bool?
         public let italic: Bool?
         public let underlined: Bool?
         public let strikethrough: Bool?
         public let obfuscated: Bool?
-        //swiftlint:enable discouraged_optional_boolean
+        // swiftlint:enable discouraged_optional_boolean
 
         public let color: String?
         public let insertion: String?

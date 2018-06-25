@@ -8,8 +8,8 @@
 
 import Foundation
 
-//swiftlint:disable file_length
-//swiftlint:disable:next type_body_length
+// swiftlint:disable file_length
+// swiftlint:disable:next type_body_length
 public enum MinecraftTranslations {
     public static func string(withKey key: String, substitutions: [String]?) -> String {
         guard let pattern = MinecraftTranslations.patterns[key] else {
@@ -65,7 +65,7 @@ public enum MinecraftTranslations {
         return resultString
     }
 
-    //swiftlint:disable line_length
+    // swiftlint:disable line_length
     private static let patterns: [String: String] = [
         "addServer.add": "Done",
         "addServer.enterIp": "Server Address",
