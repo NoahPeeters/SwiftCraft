@@ -1,0 +1,3388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MinecraftClient Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/MinecraftClient" class="dashAnchor"></a>
+    <a title="MinecraftClient Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftCraft Docs</a> (74% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftCraft Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        MinecraftClient Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Buffer.html">Buffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkColumn.html">ChunkColumn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkColumn/Position.html">– Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkSection.html">ChunkSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkSection/BlockData.html">– BlockData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkSection/BlockIDsWrapper.html">– BlockIDsWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ClosureReactor.html">ClosureReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ContinuousMessageCryptor.html">ContinuousMessageCryptor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DebugPrintReactor.html">DebugPrintReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MessageCompressor.html">MessageCompressor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MinecraftClient.html">MinecraftClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MinecraftWorld.html">MinecraftWorld</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultiReactor.html">MultiReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SingleReactor.html">SingleReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TCPClient.html">TCPClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/IPPROTO_TCP">IPPROTO_TCP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/SOCK_STREAM">SOCK_STREAM</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AdvancementsPacketError.html">AdvancementsPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BufferError.html">BufferError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChangeGameStatePacketError.html">ChangeGameStatePacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageComponent.html">ChatMessageComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageComponent/Options.html">– Options</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageComponent/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageLocation.html">ChatMessageLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessagePacketError.html">ChatMessagePacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ConnectionState.html">ConnectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CryptoWrapper.html">CryptoWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Difficulty.html">Difficulty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EncryptionRequestPacketReactorError.html">EncryptionRequestPacketReactorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EntityEquipmentPacketError.html">EntityEquipmentPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LevelType.html">LevelType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LoginSuccessPacketError.html">LoginSuccessPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MessageCompressorError.html">MessageCompressorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MinecraftTranslations.html">MinecraftTranslations</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PacketLibraryError.html">PacketLibraryError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReceivedAnimationPacketError.html">ReceivedAnimationPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SlotContent.html">SlotContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SpawnPaintingPacketError.html">SpawnPaintingPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TCPClientEvent.html">TCPClientEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WorldBorderPacketError.html">WorldBorderPacketError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/FixedWidthInteger.html">FixedWidthInteger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Int64.html">Int64</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Optional.html">Optional</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String/TypeDeserializeError.html">– TypeDeserializeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URLRequest.html">URLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URLSession.html">URLSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UUID.html">UUID</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftCraft13chunkLocation33_8EDCF9F3864ACECCA9A7B8ED51CB04BALL7ofBlockS2i_tF">chunkLocation(ofBlock:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftCraft23relativeLocationInChunk33_8EDCF9F3864ACECCA9A7B8ED51CB04BALL7ofBlockS2i_tF">relativeLocationInChunk(ofBlock:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AuthenticationProvider.html">AuthenticationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BitPatternShiftable.html">BitPatternShiftable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlockManager.html">BlockManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BufferSerializablePacket.html">BufferSerializablePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10SwiftCraft14ByteReadBufferP">ByteReadBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10SwiftCraft15ByteWriteBufferP">ByteWriteBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DeserializableDataType.html">DeserializableDataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DeserializablePacket.html">DeserializablePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HandshakePacketIDProvider.html">HandshakePacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LoginPacketIDProvider.html">LoginPacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NBTNode.html">NBTNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PacketIDProvider.html">PacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PacketLibrary.html">PacketLibrary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlayPacketIDProvider.html">PlayPacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlayerManager.html">PlayerManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reactor.html">Reactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReadBuffer.html">ReadBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SerializableDataType.html">SerializableDataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SerializablePacket.html">SerializablePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SerializationContext.html">SerializationContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionServerServiceProtocol.html">SessionServerServiceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SimplePacketIDProvider.html">SimplePacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StatusPacketIDProvider.html">StatusPacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TCPClientProtocol.html">TCPClientProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserLoginCredentials.html">UserLoginCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserLoginServiceProtocol.html">UserLoginServiceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserLoginSessionCredentials.html">UserLoginSessionCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VarIntIntegerType.html">VarIntIntegerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WriteBuffer.html">WriteBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AdvancementsPacket.html">AdvancementsPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AdvancementsPacket/Advancement.html">– Advancement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AttachEntityPacket.html">AttachEntityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockActionPacket.html">BlockActionPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockBreakAnimationPacket.html">BlockBreakAnimationPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockChangePacket.html">BlockChangePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockID.html">BlockID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockPosition.html">BlockPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChangeGameStatePacket.html">ChangeGameStatePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChangeGameStatePacket/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChatMessage.html">ChatMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChunkDataPacket.html">ChunkDataPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClientStatusPacket.html">ClientStatusPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CollectItemPacket.html">CollectItemPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultPacketLibrary.html">DefaultPacketLibrary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DestroyEntitiesPacket.html">DestroyEntitiesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Dimension.html">Dimension</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisconnectPacket.html">DisconnectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EffectPacket.html">EffectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EncryptionRequestPacket.html">EncryptionRequestPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EncryptionResponsePacket.html">EncryptionResponsePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityEquipmentPacket.html">EntityEquipmentPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityEquipmentPacket/Slot.html">– Slot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityHeadLookPacket.html">EntityHeadLookPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityLocation.html">EntityLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityLookAndRelativeMovePacket.html">EntityLookAndRelativeMovePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityLookPacket.html">EntityLookPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityMetadataPacket.html">EntityMetadataPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityPropertiesPacket.html">EntityPropertiesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityPropertiesPacket/Propery.html">– Propery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityRelativeMovePacket.html">EntityRelativeMovePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityStatusPacket.html">EntityStatusPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityTeleportPacket.html">EntityTeleportPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityVelocity.html">EntityVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityVelocityPacket.html">EntityVelocityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Gamemode.html">Gamemode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Gamemode/Mode.html">– Mode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HandshakePacket.html">HandshakePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HeldItemChangedReceivedPacket.html">HeldItemChangedReceivedPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Identifier.html">Identifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/JoinGamePacket.html">JoinGamePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/JoinGamePacket/JoinGamePacketError.html">– JoinGamePacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeepaliveRequestPacket.html">KeepaliveRequestPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeepaliveResponsePacket.html">KeepaliveResponsePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LoginStartPacket.html">LoginStartPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LoginSuccessPacket.html">LoginSuccessPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MultiBlockChangePacket.html">MultiBlockChangePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBT.html">NBT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTByte.html">NBTByte</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTByteArray.html">NBTByteArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTCompount.html">NBTCompount</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTDouble.html">NBTDouble</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTFloat.html">NBTFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTInt16.html">NBTInt16</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTInt32.html">NBTInt32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTInt64.html">NBTInt64</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTList.html">NBTList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTString.html">NBTString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NamedNBTNodeWrapper.html">NamedNBTNodeWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OfflineSessionService.html">OfflineSessionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketID.html">PacketID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParticlePacket.html">ParticlePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket.html">PlayerListPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket/AddPlayerPayload.html">– AddPlayerPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket/PlayerListPacketError.html">– PlayerListPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerLookPacket.html">PlayerLookPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerPositionAndLookReceivedPacket.html">PlayerPositionAndLookReceivedPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerPositionAndLookReceivedPacket/ValueWrapper.html">– ValueWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerUpdate.html">PlayerUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PluginMessageReceivedPacket.html">PluginMessageReceivedPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceiveChatMessagePacket.html">ReceiveChatMessagePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceivedAnimationPacket.html">ReceivedAnimationPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceivedAnimationPacket/Animation.html">– Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceivedPlayerAbilitiesPacket.html">ReceivedPlayerAbilitiesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SendChatMessagePacket.html">SendChatMessagePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ServerDifficultyPacket.html">ServerDifficultyPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ServerDifficultyPacket/ServerDifficultyPacketError.html">– ServerDifficultyPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionServerService.html">SessionServerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionServerService/Payload.html">– Payload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SetCompressionPacket.html">SetCompressionPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SetExperiencePacket.html">SetExperiencePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SetSlotPacket.html">SetSlotPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimpleUserLoginSessionCredentials.html">SimpleUserLoginSessionCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SoundEffectPacket.html">SoundEffectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnExperienceOrbPacket.html">SpawnExperienceOrbPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnGlobalEntityPacket.html">SpawnGlobalEntityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnMobPacket.html">SpawnMobPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnObjectPacket.html">SpawnObjectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPaintingPacket.html">SpawnPaintingPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPaintingPacket/Direction.html">– Direction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPlayerPacket.html">SpawnPlayerPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPositionPacket.html">SpawnPositionPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Statistic.html">Statistic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatisticsPacket.html">StatisticsPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatusRequestPacket.html">StatusRequestPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatusResponsePacket.html">StatusResponsePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatusResponsePacket/Response.html">– Response</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TeleportConfirmPacket.html">TeleportConfirmPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TimeUpdatePacket.html">TimeUpdatePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnloadChunkPacket.html">UnloadChunkPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnlockRecipesPacket.html">UnlockRecipesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnlockRecipesPacket/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateBlockEntityPacket.html">UpdateBlockEntityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateHealthPacket.html">UpdateHealthPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginCredentialsAgent.html">UserLoginCredentialsAgent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginPasswordCredentials.html">UserLoginPasswordCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginPasswordCredentialsPayload.html">UserLoginPasswordCredentialsPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse.html">UserLoginResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse/Profile.html">– Profile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse/User.html">– User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse/UserProperty.html">– UserProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginService.html">UserLoginService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginSessionCredentialsPayload.html">UserLoginSessionCredentialsPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VarInt.html">VarInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VarInt/TypeDeserializeError.html">– TypeDeserializeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WindowItemsPacket.html">WindowItemsPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WorldBorderPacket.html">WorldBorderPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WorldBorderPacket/Action.html">– Action</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft5Anglea">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft4Bytea">Byte</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft10ByteBuffera">ByteBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8EntityIDa">EntityID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft27MinecraftWorldStatusManagera">MinecraftWorldStatusManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8RecipeIDa">RecipeID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft12Serializablea">Serializable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8VarInt32a">VarInt32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8VarInt64a">VarInt64</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MinecraftClient</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">MinecraftClient</span></code></pre>
+
+                </div>
+              </div>
+            <p>Baseclass for the library. It manages everything a client have to do.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC03tcpD033_A84A6B85091ACD8BD547E2473DF530CFLLAA17TCPClientProtocol_pvp"></a>
+                    <a name="//apple_ref/swift/Property/tcpClient" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC03tcpD033_A84A6B85091ACD8BD547E2473DF530CFLLAA17TCPClientProtocol_pvp">tcpClient</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The tcp client used to connect to the server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">tcpClient</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TCPClientProtocol.html">TCPClientProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC19incommingDataBuffer33_A84A6B85091ACD8BD547E2473DF530CFLLAA0G0Cys5UInt8VGvp"></a>
+                    <a name="//apple_ref/swift/Property/incommingDataBuffer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC19incommingDataBuffer33_A84A6B85091ACD8BD547E2473DF530CFLLAA0G0Cys5UInt8VGvp">incommingDataBuffer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A buffer for incomplete incomming minecraft messages.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">incommingDataBuffer</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft10ByteBuffera">ByteBuffer</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC13packetLibrary33_A84A6B85091ACD8BD547E2473DF530CFLLAA06PacketF0_pvp"></a>
+                    <a name="//apple_ref/swift/Property/packetLibrary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC13packetLibrary33_A84A6B85091ACD8BD547E2473DF530CFLLAA06PacketF0_pvp">packetLibrary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The library of packets used for deserializing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">packetLibrary</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PacketLibrary.html">PacketLibrary</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC20sessionServerServiceAA07SessionfG8Protocol_pvp"></a>
+                    <a name="//apple_ref/swift/Property/sessionServerService" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC20sessionServerServiceAA07SessionfG8Protocol_pvp">sessionServerService</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Service to manage the authorization at mojang&rsquo;s session service.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">sessionServerService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SessionServerServiceProtocol.html">SessionServerServiceProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC15connectionStateAA010ConnectionF0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/connectionState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC15connectionStateAA010ConnectionF0Ovp">connectionState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current connection state. This will influence the interpretation of packet ids.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">connectionState</span><span class="p">:</span> <span class="kt"><a href="../Enums/ConnectionState.html">ConnectionState</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC8reactorss10DictionaryVy10Foundation4UUIDVAA7Reactor_pGvp"></a>
+                    <a name="//apple_ref/swift/Property/reactors" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC8reactorss10DictionaryVy10Foundation4UUIDVAA7Reactor_pGvp">reactors</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>List of <code>Reactors</code>. They handle incomming and outgoing messages.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">reactors</span><span class="p">:</span> <span class="p">[</span><span class="kt">UUID</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC15protocolVersionSivp"></a>
+                    <a name="//apple_ref/swift/Property/protocolVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC15protocolVersionSivp">protocolVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The version number used for the protocol</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">protocolVersion</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC11openHandler33_A84A6B85091ACD8BD547E2473DF530CFLLyycSgvp"></a>
+                    <a name="//apple_ref/swift/Property/openHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC11openHandler33_A84A6B85091ACD8BD547E2473DF530CFLLyycSgvp">openHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handler to call on open.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">openHandler</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC12closeHandler33_A84A6B85091ACD8BD547E2473DF530CFLLyAA15ConnectionStateOcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/closeHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC12closeHandler33_A84A6B85091ACD8BD547E2473DF530CFLLyAA15ConnectionStateOcSgvp">closeHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handler to call on close.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">closeHandler</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Enums/ConnectionState.html">ConnectionState</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC03tcpD013packetLibrary20sessionServerServiceAcA17TCPClientProtocol_p_AA06PacketG0_pAA07SessionijL0_ptcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(tcpClient:packetLibrary:sessionServerService:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC03tcpD013packetLibrary20sessionServerServiceAcA17TCPClientProtocol_p_AA06PacketG0_pAA07SessionijL0_ptcfc">init(tcpClient:packetLibrary:sessionServerService:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new <code>MinecraftClient</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">tcpClient</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TCPClientProtocol.html">TCPClientProtocol</a></span><span class="p">,</span>
+            <span class="nv">packetLibrary</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PacketLibrary.html">PacketLibrary</a></span><span class="p">,</span>
+            <span class="nv">sessionServerService</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SessionServerServiceProtocol.html">SessionServerServiceProtocol</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tcpClient</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The client used to connect to the server.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>packetLibrary</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The packet library to use for packet deserializing.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessionServerService</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The session server service used for authenticating.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC7connectSbyF"></a>
+                    <a name="//apple_ref/swift/Method/connect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC7connectSbyF">connect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connect the tcp client to the server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connect</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC15connectAndLogin15protocolVersionSbSiSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/connectAndLogin(protocolVersion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC15connectAndLogin15protocolVersionSbSiSg_tF">connectAndLogin(protocolVersion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connects the tcp client to the server and starts the login</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connectAndLogin</span><span class="p">(</span><span class="nv">protocolVersion</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC23connectAndRequestStatusSbyF"></a>
+                    <a name="//apple_ref/swift/Method/connectAndRequestStatus()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC23connectAndRequestStatusSbyF">connectAndRequestStatus()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connectAndRequestStatus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC5closeyyF"></a>
+                    <a name="//apple_ref/swift/Method/close()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC5closeyyF">close()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Closes the tcp client connection</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">close</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC6onOpen7handleryyycSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/onOpen(handler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC6onOpen7handleryyycSg_tF">onOpen(handler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets a handler to be called on connection open.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onOpen</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>handler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The handler to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC7onClose7handleryyAA15ConnectionStateOcSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/onClose(handler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC7onClose7handleryyAA15ConnectionStateOcSg_tF">onClose(handler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets a handler to be called on connection close.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onClose</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Enums/ConnectionState.html">ConnectionState</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>handler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The handler to set</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC4hostSSvp"></a>
+                    <a name="//apple_ref/swift/Property/host" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC4hostSSvp">host</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The host of the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">host</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC4portSivp"></a>
+                    <a name="//apple_ref/swift/Property/port" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC4portSivp">port</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The port of the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC14messageCryptor33_A84A6B85091ACD8BD547E2473DF530CFLLAA017ContinuousMessageF0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/messageCryptor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC14messageCryptor33_A84A6B85091ACD8BD547E2473DF530CFLLAA017ContinuousMessageF0CSgvp">messageCryptor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels the de- and encryption of packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">messageCryptor</span><span class="p">:</span> <span class="kt"><a href="../Classes/ContinuousMessageCryptor.html">ContinuousMessageCryptor</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC10compressor33_A84A6B85091ACD8BD547E2473DF530CFLLAA17MessageCompressorCSgvp"></a>
+                    <a name="//apple_ref/swift/Property/compressor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC10compressor33_A84A6B85091ACD8BD547E2473DF530CFLLAA17MessageCompressorCSgvp">compressor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels the de- and compression of packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">compressor</span><span class="p">:</span> <span class="kt"><a href="../Classes/MessageCompressor.html">MessageCompressor</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC15startEncryption8serverID9publicKey11verifyTokeny10Foundation4DataV_A2JtKF"></a>
+                    <a name="//apple_ref/swift/Method/startEncryption(serverID:publicKey:verifyToken:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC15startEncryption8serverID9publicKey11verifyTokeny10Foundation4DataV_A2JtKF">startEncryption(serverID:publicKey:verifyToken:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts the encryption procedure and session authentication.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    Encryption errors.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">startEncryption</span><span class="p">(</span><span class="nv">serverID</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">publicKey</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">verifyToken</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>serverID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The server id from the <code><a href="../Structs/EncryptionRequestPacket.html">EncryptionRequestPacket</a></code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>publicKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The servers public key from the <code><a href="../Structs/EncryptionRequestPacket.html">EncryptionRequestPacket</a></code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>verifyToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Teh verification token from the <code><a href="../Structs/EncryptionRequestPacket.html">EncryptionRequestPacket</a></code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC16enableEncryption12sharedSecrety10Foundation4DataV_tF"></a>
+                    <a name="//apple_ref/swift/Method/enableEncryption(sharedSecret:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC16enableEncryption12sharedSecrety10Foundation4DataV_tF">enableEncryption(sharedSecret:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enables aes encryption.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">enableEncryption</span><span class="p">(</span><span class="nv">sharedSecret</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sharedSecret</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shared secret used for both key and iv.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC17disableEncryptionyyF"></a>
+                    <a name="//apple_ref/swift/Method/disableEncryption()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC17disableEncryptionyyF">disableEncryption()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disables encryption.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disableEncryption</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC17enableCompression9thresholdySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/enableCompression(threshold:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC17enableCompression9thresholdySi_tF">enableCompression(threshold:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enables compression for all following packets with at least the size of the threshold.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">enableCompression</span><span class="p">(</span><span class="nv">threshold</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>threshold</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The minimum size of a packet to compress.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC18disableCompressionyyF"></a>
+                    <a name="//apple_ref/swift/Method/disableCompression()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC18disableCompressionyyF">disableCompression()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disables compression for all following packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disableCompression</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC10addReactory10Foundation4UUIDVAA0F0_pF"></a>
+                    <a name="//apple_ref/swift/Method/addReactor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC10addReactory10Foundation4UUIDVAA0F0_pF">addReactor(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a new <code><a href="../Protocols/Reactor.html">Reactor</a></code>. This reactor will be called aber any other reactor added so far.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addReactor</span><span class="p">(</span><span class="n">_</span> <span class="nv">reactor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UUID</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>reactor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The reactor to add.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A uuid which can be used to remove the reacto</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC13removeReactor4withAA0F0_pSg10Foundation4UUIDV_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeReactor(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC13removeReactor4withAA0F0_pSg10Foundation4UUIDV_tF">removeReactor(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes and returns the reactor with the given id.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeReactor</span><span class="p">(</span><span class="n">with</span> <span class="nv">uuid</span><span class="p">:</span> <span class="kt">UUID</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>uuid</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The uuid of the reactor to remove.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The removed reactor if one with the id existed.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC9dimensionAA9DimensionVvp"></a>
+                    <a name="//apple_ref/swift/Property/dimension" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC9dimensionAA9DimensionVvp">dimension</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">dimension</span><span class="p">:</span> <span class="kt"><a href="../Structs/Dimension.html">Dimension</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MinecraftClient+Sending"></a>
+                <a name="//apple_ref/swift/Section/MinecraftClient+Sending" class="dashAnchor"></a>
+                <a href="#/MinecraftClient+Sending">
+                  <h3 class="section-name">MinecraftClient+Sending</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC4sendyySays5UInt8VGKF"></a>
+                    <a name="//apple_ref/swift/Method/send(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC4sendyySays5UInt8VGKF">send(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends raw bytes to the server. This function should not be called manually when sending packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">send</span><span class="p">(</span><span class="n">_</span> <span class="nv">bytes</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bytes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to send.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC10sendPacketyyAA012SerializableF0_pF"></a>
+                    <a name="//apple_ref/swift/Method/sendPacket(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC10sendPacketyyAA012SerializableF0_pF">sendPacket(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a packet to the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendPacket</span><span class="p">(</span><span class="n">_</span> <span class="nv">packet</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SerializablePacket.html">SerializablePacket</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>packet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The packet to send.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MinecraftClient+Receiving"></a>
+                <a name="//apple_ref/swift/Section/MinecraftClient+Receiving" class="dashAnchor"></a>
+                <a href="#/MinecraftClient+Receiving">
+                  <h3 class="section-name">MinecraftClient+Receiving</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC11handleEvent33_A84A6B85091ACD8BD547E2473DF530CFLLyyAA09TCPClientF0OF"></a>
+                    <a name="//apple_ref/swift/Method/handleEvent(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC11handleEvent33_A84A6B85091ACD8BD547E2473DF530CFLLyyAA09TCPClientF0OF">handleEvent(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels a new <code><a href="../Enums/TCPClientEvent.html">TCPClientEvent</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">handleEvent</span><span class="p">(</span><span class="n">_</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Enums/TCPClientEvent.html">TCPClientEvent</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The event to handle.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC13handleMessage33_A84A6B85091ACD8BD547E2473DF530CFLLyySays5UInt8VGF"></a>
+                    <a name="//apple_ref/swift/Method/handleMessage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC13handleMessage33_A84A6B85091ACD8BD547E2473DF530CFLLyySays5UInt8VGF">handleMessage(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels a new incomming message.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">handleMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">bytes</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bytes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to handle.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC16handlePacketData33_A84A6B85091ACD8BD547E2473DF530CFLLyySays5UInt8VGKF"></a>
+                    <a name="//apple_ref/swift/Method/handlePacketData(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC16handlePacketData33_A84A6B85091ACD8BD547E2473DF530CFLLyySays5UInt8VGKF">handlePacketData(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels the data of a new packet. This includes deserializing and reactors.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    Any error which might occure.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">handlePacketData</span><span class="p">(</span><span class="n">_</span> <span class="nv">packetData</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>packetData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The dat of the packet.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MinecraftClient+Receiving2"></a>
+                <a name="//apple_ref/swift/Section/MinecraftClient+Receiving" class="dashAnchor"></a>
+                <a href="#/MinecraftClient+Receiving2">
+                  <h3 class="section-name">MinecraftClient+Receiving</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft20SerializationContextP6clientAA15MinecraftClientCvp"></a>
+                    <a name="//apple_ref/swift/Property/client" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft20SerializationContextP6clientAA15MinecraftClientCvp">client</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MinecraftClient</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MinecraftClient+Reactor"></a>
+                <a name="//apple_ref/swift/Section/MinecraftClient+Reactor" class="dashAnchor"></a>
+                <a href="#/MinecraftClient+Reactor">
+                  <h3 class="section-name">MinecraftClient+Reactor</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft7ReactorP17didReceivedPacket_6clientyAA014DeserializableF0_p_AA15MinecraftClientCtKF"></a>
+                    <a name="//apple_ref/swift/Method/didReceivedPacket(_:client:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft7ReactorP17didReceivedPacket_6clientyAA014DeserializableF0_p_AA15MinecraftClientCtKF">didReceivedPacket(_:client:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">didReceivedPacket</span><span class="p">(</span><span class="n">_</span> <span class="nv">packet</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DeserializablePacket.html">DeserializablePacket</a></span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MinecraftClient</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft7ReactorP16shouldSendPacket_6clientSbAA012SerializableF0_p_AA15MinecraftClientCtF"></a>
+                    <a name="//apple_ref/swift/Method/shouldSendPacket(_:client:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft7ReactorP16shouldSendPacket_6clientSbAA012SerializableF0_p_AA15MinecraftClientCtF">shouldSendPacket(_:client:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">shouldSendPacket</span><span class="p">(</span><span class="n">_</span> <span class="nv">packet</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SerializablePacket.html">SerializablePacket</a></span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MinecraftClient</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft7ReactorP13didSendPacket_6clientyAA012SerializableF0_p_AA15MinecraftClientCtF"></a>
+                    <a name="//apple_ref/swift/Method/didSendPacket(_:client:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft7ReactorP13didSendPacket_6clientyAA012SerializableF0_p_AA15MinecraftClientCtF">didSendPacket(_:client:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">didSendPacket</span><span class="p">(</span><span class="n">_</span> <span class="nv">packet</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SerializablePacket.html">SerializablePacket</a></span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MinecraftClient</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MinecraftClient+Enryption"></a>
+                <a name="//apple_ref/swift/Section/MinecraftClient+Enryption" class="dashAnchor"></a>
+                <a href="#/MinecraftClient+Enryption">
+                  <h3 class="section-name">MinecraftClient+Enryption</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC24encryptMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHF"></a>
+                    <a name="//apple_ref/swift/Method/encryptMessageIfRequired(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC24encryptMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHF">encryptMessageIfRequired(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encrypts a message if encryption is enabled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">encryptMessageIfRequired</span><span class="p">(</span><span class="n">_</span> <span class="nv">bytes</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bytes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to encrypt.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The encrypted bytes of encryption is enabled. Otherwise the input bytes.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC24decryptMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHF"></a>
+                    <a name="//apple_ref/swift/Method/decryptMessageIfRequired(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC24decryptMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHF">decryptMessageIfRequired(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Decryptes a message if encryption is enabled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decryptMessageIfRequired</span><span class="p">(</span><span class="n">_</span> <span class="nv">bytes</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bytes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to encrypt.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The decrypted bytes of encryption is enabled. Otherwise the input bytes.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MinecraftClient+Compression"></a>
+                <a name="//apple_ref/swift/Section/MinecraftClient+Compression" class="dashAnchor"></a>
+                <a href="#/MinecraftClient+Compression">
+                  <h3 class="section-name">MinecraftClient+Compression</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC25compressMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHKF"></a>
+                    <a name="//apple_ref/swift/Method/compressMessageIfRequired(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC25compressMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHKF">compressMessageIfRequired(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compresses a message if compression is enabled.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    And error which might occure.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">compressMessageIfRequired</span><span class="p">(</span><span class="n">_</span> <span class="nv">bytes</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bytes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to compress.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The compressed bytes of compression is enabled. Otherwise the input bytes.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC27decompressMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHKF"></a>
+                    <a name="//apple_ref/swift/Method/decompressMessageIfRequired(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC27decompressMessageIfRequired33_A84A6B85091ACD8BD547E2473DF530CFLLySays5UInt8VGAHKF">decompressMessageIfRequired(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Decompresses a message if compression is enabled.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    And error which might occure.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">decompressMessageIfRequired</span><span class="p">(</span><span class="n">_</span> <span class="nv">bytes</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bytes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The bytes to decompress.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The decompressed bytes of compression is enabled. Otherwise the input bytes.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC25supportedProtocolVersionss10DictionaryVySSSiGvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/supportedProtocolVersions" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC25supportedProtocolVersionss10DictionaryVySSSiGvpZ">supportedProtocolVersions</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Relation of all supported human readable versions and protocol version numbers.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">supportedProtocolVersions</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC34mostRecentSupportedProtocolVersionSivpZ"></a>
+                    <a name="//apple_ref/swift/Variable/mostRecentSupportedProtocolVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC34mostRecentSupportedProtocolVersionSivpZ">mostRecentSupportedProtocolVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The most recent released protocol version number.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">mostRecentSupportedProtocolVersion</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC16keepaliveReactorAA0F0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/keepaliveReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC16keepaliveReactorAA0F0_pyFZ">keepaliveReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new reactor for keepalive packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">keepaliveReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new reactor</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC24compressionPacketReactorAA0G0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/compressionPacketReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC24compressionPacketReactorAA0G0_pyFZ">compressionPacketReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels set compression packets by enabeling or disableing compression.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">compressionPacketReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC23encryptionPacketReactorAA0G0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/encryptionPacketReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC23encryptionPacketReactorAA0G0_pyFZ">encryptionPacketReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels the <code><a href="../Structs/EncryptionRequestPacket.html">EncryptionRequestPacket</a></code> by enabeling encryption.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">encryptionPacketReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC25loginSuccessPacketReactorAA0H0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/loginSuccessPacketReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC25loginSuccessPacketReactorAA0H0_pyFZ">loginSuccessPacketReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels the login success packets by updating the clients connection state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">loginSuccessPacketReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC21joinGamePacketReactorAA0H0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/joinGamePacketReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC21joinGamePacketReactorAA0H0_pyFZ">joinGamePacketReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels the join game packet by updateing the dimension.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">joinGamePacketReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC12loginReactorAA0F0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/loginReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC12loginReactorAA0F0_pyFZ">loginReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels all packets relevant for the login.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">loginReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC16chatPrintReactor6prefixAA0G0_pSS_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/chatPrintReactor(prefix:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC16chatPrintReactor6prefixAA0G0_pSS_tFZ">chatPrintReactor(prefix:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a Reactor which prints chat messages</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">chatPrintReactor</span><span class="p">(</span><span class="nv">prefix</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"chat: "</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefix</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A String to show in front of every chat message.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC17debugPrintReactorAA0G0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/debugPrintReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC17debugPrintReactorAA0G0_pyFZ">debugPrintReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a reactor which prints every incoming and outgoing packet.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debugPrintReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC27singleTypeDebugPrintReactor3forAA0I0_pxm_tAA20DeserializablePacketRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/singleTypeDebugPrintReactor(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC27singleTypeDebugPrintReactor3forAA0I0_pxm_tAA20DeserializablePacketRzlFZ">singleTypeDebugPrintReactor(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a reactor which prints packets of one type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">singleTypeDebugPrintReactor</span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">type</span><span class="p">:</span> <span class="k">Type</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span> <span class="k">where</span> <span class="k">Type</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DeserializablePacket.html">DeserializablePacket</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The packet type to listen for</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC27teleportationConfirmReactorAA0G0_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/teleportationConfirmReactor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC27teleportationConfirmReactorAA0G0_pyFZ">teleportationConfirmReactor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new reactor for keepalive packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">teleportationConfirmReactor</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new reactor</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC17essentialReactorsAA7Reactor_pyFZ"></a>
+                    <a name="//apple_ref/swift/Method/essentialReactors()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC17essentialReactorsAA7Reactor_pyFZ">essentialReactors()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A reactor which handels all essential packets to login and keep the connection alive.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">essentialReactors</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC16chunkDataReactor12blockManagerAA0G0_pAA05BlockI0_p_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/chunkDataReactor(blockManager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC16chunkDataReactor12blockManagerAA0G0_pAA05BlockI0_p_tFZ">chunkDataReactor(blockManager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new reactor to handle chunk data packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">chunkDataReactor</span><span class="p">(</span><span class="nv">blockManager</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BlockManager.html">BlockManager</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>blockManger</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The chunk manager to store the chunks to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC18unloadChunkReactor12blockManagerAA0G0_pAA05BlockI0_p_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/unloadChunkReactor(blockManager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC18unloadChunkReactor12blockManagerAA0G0_pAA05BlockI0_p_tFZ">unloadChunkReactor(blockManager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new reactor to handle unload chunk packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">unloadChunkReactor</span><span class="p">(</span><span class="nv">blockManager</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BlockManager.html">BlockManager</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>blockManager</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The chunk manager to store the chunks to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC18blockChangeReactor0E7ManagerAA0G0_pAA05BlockH0_p_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/blockChangeReactor(blockManager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC18blockChangeReactor0E7ManagerAA0G0_pAA05BlockH0_p_tFZ">blockChangeReactor(blockManager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blockChangeReactor</span><span class="p">(</span><span class="nv">blockManager</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BlockManager.html">BlockManager</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC23multiBlockChangeReactor12blockManagerAA0H0_pAA0fJ0_p_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/multiBlockChangeReactor(blockManager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC23multiBlockChangeReactor12blockManagerAA0H0_pAA0fJ0_p_tFZ">multiBlockChangeReactor(blockManager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">multiBlockChangeReactor</span><span class="p">(</span><span class="nv">blockManager</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BlockManager.html">BlockManager</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC28playerPositionAndLookReactor0E7ManagerAA0I0_pAA06PlayerJ0_p_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/playerPositionAndLookReactor(playerManager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC28playerPositionAndLookReactor0E7ManagerAA0I0_pAA06PlayerJ0_p_tFZ">playerPositionAndLookReactor(playerManager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">playerPositionAndLookReactor</span><span class="p">(</span><span class="nv">playerManager</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PlayerManager.html">PlayerManager</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC12worldReactor0E13StatusManagerAA0F0_pAA05BlockH0_AA06PlayerH0p_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/worldReactor(worldStatusManager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC12worldReactor0E13StatusManagerAA0F0_pAA05BlockH0_AA06PlayerH0p_tFZ">worldReactor(worldStatusManager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handels all packets relevant for world status updates.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">worldReactor</span><span class="p">(</span><span class="nv">worldStatusManager</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:10SwiftCraft27MinecraftWorldStatusManagera">MinecraftWorldStatusManager</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/Reactor.html">Reactor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The requested reactor.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC13sendHandshake9nextStateyAA010ConnectionH0O_tF"></a>
+                    <a name="//apple_ref/swift/Method/sendHandshake(nextState:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC13sendHandshake9nextStateyAA010ConnectionH0O_tF">sendHandshake(nextState:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a handshake packet to the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendHandshake</span><span class="p">(</span><span class="nv">nextState</span><span class="p">:</span> <span class="kt"><a href="../Enums/ConnectionState.html">ConnectionState</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nextState</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The state of the connection to switch to. This can be login or status.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC14sendLoginStart8usernameySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/sendLoginStart(username:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC14sendLoginStart8usernameySS_tF">sendLoginStart(username:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a login start packet to the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendLoginStart</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>username</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The username which will be used to authenticate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC14performRespawnyyF"></a>
+                    <a name="//apple_ref/swift/Method/performRespawn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC14performRespawnyyF">performRespawn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">performRespawn</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC17requestStatisticsyyF"></a>
+                    <a name="//apple_ref/swift/Method/requestStatistics()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC17requestStatisticsyyF">requestStatistics()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">requestStatistics</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC27sendKeepaliveResponsePacket2idys5Int64V_tF"></a>
+                    <a name="//apple_ref/swift/Method/sendKeepaliveResponsePacket(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC27sendKeepaliveResponsePacket2idys5Int64V_tF">sendKeepaliveResponsePacket(id:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a keepalive packet to the server.
+This must be send after receiving a keepalive request or the client will be kicked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendKeepaliveResponsePacket</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id from the received keepalive packet.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC14sendPlayerLook3yaw5pitch10isOnGroundySf_SfSbtF"></a>
+                    <a name="//apple_ref/swift/Method/sendPlayerLook(yaw:pitch:isOnGround:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC14sendPlayerLook3yaw5pitch10isOnGroundySf_SfSbtF">sendPlayerLook(yaw:pitch:isOnGround:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendPlayerLook</span><span class="p">(</span><span class="nv">yaw</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">pitch</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">isOnGround</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC11sendMessageyySSF"></a>
+                    <a name="//apple_ref/swift/Method/sendMessage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC11sendMessageyySSF">sendMessage(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a chat message to the server. A normal server will forward this chat message to every player.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message to send.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC19sendTeleportConfirm10teleportIDySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/sendTeleportConfirm(teleportID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC19sendTeleportConfirm10teleportIDySi_tF">sendTeleportConfirm(teleportID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendTeleportConfirm</span><span class="p">(</span><span class="nv">teleportID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft15MinecraftClientC23sendStatusRequestPacketyyF"></a>
+                    <a name="//apple_ref/swift/Method/sendStatusRequestPacket()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft15MinecraftClientC23sendStatusRequestPacketyyF">sendStatusRequestPacket()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a keepalive packet to the server.
+This must be send after receiving a keepalive request or the client will be kicked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">sendStatusRequestPacket</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id from the received keepalive packet.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/NoahPeeters" target="_blank" rel="external">Noah Peeters</a>. All rights reserved. (Last updated: 2018-06-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

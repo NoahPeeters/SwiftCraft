@@ -1,5 +1,6 @@
 
-docs
+docs/docsets
+docs/undocumented.json
 
 # Created by https://www.gitignore.io/api/xcode,swift,macos,carthage
 

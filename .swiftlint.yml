@@ -25,7 +25,6 @@ enabled_rules:
   - empty_string
   - explicit_enum_raw_value
   - fallthrough
-  - file_name
   - implicit_return
   - let_var_whitespace
   - literal_expression_end_indentation

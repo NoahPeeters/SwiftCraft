@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ClosureReactor Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ClosureReactor" class="dashAnchor"></a>
+    <a title="ClosureReactor Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftCraft Docs</a> (74% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftCraft Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ClosureReactor Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Buffer.html">Buffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkColumn.html">ChunkColumn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkColumn/Position.html">– Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkSection.html">ChunkSection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkSection/BlockData.html">– BlockData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChunkSection/BlockIDsWrapper.html">– BlockIDsWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ClosureReactor.html">ClosureReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ContinuousMessageCryptor.html">ContinuousMessageCryptor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DebugPrintReactor.html">DebugPrintReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MessageCompressor.html">MessageCompressor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MinecraftClient.html">MinecraftClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MinecraftWorld.html">MinecraftWorld</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultiReactor.html">MultiReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SingleReactor.html">SingleReactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TCPClient.html">TCPClient</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/IPPROTO_TCP">IPPROTO_TCP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/SOCK_STREAM">SOCK_STREAM</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AdvancementsPacketError.html">AdvancementsPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BufferError.html">BufferError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChangeGameStatePacketError.html">ChangeGameStatePacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageComponent.html">ChatMessageComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageComponent/Options.html">– Options</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageComponent/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessageLocation.html">ChatMessageLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ChatMessagePacketError.html">ChatMessagePacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ConnectionState.html">ConnectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CryptoWrapper.html">CryptoWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Difficulty.html">Difficulty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EncryptionRequestPacketReactorError.html">EncryptionRequestPacketReactorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/EntityEquipmentPacketError.html">EntityEquipmentPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LevelType.html">LevelType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LoginSuccessPacketError.html">LoginSuccessPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MessageCompressorError.html">MessageCompressorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MinecraftTranslations.html">MinecraftTranslations</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PacketLibraryError.html">PacketLibraryError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReceivedAnimationPacketError.html">ReceivedAnimationPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SlotContent.html">SlotContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SpawnPaintingPacketError.html">SpawnPaintingPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TCPClientEvent.html">TCPClientEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WorldBorderPacketError.html">WorldBorderPacketError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/FixedWidthInteger.html">FixedWidthInteger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Int64.html">Int64</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Optional.html">Optional</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String/TypeDeserializeError.html">– TypeDeserializeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URLRequest.html">URLRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URLSession.html">URLSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UUID.html">UUID</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftCraft13chunkLocation33_8EDCF9F3864ACECCA9A7B8ED51CB04BALL7ofBlockS2i_tF">chunkLocation(ofBlock:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftCraft23relativeLocationInChunk33_8EDCF9F3864ACECCA9A7B8ED51CB04BALL7ofBlockS2i_tF">relativeLocationInChunk(ofBlock:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AuthenticationProvider.html">AuthenticationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BitPatternShiftable.html">BitPatternShiftable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BlockManager.html">BlockManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BufferSerializablePacket.html">BufferSerializablePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10SwiftCraft14ByteReadBufferP">ByteReadBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10SwiftCraft15ByteWriteBufferP">ByteWriteBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DeserializableDataType.html">DeserializableDataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DeserializablePacket.html">DeserializablePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HandshakePacketIDProvider.html">HandshakePacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LoginPacketIDProvider.html">LoginPacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NBTNode.html">NBTNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PacketIDProvider.html">PacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PacketLibrary.html">PacketLibrary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlayPacketIDProvider.html">PlayPacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlayerManager.html">PlayerManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reactor.html">Reactor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ReadBuffer.html">ReadBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SerializableDataType.html">SerializableDataType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SerializablePacket.html">SerializablePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SerializationContext.html">SerializationContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SessionServerServiceProtocol.html">SessionServerServiceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SimplePacketIDProvider.html">SimplePacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StatusPacketIDProvider.html">StatusPacketIDProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TCPClientProtocol.html">TCPClientProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserLoginCredentials.html">UserLoginCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserLoginServiceProtocol.html">UserLoginServiceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UserLoginSessionCredentials.html">UserLoginSessionCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VarIntIntegerType.html">VarIntIntegerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WriteBuffer.html">WriteBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AdvancementsPacket.html">AdvancementsPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AdvancementsPacket/Advancement.html">– Advancement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/AttachEntityPacket.html">AttachEntityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockActionPacket.html">BlockActionPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockBreakAnimationPacket.html">BlockBreakAnimationPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockChangePacket.html">BlockChangePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockID.html">BlockID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/BlockPosition.html">BlockPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChangeGameStatePacket.html">ChangeGameStatePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChangeGameStatePacket/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChatMessage.html">ChatMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ChunkDataPacket.html">ChunkDataPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClientStatusPacket.html">ClientStatusPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CollectItemPacket.html">CollectItemPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultPacketLibrary.html">DefaultPacketLibrary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DestroyEntitiesPacket.html">DestroyEntitiesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Dimension.html">Dimension</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DisconnectPacket.html">DisconnectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EffectPacket.html">EffectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EncryptionRequestPacket.html">EncryptionRequestPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EncryptionResponsePacket.html">EncryptionResponsePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityEquipmentPacket.html">EntityEquipmentPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityEquipmentPacket/Slot.html">– Slot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityHeadLookPacket.html">EntityHeadLookPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityLocation.html">EntityLocation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityLookAndRelativeMovePacket.html">EntityLookAndRelativeMovePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityLookPacket.html">EntityLookPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityMetadataPacket.html">EntityMetadataPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityPropertiesPacket.html">EntityPropertiesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityPropertiesPacket/Propery.html">– Propery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityRelativeMovePacket.html">EntityRelativeMovePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityStatusPacket.html">EntityStatusPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityTeleportPacket.html">EntityTeleportPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityVelocity.html">EntityVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/EntityVelocityPacket.html">EntityVelocityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Gamemode.html">Gamemode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Gamemode/Mode.html">– Mode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HandshakePacket.html">HandshakePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/HeldItemChangedReceivedPacket.html">HeldItemChangedReceivedPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Identifier.html">Identifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/JoinGamePacket.html">JoinGamePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/JoinGamePacket/JoinGamePacketError.html">– JoinGamePacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeepaliveRequestPacket.html">KeepaliveRequestPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeepaliveResponsePacket.html">KeepaliveResponsePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LoginStartPacket.html">LoginStartPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LoginSuccessPacket.html">LoginSuccessPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MultiBlockChangePacket.html">MultiBlockChangePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBT.html">NBT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTByte.html">NBTByte</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTByteArray.html">NBTByteArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTCompount.html">NBTCompount</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTDouble.html">NBTDouble</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTFloat.html">NBTFloat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTInt16.html">NBTInt16</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTInt32.html">NBTInt32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTInt64.html">NBTInt64</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTList.html">NBTList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NBTString.html">NBTString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NamedNBTNodeWrapper.html">NamedNBTNodeWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OfflineSessionService.html">OfflineSessionService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PacketID.html">PacketID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParticlePacket.html">ParticlePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket.html">PlayerListPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket/AddPlayerPayload.html">– AddPlayerPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerListPacket/PlayerListPacketError.html">– PlayerListPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerLookPacket.html">PlayerLookPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerPositionAndLookReceivedPacket.html">PlayerPositionAndLookReceivedPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerPositionAndLookReceivedPacket/ValueWrapper.html">– ValueWrapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlayerUpdate.html">PlayerUpdate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PluginMessageReceivedPacket.html">PluginMessageReceivedPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceiveChatMessagePacket.html">ReceiveChatMessagePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceivedAnimationPacket.html">ReceivedAnimationPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceivedAnimationPacket/Animation.html">– Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ReceivedPlayerAbilitiesPacket.html">ReceivedPlayerAbilitiesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SendChatMessagePacket.html">SendChatMessagePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ServerDifficultyPacket.html">ServerDifficultyPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ServerDifficultyPacket/ServerDifficultyPacketError.html">– ServerDifficultyPacketError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionServerService.html">SessionServerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SessionServerService/Payload.html">– Payload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SetCompressionPacket.html">SetCompressionPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SetExperiencePacket.html">SetExperiencePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SetSlotPacket.html">SetSlotPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SimpleUserLoginSessionCredentials.html">SimpleUserLoginSessionCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SoundEffectPacket.html">SoundEffectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnExperienceOrbPacket.html">SpawnExperienceOrbPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnGlobalEntityPacket.html">SpawnGlobalEntityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnMobPacket.html">SpawnMobPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnObjectPacket.html">SpawnObjectPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPaintingPacket.html">SpawnPaintingPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPaintingPacket/Direction.html">– Direction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPlayerPacket.html">SpawnPlayerPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpawnPositionPacket.html">SpawnPositionPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Statistic.html">Statistic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatisticsPacket.html">StatisticsPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatusRequestPacket.html">StatusRequestPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatusResponsePacket.html">StatusResponsePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StatusResponsePacket/Response.html">– Response</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TeleportConfirmPacket.html">TeleportConfirmPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TimeUpdatePacket.html">TimeUpdatePacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnloadChunkPacket.html">UnloadChunkPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnlockRecipesPacket.html">UnlockRecipesPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnlockRecipesPacket/Action.html">– Action</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateBlockEntityPacket.html">UpdateBlockEntityPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UpdateHealthPacket.html">UpdateHealthPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginCredentialsAgent.html">UserLoginCredentialsAgent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginPasswordCredentials.html">UserLoginPasswordCredentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginPasswordCredentialsPayload.html">UserLoginPasswordCredentialsPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse.html">UserLoginResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse/Profile.html">– Profile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse/User.html">– User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginResponse/UserProperty.html">– UserProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginService.html">UserLoginService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserLoginSessionCredentialsPayload.html">UserLoginSessionCredentialsPayload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VarInt.html">VarInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/VarInt/TypeDeserializeError.html">– TypeDeserializeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WindowItemsPacket.html">WindowItemsPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WorldBorderPacket.html">WorldBorderPacket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WorldBorderPacket/Action.html">– Action</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft5Anglea">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft4Bytea">Byte</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft9ByteArraya">ByteArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft10ByteBuffera">ByteBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8EntityIDa">EntityID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft27MinecraftWorldStatusManagera">MinecraftWorldStatusManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8RecipeIDa">RecipeID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft12Serializablea">Serializable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8VarInt32a">VarInt32</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftCraft8VarInt64a">VarInt64</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ClosureReactor</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">ClosureReactor</span><span class="o">&lt;</span><span class="kt">PacketType</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/SingleReactor.html">SingleReactor</a></span><span class="o">&lt;</span><span class="kt">PacketType</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">PacketType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DeserializablePacket.html">DeserializablePacket</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>A subclass of <code><a href="../Classes/SingleReactor.html">SingleReactor</a></code> wich allows a closure to be called on packet receiving.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft14ClosureReactorC7Handlera"></a>
+                    <a name="//apple_ref/swift/Alias/Handler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft14ClosureReactorC7Handlera">Handler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type of the closure.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Handler</span> <span class="o">=</span> <span class="p">(</span><span class="kt">PacketType</span><span class="p">,</span> <span class="kt"><a href="../Classes/MinecraftClient.html">MinecraftClient</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft14ClosureReactorC7handler33_7B1160868459EBC8966E25BD21D22CF1LLyyx_AA15MinecraftClientCtKcvp"></a>
+                    <a name="//apple_ref/swift/Property/handler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft14ClosureReactorC7handler33_7B1160868459EBC8966E25BD21D22CF1LLyyx_AA15MinecraftClientCtKcvp">handler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>THe handler for new packets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">handler</span><span class="p">:</span> <span class="kt"><a href="../Classes/ClosureReactor.html#/s:10SwiftCraft14ClosureReactorC7Handlera">Handler</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft14ClosureReactorC7handlerACyxGyx_AA15MinecraftClientCtKc_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(handler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft14ClosureReactorC7handlerACyxGyx_AA15MinecraftClientCtKc_tcfc">init(handler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new <code>ClosureReactor</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Classes/ClosureReactor.html#/s:10SwiftCraft14ClosureReactorC7Handlera">Handler</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>handler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The handler to call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftCraft14ClosureReactorC17didReceivedPacket_6clientyx_AA15MinecraftClientCtKF"></a>
+                    <a name="//apple_ref/swift/Method/didReceivedPacket(_:client:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftCraft14ClosureReactorC17didReceivedPacket_6clientyx_AA15MinecraftClientCtKF">didReceivedPacket(_:client:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="kd">func</span> <span class="nf">didReceivedPacket</span><span class="p">(</span><span class="n">_</span> <span class="nv">packet</span><span class="p">:</span> <span class="kt">PacketType</span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt"><a href="../Classes/MinecraftClient.html">MinecraftClient</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/NoahPeeters" target="_blank" rel="external">Noah Peeters</a>. All rights reserved. (Last updated: 2018-06-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

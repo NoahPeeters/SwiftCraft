@@ -595,6 +595,7 @@
 		1334251120B460D60097C45D /* Data+MinecraftHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+MinecraftHexString.swift"; sourceTree = "<group>"; };
 		1334251420B4647A0097C45D /* SessionServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServerService.swift; sourceTree = "<group>"; };
 		1334251720B469DB0097C45D /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		13DF9A0A20E11641005A3252 /* build_docs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_docs.sh; sourceTree = "<group>"; };
 		4005B77A20C30C1A001F09D2 /* SwiftCraftReactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraftReactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4005B77C20C30C1A001F09D2 /* SwiftCraftReactive_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCraftReactive_macOS.h; sourceTree = "<group>"; };
 		4005B77D20C30C1A001F09D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -937,6 +938,14 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
+		13DF9A0B20E11649005A3252 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				13DF9A0A20E11641005A3252 /* build_docs.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		4005B77B20C30C1A001F09D2 /* SwiftCraftReactive */ = {
 			isa = PBXGroup;
 			children = (
@@ -1119,6 +1128,7 @@
 				40BCC65A20DE7C2E0023BC2E /* README.md */,
 				401C5ADB20DFCA0700E9B461 /* LICENSE */,
 				401C5ADC20DFCA3700E9B461 /* ObjC-PyCrypto-LICENSE */,
+				13DF9A0B20E11649005A3252 /* scripts */,
 				401252B820DD03DF00802FCA /* Package Manager */,
 				40AEEE8020DBDD3700E774CA /* Sources */,
 				40AEEE8120DBDD5D00E774CA /* Tests */,
@@ -1707,23 +1717,6 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
-/* Begin PBXLegacyTarget section */
-		403464D220B8A94A002FBC11 /* Create Documentation */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "--author \"Noah Peeters\" --author_url \"https://github.com/NoahPeeters\" --module SwiftCraft --source-directory Sources/SwiftCraft --min-acl private -e Sources/SwiftCraft/Crypto/SwCrypt.swift Sources/SwiftCraft/Crypto/DataCompression.swift";
-			buildConfigurationList = 403464D520B8A94A002FBC11 /* Build configuration list for PBXLegacyTarget "Create Documentation" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/local/bin/jazzy;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = "Create Documentation";
-			passBuildSettingsInEnvironment = 1;
-			productName = "Create Documentation";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		4005B77920C30C1A001F09D2 /* SwiftCraftReactive macOS */ = {
 			isa = PBXNativeTarget;
@@ -1973,9 +1966,6 @@
 						CreatedOnToolsVersion = 9.3.1;
 						LastSwiftMigration = 1000;
 					};
-					403464D220B8A94A002FBC11 = {
-						CreatedOnToolsVersion = 9.3.1;
-					};
 					40767E3120DF07E10082A6D1 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -2029,7 +2019,6 @@
 				4012529320DC5FAA00802FCA /* SwiftCraftAppShared macOS */,
 				40DC842120DC5418005F7EDE /* SwiftCraftMacApp */,
 				407F2C0320DDC10F0078B8F1 /* SwiftCraftiOSApp */,
-				403464D220B8A94A002FBC11 /* Create Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -3100,29 +3089,6 @@
 			};
 			name = Release;
 		};
-		403464D320B8A94A002FBC11 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-			};
-			name = Debug;
-		};
-		403464D420B8A94A002FBC11 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-			};
-			name = Release;
-		};
 		40767E3B20DF07E10082A6D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3616,15 +3582,6 @@
 			buildConfigurations = (
 				4024AB6020B1DB57008790F2 /* Debug */,
 				4024AB6120B1DB57008790F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		403464D520B8A94A002FBC11 /* Build configuration list for PBXLegacyTarget "Create Documentation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				403464D320B8A94A002FBC11 /* Debug */,
-				403464D420B8A94A002FBC11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
