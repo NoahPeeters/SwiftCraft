@@ -54,6 +54,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         BlockActionPacket.self,                             // 0x0A
         BlockChangePacket.self,                             // 0x0B
         ServerDifficultyPacket.self,                        // 0x0D
+        TabCompleteResponsePacket.self,                     // 0x0E
         ReceiveChatMessagePacket.self,                      // 0x0F
         MultiBlockChangePacket.self,                        // 0x10
         WindowItemsPacket.self,                             // 0x14

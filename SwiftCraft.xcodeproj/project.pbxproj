@@ -447,6 +447,12 @@
 		40AEEE7B20DBD0D300E774CA /* EntityLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7A20DBD0D300E774CA /* EntityLocation.swift */; };
 		40AEEE7D20DBD0E800E774CA /* SlotContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7C20DBD0E800E774CA /* SlotContent.swift */; };
 		40AEEE7F20DBD0FF00E774CA /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7E20DBD0FF00E774CA /* General.swift */; };
+		40C7023320E579C300000919 /* TabCompleteRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7023220E579C300000919 /* TabCompleteRequestPacket.swift */; };
+		40C7023420E579C300000919 /* TabCompleteRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7023220E579C300000919 /* TabCompleteRequestPacket.swift */; };
+		40C7023520E579C300000919 /* TabCompleteRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7023220E579C300000919 /* TabCompleteRequestPacket.swift */; };
+		40C7023720E579DA00000919 /* TabCompleteResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7023620E579DA00000919 /* TabCompleteResponsePacket.swift */; };
+		40C7023820E579DA00000919 /* TabCompleteResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7023620E579DA00000919 /* TabCompleteResponsePacket.swift */; };
+		40C7023920E579DA00000919 /* TabCompleteResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C7023620E579DA00000919 /* TabCompleteResponsePacket.swift */; };
 		40C74D1720DD8B9F008CC291 /* CrypoWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */; };
 		40C74D1920DD8D2D008CC291 /* SwCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74D1820DD8D2D008CC291 /* SwCrypt.swift */; };
 		40C74D2320DDB21D008CC291 /* SwiftCraft.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C74D2120DDB21D008CC291 /* SwiftCraft.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -798,6 +804,8 @@
 		40AEEE7E20DBD0FF00E774CA /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		40AEEE8220DBE5F900E774CA /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		40BCC65A20DE7C2E0023BC2E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		40C7023220E579C300000919 /* TabCompleteRequestPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCompleteRequestPacket.swift; sourceTree = "<group>"; };
+		40C7023620E579DA00000919 /* TabCompleteResponsePacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCompleteResponsePacket.swift; sourceTree = "<group>"; };
 		40C74D1620DD8B9F008CC291 /* CrypoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrypoWrapper.swift; sourceTree = "<group>"; };
 		40C74D1820DD8D2D008CC291 /* SwCrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCrypt.swift; sourceTree = "<group>"; };
 		40C74D1F20DDB21D008CC291 /* SwiftCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1124,6 +1132,7 @@
 				408C67E820DAB5F90090A1F0 /* BlockActionPacket.swift */,
 				4024C60120D953AB00493A86 /* BlockChangePacket.swift */,
 				40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */,
+				40C7023620E579DA00000919 /* TabCompleteResponsePacket.swift */,
 				4022B07620B4D20C00B4E680 /* ReceiveChatMessagePacket.swift */,
 				40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */,
 				4024C5C820D9077A00493A86 /* WindowItemsPacket.swift */,
@@ -1170,6 +1179,7 @@
 			isa = PBXGroup;
 			children = (
 				40695BA120DAF6A1007C1C36 /* TeleportConfirmPacket.swift */,
+				40C7023220E579C300000919 /* TabCompleteRequestPacket.swift */,
 				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
 				408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */,
 				4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */,
@@ -2318,6 +2328,7 @@
 				408E641720BB096300AE9C2D /* UpdateHealthPacket.swift in Sources */,
 				40778F8920DAC94900B8BB99 /* Identifier.swift in Sources */,
 				4024AB8220B21E67008790F2 /* WriteBuffer.swift in Sources */,
+				40C7023820E579DA00000919 /* TabCompleteResponsePacket.swift in Sources */,
 				408E63E520B992D900AE9C2D /* EntityStatusPacket.swift in Sources */,
 				408E63EF20B9D4FC00AE9C2D /* PlayerListPacket.swift in Sources */,
 				40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */,
@@ -2389,6 +2400,7 @@
 				408E640F20BAFCEE00AE9C2D /* UnloadChunkPacket.swift in Sources */,
 				40695B9120DAEE27007C1C36 /* PlayerReactor.swift in Sources */,
 				40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */,
+				40C7023420E579C300000919 /* TabCompleteRequestPacket.swift in Sources */,
 				408E640B20BAF60E00AE9C2D /* World.swift in Sources */,
 				408C67EF20DABC270090A1F0 /* WorldBorderPacket.swift in Sources */,
 				408C67E320DAB1D70090A1F0 /* ReceivedAnimationPacket.swift in Sources */,
@@ -2520,6 +2532,7 @@
 				4084643120DDB99300C2ACC4 /* BlockActionPacket.swift in Sources */,
 				4084645220DDB99300C2ACC4 /* SpawnPaintingPacket.swift in Sources */,
 				4084644520DDB99300C2ACC4 /* NBT.swift in Sources */,
+				40C7023920E579DA00000919 /* TabCompleteResponsePacket.swift in Sources */,
 				4084644B20DDB99300C2ACC4 /* UnloadChunkPacket.swift in Sources */,
 				4084648520DDB99300C2ACC4 /* MultiBlockChangePacket.swift in Sources */,
 				4084644320DDB99300C2ACC4 /* SwCrypt.swift in Sources */,
@@ -2591,6 +2604,7 @@
 				4084645420DDB99300C2ACC4 /* CrypoWrapper.swift in Sources */,
 				4084643220DDB99300C2ACC4 /* CollectItemPacket.swift in Sources */,
 				4084643820DDB99300C2ACC4 /* PacketIDProvider.swift in Sources */,
+				40C7023520E579C300000919 /* TabCompleteRequestPacket.swift in Sources */,
 				4084643720DDB99300C2ACC4 /* PlayerListPacket.swift in Sources */,
 				4084644D20DDB99300C2ACC4 /* AttachEntityPacket.swift in Sources */,
 				4084644C20DDB99300C2ACC4 /* PacketID.swift in Sources */,
@@ -2676,6 +2690,7 @@
 				4084636520DDB3DD00C2ACC4 /* SerializablePacket.swift in Sources */,
 				408463B020DDB3DD00C2ACC4 /* KeepaliveRequestPacket.swift in Sources */,
 				4084638820DDB3DD00C2ACC4 /* BlockActionPacket.swift in Sources */,
+				40C7023720E579DA00000919 /* TabCompleteResponsePacket.swift in Sources */,
 				4084639E20DDB3DD00C2ACC4 /* CollectItemPacket.swift in Sources */,
 				4084638720DDB3DD00C2ACC4 /* ChatMessageLocation.swift in Sources */,
 				4084634A20DDB3DD00C2ACC4 /* SpawnPositionPacket.swift in Sources */,
@@ -2747,6 +2762,7 @@
 				4084636E20DDB3DD00C2ACC4 /* EffectPacket.swift in Sources */,
 				408463A520DDB3DD00C2ACC4 /* PacketLibrary.swift in Sources */,
 				4084636C20DDB3DD00C2ACC4 /* SoundEffectPacket.swift in Sources */,
+				40C7023320E579C300000919 /* TabCompleteRequestPacket.swift in Sources */,
 				4084636D20DDB3DD00C2ACC4 /* EntityVelocity.swift in Sources */,
 				4084637A20DDB3DD00C2ACC4 /* ChunkSection.swift in Sources */,
 				4084636A20DDB3DD00C2ACC4 /* StatusRequestPacket.swift in Sources */,
