@@ -41,7 +41,7 @@ public class SwiftCraftAppGame {
     }
 
     public func startOffline() {
-        createMinecraftClient(sessionServerService: OfflineSessionService(username: "Gigameter"))
+        createMinecraftClient(sessionServerService: OfflineSessionService(username: "Player"))
         guard self.minecraftClient.connectAndLogin() else {
             print("Connection failed")
             exit(0)
