@@ -59,6 +59,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
         WindowItemsPacket.self,                             // 0x14
         SetSlotPacket.self,                                 // 0x16
         PluginMessageReceivedPacket.self,                   // 0x18
+        DisconnectPlayPacket.self,                          // 0x1A
         EntityStatusPacket.self,                            // 0x1B
         UnloadChunkPacket.self,                             // 0x1D
         ChangeGameStatePacket.self,                         // 0x1E

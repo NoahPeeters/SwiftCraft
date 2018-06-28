@@ -484,6 +484,9 @@
 		40E314FC20B609C900C9E271 /* PrintReactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314FB20B609C900C9E271 /* PrintReactors.swift */; };
 		40E314FE20B6110900C9E271 /* MultiBlockChangePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */; };
 		40E3150020B612EB00C9E271 /* TimeUpdatePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */; };
+		40F0589A20E560EF00CE003E /* DisconnectPlayPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0589920E560EF00CE003E /* DisconnectPlayPacket.swift */; };
+		40F0589B20E5654600CE003E /* DisconnectPlayPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0589920E560EF00CE003E /* DisconnectPlayPacket.swift */; };
+		40F0589C20E5654700CE003E /* DisconnectPlayPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F0589920E560EF00CE003E /* DisconnectPlayPacket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -826,6 +829,7 @@
 		40E314FB20B609C900C9E271 /* PrintReactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintReactors.swift; sourceTree = "<group>"; };
 		40E314FD20B6110900C9E271 /* MultiBlockChangePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBlockChangePacket.swift; sourceTree = "<group>"; };
 		40E314FF20B612EB00C9E271 /* TimeUpdatePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpdatePacket.swift; sourceTree = "<group>"; };
+		40F0589920E560EF00CE003E /* DisconnectPlayPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectPlayPacket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1117,6 +1121,7 @@
 				4024C5C820D9077A00493A86 /* WindowItemsPacket.swift */,
 				4024C5C420D9039F00493A86 /* SetSlotPacket.swift */,
 				40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */,
+				40F0589920E560EF00CE003E /* DisconnectPlayPacket.swift */,
 				408E63E420B992D900AE9C2D /* EntityStatusPacket.swift */,
 				408E640E20BAFCEE00AE9C2D /* UnloadChunkPacket.swift */,
 				404352EF20DADE7C00C2E737 /* ChangeGameStatePacket.swift */,
@@ -2337,6 +2342,7 @@
 				4024AB8020B21E45008790F2 /* ReadBuffer.swift in Sources */,
 				40AEEE7520DBD0A400E774CA /* LevelType.swift in Sources */,
 				408E640D20BAFC3200AE9C2D /* BlockReactor.swift in Sources */,
+				40F0589B20E5654600CE003E /* DisconnectPlayPacket.swift in Sources */,
 				408C67ED20DAB8620090A1F0 /* ParticlePacket.swift in Sources */,
 				401C5AD920DFB8FC00E9B461 /* AESCipher.m in Sources */,
 				40C74D1920DD8D2D008CC291 /* SwCrypt.swift in Sources */,
@@ -2532,6 +2538,7 @@
 				4084643420DDB99300C2ACC4 /* SpawnPositionPacket.swift in Sources */,
 				4084646920DDB99300C2ACC4 /* ClientStatusPacket.swift in Sources */,
 				4084643620DDB99300C2ACC4 /* KeepaliveReactor.swift in Sources */,
+				40F0589C20E5654700CE003E /* DisconnectPlayPacket.swift in Sources */,
 				4084648220DDB99300C2ACC4 /* SetExperiencePacket.swift in Sources */,
 				401C5ADA20DFB8FC00E9B461 /* AESCipher.m in Sources */,
 				4084646620DDB99300C2ACC4 /* KeepaliveResponsePacket.swift in Sources */,
@@ -2687,6 +2694,7 @@
 				4084639520DDB3DD00C2ACC4 /* ReceivedPlayerAbilitiesPacket.swift in Sources */,
 				4084636B20DDB3DD00C2ACC4 /* Difficulty.swift in Sources */,
 				4084638B20DDB3DD00C2ACC4 /* SpawnPlayerPacket.swift in Sources */,
+				40F0589A20E560EF00CE003E /* DisconnectPlayPacket.swift in Sources */,
 				408463A820DDB3DD00C2ACC4 /* UserLoginResponse.swift in Sources */,
 				401C5AD820DFB8FC00E9B461 /* AESCipher.m in Sources */,
 				4084635D20DDB3DD00C2ACC4 /* TeleportationConfirmReactor.swift in Sources */,
