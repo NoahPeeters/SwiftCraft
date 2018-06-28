@@ -162,7 +162,7 @@
 		4084636520DDB3DD00C2ACC4 /* SerializablePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070520B355CF00B116C4 /* SerializablePacket.swift */; };
 		4084636620DDB3DD00C2ACC4 /* SpawnMobPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E641020BB006200AE9C2D /* SpawnMobPacket.swift */; };
 		4084636720DDB3DD00C2ACC4 /* ClientStatusPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */; };
-		4084636820DDB3DD00C2ACC4 /* DisconnectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */; };
+		4084636820DDB3DD00C2ACC4 /* DisconnectLoginPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectLoginPacket.swift */; };
 		4084636920DDB3DD00C2ACC4 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024AB8520B220C0008790F2 /* Buffer.swift */; };
 		4084636A20DDB3DD00C2ACC4 /* StatusRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60C20DA680000493A86 /* StatusRequestPacket.swift */; };
 		4084636B20DDB3DD00C2ACC4 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AEEE7220DBD09600E774CA /* Difficulty.swift */; };
@@ -370,7 +370,7 @@
 		4084649320DDB99300C2ACC4 /* SendChatMessagePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */; };
 		4084649420DDB99300C2ACC4 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B07420B4D04100B4E680 /* Optional+Unwrap.swift */; };
 		4084649520DDB99300C2ACC4 /* ContinuousMessageCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4022B06120B4AC8400B4E680 /* ContinuousMessageCryptor.swift */; };
-		4084649620DDB99300C2ACC4 /* DisconnectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */; };
+		4084649620DDB99300C2ACC4 /* DisconnectLoginPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectLoginPacket.swift */; };
 		4084649720DDB99300C2ACC4 /* DestroyEntitiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60320D962A300493A86 /* DestroyEntitiesPacket.swift */; };
 		4084649820DDB99300C2ACC4 /* HandshakePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4068070720B35FDF00B116C4 /* HandshakePacket.swift */; };
 		4084649920DDB99300C2ACC4 /* PluginMessageReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */; };
@@ -456,7 +456,7 @@
 		40D6CC5120B36C4D0043FAB5 /* PacketLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */; };
 		40D6CC5320B36CF30043FAB5 /* LoginSuccessPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */; };
 		40D6CC5520B36EE00043FAB5 /* EncryptionRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */; };
-		40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */; };
+		40D6CC5720B370490043FAB5 /* DisconnectLoginPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6CC5620B370490043FAB5 /* DisconnectLoginPacket.swift */; };
 		40DAC2D920B985420017FEBD /* ServerDifficultyPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */; };
 		40DAC2DB20B986030017FEBD /* PluginMessageReceivedPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */; };
 		40DAC2DD20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */; };
@@ -800,7 +800,7 @@
 		40D6CC5020B36C4D0043FAB5 /* PacketLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketLibrary.swift; sourceTree = "<group>"; };
 		40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessPacket.swift; sourceTree = "<group>"; };
 		40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionRequestPacket.swift; sourceTree = "<group>"; };
-		40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectPacket.swift; sourceTree = "<group>"; };
+		40D6CC5620B370490043FAB5 /* DisconnectLoginPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectLoginPacket.swift; sourceTree = "<group>"; };
 		40DAC2D820B985420017FEBD /* ServerDifficultyPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDifficultyPacket.swift; sourceTree = "<group>"; };
 		40DAC2DA20B986030017FEBD /* PluginMessageReceivedPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginMessageReceivedPacket.swift; sourceTree = "<group>"; };
 		40DAC2DC20B989BC0017FEBD /* ReceivedPlayerAbilitiesPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedPlayerAbilitiesPacket.swift; sourceTree = "<group>"; };
@@ -1079,7 +1079,7 @@
 		4022B06D20B4CC0900B4E680 /* Clientbound */ = {
 			isa = PBXGroup;
 			children = (
-				40D6CC5620B370490043FAB5 /* DisconnectPacket.swift */,
+				40D6CC5620B370490043FAB5 /* DisconnectLoginPacket.swift */,
 				40D6CC5420B36EE00043FAB5 /* EncryptionRequestPacket.swift */,
 				40D6CC5220B36CF30043FAB5 /* LoginSuccessPacket.swift */,
 				4022B06320B4B02700B4E680 /* SetCompressionPacket.swift */,
@@ -2315,7 +2315,7 @@
 				4068070620B355CF00B116C4 /* SerializablePacket.swift in Sources */,
 				408E641120BB006200AE9C2D /* SpawnMobPacket.swift in Sources */,
 				408E63EB20B9A8B600AE9C2D /* ClientStatusPacket.swift in Sources */,
-				40D6CC5720B370490043FAB5 /* DisconnectPacket.swift in Sources */,
+				40D6CC5720B370490043FAB5 /* DisconnectLoginPacket.swift in Sources */,
 				4024AB8620B220C0008790F2 /* Buffer.swift in Sources */,
 				4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */,
 				40AEEE7320DBD09600E774CA /* Difficulty.swift in Sources */,
@@ -2587,7 +2587,7 @@
 				4084643C20DDB99300C2ACC4 /* BlockReactor.swift in Sources */,
 				4084649520DDB99300C2ACC4 /* ContinuousMessageCryptor.swift in Sources */,
 				4084648720DDB99300C2ACC4 /* EncryptionRequestPacket.swift in Sources */,
-				4084649620DDB99300C2ACC4 /* DisconnectPacket.swift in Sources */,
+				4084649620DDB99300C2ACC4 /* DisconnectLoginPacket.swift in Sources */,
 				4084649920DDB99300C2ACC4 /* PluginMessageReceivedPacket.swift in Sources */,
 				4084643D20DDB99300C2ACC4 /* Serializable.swift in Sources */,
 				4084645F20DDB99300C2ACC4 /* SingleReactor.swift in Sources */,
@@ -2748,7 +2748,7 @@
 				408463BC20DDB3DD00C2ACC4 /* SendChatMessagePacket.swift in Sources */,
 				4084638320DDB3DD00C2ACC4 /* Optional+Unwrap.swift in Sources */,
 				4084639A20DDB3DD00C2ACC4 /* ContinuousMessageCryptor.swift in Sources */,
-				4084636820DDB3DD00C2ACC4 /* DisconnectPacket.swift in Sources */,
+				4084636820DDB3DD00C2ACC4 /* DisconnectLoginPacket.swift in Sources */,
 				4084638520DDB3DD00C2ACC4 /* DestroyEntitiesPacket.swift in Sources */,
 				4084634C20DDB3DD00C2ACC4 /* HandshakePacket.swift in Sources */,
 				408463A120DDB3DD00C2ACC4 /* PluginMessageReceivedPacket.swift in Sources */,

@@ -32,7 +32,7 @@ public struct DefaultPacketLibrary: PacketLibrary {
     /// List of packet types.
     private let packets: [DeserializablePacket.Type] = [
         // Login
-        DisconnectPacket.self,                              // 0x00
+        DisconnectLoginPacket.self,                         // 0x00
         EncryptionRequestPacket.self,                       // 0x01
         LoginSuccessPacket.self,                            // 0x02
         SetCompressionPacket.self,                          // 0x03
