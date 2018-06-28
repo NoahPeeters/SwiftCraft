@@ -8,8 +8,20 @@
 
 import Foundation
 
+/// Minimal protocol for a minecraft client
+public protocol MinecraftClientProtocol {
+    /// The current connection state. This will influence the interpretation of packet ids.
+    var connectionState: ConnectionState { get }
+
+    /// The version number used for the protocol
+    var protocolVersion: Int { get }
+
+    /// The current dimension of the player
+    var dimension: Dimension { get }
+}
+
 /// Baseclass for the library. It manages everything a client have to do.
-open class MinecraftClient {
+open class MinecraftClient: MinecraftClientProtocol {
     /// The tcp client used to connect to the server
     private let tcpClient: TCPClientProtocol
 
@@ -298,12 +310,6 @@ extension MinecraftClient {
 
         let packet = try packetLibrary.parse(packetBuffer, packetID: packetID, context: self)
         try self.didReceivedPacket(packet, client: self)
-    }
-}
-
-extension MinecraftClient: SerializationContext {
-    public var client: MinecraftClient {
-        return self
     }
 }
 

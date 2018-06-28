@@ -36,7 +36,7 @@ public struct ChunkDataPacket: DeserializablePacket, PlayPacketIDProvider, Custo
                 return nil
             }
 
-            return try ChunkSection(from: buffer, hasSkylight: context.client.dimension.hasSkylight)
+            return try ChunkSection(from: buffer, hasSkylight: context.dimension.hasSkylight)
         }
 
         let biomes = try isInitial ? buffer.read(lenght: 256) : nil

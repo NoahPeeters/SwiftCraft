@@ -8,13 +8,7 @@
 
 import Foundation
 
-public protocol SerializationContext {
-    /// The minecraft client.
-    var client: MinecraftClient { get }
-
-    /// The version number of the used protocol.
-    var protocolVersion: Int { get }
-}
+public typealias SerializationContext = MinecraftClientProtocol
 
 // MARK: - Serializing
 
