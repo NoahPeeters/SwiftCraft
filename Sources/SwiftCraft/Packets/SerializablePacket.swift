@@ -56,5 +56,24 @@ extension BufferSerializablePacket {
 
 /// A deserializable minecaft packet.
 public protocol DeserializablePacket: PacketIDProvider {
+    /// Deserialize a packet from the given buffer.
+    ///
+    /// - Parameters:
+    ///   - bytes: The buffer to deserialize the packet from.
+    ///   - context: The context to use for deserialization.
+    /// - Throws: Deserialization errors. THis depends on the kind of packet.
     init<Buffer: ByteReadBuffer>(from buffer: Buffer, context: SerializationContext) throws
+}
+
+extension DeserializablePacket {
+    /// Deserialize a packet from the given bytes.
+    ///
+    /// - Parameters:
+    ///   - bytes: The bytes to deserialize the packet from.
+    ///   - context: The context to use for deserialization.
+    /// - Throws: Deserialization errors. THis depends on the kind of packet.
+    public init(from bytes: ByteArray, context: SerializationContext) throws {
+        let buffer = Buffer(elements: bytes)
+        try self.init(from: buffer, context: context)
+    }
 }
