@@ -20,7 +20,7 @@ extension UUID: Serializable {
     public func serialize<Buffer: ByteWriteBuffer>(to buffer: Buffer) {
         var uuid = self.uuid
         let data = withUnsafePointer(to: &uuid) {
-            return Data(bytes: $0, count: 16)
+            Data(bytes: $0, count: 16)
         }
 
         buffer.write(elements: Array(data))

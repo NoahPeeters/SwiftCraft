@@ -11,15 +11,14 @@ import Foundation
 extension Array: DeserializableDataType where Element: DeserializableDataType {
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer) throws {
         let count = try VarInt32(from: buffer).value
-
         self = try (0..<count).map { _ in
-            return try Element(from: buffer)
+            try Element(from: buffer)
         }
     }
 
     public init<Buffer: ByteReadBuffer>(from buffer: Buffer, count: Int) throws {
         self = try (0..<count).map { _ in
-            return try Element(from: buffer)
+            try Element(from: buffer)
         }
     }
 }

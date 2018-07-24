@@ -167,7 +167,7 @@ extension MinecraftClient: Reactor {
 
     public func shouldSendPacket(_ packet: SerializablePacket, client: MinecraftClient) -> Bool {
         return reactors.reduce(true) {
-            return $0 && $1.value.shouldSendPacket(packet, client: client)
+            $0 && $1.value.shouldSendPacket(packet, client: client)
         }
     }
 

@@ -45,7 +45,7 @@ public struct ParticlePacket: DeserializablePacket, PlayPacketIDProvider {
         particleData = try Float(from: buffer)
         count = try Int(Int32(from: buffer))
         data = try [VarInt32](from: buffer, count: ParticlePacket.dataLength(particleID: particleID)).map {
-            return $0.integer
+            $0.integer
         }
     }
 
