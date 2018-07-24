@@ -39,7 +39,7 @@ extension MinecraftClient {
 
 /// A Reactor which prints ever packet.
 public class DebugPrintReactor: Reactor {
-    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
+    public func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) {
         print(" 🔽 \(packet)")
     }
 

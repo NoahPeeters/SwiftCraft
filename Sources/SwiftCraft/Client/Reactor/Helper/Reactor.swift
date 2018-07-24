@@ -31,7 +31,7 @@ public protocol Reactor {
     /// - Parameters:
     ///   - packet: The packet which was send.
     ///   - client: The client which send the packet.
-    func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient)
+    func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) throws
 }
 
 extension Reactor {

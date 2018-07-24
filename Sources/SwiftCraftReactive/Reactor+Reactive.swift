@@ -52,7 +52,7 @@ private class ReactivePacketReactor: Reactor {
         self.observer = observer
     }
 
-    fileprivate func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) throws {
+    fileprivate func didReceivedPacket(_ packet: DeserializablePacket, client: MinecraftClient) {
         observer?.send(value: packet)
     }
 }

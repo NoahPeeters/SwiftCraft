@@ -17,7 +17,7 @@ public class SwiftCraftAppGame {
     public init() {}
 
     public func startOnline() {
-        //        UserDefaults.standard.removeObject(forKey: "accessToken")
+//        UserDefaults.standard.removeObject(forKey: "accessToken")
 
         let passwordCredentials = loadCredentials() ?? UserLoginPasswordCredentials.readFromEnvironment()
         let loginService = UserLoginService()
@@ -49,9 +49,12 @@ public class SwiftCraftAppGame {
     }
 
     private func createMinecraftClient(sessionServerService: SessionServerServiceProtocol) {
-        minecraftClient = MinecraftClient(
+        let networkLayer = MinecraftClientTCPNetworkLayer(
             tcpClient: TCPClient(host: "localhost", port: 25565),
-            packetLibrary: DefaultPacketLibrary(),
+            packetLibrary: DefaultPacketLibrary())
+
+        minecraftClient = MinecraftClient(
+            networkLayer: networkLayer,
             sessionServerService: sessionServerService)
 
         _ = minecraftClient.addReactor(MinecraftClient.essentialReactors())
@@ -61,7 +64,7 @@ public class SwiftCraftAppGame {
             print($0)
         }
 
-        minecraftClient.onClose {
+        networkLayer.onClose {
             print("Connection closed \($0)")
         }
     }

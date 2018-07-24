@@ -15,9 +15,9 @@ extension MinecraftClient {
     public static func compressionPacketReactor() -> Reactor {
         return ClosureReactor<SetCompressionPacket> { packet, client in
             if packet.threshold == -1 {
-                client.disableCompression()
+                client.networkLayer.disableCompression()
             } else {
-                client.enableCompression(threshold: packet.threshold)
+                client.networkLayer.enableCompression(threshold: packet.threshold)
             }
         }
     }

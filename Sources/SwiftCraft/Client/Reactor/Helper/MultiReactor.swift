@@ -32,9 +32,9 @@ open class MultiReactor: Reactor {
         }
     }
 
-    public func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) {
-        reactors.forEach {
-            $0.didSendPacket(packet, client: client)
+    public func didSendPacket(_ packet: SerializablePacket, client: MinecraftClient) throws {
+        try reactors.forEach {
+            try $0.didSendPacket(packet, client: client)
         }
     }
 }
