@@ -122,6 +122,12 @@
 		40778F8720DAC8E500B8BB99 /* AdvancementsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */; };
 		40778F8920DAC94900B8BB99 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8820DAC94900B8BB99 /* Identifier.swift */; };
 		40778F8B20DACAEE00B8BB99 /* Dictionary+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */; };
+		407C862C2107A5C5001ABA56 /* TabCompleteResponsePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C86282107A4F6001ABA56 /* TabCompleteResponsePacketTests.swift */; };
+		407C862D2107A5C6001ABA56 /* TabCompleteResponsePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C86282107A4F6001ABA56 /* TabCompleteResponsePacketTests.swift */; };
+		407C862E2107A5C7001ABA56 /* TabCompleteResponsePacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C86282107A4F6001ABA56 /* TabCompleteResponsePacketTests.swift */; };
+		407C86312107A6DF001ABA56 /* TabCompleteRequestPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C862F2107A68D001ABA56 /* TabCompleteRequestPacketTests.swift */; };
+		407C86322107A6DF001ABA56 /* TabCompleteRequestPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C862F2107A68D001ABA56 /* TabCompleteRequestPacketTests.swift */; };
+		407C86332107A6E0001ABA56 /* TabCompleteRequestPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407C862F2107A68D001ABA56 /* TabCompleteRequestPacketTests.swift */; };
 		407F2C0720DDC10F0078B8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F2C0620DDC10F0078B8F1 /* AppDelegate.swift */; };
 		407F2C0C20DDC10F0078B8F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407F2C0A20DDC10F0078B8F1 /* Main.storyboard */; };
 		407F2C0E20DDC10F0078B8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407F2C0D20DDC10F0078B8F1 /* Assets.xcassets */; };
@@ -727,6 +733,8 @@
 		40778F8620DAC8E500B8BB99 /* AdvancementsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancementsPacket.swift; sourceTree = "<group>"; };
 		40778F8820DAC94900B8BB99 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		40778F8A20DACAEE00B8BB99 /* Dictionary+Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Serializable.swift"; sourceTree = "<group>"; };
+		407C86282107A4F6001ABA56 /* TabCompleteResponsePacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCompleteResponsePacketTests.swift; sourceTree = "<group>"; };
+		407C862F2107A68D001ABA56 /* TabCompleteRequestPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCompleteRequestPacketTests.swift; sourceTree = "<group>"; };
 		407F2C0420DDC10F0078B8F1 /* SwiftCraftiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCraftiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		407F2C0620DDC10F0078B8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		407F2C0B20DDC10F0078B8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1788,6 +1796,8 @@
 			children = (
 				40F058AF20E5726500CE003E /* MockSerializationContext.swift */,
 				40F058AB20E56DAF00CE003E /* DisconnectPlayPacketTests.swift */,
+				407C86282107A4F6001ABA56 /* TabCompleteResponsePacketTests.swift */,
+				407C862F2107A68D001ABA56 /* TabCompleteRequestPacketTests.swift */,
 			);
 			path = "Packets Tests";
 			sourceTree = "<group>";
@@ -2458,10 +2468,12 @@
 				401C5ADF20E0025500E9B461 /* CompressionTests.swift in Sources */,
 				13879E2920E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
 				40E2141820E196F300730052 /* TranslationTests.swift in Sources */,
+				407C86322107A6DF001ABA56 /* TabCompleteRequestPacketTests.swift in Sources */,
 				4024AB8820B22418008790F2 /* BufferTests.swift in Sources */,
 				40F058B120E5726500CE003E /* MockSerializationContext.swift in Sources */,
 				4024AB9220B231A2008790F2 /* DataTypesSerializationTests.swift in Sources */,
 				40E2141320E1915A00730052 /* BlockPositionTests.swift in Sources */,
+				407C862D2107A5C6001ABA56 /* TabCompleteResponsePacketTests.swift in Sources */,
 				4068070120B3200600B116C4 /* TCPClientTests.swift in Sources */,
 				40F058AD20E56DAF00CE003E /* DisconnectPlayPacketTests.swift in Sources */,
 			);
@@ -2476,10 +2488,12 @@
 				401C5ADE20E0025500E9B461 /* CompressionTests.swift in Sources */,
 				13879E2820E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
 				40E2141620E196F100730052 /* TranslationTests.swift in Sources */,
+				407C86312107A6DF001ABA56 /* TabCompleteRequestPacketTests.swift in Sources */,
 				40767E5320DF09060082A6D1 /* DataTypesSerializationTests.swift in Sources */,
 				40F058B020E5726500CE003E /* MockSerializationContext.swift in Sources */,
 				40767E5420DF09060082A6D1 /* TCPClientTests.swift in Sources */,
 				40E2141020E1905700730052 /* BlockPositionTests.swift in Sources */,
+				407C862C2107A5C5001ABA56 /* TabCompleteResponsePacketTests.swift in Sources */,
 				40767E5220DF09060082A6D1 /* BufferTests.swift in Sources */,
 				40F058AC20E56DAF00CE003E /* DisconnectPlayPacketTests.swift in Sources */,
 			);
@@ -2494,10 +2508,12 @@
 				401C5AE020E0025500E9B461 /* CompressionTests.swift in Sources */,
 				13879E2A20E13BA100EEED99 /* NumberSerializationTests.swift in Sources */,
 				40E2141720E196F200730052 /* TranslationTests.swift in Sources */,
+				407C86332107A6E0001ABA56 /* TabCompleteRequestPacketTests.swift in Sources */,
 				40767E4F20DF09050082A6D1 /* DataTypesSerializationTests.swift in Sources */,
 				40F058B220E5726500CE003E /* MockSerializationContext.swift in Sources */,
 				40767E5020DF09050082A6D1 /* TCPClientTests.swift in Sources */,
 				40E2141120E1905700730052 /* BlockPositionTests.swift in Sources */,
+				407C862E2107A5C7001ABA56 /* TabCompleteResponsePacketTests.swift in Sources */,
 				40767E4E20DF09050082A6D1 /* BufferTests.swift in Sources */,
 				40F058AE20E56DAF00CE003E /* DisconnectPlayPacketTests.swift in Sources */,
 			);
