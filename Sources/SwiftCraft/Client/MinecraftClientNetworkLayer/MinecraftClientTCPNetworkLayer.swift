@@ -141,7 +141,7 @@ extension MinecraftClientTCPNetworkLayer {
             } catch {
                 if case let PacketLibraryError.unknowPacketID(packetID) = error {
                     let hexID = String(packetID.id, radix: 16, uppercase: true)
-                    print(" ❗️ unknown packet: \(packetID.connectionState): 0x\(hexID)")
+//                    print(" ❗️ unknown packet: \(packetID.connectionState): 0x\(hexID)")
                 } else {
                     print(" ❌ \(error)")
                 }

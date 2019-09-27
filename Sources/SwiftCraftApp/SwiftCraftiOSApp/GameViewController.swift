@@ -17,11 +17,12 @@ public class GameViewController: UIViewController, UITextFieldDelegate {
     private var messages: [String] = []
 
     public func start(host: String, port: Int, sessionServer: SessionServerServiceProtocol) {
+        let networkLayer = MinecraftClientTCPNetworkLayer(
+            tcpClient: TCPClient(host: host, port: port),
+            packetLibrary: DefaultPacketLibrary())
+
         client = MinecraftClient(
-            tcpClient: TCPClient(
-                host: host,
-                port: port),
-            packetLibrary: DefaultPacketLibrary(),
+            networkLayer: networkLayer,
             sessionServerService: sessionServer)
 
         _ = client.addReactor(MinecraftClient.essentialReactors())
@@ -29,13 +30,13 @@ public class GameViewController: UIViewController, UITextFieldDelegate {
             self?.addMessage(packet.message.message.string(translationManager: EnglishTranslationManager()))
         })
 
-        client.onOpen { [weak self] in
+        networkLayer.onOpen { [weak self] in
             DispatchQueue.main.async {
                 self?.addMessage("Connection opened")
             }
         }
 
-        client.onClose { [weak self] connectionState in
+        networkLayer.onClose { [weak self] connectionState in
             DispatchQueue.main.async {
                 self?.addMessage("Connection closed \(connectionState)")
             }

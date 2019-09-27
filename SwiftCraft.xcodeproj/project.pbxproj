@@ -84,6 +84,9 @@
 		4024C60B20DA665F00493A86 /* StatusResponsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60A20DA665F00493A86 /* StatusResponsePacket.swift */; };
 		4024C60D20DA680000493A86 /* StatusRequestPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024C60C20DA680000493A86 /* StatusRequestPacket.swift */; };
 		4024E0BE20DE81EA0033D1E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024E0BC20DE81A60033D1E4 /* LoginViewController.swift */; };
+		4041EC5F2107C17900191FCD /* PlayerPositionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041EC5E2107C17900191FCD /* PlayerPositionPacket.swift */; };
+		4041EC602107C28600191FCD /* PlayerPositionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041EC5E2107C17900191FCD /* PlayerPositionPacket.swift */; };
+		4041EC612107C28600191FCD /* PlayerPositionPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041EC5E2107C17900191FCD /* PlayerPositionPacket.swift */; };
 		404352F020DADE7C00C2E737 /* ChangeGameStatePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404352EF20DADE7C00C2E737 /* ChangeGameStatePacket.swift */; };
 		404352F220DAE29600C2E737 /* CollectItemPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404352F120DAE29600C2E737 /* CollectItemPacket.swift */; };
 		406806FF20B30D3500B116C4 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406806FE20B30D3500B116C4 /* TCPClient.swift */; };
@@ -713,6 +716,7 @@
 		4034B0AD20E1706A00FFA816 /* SwiftCraftReactive-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-iOS.xcconfig"; sourceTree = "<group>"; };
 		4034B0AE20E1707200FFA816 /* SwiftCraftReactive-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-macOS.xcconfig"; sourceTree = "<group>"; };
 		4034B0AF20E1707B00FFA816 /* SwiftCraftReactive-tvOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftCraftReactive-tvOS.xcconfig"; sourceTree = "<group>"; };
+		4041EC5E2107C17900191FCD /* PlayerPositionPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPositionPacket.swift; sourceTree = "<group>"; };
 		404352EF20DADE7C00C2E737 /* ChangeGameStatePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGameStatePacket.swift; sourceTree = "<group>"; };
 		404352F120DAE29600C2E737 /* CollectItemPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectItemPacket.swift; sourceTree = "<group>"; };
 		406806FE20B30D3500B116C4 /* TCPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
@@ -1200,6 +1204,7 @@
 				40E314F220B5F65300C9E271 /* SendChatMessagePacket.swift */,
 				408E63EA20B9A8B600AE9C2D /* ClientStatusPacket.swift */,
 				4022B07B20B4E13B00B4E680 /* KeepaliveResponsePacket.swift */,
+				4041EC5E2107C17900191FCD /* PlayerPositionPacket.swift */,
 				40695BA520DB0088007C1C36 /* PlayerLookPacket.swift */,
 			);
 			path = Serverbound;
@@ -2412,6 +2417,7 @@
 				4024C60420D962A300493A86 /* DestroyEntitiesPacket.swift in Sources */,
 				4024C5C920D9077A00493A86 /* WindowItemsPacket.swift in Sources */,
 				40AEEE7720DBD0B500E774CA /* ChatMessageLocation.swift in Sources */,
+				4041EC602107C28600191FCD /* PlayerPositionPacket.swift in Sources */,
 				408C67E920DAB5F90090A1F0 /* BlockActionPacket.swift in Sources */,
 				408E641320BB04A700AE9C2D /* EntityPropertiesPacket.swift in Sources */,
 				408E641520BB08CD00AE9C2D /* SetExperiencePacket.swift in Sources */,
@@ -2624,6 +2630,7 @@
 				4084646120DDB99300C2ACC4 /* LoginStartPacket.swift in Sources */,
 				4084649120DDB99300C2ACC4 /* EntityPropertiesPacket.swift in Sources */,
 				4084645620DDB99300C2ACC4 /* DataCompression.swift in Sources */,
+				4041EC612107C28600191FCD /* PlayerPositionPacket.swift in Sources */,
 				4084646720DDB99300C2ACC4 /* Data+Serializable.swift in Sources */,
 				4084648820DDB99300C2ACC4 /* Credentials.swift in Sources */,
 				4084642720DDB99300C2ACC4 /* EntityLookAndRelativeMovePacket.swift in Sources */,
@@ -2784,6 +2791,7 @@
 				4084635620DDB3DD00C2ACC4 /* Dictionary+Serializable.swift in Sources */,
 				4084637B20DDB3DD00C2ACC4 /* ReadBuffer.swift in Sources */,
 				408463BF20DDB3DD00C2ACC4 /* KeepaliveResponsePacket.swift in Sources */,
+				4041EC5F2107C17900191FCD /* PlayerPositionPacket.swift in Sources */,
 				4084637420DDB3DD00C2ACC4 /* Data+Serializable.swift in Sources */,
 				4084634D20DDB3DD00C2ACC4 /* SetCompressionPacket.swift in Sources */,
 				4084636720DDB3DD00C2ACC4 /* ClientStatusPacket.swift in Sources */,
